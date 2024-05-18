@@ -22,7 +22,7 @@ const initialValues = {
     password: "",
 };
 
-const page = () => {
+const Page = () => {
     const router = useRouter()
     const [password, setpassword] = useState(false);
     const [open, setOpen] = React.useState(false);
@@ -323,4 +323,4 @@ const VerifyOtp = ({ size, open, handleClose, email }) => {
     );
 };
 
-export default page;
+export default Page;
