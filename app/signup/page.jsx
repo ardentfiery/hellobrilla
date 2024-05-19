@@ -38,7 +38,6 @@ const Page = () => {
             initialValues: initialValues,
             validationSchema: signUpSchema,
             onSubmit: async (values) => {
-                console.log(values);
                 const toastId = toast.loading("Signing up...");
                 try {
                     await axios.post("/user/signup", values);
@@ -213,7 +212,8 @@ const Page = () => {
                         <button
                             onClick={() => {
                                 window.open(
-                                    "http://localhost:5000/user/google",
+                                    // "http://localhost:5000/user/google",
+                                    "https://backend.brillasystem.com/user/google",
                                     "_self"
                                 );
                             }}
@@ -250,11 +250,8 @@ const VerifyOtp = ({ size, open, handleClose, email }) => {
     const [verified, setverified] = useState(false);
     const [otp, setotp] = useState("");
     const verifyOtp = async () => {
-        console.log("airaxaaa");
-        console.log(otp);
         const toastId = toast.loading("Verifying OTP");
         try {
-            console.log("gggggggggg");
             await axios.post("/user/verifysignupotp", {
                 otp,
                 email,

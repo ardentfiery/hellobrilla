@@ -32,8 +32,6 @@ const Page = () => {
             initialValues: initialValues,
             validationSchema: loginSchema,
             onSubmit: async (values) => {
-                console.log(values);
-                console.log("kei consile gare");
                 const toastId = toast.loading("Sending Otp...");
                 try {
                     await axios.post("/user/locallogin", {
@@ -177,7 +175,8 @@ const Page = () => {
                             <button
                                 onClick={() => {
                                     window.open(
-                                        "http://localhost:5000/user/google",
+                                        // "http://localhost:5000/user/google",
+                                        "https://backend.brillasystem.com/user/google",
                                         "_self"
                                     );
                                 }}

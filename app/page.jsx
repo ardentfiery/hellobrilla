@@ -137,7 +137,7 @@ const Home = () => {
             </div>
             <div>
               <img
-                className="h-[25vh] left-[5rem] z-40 absolute bottom-[7rem]"
+                className="h-[25vh] left-[0rem] -z-10 absolute bottom-[8rem] md:bottom-[3rem]"
                 src="/landing/rounded.png"
                 alt=""
               />
