@@ -43,13 +43,13 @@ const Sixthsec = () => {
     );
     return (
         <div className="mt-[15vh]" ref={container}>
-            <div className="eventos flex flex-col items-center">
+            <div className="eventos flex flex-col items-center ">
                 <div>
                     <p className="font-bold text-4xl">Eventos</p>
                 </div>
                 <div className="flex ">
-                    <p className="h-[4px] w-[100px] bg-[#803DA1] ml-340px] "></p>
-                    <p className="h-[4px] w-[50px] bg-[#803DA1] ml-[30px]"></p>
+                    <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px] "></div>
+                    <div className="h-[4px] w-[30px] bg-[#664198] ml-[30px]"></div>
                 </div>
             </div>
             <div className="eventos md:flex-row flex flex-col items-center  gap-[5rem]">
@@ -108,10 +108,10 @@ const Sixthsec = () => {
                     <div className="flex md:gap-8 gap-3 ">
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -123,10 +123,10 @@ const Sixthsec = () => {
                         </div>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -138,10 +138,10 @@ const Sixthsec = () => {
                         </div>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -153,10 +153,10 @@ const Sixthsec = () => {
                         </div>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@ const Sixthsec = () => {
                         </div>
                     </div>
                     <div className="eventosleft">
-                        <button className="flex gap-2 items-center bg-[#803DA1] px-8 py-5 rounded-full">
+                        <button className="flex gap-2 items-center bg-[#664198] px-8 py-5 rounded-full">
                             <p className="text-white text-2xl font-semibold">
                                 Comprar ahora
                             </p>

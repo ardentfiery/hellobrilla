@@ -54,7 +54,7 @@ const Tenthsec = () => {
                   type="text"
                   placeholder="Email"
                 />
-                <p className="foot w-[30px] flex justify-center items-center h-[35px] bg-purple-600">
+                <p className="foot w-[30px] flex justify-center items-center h-[35px] bg-[#664198]">
                   <MdPlayArrow />
                 </p>
               </div>

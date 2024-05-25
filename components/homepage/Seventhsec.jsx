@@ -65,20 +65,20 @@ const Seventhsec = () => {
                     <p className="contact font-bold text-4xl">Contáctanos</p>
                 </div>
                 <div className="flex contact ">
-                    <p className="h-[4px] w-[100px] bg-[#803DA1] ml-340px] "></p>
-                    <p className="h-[4px] w-[50px] bg-[#803DA1] ml-[30px]"></p>
+                    <div className="h-[4px] w-[100px] bg-[#664198] ml-340px] "></div>
+                    <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px]"></div>
                 </div>
             </div>
             <div>
-                <p className="text-[#803DA1] secondline text-2xl text-center md:text-5xl font-bold">
+                <p className="text-[#664198] secondline text-2xl text-center md:text-5xl font-bold">
                     CONECTATE CON LA COMUNIDAD DE BRILLA
                 </p>
             </div>
             <div className="flex flex-col gap-2 items-center socialicons">
                 <div>
-                    <p className="text-[#803DA1]">SIGEUMOS</p>
+                    <p className="text-[#664198]">SIGEUMOS</p>
                 </div>
-                <div className="flex flex-wrap justify-center gap-10 text-[#803DA1]">
+                <div className="flex flex-wrap justify-center gap-10 text-[#664198]">
                     <p className="text-4xl socialicons md:text-7xl">
                         <FaWhatsapp />
                     </p>

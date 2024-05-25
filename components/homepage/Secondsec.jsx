@@ -49,8 +49,8 @@ const Secondsec = () => {
         { scope: container }
       );
     return (
-        <div className="flex flex-col md:flex-row gap-8 items-center w-[80vw] ml-[15vw] h-fit py-4 md:py-0 md:h-[80vh] " ref={container}>
-            <div className=" flex flex-col gap-4 text-right leftsection ">
+        <div className="flex flex-col md:flex-row gap-8 items-center w-[100vw] justify-center   h-fit py-4 md:py-0 md:h-[80vh] " ref={container}>
+            <div className=" flex  flex-col gap-4 text-right leftsection ">
                 <div className=" w-[95%] gap-1 md:w-[20vw] flex flex-col md:gap-6 ">
                     <div className="flex items-center md:gap-2 text-right  justify-end w-[100%]">
                         <div>
@@ -59,7 +59,7 @@ const Secondsec = () => {
                             </p>
                         </div>
                         <div>
-                            <FaCircleCheck className="text-[#803DA1]" />
+                            <FaCircleCheck className="text-[#664198]" />
                         </div>
                     </div>
                     <div>
@@ -76,7 +76,7 @@ const Secondsec = () => {
                             <p className="text-2xl font-semibold">lorem ipsu</p>
                         </div>
                         <div>
-                            <FaCircleCheck className="text-[#803DA1]" />
+                            <FaCircleCheck className="text-[#664198]" />
                         </div>
                     </div>
                     <div>
@@ -92,7 +92,7 @@ const Secondsec = () => {
                             <p className="text-2xl font-semibold">lorem ipsu</p>
                         </div>
                         <div>
-                            <FaCircleCheck className="text-[#803DA1]" />
+                            <FaCircleCheck className="text-[#664198]" />
                         </div>
                     </div>
                     <div>
@@ -106,12 +106,12 @@ const Secondsec = () => {
             <div className="relative">
                 <div>
                     <img
-                        className="video h-[10rem]  md:h-[50vh] "
+                        className="video h-[10rem]  md:h-[20rem] "
                         src="/landing/circle.png"
                         alt=""
                     />
                 </div>
-                <div className="w-[24vw]">
+                <div className="w-[20rem]">
                     <img
                         className="video h-[100%] md:h-[100%] md:w-[100%] absolute top-0 md:top-[] "
                         src="/landing/playvideo.png"
@@ -119,7 +119,7 @@ const Secondsec = () => {
                     />
                 </div>
             </div>
-            <div className="rightsection w-[100vw] md:w-[100%]">
+            <div className="rightsection w-[100vw] md:w-fit px-2 md:px-0">
                 <div className="flex flex-col  gap-4 ">
                     <div className="w-[100%] md:w-[20vw]  flex flex-col gap-1 md:gap-6">
                         <div className="flex items-center gap-2 ">
@@ -129,7 +129,7 @@ const Secondsec = () => {
                                 </p>
                             </div>
                             <div>
-                                <FaCircleCheck className="text-[#803DA1]" />
+                                <FaCircleCheck className="text-[#664198]" />
                             </div>
                         </div>
                         <div>
@@ -147,7 +147,7 @@ const Secondsec = () => {
                                 </p>
                             </div>
                             <div>
-                                <FaCircleCheck className="text-[#803DA1]" />
+                                <FaCircleCheck className="text-[#664198]" />
                             </div>
                         </div>
                         <div>
@@ -165,7 +165,7 @@ const Secondsec = () => {
                                 </p>
                             </div>
                             <div>
-                                <FaCircleCheck className="text-[#803DA1]" />
+                                <FaCircleCheck className="text-[#664198]" />
                             </div>
                         </div>
                         <div>

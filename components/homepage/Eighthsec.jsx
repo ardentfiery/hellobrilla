@@ -62,8 +62,8 @@ const Eighthsec = () => {
                         </p>
                     </div>
                     <div className="flex ">
-                        <p className="h-[4px] w-[100px] bg-[#803DA1] ml-340px] "></p>
-                        <p className="h-[4px] w-[50px] bg-[#803DA1] ml-[30px]"></p>
+                        <div className="h-[4px] w-[100px] bg-[#664198]  "></div>
+                        <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px]"></div>
                     </div>
                 </div>
                 <div>

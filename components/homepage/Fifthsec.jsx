@@ -37,8 +37,8 @@ const Fifthsec = () => {
             <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
                 <p>Promoción del Sistema</p>
                 <div className="flex ">
-                    <p className="h-[4px] w-[100px] bg-[#803DA1] ml-340px] "></p>
-                    <p className="h-[4px] w-[50px] bg-[#803DA1] ml-[30px]"></p>
+                    <div className="h-[4px] w-[100px] bg-[#664198] ml-[340px] "></div>
+                    <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px]"></div>
                 </div>
             </div>
             <div className="md:flex-row flex flex-col gap-[4rem] w-[100vw] items-center">
@@ -201,13 +201,13 @@ const Fifthsec = () => {
                             La oferta expira en:
                         </p>
                     </div>
-                    <div className="flex md:gap-8  gap-5 ">
+                    <div className="flex md:gap-8  gap-5 mr-2 ">
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -219,10 +219,10 @@ const Fifthsec = () => {
                         </div>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -234,10 +234,10 @@ const Fifthsec = () => {
                         </div>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -249,10 +249,10 @@ const Fifthsec = () => {
                         </div>
                         <div className="flex flex-col gap-3 items-center">
                             <div className="flex gap-3">
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
-                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#803DA1] text-white font-bold text-4xl flex items-center justify-center">
+                                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                                     <p>0</p>
                                 </div>
                             </div>
@@ -264,7 +264,7 @@ const Fifthsec = () => {
                         </div>
                     </div>
                     <div>
-                        <button className="book flex gap-2 items-center bg-[#803DA1] px-8 py-5 rounded-full">
+                        <button className="book flex gap-2 items-center bg-[#664198] px-8 py-5 rounded-full">
                             <p className="text-white text-2xl font-semibold">
                                 Comprar ahora
                             </p>

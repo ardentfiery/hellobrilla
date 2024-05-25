@@ -59,7 +59,7 @@ const Thirdsec = () => {
     );
     return (
         <div  ref={container}>
-            <div className="bg-[#803DA1]  h-fit md:h-[50vh] text-white flex flex-col gap-16 items-center p-8">
+            <div className="bg-[#664198]  h-fit md:h-[30rem] text-white flex flex-col gap-16 items-center p-8">
                 <div className=" w-[100vw] text-center md:text-3xl text-2xl  px-[1rem] md:px-[14rem]">
                     <p className=" one font-bold">
                         Recupera tu ventaja y aumenta tu confianza, bienestar y
@@ -89,7 +89,7 @@ const Thirdsec = () => {
                 </div>
             </div>
 
-            <div className=" flex flex-col py-[5rem] bg-[#e0dcdc] items-center gap-6  text-[#803DA1] w-[100vw]  px-3 ">
+            <div className=" flex flex-col py-[5rem] bg-[#e0dcdc] items-center gap-6  text-[#664198] w-[100vw]  px-3 ">
                 <div>
                     <img
                         className="two h-[10vh] w-auto md:h-[8vh]  "
@@ -119,7 +119,7 @@ const Thirdsec = () => {
                 </div>
             </div>
 
-            <div className=" flex  flex-col  items-center gap-6  py-[5rem] text-white bg-[#803DA1] w-[100vw] ">
+            <div className=" flex  flex-col  items-center gap-6  py-[5rem] text-white bg-[#664198] w-[100vw] ">
                 <div>
                     <img
                         className="three h-[6vh] w-auto object-cover "
@@ -127,7 +127,7 @@ const Thirdsec = () => {
                         alt=""
                     />
                 </div>
-                <div className="three bg-[#803DA1]">
+                <div className="three bg-[#664198]">
                     <p className="font-bold text-3xl text-center text-white">
                         APRENDE DE LOS EXPERTOS.
                     </p>
@@ -144,10 +144,10 @@ const Thirdsec = () => {
                     </p>
                 </div>
             </div>
-            <div className=" flex py-[5rem] flex-col bg-[#e0dcdc] items-center gap-6  text-[#803DA1]  w-[100vw] ">
+            <div className=" flex py-[5rem] flex-col bg-[#e0dcdc] items-center gap-6  text-[#664198]  w-[100vw] ">
                 <div>
                     <img
-                        className="four h-[6vh] w-[6vh] -[#803DA1]"
+                        className="four h-[6vh] w-[6vh] -[#664198]"
                         src="/landing/three.png"
                         alt=""
                     />
