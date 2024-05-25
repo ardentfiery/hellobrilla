@@ -37,7 +37,7 @@ const Fifthsec = () => {
             <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
                 <p>Promoción del Sistema</p>
                 <div className="flex ">
-                    <div className="h-[4px] w-[100px] bg-[#664198] ml-[340px] "></div>
+                    <div className="h-[4px] w-[100px] bg-[#664198] "></div>
                     <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px]"></div>
                 </div>
             </div>
