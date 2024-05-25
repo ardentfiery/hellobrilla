@@ -110,7 +110,7 @@ const Left = () => {
                 <Secondary menuData={menuData} handleSelect={handleSelect} sethamclicked={sethamclicked} />
             ) : null}
 
-            <div className="absolute bg-red-300">
+            <div className="absolute z-50 ">
                 <RxHamburgerMenu
                     onClick={() => {
                         sethamclicked(true);
