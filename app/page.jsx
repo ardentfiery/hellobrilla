@@ -18,6 +18,7 @@ import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
+
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -53,6 +54,7 @@ const Home = () => {
     );
     return (
         <div className="overflow-x-hidden relative" ref={container}>
+          
            
                 
                 <img
