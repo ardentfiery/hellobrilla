@@ -4,15 +4,33 @@ import { MdPlayArrow } from "react-icons/md";
 import { IoMdArrowDropright } from "react-icons/io";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/navigation";
 
 
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import axios from "../../app/api/axiosintercepter"
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Fifthsec = () => {
+    const router = useRouter()
+    const paymentFunc=async()=>{
+        try {
+            console.log(" j payo tei")
+            const datarecieved = await axios.get("/user/authorize")
+            console.log(datarecieved)
+
+
+            
+        } catch (error) {
+            console.log(error)
+            router.push("/signup")
+
+            
+        }
+    }
     const container = useRef(null);
     useGSAP(
         () => {
@@ -264,7 +282,7 @@ const Fifthsec = () => {
                         </div>
                     </div>
                     <div>
-                        <button className="book flex gap-2 items-center bg-[#664198] px-8 py-5 rounded-full">
+                        <button onClick={paymentFunc} className="book flex gap-2 items-center bg-[#664198] px-8 py-5 rounded-full">
                             <p className="text-white text-2xl font-semibold">
                                 Comprar ahora
                             </p>

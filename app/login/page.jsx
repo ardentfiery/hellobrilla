@@ -39,6 +39,7 @@ const Page = () => {
                         password: values.password,
                     });
                     toast.success("Log in successful !");
+                    router.push("/")
                     toast.dismiss(toastId);
                 } catch (error) {
                     toast.error("Login failer");
