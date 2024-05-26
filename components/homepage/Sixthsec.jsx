@@ -80,7 +80,7 @@ const Sixthsec = () => {
     const getEvent = async () => {
         try {
             const data = await axios.get(
-                "http://192.168.1.13:3502/landingpage/getevents"
+                "http://localhost:3502/landingpage/getevents"
             );
             seteventData(data.data);
         } catch (error) {
@@ -290,13 +290,12 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
         //     router.push("/signin");
         // } else {
             const stripe = await loadStripe(
-                
                "pk_test_51OdbKnSDrQbUV5GODnck4S7qTTAI1C7Cb2IIjJmcb6HLlHymyzQXpfdTUfbn0hFEbzVcu9HijzBuWGKMfch1wU8O00ZTvLKR3G"
             );
             // const stripe = await loadStripe(process.env.NEXT_PUBLIC_PUBLISHABLE_KEY_TEST);
             try {
                 const resp = await axios.post(
-                    "http://192.168.1.13:3502/create-checkout-session",
+                    "http://localhost:3502/create-checkout-session",
                     // "http://localhost:5000/create-checkout-session",
                     {
                         product: {

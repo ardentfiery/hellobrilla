@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://192.168.1.14:3502",
-  // baseURL: "https://backend.brillasystem.com",
+  // baseURL: "http://192.168.1.14:3502",
+  // baseURL: "http://localhost:3502",
+  baseURL: "https://backend.brillasystem.com",
 });
 
 axiosInstance.interceptors.response.use(
