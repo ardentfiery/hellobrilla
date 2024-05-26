@@ -17,7 +17,6 @@ const Fifthsec = () => {
   const router = useRouter();
   const paymentFunc = async () => {
     try {
-      console.log(" j payo tei");
       const datarecieved = await axios.get("/user/authorize");
       console.log(datarecieved.data);
       try {
@@ -26,7 +25,7 @@ const Fifthsec = () => {
         );
         const resp = await axios.post(
         //   "http://localhost:3502/create-checkout-session-brilla",
-          "https://backend.brillasystem.com/create-checkout-session-brilla",
+          "/create-checkout-session-brilla",
           // "http://localhost:5000/create-checkout-session",
           {
             product: {
