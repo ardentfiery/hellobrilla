@@ -28,7 +28,7 @@ const Tenthsec = () => {
     { scope: container }
   );
   return (
-    <div className="text-white w-[100vw] h-fit">
+    <div className="text-white w-[100vw] h-fit relative ">
       <div className="flex flex-col md:flex-row w-[100vw] bg-red-300">
         <div className="bg-[#100c34] flex flex-col gap-4 md:gap-0  md:flex-row  w-[100%] md:w-[70%]  h-fit md:h-[40vh] ">
           <div className="flex  flex-col gap-6 items-center py-4 md:pt-8  w-[100%] md:w-[70%] ">

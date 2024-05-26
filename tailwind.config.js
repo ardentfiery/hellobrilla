@@ -14,11 +14,31 @@ module.exports = {
                 },
                 floaticon: {
                     "0%, 100%": {
-                        'top': "10vh",
+                        'top': "20vh",
                         // transform: 'rotate(-180deg)'
                     },
                     "50%": {
-                        'top': "100vh",
+                        'top': "21vh",
+                        // transform: 'rotate(20deg)'
+                    },
+                },
+                floaticontwo: {
+                    "0%, 100%": {
+                        'top': "50vh",
+                        // transform: 'rotate(-180deg)'
+                    },
+                    "50%": {
+                        'top': "51vh",
+                        // transform: 'rotate(20deg)'
+                    },
+                },
+                side: {
+                    "0%, 100%": {
+                        'left': "60vh",
+                        // transform: 'rotate(-180deg)'
+                    },
+                    "50%": {
+                        'left': "61vh",
                         // transform: 'rotate(20deg)'
                     },
                 },
@@ -26,7 +46,9 @@ module.exports = {
             },
             animation: {
                 updown: "wiggle 5s linear infinite",
-                topdown: "floaticon 8s linear infinite",
+                topdown: "floaticon 2s linear infinite",
+                topdowntwo: "floaticontwo 2s linear infinite",
+                sideways: "side 2s linear infinite",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import axios from "@/app/api/axiosintercepter";
 import { Modal, Input, Button } from "rsuite";
-
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { loadStripe } from "@stripe/stripe-js";
@@ -126,10 +125,10 @@ const Sixthsec = () => {
       </div>
       {eventData.map((event) => {
         return (
-          <div className="eventos md:flex-row flex flex-col items-center  gap-[5rem]">
-            <div className="h-[25rem] md:h-[80vh] mt-4 md:mt-0">
+          <div className="eventos md:flex-row flex flex-col items-center  gap-[5rem] mt-6">
+            <div className="w-[25rem] md:w-[30rem] mt-4 md:mt-0">
               <img
-                className="h-[100%] w-auto ml-4"
+                className="h-[100%] w-auto ml-4 object-cover"
                 src={event.eventImage}
                 alt=""
               />
@@ -180,10 +179,10 @@ const Sixthsec = () => {
               <div className="flex md:gap-8 gap-3 ">
                 <div className="flex flex-col gap-3 items-center">
                   <div className="flex gap-3">
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.days[0]}</p>
                     </div>
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.days[1]}</p>
                     </div>
                   </div>
@@ -195,10 +194,10 @@ const Sixthsec = () => {
                 </div>
                 <div className="flex flex-col gap-3 items-center">
                   <div className="flex gap-3">
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.hours[0]}</p>
                     </div>
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.hours[1]}</p>
                     </div>
                   </div>
@@ -210,10 +209,10 @@ const Sixthsec = () => {
                 </div>
                 <div className="flex flex-col gap-3 items-center">
                   <div className="flex gap-3">
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.minutes[0]}</p>
                     </div>
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.minutes[1]}</p>
                     </div>
                   </div>
@@ -225,10 +224,10 @@ const Sixthsec = () => {
                 </div>
                 <div className="flex flex-col gap-3 items-center">
                   <div className="flex gap-3">
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.seconds[0]}</p>
                     </div>
-                    <div className="h-[9vh] md:w-[2.5vw]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                    <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                       <p>{event?.timeLeft?.seconds[1]}</p>
                     </div>
                   </div>
@@ -247,7 +246,7 @@ const Sixthsec = () => {
                   }}
                   className="flex gap-2 items-center bg-[#664198] px-8 py-5 rounded-full"
                 >
-                  <p className="text-white text-2xl font-semibold">
+                  <p className="text-white text-xl font-semibold">
                     Comprar ahora
                   </p>
 

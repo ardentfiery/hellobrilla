@@ -58,16 +58,11 @@ const Home = () => {
            
                 
                 <img
-                    className="animate-topdown h-[80px] top-[2vh] right-[10vw] z-10 absolute "
-                    src="/dashboard/star.png"
+                    className="animate-topdown h-[30px] top-[20vh] right-[40vw] md:right-[30vw] z-10 absolute "
+                    src="/dashboard/floatingbook.png"
                     alt=""
                 />
-                <img
-                    className="animate-updown h-[40px] top-[65vh] right-[60vw] z-10 absolute "
-                    src="/dashboard/ring.png"
-                    alt=""
-                />
-                <img
+              {/*  <img
                     className="animate-updown h-[80px] top-[2vh] left-[50vw] z-10 absolute "
                     src="/dashboard/star.png"
                     alt=""
@@ -92,7 +87,7 @@ const Home = () => {
                     className="animate-updown h-[40px] top-[50vh] left-[90vw] z-10 absolute "
                     src="/dashboard/ring.png"
                     alt=""
-                />
+                /> */}
           
 
             <div className="bg-gradient-to-r from-[#b894e4] to-white ">

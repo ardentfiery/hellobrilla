@@ -18,7 +18,6 @@ const Fifthsec = () => {
   const paymentFunc = async () => {
     try {
       const datarecieved = await axios.get("/user/authorize");
-      console.log(datarecieved.data);
       try {
         const stripe = await loadStripe(
           "pk_test_51OdbKnSDrQbUV5GODnck4S7qTTAI1C7Cb2IIjJmcb6HLlHymyzQXpfdTUfbn0hFEbzVcu9HijzBuWGKMfch1wU8O00ZTvLKR3G"
@@ -66,7 +65,17 @@ const Fifthsec = () => {
     { scope: container }
   );
   return (
-    <div className="flex flex-col gap-[4rem] mt-[6rem] " ref={container}>
+    <div className="flex flex-col gap-[4rem] mt-[6rem] relative " ref={container}>
+            <img
+        className="animate-topdown h-[20px]  left-[7vw] -z-10 absolute "
+        src="/dashboard/floatingball.png"
+        alt=""
+      />
+      <img
+        className="animate-topdowntwo h-[20px]  right-[20vw] -z-10 absolute "
+        src="/dashboard/floatingpyramid.png"
+        alt=""
+      />
       <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
         <p>Promoción del Sistema</p>
         <div className="flex ">
@@ -292,9 +301,9 @@ const Fifthsec = () => {
           <div>
             <button
               onClick={paymentFunc}
-              className="book flex gap-2 items-center bg-[#664198] px-8 py-5 rounded-full"
+              className="book flex gap-2 items-center bg-[#664198] px-8 py-3 rounded-full"
             >
-              <p className="text-white text-2xl font-semibold">Comprar ahora</p>
+              <p className="text-white text-xl font-semibold">Comprar ahora</p>
               <p>
                 <IoMdArrowDropright className="text-white text-3xl" />
               </p>
