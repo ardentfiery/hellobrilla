@@ -55,10 +55,8 @@ const Home = () => {
   const authorizeUser = async () => {
     try {
       const data = await axios.get("/user/paidforbrilla");
-      console.log("pushingggggggggggggggggggggggggggg");
       router.push("/dashboard");
     } catch (error) {
-      console.log("pushingggggggggggggggggggggggggggg");
       router.push("/payment");
     }
   };
