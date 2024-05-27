@@ -32,7 +32,7 @@ const Page = () => {
             initialValues: initialValues,
             validationSchema: loginSchema,
             onSubmit: async (values) => {
-                const toastId = toast.loading("Sending Otp...");
+                const toastId = toast.loading("Loggin in...");
                 try {
                     await axios.post("/user/locallogin", {
                         username: values.username,
