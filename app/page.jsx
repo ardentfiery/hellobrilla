@@ -18,7 +18,6 @@ import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
-
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -54,41 +53,29 @@ const Home = () => {
     );
     return (
         <div className="overflow-x-hidden relative" ref={container}>
-          
            
-                
-                <img
-                    className="animate-topdown h-[30px] top-[20vh] right-[40vw] md:right-[30vw] z-10 absolute "
-                    src="/dashboard/floatingbook.png"
-                    alt=""
-                />
-              {/*  <img
-                    className="animate-updown h-[80px] top-[2vh] left-[50vw] z-10 absolute "
-                    src="/dashboard/star.png"
+             <img
+                    className="animate-updown h-[10px] top-[10vh] left-[70vw] z-10 absolute "
+                    src="/landing/star.png"
                     alt=""
                 />
                 <img
-                    className="animate-topdown h-[40px] top-[6vh] bottom-[20vw] z-10 absolute "
-                    src="/dashboard/ring.png"
+                    className="animate-sideway h-[20px] top-[6vh] bottom-[20vw] z-10 absolute "
+                    src="/landing/shape.png"
                     alt=""
                 />
                 <img
-                    className="animate-topdown h-[80px] top-[4vh] left-[30vw] z-10 absolute "
-                    src="/dashboard/star.png"
+                    className="animate-topdown h-[30px] top-[20vh] left-[80vw] z-10 absolute "
+                    src="/landing/shapes.png"
                     alt=""
                 />
                 <img
-                    className="animate-topdown h-[40px] top-[50vh] left-[20vw] z-10 absolute "
-                    src="/dashboard/ring.png"
+                    className="animate-sideways h-[20px] top-[80vh] left-[80vw] z-10 absolute "
+                    src="/landing/shaping.png"
                     alt=""
                 />
           
-                <img
-                    className="animate-updown h-[40px] top-[50vh] left-[90vw] z-10 absolute "
-                    src="/dashboard/ring.png"
-                    alt=""
-                /> */}
-          
+               
 
             <div className="bg-gradient-to-r from-[#b894e4] to-white ">
                 <div className="md:flex-row flex flex-col overflow-x-hidden  ">
@@ -104,7 +91,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <img
-                                    className=" nav h-[4vh] md:h-[8vh] md:ml-[10rem] "
+                                    className=" nav h-[6vh] md:h-[8vh] md:ml-[10rem] "
                                     src="/landing/logo.png"
                                     alt=""
                                 />
@@ -148,8 +135,8 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="md:flex-row flex flex-col-reverse  gap-[1rem] md:h-[80vh]">
-                    <div className="land flex flex-col gap-3  md:gap-6  w-[90vw] md:w-[35vw] mt-16 ml-[9vw]  h-[60vh] ">
+                <div className="md:flex-row flex flex-col-reverse  md:gap-[1rem] gap-0 md:h-[70vh]">
+                    <div className="land flex flex-col gap-3  md:gap-6  w-[90vw] md:w-[35vw] mt-20 ml-[9vw]  h-[60vh] ">
                         <div>
                             <p className="text-3xl text-[#664198] md:text-5xl font-semibold">
                                 ¡Brilla más!
@@ -174,7 +161,7 @@ const Home = () => {
 
                         <div>
                             <img
-                                className="h-[25vh] left-[0rem] -z-10 absolute bottom-[8rem] md:bottom-[3rem]"
+                                className="h-[25vh] left-[0rem] -z-10 absolute bottom-[2rem] md:bottom-[3rem]"
                                 src="/landing/rounded.png"
                                 alt=""
                             />
@@ -182,10 +169,17 @@ const Home = () => {
                     </div>
                     <div>
                         <img
-                            className="landgirl md:h-[70vh]  md:mt-0 object-cover  "
+                            className="landgirl md:h-[70vh] md:flex hidden    md:mt-0 object-cover  "
                             src="/dashboard/home.png"
                             alt=""
                         />
+                        <div className="flex items-center justify-center mt-8">
+                            <img
+                                className="landgirl md:hidden visible h-[30vh] "
+                                src="/dashboard/girlis.png"
+                                alt=""
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

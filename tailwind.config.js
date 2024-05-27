@@ -10,7 +10,7 @@ module.exports = {
             keyframes: {
                 wiggle: {
                     "0%, 100%": { top: "30vh" },
-                    "50%": { top: "100vh" },
+                    "50%": { top: "60vh" },
                 },
                 floaticon: {
                     "0%, 100%": {
@@ -18,17 +18,17 @@ module.exports = {
                         // transform: 'rotate(-180deg)'
                     },
                     "50%": {
-                        'top': "21vh",
+                        'top': "23vh",
                         // transform: 'rotate(20deg)'
                     },
                 },
                 floaticontwo: {
                     "0%, 100%": {
-                        'top': "50vh",
+                        'top': "60vh",
                         // transform: 'rotate(-180deg)'
                     },
                     "50%": {
-                        'top': "51vh",
+                        'top': "61vh",
                         // transform: 'rotate(20deg)'
                     },
                 },
@@ -38,17 +38,29 @@ module.exports = {
                         // transform: 'rotate(-180deg)'
                     },
                     "50%": {
-                        'left': "61vh",
+                        'left': "63vh",
+                        // transform: 'rotate(20deg)'
+                    },
+                },
+                sides: {
+                    "0%, 100%": {
+                        'left': "20vw",
+                        // transform: 'rotate(-180deg)'
+                    },
+                    "50%": {
+                        'left': "80vw",
                         // transform: 'rotate(20deg)'
                     },
                 },
                 
             },
             animation: {
-                updown: "wiggle 5s linear infinite",
-                topdown: "floaticon 2s linear infinite",
+                updown: "wiggle 10s linear infinite",
+                topdown: "floaticon 5s ease-in infinite",
                 topdowntwo: "floaticontwo 2s linear infinite",
-                sideways: "side 2s linear infinite",
+                sideways: "side 4s linear infinite",
+                sideway: "sides 20s linear infinite",
+               
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

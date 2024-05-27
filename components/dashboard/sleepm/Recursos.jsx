@@ -54,7 +54,7 @@ const Recursos = () => {
                         </div>
                     </div>
                     <div className="flex gap-4">
-                        <div className="relative  h-[150px] w-[180px] md:w-[350px] rounded-3xl overflow-hidden">
+                        <div className="relative  h-[150px] w-[160px] md:w-[350px] rounded-3xl overflow-hidden">
                             <img
                                 className="w-[100%] h-[100%] md:w-[100%] -z-10"
                                 src="/dashboard/book.jpg"
@@ -66,7 +66,7 @@ const Recursos = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="relative h-[150px] md:w-[350px] w-[180px] rounded-3xl overflow-hidden">
+                        <div className="relative h-[150px] md:w-[350px] w-[160px] rounded-3xl overflow-hidden">
                             <img
                                 className="w-[100%] h-[100%] "
                                 src="/dashboard/sketch.png"

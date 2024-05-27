@@ -55,13 +55,9 @@ const Seventhsec = () => {
       className="flex flex-col items-center justify-center gap-16 relative h-[70vh] md:h-[100vh]"
       ref={container}
     >
+    
       <img
-        className="animate-sideways h-[30px]  top-[40vh] -z-10 absolute "
-        src="/dashboard/floatingcontact2.png"
-        alt=""
-      />
-      <img
-        className="animate-topdowntwo h-[20px]  right-[30vw] -z-10 absolute "
+        className="animate-sideway h-[20px]  right-[70vw] -z-10 absolute "
         src="/dashboard/floatingcontact.png"
         alt=""
       />
