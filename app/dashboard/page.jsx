@@ -9,8 +9,8 @@ const Page = () => {
   const router = useRouter();
   const checkAuthorization = async () => {
     try {
-      const isAuthorized = await axios.get("/user/authorized");
-      // console.log(isAuthorized);
+      const isAuthorized = await axios.get("/user/authorize");
+      console.log(isAuthorized);
     } catch (error) {
       router.push("/login");
     }
