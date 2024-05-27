@@ -7,19 +7,21 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosLogOut } from "react-icons/io";
 import axios from "@/app/api/axiosintercepter";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import {toast} from "react-hot-toast";
 const Left = () => {
   const router = useRouter();
 
   const logOutUser = async () => {
+    const toastId = toast.loading("Signing up...");
     try {
-      console.log(
-        "logout maa aayo"
-      )
       await axios.get("/user/logout");
+      toast.success("Logged Out !");
+      toast.dismiss(toastId);
       router.push("/login");
     } catch (error) {
       console.log(error);
+      toast.success("Log Out failed !");
+      toast.dismiss(toastId);
     }
   };
 
