@@ -17,11 +17,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { useRouter } from "next/navigation";
-import axios from "@/app/api/axiosintercepter"
+import axios from "@/app/api/axiosintercepter";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
-
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,16 +54,18 @@ const Home = () => {
 
   const authorizeUser = async () => {
     try {
-        
-      await axios.get("/user/paidforbrilla");
+      const data = await axios.get("/user/paidforbrilla");
+      console.log("pushingggggggggggggggggggggggggggg");
+      router.push("/dashboard");
     } catch (error) {
-      console.log("error calling api");
+      console.log("pushingggggggggggggggggggggggggggg");
+      router.push("/payment");
     }
   };
 
   useEffect(() => {
-    authorizeUser()
-  },[]);
+    authorizeUser();
+  }, []);
   return (
     <div className="overflow-x-hidden relative" ref={container}>
       <img
