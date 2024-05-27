@@ -212,8 +212,8 @@ const Page = () => {
                         <button
                             onClick={() => {
                                 window.open(
-                                    "http://localhost:3502/user/google",
-                                    // "https://backend.brillasystem.com/user/google",
+                                    // "http://localhost:3502/user/google",
+                                    "https://backend.brillasystem.com/user/google",
                                     "_self"
                                 );
                             }}
