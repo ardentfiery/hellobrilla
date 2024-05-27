@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Left from "@/components/dashboard/Left";
 import axios from "@/app/api/axiosintercepter";
