@@ -9,13 +9,17 @@ import axios from "@/app/api/axiosintercepter";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 const Left = () => {
-    const router = useRouter();
+  const router = useRouter();
+
   const logOutUser = async () => {
     try {
-        await axios.get("/user/logout");
-        router.push("/login")
+      console.log(
+        "logout maa aayo"
+      )
+      await axios.get("/user/logout");
+      router.push("/login");
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
   };
 
