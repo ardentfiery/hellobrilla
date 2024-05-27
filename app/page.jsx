@@ -54,10 +54,15 @@ const Home = () => {
 
   const authorizeUser = async () => {
     try {
-      const data = await axios.get("/user/paidforbrilla");
-      router.push("/dashboard");
+      const isAuthorized = await axios.get("/user/authorize");
+      try {
+        const data = await axios.get("/user/paidforbrilla");
+        router.push("/dashboard");
+      } catch (error) {
+        router.push("/payment");
+      }
     } catch (error) {
-      router.push("/payment");
+      console.log(error);
     }
   };
 
