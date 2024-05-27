@@ -39,8 +39,7 @@ const Page = () => {
                         password: values.password,
                     });
                     toast.success("Log in successful !");
-                    await axios.get("/user/paidforbrilla")
-                    // router.push("/")
+                    router.push("/")
                     toast.dismiss(toastId);
                 } catch (error) {
                     toast.error("Login failer");
