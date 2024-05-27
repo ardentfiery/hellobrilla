@@ -46,7 +46,8 @@ const Page = () => {
                     toast.success("Signed up !");
                     toast.dismiss(toastId);
                 } catch (error) {
-                    toast.error("Error sending otp");
+                    console.log(error)
+                    toast.error(error.message);
                     toast.dismiss(toastId);
                 }
             },
