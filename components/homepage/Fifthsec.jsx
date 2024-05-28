@@ -231,7 +231,7 @@ const Fifthsec = () => {
               <p>
                 COSTO:
                 <span className="text-gray-600">
-                  ${brillaDetails.brillaPrice}-
+                  ${brillaDetails?.brillaPrice}-
                 </span>{" "}
                 / 1 Año
               </p>
