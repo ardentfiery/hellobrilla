@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { BiDownArrow } from "react-icons/bi";
 import { MdPlayArrow } from "react-icons/md";
 import { IoMdArrowDropright } from "react-icons/io";
@@ -14,6 +15,8 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Fifthsec = () => {
+  const [brillaDetails, setbrillaDetails] = useState();
+
   const router = useRouter();
   const paymentFunc = async () => {
     const toastId = toast.loading("processing request...");
@@ -28,6 +31,18 @@ const Fifthsec = () => {
     }
   };
 
+  const getBrillDetails = async () => {
+    try {
+      const datarecieved = await axios.get("/user/getbrilla");
+      setbrillaDetails(datarecieved.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getBrillDetails();
+  }, []);
   const container = useRef(null);
   useGSAP(
     () => {
@@ -215,7 +230,10 @@ const Fifthsec = () => {
             <div className="flex justify-center font-semibold md:text-3xl text-2xl">
               <p>
                 COSTO:
-                <span className="text-gray-600">$700-</span> $450 / 1 Año
+                <span className="text-gray-600">
+                  ${brillaDetails.brillaPrice}-
+                </span>{" "}
+                / 1 Año
               </p>
             </div>
           </div>

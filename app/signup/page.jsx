@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoPerson } from "react-icons/go";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdOutlinePhone } from "react-icons/md";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { useFormik } from "formik";
 import { signUpSchema } from "@/schema";
 import axios from "../api/axiosintercepter";
@@ -27,6 +28,8 @@ const Page = () => {
   const [password, setpassword] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [size, setSize] = React.useState();
+  const [savedUserId, setsavedUserId] = React.useState();
+  const [savedUserEmail, setsavedUserEmail] = React.useState();
   const handleOpen = (value) => {
     setSize(value);
     setOpen(true);
@@ -40,7 +43,9 @@ const Page = () => {
       onSubmit: async (values) => {
         const toastId = toast.loading("Signing up...");
         try {
-          await axios.post("/user/signup", values);
+          const resp = await axios.post("/user/signup", values);
+          setsavedUserId(resp.data.userId);
+          setsavedUserEmail(resp.data.email);
           console.log("sign up done");
           handleOpen("md");
           toast.success("Signed up !");
@@ -58,7 +63,8 @@ const Page = () => {
         size={size}
         open={open}
         handleClose={handleClose}
-        email={values.email}
+        email={savedUserEmail}
+        userId={savedUserId}
       />
       <img
         className="h-[200px] w-[200px] absolute right-[-100px] md:top-0 top-[-30px] md:right-[0px]"
@@ -183,12 +189,21 @@ const Page = () => {
               </div>
 
               <div className="mr-4 w-[10%]">
-                <FaEyeSlash
-                  onClick={() => {
-                    setpassword(!password);
-                  }}
-                  className="text-[#803DA1]  cursor-pointer"
-                />
+                {password ? (
+                  <FaEye
+                    onClick={() => {
+                      setpassword(!password);
+                    }}
+                    className="text-[#803DA1]  cursor-pointer"
+                  />
+                ) : (
+                  <FaEyeSlash
+                    onClick={() => {
+                      setpassword(!password);
+                    }}
+                    className="text-[#803DA1]  cursor-pointer"
+                  />
+                )}
               </div>
             </div>
             {errors.password && touched.password ? (
@@ -242,9 +257,51 @@ const Page = () => {
     </div>
   );
 };
-const VerifyOtp = ({ size, open, handleClose, email }) => {
+const VerifyOtp = ({ size, open, handleClose, email, userId }) => {
   const [verified, setverified] = useState(false);
   const [otp, setotp] = useState("");
+
+  const initialTimer = 180; // 3 minutes = 180 seconds
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [timer, setTimer] = useState(initialTimer);
+
+  const resendOtp = async (values) => {
+    const toastId = toast.loading("Resending otp...");
+    try {
+      const resp = await axios.post("/user/resendotp", {
+        email: email,
+        userId: userId,
+      });
+      toast.success("Sent otp!");
+      toast.dismiss(toastId);
+    } catch (error) {
+      toast.error("Error resending otp");
+      toast.dismiss(toastId);
+    }
+  };
+
+  useEffect(() => {
+    let interval;
+    if (isDisabled) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => {
+          if (prevTimer <= 0) {
+            clearInterval(interval);
+            setIsDisabled(false);
+            return 0;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isDisabled]);
+
+  const handleClick = () => {
+    setIsDisabled(true);
+    setTimer(initialTimer); // 3 minutes = 180 seconds
+  };
+
   const verifyOtp = async () => {
     const toastId = toast.loading("Verifying OTP");
     try {
@@ -276,7 +333,7 @@ const VerifyOtp = ({ size, open, handleClose, email }) => {
             {verified === true ? (
               <div className="flex flex-col items-center gap-6">
                 <p className="font-extrabold  text-4xl text-[#803da1]">
-                  Your sign up is verified.
+                  Tu registro ha sido verificado.
                 </p>
                 <MdDoneOutline className="text-6xl text-green-700" />
               </div>
@@ -284,28 +341,50 @@ const VerifyOtp = ({ size, open, handleClose, email }) => {
               <>
                 <div>
                   <p className="text-xl  text-[#803da1] text-center">
-                    OTP has been sent to your email:{email}
-                    <br /> Please verify OTP.
+                    Hemos enviado un código a tu correo electrónico: {email}
+                    <br /> Por favor, verifica tu correo y coloca el código
+                    aquí.
                   </p>
                 </div>
-                <div>
+                <div className="bg-[#edd6e8] flex items-center">
                   <input
-                    className=" border-none bg-[#edd6e8] outline-none h-[60px] w-[360px] rounded px-4 text-[#5F5D9C] placeholder-[#6e6adf] text-sm"
+                    className=" border-none bg-[#edd6e8] outline-none h-[50px] w-[360px] rounded px-4 text-[#5F5D9C] placeholder-[#6e6adf] text-sm"
                     type="text"
-                    placeholder="Enter OTP"
+                    placeholder="Coloca el código."
                     name="name"
                     onChange={(e) => {
                       setotp(e.target.value);
                     }}
                     // value={values.name}
                   />
+                  <div className=" ">
+                    <button
+                      onClick={() => {
+                        handleClick();
+                        resendOtp();
+                      }}
+                      disabled={isDisabled}
+                      className={`px-4 py-2 text-white font-bold rounded  h-[50px] ${
+                        isDisabled
+                          ? "bg-gray-500"
+                          : "bg-blue-500 hover:bg-blue-700"
+                      }`}
+                    >
+                      {isDisabled
+                        ? `Reenviar OTP en: ${Math.floor(timer / 60)}:${(
+                            "0" +
+                            (timer % 60)
+                          ).slice(-2)}`
+                        : "Reenviar OTP"}
+                    </button>
+                  </div>
                 </div>
                 <div>
                   <button
                     onClick={verifyOtp}
                     className="h-[40px] w-[160px] bg-[#e782c0] text-[#803da1]"
                   >
-                    Verify OTP
+                    Verifica
                   </button>
                 </div>
               </>

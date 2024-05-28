@@ -36,11 +36,12 @@ const page = () => {
             d="M5 13l4 4L19 7"
           ></path>
         </svg>
-        <h2 className="text-2xl font-bold mb-2 text-purple-700">Success!</h2>
+        <h2 className="text-2xl font-bold mb-2 text-purple-700">¡Exitoso!</h2>
         <p className="text-gray-700 mb-4 text-[1.2rem] font-semibold">
-          The brilla system has been bought successfully and you will be able to
-          access the dashboard after verification by admins. Please check your
-          email for the details.
+          La compra del sistema Brilla System se realizó con éxito. Podrás
+          acceder al panel de control una vez que los administradores completen
+          la verificación. Recibirás una notificación por correo electrónico
+          para darte la bienvenida.
         </p>
         <p className="text-gray-700">
           Redirecting to the login page in {countdown} seconds...

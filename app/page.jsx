@@ -56,10 +56,16 @@ const Home = () => {
     try {
       const isAuthorized = await axios.get("/user/authorize");
       try {
-        const data = await axios.get("/user/paidforbrilla");
-        router.push("/dashboard");
+        const data = await axios.get("/user/userotpverified");
+        try {
+          const data = await axios.get("/user/paidforbrilla");
+
+          router.push("/dashboard");
+        } catch (error) {
+          router.push("/payment");
+        }
       } catch (error) {
-        router.push("/payment");
+        router.push("/verifyotp");
       }
     } catch (error) {
       console.log(error);

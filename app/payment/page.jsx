@@ -47,7 +47,7 @@ const page = () => {
     }
   };
   return (
-    <div className="flex flex-col gap-[4rem] mt-[6rem] ">
+    <div className="flex flex-col gap-[4rem] mt-[2rem] ">
       <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
         <p>Buy System In Order To Access Dashboard</p>
         <div className="flex ">
@@ -55,153 +55,12 @@ const page = () => {
           <div className="h-[4px] w-[10rem] bg-[#664198] ml-[30px]"></div>
         </div>
       </div>
-      <div className="md:flex-row flex flex-col gap-[4rem] w-[100vw] items-center">
-        <div className="book ml-[-10rem]">
-          <img className="md:h-[60vh] " src="/landing/book.png" alt="" />
-        </div>
-        <div className="book w-[100vw]  md:w-[30vw] flex flex-col gap-8">
-          <div>
-            <p className="font-semibold text-3xl text-center md:text-left ">
-              MASTER BUNDLE PRO
-            </p>
+      <div className=" flex justify-center gap-[4rem] w-[100vw] items-center">
+        <div className="flex flex-col gap-[4rem] h-[30rem] py-2  justify-between">
+          <div className="book ml-[-10rem]">
+            <img className="w-[30rem] " src="/landing/book.png" alt="" />
           </div>
-          <div className="flex flex-col   gap-4 w-[100%] md:w-[35vw]  ">
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0   text-xl font-medium ">
-              <div className="flex items-center  gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Dashboard</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0  text-xl font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Empresa</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl   font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Estrategias de liderazgo</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Estrategias de ventas.</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Estrategias de Marketing</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex md:items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Aprendizaje de crecimiento personal</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Herramientas</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Conferencia</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Podcast</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Mi página web</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="flex justify-center font-semibold md:text-3xl text-2xl">
-              <p>
-                COSTO:
-                <span className="text-gray-600">$700-</span> $450 / 1 Año
-              </p>
-            </div>
+          <div className="">
             <div
               onClick={() => {
                 paymentFunc();
@@ -210,6 +69,26 @@ const page = () => {
             >
               <button className="border-[#664198] border-[1px] py-2 px-[6rem] font-bold text-[1.2rem] rounded hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300">
                 Purchase
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="w-[30rem] h-[30rem] bg-slate-300 rounded flex flex-col justify-between py-2">
+            <p className="font-bold text-[2rem] text-center">
+              Already done the payment by other means?
+            </p>
+            <p className="font-lightbold text-[1.2rem] text-center">
+              Click the button below to send verification request to admins.
+            </p>
+            <div
+              onClick={() => {
+                paymentFunc();
+              }}
+              className="flex justify-center mt-2"
+            >
+              <button className="border-[#664198] border-[1px] py-2 px-[6rem] font-bold text-[1.2rem] rounded hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300">
+                Send Verification Request
               </button>
             </div>
           </div>
