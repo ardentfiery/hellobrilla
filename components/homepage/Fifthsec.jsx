@@ -40,6 +40,55 @@ const Fifthsec = () => {
     }
   };
 
+  const calculateTimeLeft = (eventEndDate) => {
+    const difference = +new Date(eventEndDate) - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days:
+          Math.floor(difference / (1000 * 60 * 60 * 24)) < 10
+            ? `0${Math.floor(difference / (1000 * 60 * 60 * 24))}`
+            : `${Math.floor(difference / (1000 * 60 * 60 * 24))}`,
+        hours:
+          Math.floor((difference / (1000 * 60 * 60)) % 24) < 10
+            ? `0${Math.floor((difference / (1000 * 60 * 60)) % 24)}`
+            : `${Math.floor((difference / (1000 * 60 * 60)) % 24)}`,
+        minutes:
+          Math.floor((difference / 1000 / 60) % 60) < 10
+            ? `0${Math.floor((difference / 1000 / 60) % 60)}`
+            : `${Math.floor((difference / 1000 / 60) % 60)}`,
+        seconds:
+          Math.floor((difference / 1000) % 60) < 10
+            ? `0${Math.floor((difference / 1000) % 60)}`
+            : `${Math.floor((difference / 1000) % 60)}`,
+      };
+    } else {
+      timeLeft = {
+        days: "00",
+        hours: "00",
+        minutes: "00",
+        seconds: "00",
+      };
+    }
+
+    return timeLeft;
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setbrillaDetails((prevDet) => {
+        return {
+          ...prevDet,
+          timeLeft: calculateTimeLeft(prevDet?.timeRemaining),
+        };
+      });
+    }, 1000);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(timer);
+  }, [brillaDetails]);
+
   useEffect(() => {
     getBrillDetails();
   }, []);
@@ -64,6 +113,7 @@ const Fifthsec = () => {
       className="flex flex-col gap-[4rem] mt-[6rem] relative "
       ref={container}
     >
+      {console.log(brillaDetails?.timeLeft)}
       <img
         className="animate-updown h-[20px]  left-[7vw] -z-10 absolute "
         src="/dashboard/floatingball.png"
@@ -238,67 +288,63 @@ const Fifthsec = () => {
             </div>
           </div>
         </div>
-        <div className="book flex flex-col gap-8 items-center  w-[100vw] md:w-[35%]">
+        <div className="book flex flex-col gap-8 items-center  w-[100vw] md:pr-16 md:w-[35%]">
           <div>
             <p className="font-semibold text-2xl">La oferta expira en:</p>
           </div>
-          <div className="flex md:gap-8  gap-5 mr-2 ">
+          <div className="flex md:gap-8 gap-3 ">
             <div className="flex flex-col gap-3 items-center">
               <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.days[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.days[1]}</p>
                 </div>
               </div>
               <div>
-                <p className="md:font-semibold font-semibold  md:text-xl items-center ">
-                  Dias
-                </p>
+                <p className="font-semibold md:text-xl items-center ">Dias</p>
               </div>
             </div>
             <div className="flex flex-col gap-3 items-center">
               <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.hours[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.hours[1]}</p>
                 </div>
               </div>
               <div>
-                <p className="md:font-semibold font-semibold md:text-xl items-center ">
-                  Horas
-                </p>
+                <p className="font-semibold md:text-xl items-center ">Horas</p>
               </div>
             </div>
             <div className="flex flex-col gap-3 items-center">
               <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.minutes[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.minutes[1]}</p>
                 </div>
               </div>
               <div>
-                <p className="md:font-semibold font-semibold md:text-xl items-center ">
+                <p className="font-semibold md:text-xl items-center ">
                   Minutos
                 </p>
               </div>
             </div>
             <div className="flex flex-col gap-3 items-center">
               <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.seconds[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[2.5vw] w-[8vw] rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
-                  <p>0</p>
+                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                  <p>{brillaDetails?.timeLeft?.seconds[1]}</p>
                 </div>
               </div>
               <div>
-                <p className="md:font-semibold font-semibold md:text-xl items-center ">
+                <p className="font-semibold md:text-xl items-center ">
                   Segundos
                 </p>
               </div>

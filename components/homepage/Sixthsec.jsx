@@ -147,10 +147,10 @@ const Sixthsec = () => {
             </div>
             {eventData.map((event) => {
                 return (
-                    <div className="eventos md:flex-row flex flex-col items-center  gap-[5rem] mt-6">
-                        <div className="w-[25rem] md:w-[30rem] mt-4 md:mt-0">
+                    <div className="eventos md:flex-row flex flex-col items-center md:grid md:grid-cols-3  gap-[5rem] mt-6">
+                        <div className="w-[25rem] md:w-[20rem] mt-4 md:mt-0">
                             <img
-                                className="h-[100%] w-auto ml-4 object-cover"
+                                className="w-[100%]  ml-4 object-cover"
                                 src={event.eventImage}
                                 alt=""
                             />
@@ -196,7 +196,7 @@ const Sixthsec = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className=" eventosleft flex flex-col gap-8 md:w-[45vw] items-center ">
+                        <div className=" eventosleft flex flex-col gap-8 md:pr-16 items-center ">
                             <div>
                                 <p className="font-semibold md:text-2xl text-xl ">
                                     La oferta del Evento terminará en:
