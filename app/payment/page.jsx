@@ -1,8 +1,5 @@
 "use client";
-import React from "react";
-import { BiDownArrow } from "react-icons/bi";
-import { MdPlayArrow } from "react-icons/md";
-import { IoMdArrowDropright } from "react-icons/io";
+import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "@/app/api/axiosintercepter";
 import { useRouter } from "next/navigation";
@@ -10,6 +7,7 @@ import { toast } from "react-hot-toast";
 const page = () => {
   const router = useRouter();
 
+  const [brillaDetails, setbrillaDetails] = useState();
   const paymentFunc = async () => {
     const toastId = toast.loading("processing request...");
     try {
@@ -25,7 +23,7 @@ const page = () => {
           {
             product: {
               name: "Brilla system ",
-              price: 400,
+              price: brillaDetails?.brillaPrice,
               image:
                 "https://res.cloudinary.com/do7fzmdl3/image/upload/q_auto:low/brilla_mfs7nk.png",
               // eventId:currentEvent._id
@@ -46,6 +44,20 @@ const page = () => {
       router.push("/signup");
     }
   };
+
+  const getBrillDetails = async () => {
+    try {
+      const datarecieved = await axios.get("/landingpage/getbrilla");
+      setbrillaDetails(datarecieved.data[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getBrillDetails();
+  }, []);
+
   return (
     <div className="flex flex-col gap-[4rem] mt-[2rem] ">
       <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
@@ -59,6 +71,15 @@ const page = () => {
         <div className="flex flex-col gap-[4rem] h-[30rem] py-2  justify-between">
           <div className="book ml-[-10rem]">
             <img className="w-[30rem] " src="/landing/book.png" alt="" />
+            <div className="flex justify-center font-semibold md:text-3xl text-2xl">
+              <p>
+                COSTO:
+                <span className="text-gray-600">
+                  ${brillaDetails?.brillaPrice}-
+                </span>{" "}
+                / 1 Año
+              </p>
+            </div>
           </div>
           <div className="">
             <div

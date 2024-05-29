@@ -33,8 +33,8 @@ const Fifthsec = () => {
 
   const getBrillDetails = async () => {
     try {
-      const datarecieved = await axios.get("/user/getbrilla");
-      setbrillaDetails(datarecieved.data);
+      const datarecieved = await axios.get("/landingpage/getbrilla");
+      setbrillaDetails(datarecieved.data[0]);
     } catch (error) {
       console.log(error);
     }
