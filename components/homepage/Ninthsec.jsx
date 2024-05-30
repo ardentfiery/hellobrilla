@@ -2,18 +2,28 @@ import React from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useRef } from "react";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
 
 import { IoMdStar } from "react-icons/io";
+import { Card, CardContent } from "@/components/ui/card"
 const Ninthsec = () => {
-    
     return (
         <div className="relative flex  h-[60rem] md:h-[100vh]">
             <div>
-                <img className="h-[60rem] md:h-[100vh]" src="/landing/bg1.jpg" alt="" />
+                <img
+                    className="h-[60rem] md:h-[100vh]"
+                    src="/landing/bg1.jpg"
+                    alt=""
+                />
             </div>
             <div className="absolute top-0 flex flex-col gap-6 mt-16 items-center w-[100vw]">
                 <div className="flex flex-col items-center">
@@ -29,8 +39,8 @@ const Ninthsec = () => {
                 </div>
                 <div>
                     <p className="text-white px-2 text-lg text-center">
-                        Lorem ipsum dolor sit amet consectetur. Quis at in<br/> massa
-                        etiam velit est imperdiet id.
+                        Lorem ipsum dolor sit amet consectetur. Quis at in
+                        <br /> massa etiam velit est imperdiet id.
                     </p>
                 </div>
                 <div className="flex flex-col gap-3 md:flex-row md:gap-6">
@@ -135,7 +145,48 @@ const Ninthsec = () => {
                     </div>
                 </div>
                 <div>
-                    <div>videoplayer</div>
+                    <div>
+                        <Carousel className="w-full max-w-lg">
+                            <CarouselContent>
+                                <CarouselItem>
+                                    {/* <Card> */}
+                                        {/* <CardContent> */}
+                                            <img
+                                                // className="w-full ohject-cover"
+                                                src="/landing/video.jpg"
+                                                alt=""
+                                            />
+                                        {/* </CardContent> */}
+                                    {/* </Card> */}
+                                </CarouselItem>
+                                <CarouselItem>
+                                    {/* <Card> */}
+                                        {/* <CardContent> */}
+                                            <img
+                                                // className="w-[20rem] ohject-cover"
+                                                src="/landing/video.jpg"
+                                                alt=""
+                                            />
+                                        {/* </CardContent> */}
+                                    {/* </Card> */}
+                                </CarouselItem>
+                                <CarouselItem>
+                                    {/* <Card> */}
+                                        {/* <CardContent> */}
+                                            <img
+                                                // className="w-[20rem] ohject-cover"
+                                                src="/landing/video.jpg"
+                                                alt=""
+                                            />
+                                        {/* </CardContent> */}
+                                    {/* </Card> */}
+                                </CarouselItem>
+                                
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+                    </div>
                     <div>3 ota dot</div>
                 </div>
             </div>
