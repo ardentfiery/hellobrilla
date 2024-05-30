@@ -77,7 +77,7 @@ const Eighthsec = () => {
                     <div className="flex flex-col gap-4">
                         <img
                             className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/person.jpg"
+                            src="/landing/persons.jpg"
                             alt=""
                         />
                         <p className="phototext-xl md:text-3xl font-semibold">
@@ -88,7 +88,7 @@ const Eighthsec = () => {
                     <div className="photo flex flex-col gap-4">
                         <img
                             className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/person.jpg"
+                            src="/landing/persons.jpg"
                             alt=""
                         />
                         <p className="text-xl md:text-3xl font-semibold">
@@ -99,7 +99,7 @@ const Eighthsec = () => {
                     <div className="photo flex flex-col gap-4">
                         <img
                             className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/person.jpg"
+                            src="/landing/persons.jpg"
                             alt=""
                         />
                         <p className="text-xl md:text-3xl font-semibold">
