@@ -166,7 +166,7 @@ const Fifthsec = () => {
                   <MdPlayArrow />
                 </div>
                 <div>
-                  <p>Empresa</p>
+                  <p>Entrenamiento en crecimiento personal</p>
                 </div>
               </div>
               <div>
@@ -205,7 +205,7 @@ const Fifthsec = () => {
                   <MdPlayArrow />
                 </div>
                 <div>
-                  <p>Estrategias de Marketing</p>
+                  <p>Entrenamiento en marketing</p>
                 </div>
               </div>
               <div>
@@ -218,33 +218,7 @@ const Fifthsec = () => {
                   <MdPlayArrow />
                 </div>
                 <div>
-                  <p>Aprendizaje de crecimiento personal</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Herramientas</p>
-                </div>
-              </div>
-              <div>
-                <BiDownArrow />
-              </div>
-            </div>
-            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
-              <div className="flex items-center gap-2">
-                <div>
-                  <MdPlayArrow />
-                </div>
-                <div>
-                  <p>Conferencia</p>
+                  <p>Mi reto</p>
                 </div>
               </div>
               <div>
@@ -270,7 +244,59 @@ const Fifthsec = () => {
                   <MdPlayArrow />
                 </div>
                 <div>
-                  <p>Mi página web</p>
+                  <p>Cursos</p>
+                </div>
+              </div>
+              <div>
+                <BiDownArrow />
+              </div>
+            </div>
+            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
+              <div className="flex items-center gap-2">
+                <div>
+                  <MdPlayArrow />
+                </div>
+                <div>
+                  <p>Conferencias</p>
+                </div>
+              </div>
+              <div>
+                <BiDownArrow />
+              </div>
+            </div>
+            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
+              <div className="flex items-center gap-2">
+                <div>
+                  <MdPlayArrow />
+                </div>
+                <div>
+                  <p>Referidos</p>
+                </div>
+              </div>
+              <div>
+                <BiDownArrow />
+              </div>
+            </div>
+            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
+              <div className="flex items-center gap-2">
+                <div>
+                  <MdPlayArrow />
+                </div>
+                <div>
+                  <p>Ganancias</p>
+                </div>
+              </div>
+              <div>
+                <BiDownArrow />
+              </div>
+            </div>
+            <div className="grid grid-cols-[6fr_1fr] px-4 md:px-0 text-xl  font-medium">
+              <div className="flex items-center gap-2">
+                <div>
+                  <MdPlayArrow />
+                </div>
+                <div>
+                  <p>Mi perfil</p>
                 </div>
               </div>
               <div>
@@ -280,9 +306,10 @@ const Fifthsec = () => {
             <div className="flex justify-center font-semibold md:text-3xl text-2xl">
               <p>
                 COSTO:
-                <span className="text-gray-600">
-                  ${brillaDetails?.brillaPrice}-
-                </span>{" "}
+                <span className="text-black
+                ">
+                  ${brillaDetails?.brillaPrice}
+                </span>
                 / 1 Año
               </p>
             </div>
