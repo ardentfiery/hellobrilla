@@ -8,6 +8,7 @@ import { IoIosLogOut } from "react-icons/io";
 import axios from "@/app/api/axiosintercepter";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { IoMdNotificationsOutline } from "react-icons/io";
 const Left = () => {
   const router = useRouter();
 
@@ -135,6 +136,8 @@ const Left = () => {
           className="text-3xl text-[#664198] ml-4 md:hidden  "
         />
       </div>
+      <div className="absolute right-8 md:hidden visible"><IoMdNotificationsOutline className="text-3xl" /></div>
+     
       <div className="md:flex flex-col hidden items-center border-[3px] border-[#664198] rounded-3xl h-[97vh] ">
         <div className="w-[100%] px-[10%] flex items-center justify-between">
           <div className="h-[10vh] w-[8vw] mt-2 flex justify-between  ">
@@ -201,6 +204,7 @@ const Secondary = ({ menuData, handleSelect, sethamclicked }) => {
           </List>
         </div>
       </div>
+      
     </div>
   );
 };
