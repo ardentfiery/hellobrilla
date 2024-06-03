@@ -187,8 +187,7 @@ const Ninthsec = () => {
                             <CarouselNext />
                         </Carousel>
                     </div>
-                    <div>3 ota dot</div>
-                </div>
+                     </div>
             </div>
         </div>
     );

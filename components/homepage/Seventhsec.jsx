@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 
 import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io5";
@@ -9,12 +10,29 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import axios from "@/app/api/axiosintercepter";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Seventhsec = () => {
   const container = useRef(null);
+
+  const [socials, setSocials] = useState({});
+
+  const getSocials = async () => {
+    try {
+      const datarecieved = await axios.get("/landingpage/getsocial");
+      console.log(datarecieved);
+      setSocials(datarecieved.data[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getSocials();
+  }, []);
+
   useGSAP(
     () => {
       // gsap code here...
@@ -55,7 +73,6 @@ const Seventhsec = () => {
       className="flex flex-col items-center justify-center gap-16 relative h-[70vh] md:h-[100vh]"
       ref={container}
     >
-    
       <img
         className="animate-sideway h-[20px]  right-[70vw] -z-10 absolute "
         src="/dashboard/floatingcontact.png"
@@ -81,20 +98,49 @@ const Seventhsec = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-10 text-[#664198]">
           <p className="text-4xl socialicons md:text-7xl">
-            <FaWhatsapp />
+            <a
+              href={`${socials?.whatsapp}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <FaWhatsapp />
+            </a>
           </p>
           <p className="text-4xl socialicons md:text-7xl">
-            <IoLogoYoutube />{" "}
+            <a
+              href={`${socials?.youtube}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <IoLogoYoutube />
+            </a>
           </p>
           <p className="text-4xl socialicons md:text-7xl">
-            {" "}
-            <FaTwitter />{" "}
+            <a
+              href={`${socials?.twitter}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <FaTwitter />
+            </a>
           </p>
           <p className="text-4xl socialicons md:text-7xl">
-            <FaGoogle />
+            <a
+              href={`${socials?.google}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <FaGoogle />
+            </a>
           </p>
           <p className="text-4xl socialicons md:text-7xl">
-            <FaFacebook />{" "}
+            <a
+              href={`${socials?.facebook}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <FaFacebook />
+            </a>
           </p>
         </div>
       </div>
