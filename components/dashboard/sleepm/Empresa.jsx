@@ -2,25 +2,26 @@ import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import { FaRegCopy } from "react-icons/fa";
+import { Profile } from "../Profile";
 
 const Empresa = () => {
     return (
-        <div className="flex md:grid md:grid-cols-[70%_30%] gap-4 overflow-hidden">
+        <div className="flex md:grid md:grid-cols-[70%_30%]  md:gap-4 overflow-hidden">
             <div className="flex flex-col justify-center mt-8 gap-4 mb-4 ">
-                <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-[80vw]  md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#664198]">
+                <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-fit px-2  md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#664198]">
                     <div>
                         <IoIosSearch className="text-2xl" />
                     </div>
                     <div className=" ">
                         <input
-                            className=" h-[30px] w-[250px]"
+                            className=" h-[30px] w-[250px] outline-none"
                             type="text"
                             placeholder="Buscar servicios de Brilla System"
                         />
                     </div>
                 </div>
 
-                <div className="flex h-[30vh] md:h-[25vh] mx-2 relative justify-end md:justify-center   md:gap-6 border-[3px] rounded-2xl border-[#664198] ">
+                <div className="flex h-fit md:h-[25vh] mx-2 relative justify-end md:justify-center py-4  md:gap-6 border-[3px] rounded-2xl border-[#664198] ">
                     {/* <div className="relative"> */}
                     <div className="h-[31vh] md:w-[30vw] w-60vw] absolute bottom-0 left-0  z-50 ">
                         <img
@@ -30,7 +31,7 @@ const Empresa = () => {
                         />
                     </div>
 
-                    <div className="flex flex-col items-end w-[65%] md:w-full md:items-center  md:flex-end mt-6 gap-4  ">
+                    <div className="flex flex-col items-end w-[55%] md:w-full md:items-center  md:flex-end  gap-4  ">
                         <div className="mr-8">
                             <p className="font-bold text-xl md:text-2xl text-[#353564]">
                                 ¡Hola Llecenia bienvenida a
@@ -40,7 +41,7 @@ const Empresa = () => {
                             </p>
                         </div>
                         <div className="flex ">
-                            <p className="italic text-[12px] font-semibold">
+                            <p className="italic text-[10px] font-semibold">
                                 Decido brillar con determinación y excelencia,
                                 dejando una huella
                                 <br /> imborrable de bondad y inspiración en
@@ -48,7 +49,7 @@ const Empresa = () => {
                             </p>
                         </div>
                         <div className="flex justify-end">
-                            <button className="h-[35px] w-[200px] mr-2  rounded-2xl border-[3px] border-[#664198]">
+                            <button className="h-[35px] w-[180px] mr-2  rounded-2xl border-[3px] border-[#664198]">
                                 <p>Ver el paso o paso</p>
                             </button>
                         </div>
@@ -216,7 +217,7 @@ const Empresa = () => {
                     </div>
 
                     <div className="grid grid-cols-3 gap-[20px] justify-center text-center">
-                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] h-[15vh] md:h-[10vh] rounded-2xl  flex flex-col gap-3 items-center">
+                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] h-fit md:h-[10vh] rounded-2xl  flex flex-col gap-3 items-center">
                             <div>
                                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                                     Prospectos nuevos
@@ -237,7 +238,7 @@ const Empresa = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-[15vh] md:h-[10vh]  flex flex-col gap-3  items-center">
+                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-fit1 md:h-[10vh]  flex flex-col gap-3  items-center">
                             <div>
                                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                                     Preguntas realizadas
@@ -258,7 +259,7 @@ const Empresa = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-[15vh] md:h-[10vh]  flex flex-col gap-3  items-center">
+                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-fit1 md:h-[10vh]  flex flex-col gap-3  items-center">
                             <div>
                                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                                     ATM realizados
@@ -279,7 +280,7 @@ const Empresa = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-[15vh] md:h-[10vh]  flex flex-col gap-3  items-center">
+                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-fit1 md:h-[10vh]  flex flex-col gap-3  items-center">
                             <div>
                                 <p className="text-gray-600 font-bold md:text-2xl">
                                     Prospectos nuevos
@@ -296,7 +297,7 @@ const Empresa = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-[15vh] md:h-[10vh]  flex flex-col gap-3  items-center">
+                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-fit1 md:h-[10vh]  flex flex-col gap-3  items-center">
                             <div>
                                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                                     Prospectos nuevos
@@ -313,7 +314,7 @@ const Empresa = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-[15vh] md:h-[10vh]  flex flex-col gap-3  items-center">
+                        <div className="border-[2px] border-[#803da1] w-[27vw] md:w-[17vw] rounded-2xl h-fit1 md:h-[10vh]  flex flex-col gap-3  items-center">
                             <div>
                                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                                     Prospectos nuevos
@@ -333,117 +334,8 @@ const Empresa = () => {
                     </div>
                 </div>
             </div>
-            <div className=" flex-col gap-6 items-center md:flex hidden">
-                <div className="flex flex-col items-center ">
-                    <div className="flex gap-6 h-[15vh] items-center">
-                        <div className="h-[30px] w-[30px]">
-                            <img
-                                className="h-[100%] w-[100%]"
-                                src="/dashboard/notification.png"
-                                alt=""
-                            />
-                        </div>
-                        <div>
-                            <div className="h-[100px] w-[100px] object-fit rounded-full overflow-hidden ">
-                                <img
-                                    className="h-[100%] w-[100%]"
-                                    src="/dashboard/girlie.jpg"
-                                    alt=""
-                                />
-                                ;
-                            </div>
-                        </div>
-                        <div>
-                            <div className="h-[30px] w-[30px]">
-                                <img src="/dashboard/msg.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="text-[#803da1] font-semibold flex flex-col items-center gap-0">
-                        <p>75%</p>
-                        <p>completado</p>
-                    </div>
-                </div>
-
-                <div className="flex flex-col items-center gap-2">
-                    <div>
-                        <p className="text-3xl font-semibold text-black">
-                            Llecenia Robles
-                        </p>
-                    </div>
-                    <div>
-                        <p className="underline">Usuario:Lleci</p>
-                    </div>
-                    <div>
-                        <p>link para referer</p>
-                    </div>
-                    <div className="flex gap-2">
-                        <div>
-                            <FaRegCopy />
-                        </div>
-                        <div>
-                            <a href="https://brillasystem.com/lleci">
-                                https://brillasystem.com/lleci
-                            </a>
-                        </div>
-                    </div>
-                    <div className="h-[1px] w-[250px] bg-black"></div>
-                </div>
-                <div>
-                    <div className="text-2xl font-semibold">
-                        FILTRAR POR FECHAS
-                    </div>
-                    <div className="h-[20vh] w-[20vw]">
-                        <img
-                            className="h-[100%] w-[100%]"
-                            src="/dashboard/calendar.png"
-                            alt=""
-                        />
-                    </div>
-                </div>
-                <div className="flex flex-col gap-2 items-center">
-                    <div className="flex gap-4 justify-around">
-                        <div className="font-semibold text-gray-500 text-xl">
-                            Desde
-                        </div>
-                        <div className="font-semibold text-gray-500 text-xl">
-                            Hasta
-                        </div>
-                    </div>
-                    <div className="flex gap-4 justify-around">
-                        <div className=" text-white rounded-[3px] text-center h-[35px] w-[150px]  bg-[#803DA1]">
-                            DD MM AAAA
-                        </div>
-                        <div className=" text-white rounded-[3px] text-center h-[35px] w-[150px] bg-[#803DA1]">
-                            DD MM AAAA
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between items-center">
-                        <button className="h-[30px] w-[150px] rounded-2xl  border-[3px] text-[#803da1] border-[#803da1]">
-                            Eliminar filtro
-                        </button>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-2 mt-6">
-                    <div>
-                        <p className="text-black text-xl font-semibold text-center">
-                            MI ACTITUD HOY ES
-                            <br />{" "}
-                            <span className="text-[#803da1] text-2xl font-semibold">
-                                GANADOR
-                            </span>
-                        </p>
-                    </div>
-                    <div className="flex gap-2 items-center justify-center">
-                        <div className="h-[10px] w-[10px]">
-                            <img src="/dashboard/logout.png" alt="" />
-                        </div>
-                        <div>
-                            <p className="text-[#803da1]">Cerrar sesion</p>
-                        </div>
-                    </div>
-                </div>
+            <div className="hidden md:flex">
+                <Profile />
             </div>
         </div>
     );

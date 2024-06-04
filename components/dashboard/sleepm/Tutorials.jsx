@@ -2,9 +2,20 @@ import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { LuPlayCircle } from "react-icons/lu";
 
+import Popup from "../Popup";
+
 const Tutorials = () => {
+    const [open, setOpen] = React.useState(false);
+    const [size, setSize] = React.useState();
+    const handleOpen = (value) => {
+        setSize(value);
+        setOpen(true);
+    };
+    const handleClose = () => setOpen(false);
+
     return (
         <div className="flex flex-col  h-[100vh]">
+            <Popup  size={size} open={open} handleClose={handleClose}/>
             <div className="flex justify-between">
                 <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-[80vw] mt-2  md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#803da1]">
                     <div>
@@ -28,7 +39,7 @@ const Tutorials = () => {
                             />
                         </div>
                         <div>
-                            <div className="h-[100px] w-[100px] object-fit rounded-full overflow-hidden ">
+                            <div onClick={()=>{ handleOpen("md")}} className="h-[100px] w-[100px] object-fit rounded-full overflow-hidden ">
                                 <img
                                     className="h-[100%] w-[100%]"
                                     src="/dashboard/girlie.jpg"
@@ -37,6 +48,7 @@ const Tutorials = () => {
                                 ;
                             </div>
                         </div>
+                        
                         <div>
                             <div className="h-[30px] w-[30px]">
                                 <img src="/dashboard/msg.png" alt="" />
@@ -45,7 +57,6 @@ const Tutorials = () => {
                     </div>
                     <div className="text-[#803da1] font-semibold flex flex-col items-center gap-0">
                         <p>75%</p>
-                      
                     </div>
                 </div>
             </div>
