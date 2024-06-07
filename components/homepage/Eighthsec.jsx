@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
+import axios from "@/app/api/axiosintercepter";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Eighthsec = () => {
+    const [personData, setpersonData] = useState([]);
+    const getTeammembers = async () => {
+        try {
+            const getData = await axios.get("/landingpage/getteammembers");
+            setpersonData(getData.data.data);
+            console.log(getData);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(() => {
+        getTeammembers();
+    }, []);
     const container = useRef(null);
     useGSAP(
         () => {
@@ -40,7 +54,7 @@ const Eighthsec = () => {
                 },
                 duration: 1,
                 opacity: 0,
-                x:1000,
+                x: 1000,
             });
         },
         { scope: container }
@@ -73,73 +87,29 @@ const Eighthsec = () => {
                         massa etiam velit est imperdiet id.
                     </p>
                 </div>
+
                 <div className="grid grid-cols-2 md:grid-cols-3 px-2 md:px-0 gap-x-4 md:gap-x-16 gap-y-4">
-                    <div className="flex flex-col gap-4">
-                        <img
-                            className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/persons.jpg"
-                            alt=""
-                        />
-                        <p className="phototext-xl md:text-3xl font-semibold">
-                            Milena Goméz
-                        </p>
-                        <p className="photo">Contadora</p>
-                    </div>
-                    <div className="photo flex flex-col gap-4">
-                        <img
-                            className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/persons.jpg"
-                            alt=""
-                        />
-                        <p className="text-xl md:text-3xl font-semibold">
-                            Felipe Mora
-                        </p>
-                        <p className="photo">Vendedor</p>
-                    </div>
-                    <div className="photo flex flex-col gap-4">
-                        <img
-                            className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/persons.jpg"
-                            alt=""
-                        />
-                        <p className="text-xl md:text-3xl font-semibold">
-                            Mateo Lara
-                        </p>
-                        <p className="photo">Profesor</p>
-                    </div>
-                    <div className="photo flex flex-col gap-4">
-                        <img
-                            className="h-[25vh] w-auto object-cover"
-                            src="/landing/persons.jpg"
-                            alt=""
-                        />
-                        <p className="photo text-xl md:text-3xl font-semibold">
-                            Wendy Paéz
-                        </p>
-                        <p className="photo">Veterinaria</p>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        <img
-                            className="h-[25vh] w-auto object-cover"
-                            src="/landing/persons.jpg"
-                            alt=""
-                        />
-                        <p className="text-xl md:text-3xl font-semibold">
-                            Roberto Mora
-                        </p>
-                        <p>Emprendedor</p>
-                    </div>
-                    <div className="photo flex flex-col gap-4">
-                        <img
-                            className="photo h-[25vh] w-auto object-cover"
-                            src="/landing/persons.jpg"
-                            alt=""
-                        />
-                        <p className="photo text-xl md:text-3xl font-semibold">
-                            Miguel Suarèz
-                        </p>
-                        <p className="photo">Inversor</p>
-                    </div>
+                    {personData.map((person,index) => {
+                        return (
+                            <div key={index} className="flex flex-col gap-4">
+                                <div>
+                                    <img
+                                        className="photo h-[25vh] w-auto object-cover"
+                                        src={person.image}
+                                        alt=""
+                                    />
+                                </div>
+                                <div>
+                                    <p className="phototext-xl md:text-3xl font-semibold">
+                                        {person.name}
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="photo">{person.position}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
