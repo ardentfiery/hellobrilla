@@ -136,7 +136,7 @@ const Fifthsec = () => {
           <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px]"></div>
         </div>
       </div>
-      <div className="md:flex-row flex flex-col gap-[4rem] w-[100vw] items-center">
+      <div className="lg:flex-row md:justify-center flex flex-col gap-[4rem]  w-[100vw] items-center">
         <div className="book ml-[-10rem]">
           <img className="md:h-[60vh] " src="/landing/book.png" alt="" />
         </div>
@@ -320,12 +320,12 @@ const Fifthsec = () => {
             <p className="font-semibold text-2xl">La oferta expira en:</p>
           </div>
           <div className="flex md:gap-8 gap-3 ">
-            <div className="flex flex-col gap-3 items-center">
-              <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+            <div className="flex flex-col gap-1 items-center">
+              <div className="flex gap-2">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.days[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.days[1]}</p>
                 </div>
               </div>
@@ -333,12 +333,12 @@ const Fifthsec = () => {
                 <p className="font-semibold md:text-xl items-center ">Dias</p>
               </div>
             </div>
-            <div className="flex flex-col gap-3 items-center">
-              <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+            <div className="flex flex-col gap-1 items-center">
+              <div className="flex gap-2">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.hours[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.hours[1]}</p>
                 </div>
               </div>
@@ -346,12 +346,12 @@ const Fifthsec = () => {
                 <p className="font-semibold md:text-xl items-center ">Horas</p>
               </div>
             </div>
-            <div className="flex flex-col gap-3 items-center">
-              <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+            <div className="flex flex-col gap-1 items-center">
+              <div className="flex gap-2">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.minutes[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.minutes[1]}</p>
                 </div>
               </div>
@@ -361,12 +361,12 @@ const Fifthsec = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-3 items-center">
+            <div className="flex flex-col gap-1 items-center">
               <div className="flex gap-3">
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.seconds[0]}</p>
                 </div>
-                <div className="h-[9vh] md:w-[3rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
+                <div className="h-[9vh] md:w-[2.4rem]  w-[8vw]  rounded-lg bg-[#664198] text-white font-bold text-4xl flex items-center justify-center">
                   <p>{brillaDetails?.timeLeft?.seconds[1]}</p>
                 </div>
               </div>

@@ -164,7 +164,7 @@ const Home = () => {
               </p>
             </div>
             <div>
-              <p className="text-xl md:text-3xl ">
+              <p className="text-xl md:text-2xl lg:text-3xl ">
                 &apos;"Decido brillar con determinación
                 <br /> y excelencia, dejando una huella
                 <br /> imborrable de bondad y<br />
@@ -190,13 +190,13 @@ const Home = () => {
           </div>
           <div>
             <img
-              className="landgirl md:h-[70vh] md:flex hidden    md:mt-0 object-cover  "
+              className="landgirl md:h-[70vh] lg:flex hidden    md:mt-0 object-cover  "
               src="/dashboard/home.png"
               alt=""
             />
             <div className="flex items-center justify-center mt-8">
               <img
-                className="landgirl md:hidden visible h-[30vh] "
+                className="landgirl lg:hidden visible h-[30vh] "
                 src="/dashboard/girlis.png"
                 alt=""
               />

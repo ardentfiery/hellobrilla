@@ -17,6 +17,10 @@ module.exports = {
             },
         },
         extend: {
+            backgroundImage: {
+                'member-bg': "url('/landing/bg.png')",
+                // 'footer-texture': "url('/img/footer-texture.png')",
+              },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

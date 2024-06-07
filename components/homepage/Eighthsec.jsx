@@ -62,11 +62,14 @@ const Eighthsec = () => {
   return (
     <>
       {personData.length < 1 ? null : (
-        <div className="relative md:h-[60rem] " ref={container}>
-          <div>
-            <img className="md:h-[60rem]" src="/landing/bg.png" alt="" />
-          </div>
-          <div className="absolute top-0 flex flex-col  gap-6 mt-10 items-center  w-[100%]">
+        <div
+          className="relative h-fit py-4 bg-[url('/landing/bg.png')] bg-no-repeat	bg-cover"
+          ref={container}
+        >
+          {/* <div>
+            <img className="h-fit" src="/landing/bg.png" alt="" />
+          </div> */}
+          <div className=" top-0 flex flex-col  gap-6 mt-10 items-center  w-[100%]">
             <div className="flex flex-col items-center">
               <div>
                 <p className="font-bold text-3xl md:text-4xl">
@@ -86,12 +89,12 @@ const Eighthsec = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 px-2 md:px-0 gap-x-4 md:gap-x-16 gap-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 md:px-0 gap-x-4 md:gap-x-16 gap-y-4 ">
               {personData?.map((person, index) => {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col gap-4 pb-4 w-[16rem] h-[24rem]"
+                    className="flex flex-col gap-4 pb-4 w-[16rem]  py-4"
                   >
                     <div className=" w-[100%] flex justify-center  ">
                       <img

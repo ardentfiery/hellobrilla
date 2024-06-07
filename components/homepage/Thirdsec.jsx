@@ -59,7 +59,7 @@ const Thirdsec = () => {
     );
     return (
         <div  ref={container}>
-            <div className="bg-[#664198]  h-fit md:h-[30rem] text-white flex flex-col gap-16 items-center p-8">
+            <div className="bg-[#664198]  h-fit lg:h-[30rem] text-white flex flex-col gap-16 items-center p-8">
                 <div className=" w-[100vw] text-center md:text-3xl text-2xl  px-[1rem] md:px-[14rem]">
                     <p className=" one font-bold">
                         Recupera tu ventaja y aumenta tu confianza, bienestar y
