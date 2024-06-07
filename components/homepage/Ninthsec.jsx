@@ -149,7 +149,7 @@ const Ninthsec = () => {
         )}
         <div>
           <div className="flex items-center relative justify-center">
-            <div className="relative w-[15rem]">
+            <div className="relative w-[15rem] hidden md:flex">
               {imageArray[activeVid - 1] ? (
                 <>
                   <img
@@ -168,8 +168,7 @@ const Ninthsec = () => {
               alt=""
               className={`h-[30rem] w-[50rem] object-cover`}
             />
-            {console.log(imageArray[activeVid + 1])}
-            <div className="relative w-[15rem]">
+            <div className="relative w-[15rem] hidden md:flex">
               {imageArray[activeVid + 1] ? (
                 <>
                   <img
@@ -188,14 +187,14 @@ const Ninthsec = () => {
                 if (activeVid == 0) return null;
                 setactiveVid(activeVid - 1);
               }}
-              className="absolute text-[4rem] top-[15rem] left-[8rem] cursor-pointer text-purple-500"
+              className="absolute text-[3rem] md:text-[4rem] top-[15rem] left-[.5rem] md:left-[8rem] cursor-pointer text-purple-500"
             />
             <IoIosArrowDroprightCircle
               onClick={() => {
                 if (activeVid == imageArray.length - 1) return null;
                 setactiveVid(activeVid + 1);
               }}
-              className="absolute text-[4rem] top-[15rem] right-[8rem] cursor-pointer text-purple-500"
+              className="absolute text-[3rem] md:text-[4rem] top-[15rem] right-[.5rem] md:right-[8rem] cursor-pointer text-purple-500"
             />
           </div>
           <div className="flex items-center relative">
