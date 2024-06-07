@@ -91,8 +91,8 @@ const Eighthsec = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 px-2 md:px-0 gap-x-4 md:gap-x-16 gap-y-4">
                     {personData.map((person,index) => {
                         return (
-                            <div key={index} className="flex flex-col gap-4">
-                                <div>
+                            <div key={index} className="flex flex-col gap-4 bg-white w-[20rem]   items-center pb-4 ">
+                                <div className=" w-[100%] flex justify-center bg-gray-200">
                                     <img
                                         className="photo h-[25vh] w-auto object-cover"
                                         src={person.image}

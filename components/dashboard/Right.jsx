@@ -9,8 +9,9 @@ const Right = () => {
     return (
      <div>
         {/* <Tutorials/> */}
-        <Empresa/>
+        {/* <Empresa/> */}
         {/* <Recursos/> */}
+        <Recursos/>
      </div>
 
     );
