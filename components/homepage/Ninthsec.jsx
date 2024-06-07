@@ -15,7 +15,13 @@ import {
 
 import { IoMdStar } from "react-icons/io";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  IoIosArrowDroprightCircle,
+  IoIosArrowDropleftCircle,
+} from "react-icons/io";
+
 const Ninthsec = () => {
+  const [activeVid, setactiveVid] = useState(1);
   const [feedbackarray, setfeedbackarray] = useState([]);
   const getFeedbacks = async () => {
     try {
@@ -24,6 +30,15 @@ const Ninthsec = () => {
       setfeedbackarray(datarecieved.data.data);
     } catch (error) {}
   };
+
+  const imageArray = [
+    "/landing/bg1.jpg",
+    "/landing/video.jpg",
+    "/landing/bg2.png",
+    "/landing/video.jpg",
+    "/landing/bg1.jpg",
+  ];
+
   useEffect(() => {
     getFeedbacks();
   }, []);
@@ -132,24 +147,94 @@ const Ninthsec = () => {
             </Carousel>
           </div>
         )}
-
         <div>
-          <div>
-            <Carousel className="w-full max-w-lg">
-              <CarouselContent>
-                <CarouselItem>
-                  <img src="/landing/video.jpg" alt="" />
-                </CarouselItem>
-                <CarouselItem>
-                  <img src="/landing/video.jpg" alt="" />
-                </CarouselItem>
-                <CarouselItem>
-                  <img src="/landing/video.jpg" alt="" />
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+          <div className="flex items-center relative justify-center">
+            <div className="relative w-[15rem]">
+              {imageArray[activeVid - 1] ? (
+                <>
+                  <img
+                    src={imageArray[activeVid - 1]}
+                    alt=""
+                    className={`h-[15rem] w-[100%] object-cover`}
+                  />
+                  <div
+                    className={`absolute h-[15rem] bg-[#00000056] w-[100%]  top-0`}
+                  ></div>
+                </>
+              ) : null}
+            </div>
+            <img
+              src={imageArray[activeVid]}
+              alt=""
+              className={`h-[30rem] w-[50rem] object-cover`}
+            />
+            {console.log(imageArray[activeVid + 1])}
+            <div className="relative w-[15rem]">
+              {imageArray[activeVid + 1] ? (
+                <>
+                  <img
+                    src={imageArray[activeVid + 1]}
+                    alt=""
+                    className={`h-[15rem] w-[100%] object-cover`}
+                  />
+                  <div
+                    className={`absolute h-[15rem] bg-[#00000056] w-[100%]  top-0`}
+                  ></div>
+                </>
+              ) : null}
+            </div>
+            <IoIosArrowDropleftCircle
+              onClick={() => {
+                if (activeVid == 0) return null;
+                setactiveVid(activeVid - 1);
+              }}
+              className="absolute text-[4rem] top-[15rem] left-[8rem] cursor-pointer text-purple-500"
+            />
+            <IoIosArrowDroprightCircle
+              onClick={() => {
+                if (activeVid == imageArray.length - 1) return null;
+                setactiveVid(activeVid + 1);
+              }}
+              className="absolute text-[4rem] top-[15rem] right-[8rem] cursor-pointer text-purple-500"
+            />
+          </div>
+          <div className="flex items-center relative">
+            {/* {imageArray?.map((image, index) => {
+              return (
+                <div className="relative">
+                  <img
+                    src={image}
+                    alt=""
+                    key={index}
+                    className={` ${
+                      index != activeVid ? `h-[15rem] ` : "h-[30rem] "
+                    }`}
+                  />
+                  <div
+                    className={`absolute ${
+                      index != activeVid
+                        ? "h-[15rem] bg-[#00000056]"
+                        : "h-[30rem]"
+                    } w-[100%]  top-0`}
+                  ></div>
+                  <div></div>
+                </div>
+              );
+            })} */}
+            {/* 
+            <IoIosArrowDropleftCircle
+              onClick={() => {
+                setactiveVid(activeVid - 1);
+              }}
+              className="absolute text-[4rem] top-[15rem] left-[15rem] cursor-pointer text-purple-500"
+            />
+            <IoIosArrowDroprightCircle
+              onClick={() => {
+                setactiveVid(activeVid + 1);
+              }}
+              className="absolute text-[4rem] top-[15rem] right-[15rem] cursor-pointer text-purple-500"
+            /> */}
+            {/* <IoIosArrowDroprightCircle /> */}
           </div>
         </div>
       </div>
