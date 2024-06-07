@@ -22,7 +22,6 @@ const Seventhsec = () => {
   const getSocials = async () => {
     try {
       const datarecieved = await axios.get("/landingpage/getsocial");
-      console.log(datarecieved);
       setSocials(datarecieved.data[0]);
     } catch (error) {
       console.log(error);

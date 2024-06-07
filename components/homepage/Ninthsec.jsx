@@ -55,63 +55,70 @@ const Ninthsec = () => {
             opts={{
               align: "start",
             }}
-            className="w-full max-w-sm"
+            className="w-[76vw] md:w-[60vw] "
           >
             <CarouselContent>
-              {feedbackarray.map((feedback, index) => (
-                <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
+              {feedbackarray?.map((feedback, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-1/1 md:basis-1/2 "
+                >
                   <div className="p-1">
                     <Card className="bg-transparent border-[0px]">
                       {/* <CardContent className="flex aspect-square items-center justify-center p-6"> */}
-                      <div className="relative text-white h-[16rem] rounded-[10px] overflow-hidden ">
+                      <div className="relative text-white w-[76vw] h-[25rem] md:w-auto md:h-[20rem] rounded-[10px] overflow-hidden ">
                         <div className="  ">
                           <img
-                            className="w-[100%] h-[100%] "
+                            className="w-[100%] h-[25rem] md:h-[100%] "
                             src="/landing/bg2.png"
                             alt=""
                           />
-                        </div>
-                        <div className="absolute top-0 flex flex-col gap-4 p-4">
-                          <div className="flex text-white items-center gap-3">
-                            <div className="rounded-full overflow-hidden h-[4rem] w-[4rem]">
-                              <img
-                                className="h-[100%] w-[100%]"
-                                src={feedback.image}
-                                alt=""
-                              />
+                        </div> 
+                        <div className="flex flex-col justify-between  h-[100%] absolute top-0">
+                          <div className=" flex flex-col gap-4 p-4">
+                            <div className="flex text-white items-center gap-3">
+                              <div className="rounded-full overflow-hidden h-[4rem] w-[4rem]">
+                                <img
+                                  className="h-[100%] w-[100%]"
+                                  src={feedback.image}
+                                  alt=""
+                                />
+                              </div>
+                              <div>
+                                <p className="font-semibold">{feedback.name}</p>
+                                <p>{feedback.occupation}</p>
+                              </div>
                             </div>
                             <div>
-                              <p className="font-semibold">{feedback.name}</p>
-                              <p>{feedback.occupation}</p>
+                              <p className="font-light text-sm ">
+                                {feedback.feedback}
+                              </p>
                             </div>
                           </div>
-                          <div>
-                            <p className="font-light text-sm ">
-                              {feedback.feedback}
-                            </p>
-                          </div>
-                          <div className="h-[2px] w-[90%] bg-slate-300"></div>
-                          <div className="flex items-center justify-end gap-4 ">
-                            {/* <p className="text-sm">
+                          <div className="p-4">
+                            <div className="h-[2px] w-[100%] bg-slate-300"></div>
+                            <div className="flex items-center justify-end gap-4 ">
+                              {/* <p className="text-sm">
                                                                 Lorem ipsu
                                                             </p> */}
-                            {Array(5)
-                              .fill(0)
-                              .map((star, index) => {
-                                return (
-                                  <div>
-                                    <p>
-                                      <IoMdStar
-                                        className={
-                                          (4-index) >= feedback.rating
-                                            ? "text-gray-400 text-[1.7rem]"
-                                            : "text-yellow-600 text-[1.7rem]"
-                                        }
-                                      />
-                                    </p>
-                                  </div>
-                                );
-                              })}
+                              {Array(5)
+                                .fill(0)
+                                .map((star, index) => {
+                                  return (
+                                    <div>
+                                      <p>
+                                        <IoMdStar
+                                          className={
+                                            index >= feedback.rating
+                                              ? "text-gray-400 text-[1.7rem]"
+                                              : "text-yellow-600 text-[1.7rem]"
+                                          }
+                                        />
+                                      </p>
+                                    </div>
+                                  );
+                                })}
+                            </div>
                           </div>
                         </div>
                       </div>
