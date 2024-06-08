@@ -7,6 +7,7 @@ import { Modal, Input, Button } from "rsuite";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { loadStripe } from "@stripe/stripe-js";
+import { toast } from "react-hot-toast";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -297,6 +298,8 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
     // if (!isCookieAvailable() || !user) {
     //     router.push("/signin");
     // } else {
+    const toastId = toast.loading("processing request...");
+
     const stripe = await loadStripe(
       "pk_test_51OdbKnSDrQbUV5GODnck4S7qTTAI1C7Cb2IIjJmcb6HLlHymyzQXpfdTUfbn0hFEbzVcu9HijzBuWGKMfch1wU8O00ZTvLKR3G"
     );
@@ -317,10 +320,12 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
           inputTyped,
         }
       );
+      toast.dismiss(toastId);
       const result = await stripe.redirectToCheckout({
         sessionId: resp.data.sessionId,
       });
     } catch (error) {
+      toast.dismiss(toastId);
       console.log(error);
     }
     // }

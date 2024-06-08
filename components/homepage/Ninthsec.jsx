@@ -23,31 +23,33 @@ import {
 const Ninthsec = () => {
   const [activeVid, setactiveVid] = useState(1);
   const [feedbackarray, setfeedbackarray] = useState([]);
+  const [videoLinks, setvideoLinks] = useState([]);
+
   const getFeedbacks = async () => {
     try {
       const datarecieved = await axios.get("/landingpage/getfeedbacks");
       console.log(datarecieved);
       setfeedbackarray(datarecieved.data.data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-  const imageArray = [
-    "/landing/bg1.jpg",
-    "/landing/video.jpg",
-    "/landing/bg2.png",
-    "/landing/video.jpg",
-    "/landing/bg1.jpg",
-  ];
+  const getVideoLinks = async () => {
+    try {
+      const datarecieved = await axios.get("/landingpage/getvideolinkslanding");
+      setvideoLinks(datarecieved.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     getFeedbacks();
+    getVideoLinks();
   }, []);
   return (
-    <div className="relative flex  h-[60rem] md:h-[100vh]">
-      <div>
-        <img className="h-[60rem] md:h-[100vh]" src="/landing/bg1.jpg" alt="" />
-      </div>
-      <div className="absolute top-0 flex flex-col gap-6 mt-16 items-center w-[100vw]">
+    <div className="relative flex  h-[60rem] md:h-fit bg-[url('/landing/bg1.jpg')] bg-no-repeat	bg-cover">
+      <div className="py-16 top-0 flex flex-col gap-6  items-center w-[100vw]">
         <div className="flex flex-col items-center">
           <div>
             <p className="font-bold text-2xl md:text-4xl text-white">
@@ -76,18 +78,12 @@ const Ninthsec = () => {
               <CarouselContent>
                 {feedbackarray?.map((feedback, index) => (
                   <CarouselItem key={index} className="basis-1/1 md:basis-1/2 ">
-                    <div className="p-1">
+                    <div className="p-1  bg-[url('/landing/bg2.png')] bg-no-repeat rounded-xl	bg-cover">
                       <Card className="bg-transparent border-[0px]">
                         {/* <CardContent className="flex aspect-square items-center justify-center p-6"> */}
                         <div className="relative text-white w-[76vw] h-[25rem] md:w-auto md:h-[20rem] rounded-[10px] overflow-hidden ">
-                          <div className="  ">
-                            <img
-                              className="w-[100%] h-[25rem] md:h-[100%] "
-                              src="/landing/bg2.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="flex flex-col justify-between  h-[100%] absolute top-0">
+                        
+                          <div className="flex flex-col justify-between  h-[100%] absolute top-0 w-[95%]">
                             <div className=" flex flex-col gap-4 p-4">
                               <div className="flex text-white items-center gap-3">
                                 <div className="rounded-full overflow-hidden h-[4rem] w-[4rem]">
@@ -150,11 +146,15 @@ const Ninthsec = () => {
         <div>
           <div className="flex items-center relative justify-center">
             <div className="relative w-[15rem] hidden md:flex">
-              {imageArray[activeVid - 1] ? (
+              {videoLinks[activeVid - 1] ? (
                 <>
-                  <img
-                    src={imageArray[activeVid - 1]}
-                    alt=""
+                  {console.log(videoLinks[activeVid - 1]?.videoUrl)}
+                  <iframe
+                    src={
+                      videoLinks[activeVid - 1]?.videoUrl
+                        ? videoLinks[activeVid - 1]?.videoUrl
+                        : null
+                    }
                     className={`h-[15rem] w-[100%] object-cover`}
                   />
                   <div
@@ -163,17 +163,15 @@ const Ninthsec = () => {
                 </>
               ) : null}
             </div>
-            <img
-              src={imageArray[activeVid]}
-              alt=""
+            <iframe
+              src={videoLinks[activeVid]?.videoUrl}
               className={`h-[30rem] w-[50rem] object-cover`}
             />
             <div className="relative w-[15rem] hidden md:flex">
-              {imageArray[activeVid + 1] ? (
+              {videoLinks[activeVid + 1] ? (
                 <>
-                  <img
-                    src={imageArray[activeVid + 1]}
-                    alt=""
+                  <iframe
+                    src={videoLinks[activeVid + 1]?.videoUrl}
                     className={`h-[15rem] w-[100%] object-cover`}
                   />
                   <div
@@ -191,50 +189,13 @@ const Ninthsec = () => {
             />
             <IoIosArrowDroprightCircle
               onClick={() => {
-                if (activeVid == imageArray.length - 1) return null;
+                if (activeVid == videoLinks?.length - 1) return null;
                 setactiveVid(activeVid + 1);
               }}
               className="absolute text-[3rem] md:text-[4rem] top-[15rem] right-[.5rem] md:right-[8rem] cursor-pointer text-purple-500"
             />
           </div>
-          <div className="flex items-center relative">
-            {/* {imageArray?.map((image, index) => {
-              return (
-                <div className="relative">
-                  <img
-                    src={image}
-                    alt=""
-                    key={index}
-                    className={` ${
-                      index != activeVid ? `h-[15rem] ` : "h-[30rem] "
-                    }`}
-                  />
-                  <div
-                    className={`absolute ${
-                      index != activeVid
-                        ? "h-[15rem] bg-[#00000056]"
-                        : "h-[30rem]"
-                    } w-[100%]  top-0`}
-                  ></div>
-                  <div></div>
-                </div>
-              );
-            })} */}
-            {/* 
-            <IoIosArrowDropleftCircle
-              onClick={() => {
-                setactiveVid(activeVid - 1);
-              }}
-              className="absolute text-[4rem] top-[15rem] left-[15rem] cursor-pointer text-purple-500"
-            />
-            <IoIosArrowDroprightCircle
-              onClick={() => {
-                setactiveVid(activeVid + 1);
-              }}
-              className="absolute text-[4rem] top-[15rem] right-[15rem] cursor-pointer text-purple-500"
-            /> */}
-            {/* <IoIosArrowDroprightCircle /> */}
-          </div>
+          <div className="flex items-center relative"></div>
         </div>
       </div>
     </div>
