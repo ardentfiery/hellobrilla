@@ -303,14 +303,22 @@ const Fifthsec = () => {
                 <BiDownArrow />
               </div>
             </div>
-            <div className="flex justify-center font-semibold md:text-3xl text-2xl">
-              <p>
-                COSTO:
-                <span className="text-black
-                ">
-                  ${brillaDetails?.brillaPrice}
-                </span>
-                / 1 Año
+            <div>
+              COSTO:
+              <p className="text-3xl font-semibold text-center md:text-left">
+                {brillaDetails.brillaPrice ? (
+                  brillaDetails.brillaPrice
+                ) : brillaDetails?.discountPrice ? (
+                  <>
+                    {" "}
+                    <span className="text-3xl font-light line-through">
+                      ${brillaDetails?.originalPrice}
+                    </span>{" "}
+                    ${brillaDetails?.discountPrice}
+                  </>
+                ) : (
+                  <p>{brillaDetails?.originalPrice}$</p>
+                )}
               </p>
             </div>
           </div>
