@@ -113,7 +113,6 @@ const Fifthsec = () => {
       className="flex flex-col gap-[4rem] mt-[6rem] relative "
       ref={container}
     >
-      {console.log(brillaDetails?.timeLeft)}
       <img
         className="animate-updown h-[20px]  left-[7vw] -z-10 absolute "
         src="/dashboard/floatingball.png"
@@ -136,8 +135,8 @@ const Fifthsec = () => {
           <div className="h-[4px] w-[50px] bg-[#664198] ml-[30px]"></div>
         </div>
       </div>
-      <div className="lg:flex-row md:justify-center flex flex-col gap-[4rem]  w-[100vw] items-center">
-        <div className="book ml-[-10rem]">
+      <div className="m-auto md:flex-row flex flex-col items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-[25%_37.5%_37.5%]  gap-4 mt-6 w-[90vw]  m-atuo">
+        <div className="book ">
           <img
             className="md:h-[60vh] "
             src={brillaDetails?.brillaImage || "/landing/book.png"}
@@ -308,8 +307,8 @@ const Fifthsec = () => {
               </div>
             </div>
             <div>
-              COSTO:
               <p className="text-3xl font-semibold text-center md:text-left">
+                COSTO:
                 {brillaDetails?.brillaPrice ? (
                   brillaDetails?.brillaPrice
                 ) : brillaDetails?.discountPrice ? (
@@ -327,7 +326,7 @@ const Fifthsec = () => {
             </div>
           </div>
         </div>
-        <div className="book flex flex-col gap-8 items-center  w-[100vw] md:pr-16 md:w-[35%]">
+        <div className="book flex flex-col gap-8 items-center ">
           <div>
             <p className="font-semibold text-2xl">La oferta expira en:</p>
           </div>
