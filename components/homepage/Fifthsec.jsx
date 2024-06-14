@@ -138,7 +138,11 @@ const Fifthsec = () => {
       </div>
       <div className="lg:flex-row md:justify-center flex flex-col gap-[4rem]  w-[100vw] items-center">
         <div className="book ml-[-10rem]">
-          <img className="md:h-[60vh] " src="/landing/book.png" alt="" />
+          <img
+            className="md:h-[60vh] "
+            src={brillaDetails?.brillaImage || "/landing/book.png"}
+            alt=""
+          />
         </div>
         <div className="book w-[100vw]  md:w-[30vw] flex flex-col gap-8">
           <div>
