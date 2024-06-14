@@ -306,8 +306,8 @@ const Fifthsec = () => {
             <div>
               COSTO:
               <p className="text-3xl font-semibold text-center md:text-left">
-                {brillaDetails.brillaPrice ? (
-                  brillaDetails.brillaPrice
+                {brillaDetails?.brillaPrice ? (
+                  brillaDetails?.brillaPrice
                 ) : brillaDetails?.discountPrice ? (
                   <>
                     {" "}
