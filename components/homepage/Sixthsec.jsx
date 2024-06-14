@@ -147,7 +147,7 @@ const Sixthsec = () => {
             </div>
           </div>
           <div className="flex flex-col items-center mt-5">
-            {eventData.map((event) => {
+            {eventData.map((event, index) => {
               return (
                 <div className="eventos md:flex-row flex flex-col items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-[25%_37.5%_37.5%]  gap-4 mt-6 w-[90vw]  m-atuo">
                   <div className="w-[25rem] md:w-[70%] mt-4 md:mt-0 flex justify-center">
@@ -164,8 +164,11 @@ const Sixthsec = () => {
                       </p>
                     </div>
                     <div className="eventos">
-                      <p className="text-xl font-medium">
-                        {event.eventDescription}
+                      <p className="text-xl font-medium whitespace-pre-wrap	">
+                        {}
+                        {index == eventData.length - 1
+                          ? JSON.parse(event.eventDescription)
+                          : event.eventDescription}
                       </p>
                     </div>
                     <div className="eventos">
