@@ -165,10 +165,7 @@ const Sixthsec = () => {
                     </div>
                     <div className="eventos">
                       <p className="text-xl font-medium whitespace-pre-wrap	">
-                        {}
-                        {index == eventData.length - 1
-                          ? JSON.parse(event.eventDescription)
-                          : event.eventDescription}
+                        {event.eventDescription}
                       </p>
                     </div>
                     <div className="eventos">
@@ -176,10 +173,11 @@ const Sixthsec = () => {
                         COSTO:
                         {event.eventDiscountedCost ? (
                           <>
+                            {" "}
                             <span className="text-3xl font-light line-through">
-                              {event.eventOriginalCost}$
-                            </span>
-                            {event.eventDiscountedCost}$
+                              ${event.eventOriginalCost}
+                            </span>{" "}
+                            ${event.eventDiscountedCost}
                           </>
                         ) : (
                           <p>{event.eventOriginalCost}$</p>
