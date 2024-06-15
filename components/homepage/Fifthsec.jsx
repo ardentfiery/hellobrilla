@@ -139,9 +139,14 @@ const Fifthsec = () => {
         <div className="book ">
           <img
             className="md:h-[60vh] "
-            src={brillaDetails?.brillaImage || "/landing/book.png"}
+            src={brillaDetails?.brillaImage}
+            onError={(e) => {
+              e.target.onerror = null; // Prevent looping
+              e.target.src = "/landing/book.png";
+            }}
             alt=""
           />
+          {console.log(brillaDetails?.brillaImage)}
         </div>
         <div className="book w-[100vw]  md:w-[30vw] flex flex-col gap-8">
           <div>
