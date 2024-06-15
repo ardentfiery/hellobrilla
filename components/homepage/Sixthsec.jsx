@@ -165,7 +165,7 @@ const Sixthsec = () => {
                     </div>
                     <div className="eventos">
                       <p className="text-xl font-medium whitespace-pre-wrap	">
-                        {event.eventDescription}
+                        {event.eventDescription ? JSON.parse(event.eventDescription) : null}
                       </p>
                     </div>
                     <div className="eventos">
