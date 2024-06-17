@@ -155,7 +155,7 @@ const Secondsec = () => {
           />
           {videoUrl ? (
             <div
-              className="w-[75%] h-[15rem] ml-[13%] absolute top-[7.4rem] z-50"
+              className="w-[75%] h-[15rem] ml-[13%] absolute top-[7.4rem] z-50 cursor-pointer"
               onClick={() => {
                 handleOpen("lg");
               }}
