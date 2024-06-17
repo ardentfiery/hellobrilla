@@ -14,7 +14,6 @@ const Eighthsec = () => {
     try {
       const getData = await axios.get("/landingpage/getteammembers");
       setpersonData(getData.data.data);
-      console.log(getData);
     } catch (error) {
       console.log(error);
     }

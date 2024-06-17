@@ -25,7 +25,6 @@ const Fifthsec = () => {
       toast.dismiss(toastId);
       router.push("/payment");
     } catch (error) {
-      console.log(error);
       toast.dismiss(toastId);
       router.push("/signup");
     }

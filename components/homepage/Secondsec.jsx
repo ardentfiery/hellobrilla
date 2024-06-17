@@ -22,7 +22,6 @@ const Secondsec = () => {
     try {
       const resp = await axios.get("/landingpage/getvideolinksecond");
       setVideoUrl(resp.data?.data[0]?.videoUrl);
-      console.log(resp);
     } catch (error) {
       console.log(error);
     }
@@ -142,20 +141,20 @@ const Secondsec = () => {
       <div className="relative">
         <div>
           <img
-            className="video h-[10rem]  md:h-[30rem] "
+            className="video h-[20rem]  md:h-[30rem] "
             src="/landing/circle.png"
             alt=""
           />
         </div>
         <div className="w-[20rem] md:w-[30rem]">
           <img
-            className="video h-[100%] md:h-[100%] md:w-[100%] absolute top-0 md:top-[] "
+            className="video w-[100%] md:h-[100%] md:w-[100%] absolute top-0 md:top-[] "
             src="/landing/playvideo.png"
             alt=""
           />
           {videoUrl ? (
             <div
-              className="w-[75%] h-[15rem] ml-[13%] absolute top-[7.4rem] z-50 cursor-pointer"
+              className="w-[75%] h-[10rem] md:h-[15rem] ml-[13%] absolute top-[5rem] md:top-[7.4rem] z-50 cursor-pointer"
               onClick={() => {
                 handleOpen("lg");
               }}

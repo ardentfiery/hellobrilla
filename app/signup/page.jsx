@@ -46,7 +46,6 @@ const Page = () => {
           const resp = await axios.post("/user/signup", values);
           setsavedUserId(resp.data.userId);
           setsavedUserEmail(resp.data.email);
-          console.log("sign up done");
           handleOpen("md");
           toast.success("Signed up !");
           toast.dismiss(toastId);
@@ -309,7 +308,6 @@ const VerifyOtp = ({ size, open, handleClose, email, userId }) => {
         otp,
         email,
       });
-      console.log("verify bhayo");
       setverified(true);
       toast.success("OTP verified");
       toast.dismiss(toastId);

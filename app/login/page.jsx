@@ -44,7 +44,6 @@ const Page = () => {
           toast.dismiss(toastId);
         }
 
-        // console.log(values);
       },
     });
 

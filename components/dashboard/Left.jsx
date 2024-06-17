@@ -28,7 +28,6 @@ const Left = () => {
             toast.dismiss(toastId);
             router.push("/login");
         } catch (error) {
-            console.log(error);
             toast.success("Log Out failed !");
             toast.dismiss(toastId);
         }

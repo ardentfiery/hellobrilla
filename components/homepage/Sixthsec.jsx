@@ -165,7 +165,9 @@ const Sixthsec = () => {
                     </div>
                     <div className="eventos">
                       <p className="text-xl font-medium whitespace-pre-wrap	">
-                        {event.eventDescription ? JSON.parse(event.eventDescription) : null}
+                        {event.eventDescription
+                          ? JSON.parse(event.eventDescription)
+                          : null}
                       </p>
                     </div>
                     <div className="eventos">
@@ -327,14 +329,12 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
       });
     } catch (error) {
       toast.dismiss(toastId);
-      console.log(error);
     }
     // }
   };
 
   return (
     <div>
-      {/* {console.log(inputTyped)} */}
       <Modal size={size} open={open} onClose={handleClose}>
         <Modal.Header>
           {/* <Modal.Title>Modal Title</Modal.Title> */}

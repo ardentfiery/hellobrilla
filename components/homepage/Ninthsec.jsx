@@ -28,7 +28,6 @@ const Ninthsec = () => {
   const getFeedbacks = async () => {
     try {
       const datarecieved = await axios.get("/landingpage/getfeedbacks");
-      console.log(datarecieved);
       setfeedbackarray(datarecieved.data.data);
     } catch (error) {
       console.log(error);
@@ -148,7 +147,6 @@ const Ninthsec = () => {
             <div className="relative w-[15rem] hidden md:flex">
               {videoLinks[activeVid - 1] ? (
                 <>
-                  {console.log(videoLinks[activeVid - 1]?.videoUrl)}
                   <iframe
                     src={
                       videoLinks[activeVid - 1]?.videoUrl

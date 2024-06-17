@@ -9,7 +9,6 @@ const TreeNode = ({ item, expanded, onSelect, index }) => {
   const toggleMenu = () => setIsExpanded(!isExpanded);
 
   const handlePress = (index) => {
-    console.log(index)
     onSelect(item);
     if (item.children) {
       toggleMenu();

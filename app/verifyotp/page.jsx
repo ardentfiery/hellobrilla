@@ -80,7 +80,6 @@ const page = () => {
         otp,
         email,
       });
-      console.log("verify bhayo");
       setverified(true);
       toast.success("OTP verified");
       toast.dismiss(toastId);
