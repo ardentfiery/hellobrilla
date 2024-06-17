@@ -146,7 +146,6 @@ const Fifthsec = () => {
             }}
             alt=""
           />
-          {console.log(brillaDetails?.brillaImage)}
         </div>
         <div className="book w-[100vw]  md:w-[30vw] flex flex-col gap-8">
           <div>
