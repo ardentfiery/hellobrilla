@@ -166,7 +166,7 @@ const page = () => {
         </div>
       ) : (
         <div className="h-[100vh] w-[100vw] max-w-[100%] flex justify-center items-center ">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col items-center justify-center gap-6">
             <p className="text-[2rem] font-semibold w-[80%]">
               Su solicitud ya ha sido enviada. Espere la verificación por parte
               de nuestro administrador y revise su correo.
@@ -175,7 +175,7 @@ const page = () => {
               onClick={() => {
                 router.push("/login");
               }}
-              className="py-1 px-5 border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300"
+              className="py-1 px-5 w-[20rem] border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300"
             >
               Take Me To Login Page
             </button>
