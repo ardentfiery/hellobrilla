@@ -166,10 +166,13 @@ const page = () => {
         </div>
       ) : (
         <div className="h-[100vh] w-[100vw] max-w-[100%] flex justify-center items-center ">
-          <p className="text-[2rem] font-semibold">
-            Your request has already been sent please wait for verification by
-            our admin and check your mail!
-          </p>
+          <div className="flex flex-col gap-6">
+            <p className="text-[2rem] font-semibold w-[80%]">
+              Su solicitud ya ha sido enviada. Espere la verificación por parte
+              de nuestro administrador y revise su correo.
+            </p>
+            <button className="py-1 px-5 border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300">Take Me To Login Page</button>
+          </div>
         </div>
       )}
     </>
