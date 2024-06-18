@@ -87,7 +87,7 @@ const page = () => {
 
   return (
     <>
-      {isRequestAlreadySent ? (
+      {!isRequestAlreadySent ? (
         <div className="flex flex-col gap-[4rem] mt-[2rem] ">
           <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
             <p>Buy System In Order To Access Dashboard</p>
