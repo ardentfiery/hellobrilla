@@ -165,9 +165,19 @@ const Sixthsec = () => {
                     </div>
                     <div className="eventos">
                       <p className="text-xl font-medium whitespace-pre-wrap	">
-                        {event.eventDescription
-                          ? JSON.parse(event.eventDescription)
-                          : null}
+                        {(() => {
+                          try {
+                            return event.eventDescription
+                              ? JSON.parse(event.eventDescription)
+                              : null;
+                          } catch (error) {
+                            console.error(
+                              "Invalid JSON string:",
+                              error.message
+                            );
+                            return event.eventDescription;
+                          }
+                        })()}
                       </p>
                     </div>
                     <div className="eventos">

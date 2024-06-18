@@ -257,6 +257,7 @@ const Page = () => {
   );
 };
 const VerifyOtp = ({ size, open, handleClose, email, userId }) => {
+  const router = useRouter();
   const [verified, setverified] = useState(false);
   const [otp, setotp] = useState("");
 
@@ -311,7 +312,9 @@ const VerifyOtp = ({ size, open, handleClose, email, userId }) => {
       setverified(true);
       toast.success("OTP verified");
       toast.dismiss(toastId);
-      router.push("/login");
+      setTimeout(() => {
+        router.push("/login");
+      }, 3000);
     } catch (error) {
       toast.error("Error sending otp");
       toast.dismiss(toastId);
@@ -333,6 +336,7 @@ const VerifyOtp = ({ size, open, handleClose, email, userId }) => {
                 <p className="font-extrabold  text-4xl text-[#803da1]">
                   Tu registro ha sido verificado.
                 </p>
+                <p>Redirecting to login.........</p>
                 <MdDoneOutline className="text-6xl text-green-700" />
               </div>
             ) : (

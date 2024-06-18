@@ -23,7 +23,7 @@ const page = () => {
           {
             product: {
               name: "Brilla system ",
-              price: brillaDetails?.brillaPrice,
+              price: brillaDetails?.discountPrice ? brillaDetails?.discountPrice: brillaDetails.originalPrice ,
               image:
                 "https://res.cloudinary.com/do7fzmdl3/image/upload/q_auto:low/brilla_mfs7nk.png",
               // eventId:currentEvent._id
@@ -45,9 +45,23 @@ const page = () => {
     }
   };
 
+  const sendVerificationRequest = async () => {
+    const toastId = toast.loading("processing request...");
+    try {
+      await axios.post("/user/addverificationrequestnotstripe");
+      toast.dismiss(toastId);
+      toast.success("Verification request successfully sent");
+      router.push("/buysuccess")
+    } catch (error) {
+      toast.dismiss(toastId);
+      toast.error("Verification request failed to sent");
+    }
+  };
+
   const getBrillDetails = async () => {
     try {
       const datarecieved = await axios.get("/landingpage/getbrilla");
+      console.log(datarecieved);
       setbrillaDetails(datarecieved.data[0]);
     } catch (error) {
       console.log(error);
@@ -70,15 +84,34 @@ const page = () => {
       <div className=" flex justify-center gap-[4rem] w-[100vw] items-center">
         <div className="flex flex-col gap-[4rem] h-[30rem] py-2  justify-between">
           <div className="book ml-[-10rem]">
-            <img className="w-[30rem] " src="/landing/book.png" alt="" />
+            <img
+              className="md:h-[20rem] "
+              src={brillaDetails?.brillaImage}
+              onError={(e) => {
+                e.target.onerror = null; // Prevent looping
+                e.target.src = "/landing/book.png";
+              }}
+              alt=""
+            />
             <div className="flex justify-center font-semibold md:text-3xl text-2xl">
-              <p>
-                COSTO:
-                <span className="text-gray-600">
-                  ${brillaDetails?.brillaPrice}-
-                </span>{" "}
-                / 1 Año
-              </p>
+              <div>
+                <p className="text-3xl font-semibold text-center md:text-left">
+                  COSTO:
+                  {brillaDetails?.brillaPrice ? (
+                    brillaDetails?.brillaPrice
+                  ) : brillaDetails?.discountPrice ? (
+                    <>
+                      {" "}
+                      <span className="text-3xl font-light line-through">
+                        ${brillaDetails?.originalPrice}
+                      </span>{" "}
+                      ${brillaDetails?.discountPrice}
+                    </>
+                  ) : (
+                    <p>{brillaDetails?.originalPrice}$</p>
+                  )}
+                </p>
+              </div>
             </div>
           </div>
           <div className="">
@@ -104,7 +137,7 @@ const page = () => {
             </p>
             <div
               onClick={() => {
-                paymentFunc();
+                sendVerificationRequest();
               }}
               className="flex justify-center mt-2"
             >
