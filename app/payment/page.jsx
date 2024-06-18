@@ -171,7 +171,14 @@ const page = () => {
               Su solicitud ya ha sido enviada. Espere la verificación por parte
               de nuestro administrador y revise su correo.
             </p>
-            <button className="py-1 px-5 border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300">Take Me To Login Page</button>
+            <button
+              onClick={() => {
+                router.push("/login");
+              }}
+              className="py-1 px-5 border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300"
+            >
+              Take Me To Login Page
+            </button>
           </div>
         </div>
       )}
