@@ -135,9 +135,9 @@ const Fifthsec = () => {
         </div>
       </div>
       <div className="m-auto md:flex-row flex flex-col items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-[25%_37.5%_37.5%]  gap-4 mt-6 w-[90vw]  m-atuo">
-        <div className="book ">
+        <div className="book">
           <img
-            className="md:h-[60vh] "
+            className="md:h-[60vh] w-auto object-cover "
             src={brillaDetails?.brillaImage}
             onError={(e) => {
               e.target.onerror = null; // Prevent looping
@@ -323,7 +323,7 @@ const Fifthsec = () => {
                     ${brillaDetails?.discountPrice}
                   </>
                 ) : (
-                  <p>{brillaDetails?.originalPrice}$</p>
+                  <span>{brillaDetails?.originalPrice}$</span>
                 )}
               </p>
             </div>

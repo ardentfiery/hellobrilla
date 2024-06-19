@@ -72,7 +72,7 @@ const page = () => {
   };
   const alreadyRequestSentCheck = async () => {
     try {
-      const datarecieved = await axios.get("/user/alreadyrequestsentcheck");
+      await axios.get("/user/alreadyrequestsentcheck");
       setisRequestAlreadySent(true);
     } catch (error) {
       console.log(error);

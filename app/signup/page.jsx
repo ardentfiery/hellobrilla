@@ -78,8 +78,17 @@ const Page = () => {
       />
 
       <div className="flex flex-col gap-4 md:flex-row w-[65%]   md:justify-around h-[100vh] pt-[2%]  md:pt-[5%]">
-        <div className="md:w-[40%] w-[100vw] flex justify-center md:justify-start">
-          <img className="h-[40px] md:h-[60px]" src="/login/logo.png" alt="" />
+        <div
+          onClick={() => {
+            router.push("/");
+          }}
+          className="md:w-[40%] w-[100vw] flex justify-center md:justify-start "
+        >
+          <img
+            className="cursor-pointer hover:scale-105 h-[40px] md:h-[60px] transition-all ease-in-out duration-300"
+            src="/login/logo.png"
+            alt=""
+          />
         </div>
         <div className="flex flex-col items-center md:items-start gap-3  w-[100vw] md:w-auto md:gap-6 md:mr-10">
           <div className=" md:w-auto w-[90vw]">

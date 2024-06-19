@@ -43,7 +43,6 @@ const Page = () => {
           toast.error("Login failer");
           toast.dismiss(toastId);
         }
-
       },
     });
 
@@ -58,7 +57,12 @@ const Page = () => {
         />
 
         <div className="flex flex-col items-center md:items-start gap-8 md:flex-row w-[100%] md:w-[65%]  md:justify-between md:px-10 h-[100vh]  pt-[5%]">
-          <div>
+          <div
+            onClick={() => {
+              router.push("/");
+            }}
+            className="cursor-pointer hover:drop-shadow-sm hover:scale-105 transition-all ease-in-out duration-300"
+          >
             <img className="h-[60px]" src="/login/logo.png" alt="" />
           </div>
           <div className="flex flex-col gap-6 ">
