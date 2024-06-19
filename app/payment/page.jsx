@@ -9,6 +9,18 @@ const page = () => {
   const [isRequestAlreadySent, setisRequestAlreadySent] = useState(false);
 
   const [brillaDetails, setbrillaDetails] = useState();
+
+  const logOutUser = async () => {
+    const toastId = toast.loading("taking to home page...");
+    try {
+      await axios.get("/user/logout");
+      router.push("/");
+      toast.dismiss(toastId);
+    } catch (error) {
+      toast.dismiss(toastId);
+    }
+  };
+
   const paymentFunc = async () => {
     const toastId = toast.loading("processing request...");
     try {
@@ -64,7 +76,6 @@ const page = () => {
   const getBrillDetails = async () => {
     try {
       const datarecieved = await axios.get("/landingpage/getbrilla");
-      console.log(datarecieved);
       setbrillaDetails(datarecieved.data[0]);
     } catch (error) {
       console.log(error);
@@ -97,8 +108,8 @@ const page = () => {
             </div>
           </div>
           <div className=" flex justify-center gap-[4rem] w-[100vw] items-center">
-            <div className="flex flex-col gap-[4rem] h-[30rem] py-2  justify-between">
-              <div className="book ml-[-10rem]">
+            <div className="flex flex-col gap-[2rem] h-[30rem] w-fit px-4 py-2   justify-center">
+              <div className="flex gap-6 flex-col items-center">
                 <img
                   className="md:h-[20rem] "
                   src={brillaDetails?.brillaImage}
@@ -123,7 +134,7 @@ const page = () => {
                           ${brillaDetails?.discountPrice}
                         </>
                       ) : (
-                        <p>{brillaDetails?.originalPrice}$</p>
+                        <span>{brillaDetails?.originalPrice}$</span>
                       )}
                     </p>
                   </div>
@@ -173,11 +184,11 @@ const page = () => {
             </p>
             <button
               onClick={() => {
-                router.push("/login");
+                logOutUser();
               }}
               className="py-1 px-5 rounded w-[20rem] border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300"
             >
-              Take Me To Login Page
+              Take Me To Home Page
             </button>
           </div>
         </div>
