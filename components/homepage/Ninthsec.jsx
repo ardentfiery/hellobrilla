@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/carousel";
 
 import { IoMdStar } from "react-icons/io";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Profile } from "./Profile";
-import { Modal, ButtonToolbar, Button, Placeholder } from 'rsuite';
+import { Modal } from 'rsuite';
 const Popup = ({size,open,handleClose}) => {
   
     return (

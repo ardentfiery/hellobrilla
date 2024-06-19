@@ -306,13 +306,18 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
     phonenumber: "",
     email: "",
   });
-
+  const validDomains = ["gmail.com", "hotmail.com", "yahoo.com"];
+  const validateEmailDomain = (email) => {
+    const domain = email.split("@")[1];
+    return validDomains.includes(domain);
+  };
   const purchaseApi = async () => {
-    // if (!isCookieAvailable() || !user) {
-    //     router.push("/signin");
-    // } else {
     const toastId = toast.loading("processing request...");
-
+    if (!validateEmailDomain(inputTyped.email)) {
+      toast.dismiss;
+      toast.error("Email must be from Gmail, Hotmail, or Yahoo.");
+      return;
+    }
     const stripe = await loadStripe(
       "pk_test_51OdbKnSDrQbUV5GODnck4S7qTTAI1C7Cb2IIjJmcb6HLlHymyzQXpfdTUfbn0hFEbzVcu9HijzBuWGKMfch1wU8O00ZTvLKR3G"
     );

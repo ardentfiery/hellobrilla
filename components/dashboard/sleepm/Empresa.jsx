@@ -1,7 +1,6 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoArrowForwardCircle } from "react-icons/io5";
-import { FaRegCopy } from "react-icons/fa";
 import { Profile } from "../Profile";
 
 const Empresa = () => {

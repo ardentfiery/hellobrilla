@@ -4,8 +4,6 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { FaArrowCircleDown } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
-import { Modal, ButtonToolbar, Button, Placeholder } from 'rsuite';
-import { Profile } from "../Profile";
 import Recursospop from "./Recursospop";
 
 const Recursos = () => {

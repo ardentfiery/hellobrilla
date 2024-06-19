@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, ButtonToolbar, Button, Placeholder } from 'rsuite';
+import { Modal,  Placeholder } from 'rsuite';
 
 
 const Recursospop = () => {
