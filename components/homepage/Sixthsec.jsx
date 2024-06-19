@@ -314,7 +314,7 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
   const purchaseApi = async () => {
     const toastId = toast.loading("processing request...");
     if (!validateEmailDomain(inputTyped.email)) {
-      toast.dismiss;
+      toast.dismiss(toastId);
       toast.error("Email must be from Gmail, Hotmail, or Yahoo.");
       return;
     }
