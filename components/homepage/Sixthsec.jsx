@@ -329,6 +329,7 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
               : currentEvent.eventOriginalCost,
             image: currentEvent.eventImage,
             eventId: currentEvent._id,
+            eventName: currentEvent.eventName,
           },
           inputTyped,
         }
