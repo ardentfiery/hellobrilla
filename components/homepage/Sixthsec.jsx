@@ -83,6 +83,17 @@ const Sixthsec = () => {
       console.log(error);
     }
   };
+  const parseText = (text) => {
+    const parts = text.split(/(\*\*.*?\*\*)/);
+    return parts.map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={index}>{part.slice(2, -2)}</strong>;
+      } else {
+        return part;
+      }
+    });
+  };
+
   useEffect(() => {
     getEvent();
   }, []);
@@ -168,14 +179,14 @@ const Sixthsec = () => {
                         {(() => {
                           try {
                             return event.eventDescription
-                              ? JSON.parse(event.eventDescription)
+                              ? parseText(JSON.parse(event.eventDescription))
                               : null;
                           } catch (error) {
                             console.error(
                               "Invalid JSON string:",
                               error.message
                             );
-                            return event.eventDescription;
+                            return parseText(event.eventDescription);
                           }
                         })()}
                       </p>
