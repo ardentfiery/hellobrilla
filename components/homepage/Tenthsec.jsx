@@ -210,7 +210,7 @@ const Tenthsec = () => {
       <div className="foot bg-[#100c34] text-sm">
         <div className="flex flex-col md:flex-row md:ml-6 justify-around  items-center h-[4rem] ">
           <div className="foot">
-            © COPYRIGHT 2024 BRYLLASISTEM - BY apeXgoo.com
+            © COPYRIGHT {new Date().getFullYear()} BRYLLASISTEM - BY apeXgoo.com
           </div>
           <div className="foot  flex items-center gap-3 md:gap-8 w-[35%] md:w-[15%]">
             <p>Términos & condiciones - Privacidad</p>
