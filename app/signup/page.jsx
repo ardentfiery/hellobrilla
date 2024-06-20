@@ -94,9 +94,10 @@ const Page = () => {
             <p className="font-bold  text-3xl">Crea una cuenta</p>
           </div>
           <div className="w-[90vw] md:w-auto">
-            <p className=" text-[#5F5D9C]">
-              Sigue las instrucciones lleha esta <br />
-              <span>formulario</span>
+            <p className=" text-[#5F5D9C] text-[1.1rem] ">
+              Regístrate ahora y da el primer paso hacia un 
+               <br />
+              <span>futuro brillante. ¡Tu éxito comienza hoy!</span>
             </p>
           </div>
           <form className="flex gap-4 flex-col" onSubmit={handleSubmit}>

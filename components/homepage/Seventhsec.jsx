@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
-import { FaTwitter } from "react-icons/fa";
+import { FaTwitter,FaTelegram,FaSms,FaInstagram    } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -93,9 +93,9 @@ const Seventhsec = () => {
       </div>
       <div className="flex flex-col gap-2 items-center socialicons">
         <div>
-          <p className="text-[#664198]">SIGEUMOS</p>
+          <p className="text-[#664198] text-[1rem] font-bold">SIGEUMOS</p>
         </div>
-        <div className="flex flex-wrap justify-center gap-10 text-[#664198]">
+        <div className="flex flex-wrap justify-center items-center px-2 gap-10 text-[#664198]">
           <p className="text-4xl socialicons md:text-7xl">
             <a
               href={`${socials?.whatsapp}`}
@@ -103,6 +103,24 @@ const Seventhsec = () => {
               className="text-[#664198]"
             >
               <FaWhatsapp />
+            </a>
+          </p>
+          <p className="text-4xl socialicons md:text-7xl">
+            <a
+              href={`${socials?.telegram}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <FaTelegram />
+            </a>
+          </p>
+          <p className="text-4xl socialicons md:text-7xl">
+            <a
+              href={`sms:/${socials?.sms}`}
+              target="_blank"
+              className="text-[#664198]"
+            >
+              <FaSms />
             </a>
           </p>
           <p className="text-4xl socialicons md:text-7xl">
@@ -125,11 +143,11 @@ const Seventhsec = () => {
           </p>
           <p className="text-4xl socialicons md:text-7xl">
             <a
-              href={`${socials?.google}`}
+              href={`${socials?.instagram}`}
               target="_blank"
               className="text-[#664198]"
             >
-              <FaGoogle />
+              <FaInstagram  />
             </a>
           </p>
           <p className="text-4xl socialicons md:text-7xl">

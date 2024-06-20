@@ -68,7 +68,7 @@ const Page = () => {
           <div className="flex flex-col gap-6 ">
             <div>
               <p className="font-bold text-4xl">
-                <span className="text-[#803DA1]">Tu </span>eres Bienvenido
+                <span className="text-[#803DA1]">Tu </span>eres Bienvenido@
               </p>
             </div>
             <div>
@@ -153,14 +153,14 @@ const Page = () => {
             </div>
             <div>
               <p className="text-center">
-                Forget your password?{" "}
+                ¿Olvidaste tu contraseña?{" "}
                 <strong
                   onClick={() => {
                     handleOpen("50rem");
                   }}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-[#803DA1]"
                 >
-                  Reset Password
+                  Restablecer la contraseña
                 </strong>
               </p>
             </div>
@@ -187,7 +187,7 @@ const Page = () => {
 
             <div className="flex justify-center">
               <p>
-                ¿tienes una cuenta?{" "}
+                ¿No tienes una cuenta?{" "}
                 <span
                   onClick={() => {
                     router.push("/signup");

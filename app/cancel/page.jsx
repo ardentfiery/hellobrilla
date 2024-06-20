@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const page = () => {
-
   const [countdown, setCountdown] = useState(10);
   const router = useRouter();
   useEffect(() => {
@@ -40,11 +39,11 @@ const page = () => {
           Payment Cancelled
         </h2>
         <p className="text-gray-600 mb-4 text-[1.2rem] font-semibold">
-          Your payment has been cancelled. Please contact support if you need
-          further assistance.
+          Su pago ha sido cancelado. Póngase en contacto con el soporte si lo
+          necesita más ayuda.
         </p>
         <p className="text-gray-600">
-          Redirecting to the landing page in {countdown} seconds...
+          Redirigir a la página de destino en {countdown} segundos...
         </p>
       </div>
     </div>

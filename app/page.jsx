@@ -165,10 +165,10 @@ const Home = () => {
             </div>
             <div>
               <p className="text-xl md:text-2xl lg:text-3xl ">
-                &apos;"Decido brillar con determinación
-                <br /> y excelencia, dejando una huella
-                <br /> imborrable de bondad y<br />
-                inspiración en cada paso.&apos;"
+                &apos;"La solución de principio a fin
+                <br /> para aprender, construir, lanzar y
+                <br /> escalar tu negocio de mercadeo<br />
+                en red en la nueva economía.&apos;"
               </p>
             </div>
             <div className="mt-14">

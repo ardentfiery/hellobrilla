@@ -101,7 +101,7 @@ const page = () => {
       {!isRequestAlreadySent ? (
         <div className="flex flex-col gap-[4rem] mt-[2rem] ">
           <div className="book flex flex-col font-bold text-3xl md:text-5xl items-center">
-            <p>Buy System In Order To Access Dashboard</p>
+            <p>Compre el sistema para acceder al panel</p>
             <div className="flex ">
               <div className="h-[4px] w-[20rem] bg-[#664198] "></div>
               <div className="h-[4px] w-[10rem] bg-[#664198] ml-[30px]"></div>
@@ -148,7 +148,7 @@ const page = () => {
                   className="flex justify-center mt-2"
                 >
                   <button className="border-[#664198] border-[1px] py-2 px-[6rem] font-bold text-[1.2rem] rounded hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300">
-                    Purchase
+                    Compra
                   </button>
                 </div>
               </div>
@@ -156,10 +156,11 @@ const page = () => {
             <div>
               <div className="w-[30rem] h-[30rem] bg-slate-300 rounded flex flex-col justify-between py-2">
                 <p className="font-bold text-[2rem] text-center">
-                  Already done the payment by other means?
+                  ¿Ya hiciste el pago por otros medios?
                 </p>
                 <p className="font-lightbold text-[1.2rem] text-center">
-                  Click the button below to send verification request to admins.
+                  Haga clic en el botón a continuación para enviar una solicitud
+                  de verificación a los administradores.
                 </p>
                 <div
                   onClick={() => {
@@ -168,7 +169,7 @@ const page = () => {
                   className="flex justify-center mt-2"
                 >
                   <button className="border-[#664198] border-[1px] py-2 px-[6rem] font-bold text-[1.2rem] rounded hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300">
-                    Send Verification Request
+                    Enviar solicitud de verificación
                   </button>
                 </div>
               </div>
@@ -188,7 +189,7 @@ const page = () => {
               }}
               className="py-1 px-5 rounded w-[20rem] border-[1px] border-[#664198] hover:bg-[#664198] hover:text-white transition-all ease-in-out duration-300"
             >
-              Take Me To Home Page
+              Llévame a la página de inicio
             </button>
           </div>
         </div>

@@ -38,11 +38,11 @@ const page = () => {
         </svg>
         <h2 className="text-2xl font-bold mb-2 text-purple-700">Success!</h2>
         <p className="text-gray-700 mb-4 text-[1.2rem] font-semibold">
-          The event has been bought successfully. Please check your email for
-          the details.
+          El evento ha sido comprado exitosamente. Por favor revise su correo
+          electrónico para los detalles.
         </p>
         <p className="text-gray-700">
-          Redirecting to the landing page in {countdown} seconds...
+          Redirigir a la página de destino en {countdown} segundos...
         </p>
       </div>
     </div>

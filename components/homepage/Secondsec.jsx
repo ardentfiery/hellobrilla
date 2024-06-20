@@ -87,20 +87,20 @@ const Secondsec = () => {
         src="/landing/diamond.png"
         alt=""
       />
-      <div className=" flex  flex-col gap-4 text-right leftsection ">
-        <div className=" w-[95%] gap-1 md:w-[20vw] flex flex-col md:gap-6 ">
+      <div className=" flex  flex-col gap-8 text-right leftsection ">
+        <div className=" w-[95%] gap-1 md:w-[20vw] flex flex-col md:gap-3 ">
           <div className="flex items-center md:gap-2 text-right  justify-end w-[100%]">
             <div>
-              <p className="text-2xl font-semibold ">lorem ipsu</p>
+              <p className="text-2xl md:text-3xl font-semibold ">Misión</p>
             </div>
             <div>
               <FaCircleCheck className="text-[#664198]" />
             </div>
           </div>
           <div>
-            <p className="font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus dolorum sint
+            <p className="font-semibold md:text-lg">
+              Hacer que lanzar tu negocio sea más fácil y rápido que nunca, sin
+              importar dónde te encuentres{" "}
             </p>
           </div>
         </div>
@@ -108,32 +108,30 @@ const Secondsec = () => {
         <div className="w-[95%] md:w-[20vw] gap-1 flex flex-col md:gap-6">
           <div className="flex items-center gap-2 justify-end w-[100%]">
             <div>
-              <p className="text-2xl font-semibold">lorem ipsu</p>
+              <p className="text-2xl md:text-3xl font-semibold">Solución simplificada</p>
             </div>
             <div>
               <FaCircleCheck className="text-[#664198]" />
             </div>
           </div>
           <div>
-            <p className="font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus dolorum sint
+            <p className="font-semibold md:text-[1rem]">
+              Brilla System ofrece una solución simplificada para emprendedores
             </p>
           </div>
         </div>
         <div className="w-[95%] md:w-[20vw] gap-1 flex flex-col md:gap-6">
           <div className="flex items-center gap-2 justify-end w-[100%]">
             <div>
-              <p className="text-2xl font-semibold">lorem ipsu</p>
+              <p className="text-2xl md:text-3xl font-semibold">Flexibilidad</p>
             </div>
             <div>
               <FaCircleCheck className="text-[#664198]" />
             </div>
           </div>
           <div>
-            <p className="font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus dolorum sint
+            <p className="font-semibold md:text-[1rem]">
+              El sistema es flexible y se adapta a tus necesidades empresariales
             </p>
           </div>
         </div>
@@ -179,52 +177,50 @@ const Secondsec = () => {
       </div>
 
       <div className="rightsection w-[100vw] md:w-fit px-2 md:px-0">
-        <div className="flex flex-col  gap-4 ">
-          <div className="w-[100%] md:w-[20vw]  flex flex-col gap-1 md:gap-6">
-            <div className="flex items-center gap-2 ">
+        <div className="flex flex-col  gap-6 ">
+          <div className="w-[100%] md:w-[20vw]  flex flex-col gap-1 md:gap-3">
+            <div className="flex items-center gap-1 ">
               <div>
-                <p className="text-2xl font-semibold">lorem ipsu</p>
+                <p className="text-2xl md:text-3xl font-semibold">Diversión</p>
               </div>
               <div>
                 <FaCircleCheck className="text-[#664198]" />
               </div>
             </div>
             <div>
-              <p className="font-semibold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus dolorum sint
+              <p className="font-semibold md:text-[1rem]">
+                Brilla System está diseñado para ser una herramienta divertida
+                de usar
               </p>
             </div>
           </div>
           <div className="w-[95%] md:w-[20vw] flex flex-col gap-1 md:gap-6">
             <div className="flex items-center gap-2 ">
               <div>
-                <p className="text-2xl font-semibold">lorem ipsu</p>
+                <p className="text-2xl md:text-3xl font-semibold"> Rapidez </p>
               </div>
               <div>
                 <FaCircleCheck className="text-[#664198]" />
               </div>
             </div>
             <div>
-              <p className="font-semibold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus dolorum sint
+              <p className="font-semibold md:text-[1rem]">
+              Permite alcanzar tus metas empresariales con mayor rapidez.
               </p>
             </div>
           </div>
           <div className="w-[95%] md:w-[20vw] flex flex-col gap-1 md:gap-6">
             <div className="flex items-center gap-2 ">
               <div>
-                <p className="text-2xl font-semibold">lorem ipsu</p>
+                <p className="text-2xl md:text-3xl font-semibold">Eficiencia</p>
               </div>
               <div>
                 <FaCircleCheck className="text-[#664198]" />
               </div>
             </div>
             <div>
-              <p className="font-semibold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus dolorum sint
+              <p className="font-semibold md:text-[1rem]">
+              Facilita una mayor eficiencia en el proceso de lanzar y gestionar tu negocio.
               </p>
             </div>
           </div>

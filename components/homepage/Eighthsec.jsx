@@ -81,10 +81,11 @@ const Eighthsec = () => {
               </div>
             </div>
             <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Quis at in
-                <br />
-                massa etiam velit est imperdiet id.
+              <p className="md:w-[55%] text-center m-auto text-[1.1rem] font-semibold">
+                "¡Felicidades por tu destacada dedicación y esfuerzo! Tu
+                compromiso y excelencia académica son verdaderamente admirables.
+                Sigue brillando y alcanzando tus metas con la misma pasión y
+                determinación. ¡Eres un ejemplo a seguir!"
               </p>
             </div>
 
