@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegCopy } from "react-icons/fa"
-import Empresa from "./sleepm/Empresa";
+import Empresa from "./Empresa";
 import Recursos from "./sleepm/Recursos";
 import Tutorials from "./sleepm/Tutorials";
 
