@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 const Page = () => {
   const router = useRouter();
+
   const checkAuthorization = async () => {
     try {
       const isAuthorized = await axios.get("/user/authorize");
@@ -27,10 +28,10 @@ const Page = () => {
   return (
     <div className="h-[100vh] overflow-hidden">
       <div className="md:grid md:grid-cols-[1fr_4fr] gap-4">
-        <div className="md:px-2 md:py-4 md:h-[100vh] h-fit">
+        <div className="md:px-2 md:py-4 md:h-[100vh] h-fit  w-[21rem]">
           <Left />
         </div>
-        <div className="h-[100vh] w-[100%]  overflow-y-scroll no-scrollbar">
+        <div className="h-[100vh] w-[calc(100vw-21rem)]  overflow-y-scroll no-scrollbar">
           <Right />
           {/* <Right/> */}
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoArrowForwardCircle } from "react-icons/io5";
-import { Profile } from "./Profile";
+import { Profile } from "../Profile";
 
-const Empresa = () => {
+const Dashboard = () => {
   return (
     <div className="flex md:grid md:grid-cols-[70%_30%]  md:gap-4 overflow-hidden">
       <div className="flex flex-col justify-center mt-8 gap-4 mb-4">
@@ -327,4 +327,4 @@ const Empresa = () => {
   );
 };
 
-export default Empresa;
+export default Dashboard;
