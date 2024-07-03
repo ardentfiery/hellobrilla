@@ -3,7 +3,7 @@ import { Modal } from "rsuite";
 import axios from "@/app/api/axiosintercepter";
 import downloadImage from "@/utils/downloadImage";
 import ImageViewPop from "./ImageViewPop";
-import VideoViewPop from "./VideoviewPop";
+import VideoViewPop from "./VideoViewPop";
 
 const PopProducts = ({
   size,

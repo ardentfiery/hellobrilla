@@ -1,5 +1,5 @@
 import { Inter, Montserrat } from "next/font/google";
-import { DashProvider } from "@/context/dashboardContext";
+import { DashProvider } from "@/context/DashboardContext";
 const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata = {
   title: "Dashboard - Brilla System",
