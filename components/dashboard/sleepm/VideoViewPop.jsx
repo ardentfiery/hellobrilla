@@ -3,7 +3,7 @@ import React from "react";
 import VideoPlayer from "@/utils/VideoPlayer";
 import { useRef } from "react";
 
-const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "" }) => {
+const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size="" }) => {
   const playerRef = useRef(null);
 
   const videoPlayerOptions = {
@@ -38,7 +38,7 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "" }) => {
               onClick={() => {
                 setPop(false);
                 if (handleOpen) {
-                    handleOpen("calc(100% - 45%)")
+                    handleOpen(size)
                 }
               }}
               src="/dashboard/crossbtn.png"

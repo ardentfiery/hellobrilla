@@ -9,6 +9,8 @@ import PopTriptico from "./PopTriptico";
 import PopPlan from "./PopPlan";
 import PopFolleto from "./PopFolleto";
 import PopProducts from "./PopProducts";
+import PopVisualPdf from "./PopVisualPdf";
+import PopVisualVideo from "./PopVisualVideo";
 
 const Recursos = ({ isActive }) => {
   const [posts, setposts] = useState([]);
@@ -47,6 +49,20 @@ const Recursos = ({ isActive }) => {
     setOpenProduct(true);
   };
   const handleCloseProduct = () => setOpenProduct(false);
+  const [openPdf, setOpenPdf] = useState(false);
+  const [sizePdf, setSizePdf] = useState();
+  const handleOpenPdf = (value) => {
+    setSizePdf(value);
+    setOpenPdf(true);
+  };
+  const handleClosePdf = () => setOpenPdf(false);
+  const [openVideo, setOpenVideo] = useState(false);
+  const [sizeVideo, setSizeVideo] = useState();
+  const handleOpenVideo = (value) => {
+    setSizeVideo(value);
+    setOpenVideo(true);
+  };
+  const handleCloseVideo = () => setOpenVideo(false);
 
   const getPosts = async () => {
     try {
@@ -101,6 +117,18 @@ const Recursos = ({ isActive }) => {
         handleClose={handleCloseProduct}
         handleOpen={handleOpenProduct}
         clickedProduct={clickedProduct}
+      />
+      <PopVisualPdf
+        size={sizePdf}
+        open={openPdf}
+        handleClose={handleClosePdf}
+        handleOpen={handleOpenPdf}
+      />
+      <PopVisualVideo
+        size={sizeVideo}
+        open={openVideo}
+        handleClose={handleCloseVideo}
+        handleOpen={handleOpenVideo}
       />
       <div className="flex justify-between h-[6rem]">
         <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-[80vw]   md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#803da1]">
@@ -299,7 +327,12 @@ const Recursos = ({ isActive }) => {
               PRESENTACIÓN DE NEGOCIAS
             </div>
             <div className="flex items-center justify-around gap-4 border-[3px] border-[#664198] rounded-[4rem] w-[90vw] md:w-[800px] h-[200px] md:h-[230px] ">
-              <div className="cursor-pointer group h-[150px] w-[160px] md:h-[148px]  md:w-[287px] rounded-3xl border-[3px] border-[#664198] relative">
+              <div
+                onClick={() => {
+                  handleOpenPdf("full");
+                }}
+                className="cursor-pointer group h-[150px] w-[160px] md:h-[148px]  md:w-[287px] rounded-3xl border-[3px] border-[#664198] relative"
+              >
                 <img
                   className="h-[100%] w-[100%] "
                   src="/dashboard/sleepmpdf.png"
@@ -308,7 +341,12 @@ const Recursos = ({ isActive }) => {
                 <div className="absolute z-30 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-3xl transition-all ease-in-out duration-300"></div>
                 <p className="font-bold text-[1.8rem] text-center ">VISUAL</p>
               </div>
-              <div className=" group cursor-pointer h-[150px] w-[160px] md:h-[148px] md:w-[287px] rounded-3xl relative">
+              <div
+                onClick={() => {
+                  handleOpenVideo("full");
+                }}
+                className=" group cursor-pointer h-[150px] w-[160px] md:h-[148px] md:w-[287px] rounded-3xl relative"
+              >
                 <img
                   className="h-[100%] w-[100%] rounded-[30px] object-cover"
                   src="/dashboard/video.jpg"
@@ -323,11 +361,6 @@ const Recursos = ({ isActive }) => {
                       alt=""
                       className=" w-[80%] h-[100%] object-cover cursor-pointer"
                     />
-                    {/* <img
-                      src="/dashboard/clickablehover.png"
-                      alt=""
-                      className=" w-[70%] h-[70%] cursor-pointer hidden group-hover:flex"
-                    /> */}
                   </div>
                 </div>
               </div>

@@ -32,6 +32,7 @@ const PopProducts = ({
           setPop={setPopVid}
           vidSrc={clickedProduct?.videoUrl}
           handleOpen={handleOpen}
+          size="calc(100% - 45%)"
         />
       )}
       <Modal size={size} open={open} onClose={handleClose} className="">
