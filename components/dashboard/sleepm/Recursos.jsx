@@ -296,22 +296,40 @@ const Recursos = ({ isActive }) => {
           <div className="flex flex-col gap-4 items-center">
             <div className=" h-[35px] font-bold text-black md:w-[450px] w-[90vw] flex items-center text-xl md:text-[1.8rem] justify-center rounded-2xl">
               {" "}
-              PRESENTACION DE NEGOCIAS
+              PRESENTACIÓN DE NEGOCIAS
             </div>
-            <div className="flex items-center justify-around gap-4 border-[3px] border-[#664198] rounded-[4rem] w-[90vw] md:w-[800px] h-[200px] md:h-[250px] ">
-              <div className="h-[150px] md:h-[200px] w-[160px] md:w-[350px] rounded-3xl">
+            <div className="flex items-center justify-around gap-4 border-[3px] border-[#664198] rounded-[4rem] w-[90vw] md:w-[800px] h-[200px] md:h-[230px] ">
+              <div className="cursor-pointer group h-[150px] w-[160px] md:h-[148px]  md:w-[287px] rounded-3xl border-[3px] border-[#664198] relative">
                 <img
-                  className="h-[100%] w-[100%] rounded-[30px]"
-                  src="/dashboard/room.jpg"
+                  className="h-[100%] w-[100%] "
+                  src="/dashboard/sleepmpdf.png"
                   alt=""
                 />
+                <div className="absolute z-30 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-3xl transition-all ease-in-out duration-300"></div>
+                <p className="font-bold text-[1.8rem] text-center ">VISUAL</p>
               </div>
-              <div className="h-[150px] md:h-[200px] w-[160px] md:w-[350px] rounded-3xl">
+              <div className=" group cursor-pointer h-[150px] w-[160px] md:h-[148px] md:w-[287px] rounded-3xl relative">
                 <img
-                  className="h-[100%] w-[100%] rounded-[30px]"
+                  className="h-[100%] w-[100%] rounded-[30px] object-cover"
                   src="/dashboard/video.jpg"
                   alt=""
                 />
+                <p className="font-bold text-[1.8rem] text-center ">VIDEO</p>
+
+                <div className="absolute z-30 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-[30px] transition-all ease-in-out duration-300">
+                  <div className="group w-[40%] h-[50%]">
+                    <img
+                      src="/dashboard/clickablevid.png"
+                      alt=""
+                      className=" w-[80%] h-[100%] object-cover cursor-pointer"
+                    />
+                    {/* <img
+                      src="/dashboard/clickablehover.png"
+                      alt=""
+                      className=" w-[70%] h-[70%] cursor-pointer hidden group-hover:flex"
+                    /> */}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
