@@ -7,9 +7,13 @@ import { IoIosSearch } from "react-icons/io";
 import ImageViewPop from "./ImageViewPop";
 import PopTriptico from "./PopTriptico";
 import PopPlan from "./PopPlan";
+import PopFolleto from "./PopFolleto";
+import PopProducts from "./PopProducts";
 
 const Recursos = ({ isActive }) => {
   const [posts, setposts] = useState([]);
+  const [products, setproducts] = useState([]);
+  const [clickedProduct, setclickedProduct] = useState({});
   const [clickedImage, setClickedImage] = useState();
   const [pop, setPop] = useState(false);
 
@@ -29,6 +33,20 @@ const Recursos = ({ isActive }) => {
     setOpenPlan(true);
   };
   const handleClosePlan = () => setOpenPlan(false);
+  const [openFolleto, setOpenFolleto] = useState(false);
+  const [sizeFolleto, setSizeFolleto] = useState();
+  const handleOpenFolleto = (value) => {
+    setSizeFolleto(value);
+    setOpenFolleto(true);
+  };
+  const handleCloseFolleto = () => setOpenFolleto(false);
+  const [openProduct, setOpenProduct] = useState(false);
+  const [sizeProduct, setSizeProduct] = useState();
+  const handleOpenProduct = (value) => {
+    setSizeProduct(value);
+    setOpenProduct(true);
+  };
+  const handleCloseProduct = () => setOpenProduct(false);
 
   const getPosts = async () => {
     try {
@@ -39,26 +57,26 @@ const Recursos = ({ isActive }) => {
       console.log(`error gettting posts: ${error}`);
     }
   };
+  const getProducts = async () => {
+    try {
+      const resp = await axios.get("/sleepm/getsleepmproducts");
+      setproducts(resp?.data?.data);
+      console.log(resp?.data?.data);
+    } catch (error) {
+      console.log(`error gettting products: ${error}`);
+    }
+  };
 
   useEffect(() => {
     if (isActive) {
       getPosts();
+      getProducts();
     }
   }, [isActive]);
 
   return (
     <div className="flex flex-col  mt-6">
-      <p>boom</p>
-      {pop && (
-        <ImageViewPop
-          // size={size}
-          // open={open}
-          // handleClose={handleClose}
-          pop={pop}
-          setPop={setPop}
-          imgsrc={clickedImage}
-        />
-      )}
+      {pop && <ImageViewPop pop={pop} setPop={setPop} imgsrc={clickedImage} />}
       <PopTriptico
         size={size}
         open={open}
@@ -70,6 +88,19 @@ const Recursos = ({ isActive }) => {
         open={openPlan}
         handleClose={handleClosePlan}
         handleOpen={handleOpenPlan}
+      />
+      <PopFolleto
+        size={sizeFolleto}
+        open={openFolleto}
+        handleClose={handleCloseFolleto}
+        handleOpen={handleOpenFolleto}
+      />
+      <PopProducts
+        size={sizeProduct}
+        open={openProduct}
+        handleClose={handleCloseProduct}
+        handleOpen={handleOpenProduct}
+        clickedProduct={clickedProduct}
       />
       <div className="flex justify-between h-[6rem]">
         <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-[80vw]   md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#803da1]">
@@ -96,7 +127,7 @@ const Recursos = ({ isActive }) => {
             <div>
               <div
                 onClick={() => {
-                  handleOpen("md");
+                  handleOpen("calc(100% - 30%)");
                 }}
                 className="h-[100px] w-[100px] object-fit rounded-full overflow-hidden "
               >
@@ -130,46 +161,75 @@ const Recursos = ({ isActive }) => {
       </div>
       <div className="md:grid md:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl w-[96%]">
         <div className="flex flex-col  gap-8 w-[100vw] md:w-auto items-center">
-          <div className="border-[3px] flex items-center  md:justify-center mt-6 border-[#664198] rounded-2xl h-[35px] w-[350px] px-10 md:px-0 md:w-[450px] text-xl md:text-2xl font-bold text-white bg-[#664198]">
+          <div className="text-black flex items-center  md:justify-center mt-6  h-[35px] w-[350px] px-10 md:px-0 md:w-[450px] text-xl md:text-[1.9rem] font-bold">
             <p>NUESTROS PRODUCTOS</p>
           </div>
-          <div className="flex gap-2 justify-between items-center">
-            <div>
-              <FaArrowCircleLeft className="text-[#664198] h-[40px] w-[40px]" />
+          <div className="flex justify-center items-center  w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
+            <div
+              onClick={() => {
+                //scroll up the post images
+                console.log(scrollDiv.current);
+                if (scrollDiv.current) {
+                  scrollDiv.current.scrollBy({
+                    left: -120,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="group hover:bg-[#664198] w-[40px] h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+            >
+              <p className="font-medium text-[3rem] rotate-180 text-[#664198] group-hover:text-white ">
+                {">"}
+              </p>
             </div>
-            <div className="flex items-center md:justify-around pt-4 md:pt-0 px-2  w-[70vw] md:w-[45vw] h-[15vh] md:h-[25vh] rounded-[4rem] md:px-4">
-              <div className="h-[200px] w-[200px] flex justify-center items-center border-[#664198] border-[2px] rounded-2xl hover:bg-gray-500">
-                <img
-                  className="md:h-[90%] h-[80%] w-[90%]"
-                  src="/dashboard/mattress.png"
-                  alt=""
-                />
-              </div>
+            <div
+              ref={scrollDiv}
+              className="h-[60vh] w-[40rem] flex items-center gap-5 overflow-x-scroll hide-scrollbar grow-0"
+            >
+              {products?.map((product, index) => {
+                return (
+                  <div key={index} className="flex flex-col">
+                    <div
+                      onClick={() => {
+                        setclickedProduct(product);
+                        handleOpenProduct("calc(100% - 45%)");
+                      }}
+                      className="group h-[201px] w-[220px]  cursor-pointer border-[#803DA1] border-[2px] rounded-3xl overflow-hidden relative transition-all ease-in-out duration-300 "
+                    >
+                      <img
+                        className="h-[100%] w-[100%] object-cover"
+                        src={product?.image}
+                        alt=""
+                      />
 
-              <div className="h-[100px] md:h-[200px] w-[100px] md:w-[200px]  flex justify-center items-center  border-[#664198] border-[2px] rounded-2xl ">
-                <img
-                  className="md:h-[90%]  w-[90%]"
-                  src="/dashboard/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className="h-[200px] w-[200px]  border-[#664198]  flex justify-center items-center border-[2px] rounded-2xl">
-                <img
-                  className="md:h-[100%] h-[80%] w-[100%]"
-                  src="/dashboard/blanket.png"
-                  alt=""
-                />
-              </div>
+                      <div className="absolute top-0 h-full w-full group-hover:bg-[#0000004a]"></div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div>
-              <FaArrowCircleRight className="text-[#664198] h-[40px] w-[40px]" />
+            <div
+              onClick={() => {
+                //scroll down the post images
+                if (scrollDiv.current) {
+                  scrollDiv.current.scrollBy({
+                    left: 120,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="group hover:bg-[#664198] w-[40px] h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+            >
+              <p className="font-medium text-[3rem]  text-[#664198] group-hover:text-white">
+                {">"}
+              </p>
             </div>
           </div>
           <div className="flex gap-4 ">
             <div
               className="relative  h-[113px] w-[160px] md:w-[266px] rounded-2xl  overflow-hidden "
               onClick={() => {
-                handleOpen("calc(100% - 120px)");
+                handleOpen("calc(100% - 20%)");
               }}
             >
               <img
@@ -177,7 +237,7 @@ const Recursos = ({ isActive }) => {
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-30 top-0 bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center rounded-2xl items-center">
+              <div className="absolute z-20 top-0 bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center rounded-2xl items-center">
                 <p
                   className=" md:text-2xl text-xl font-bold text-white shadow-md "
                   style={{
@@ -191,7 +251,7 @@ const Recursos = ({ isActive }) => {
             <div
               className="relative h-[113px] md:w-[266px] w-[160px]  overflow-hidden  rounded-2xl "
               onClick={() => {
-                handleOpenPlan('calc(100% - 320px)')
+                handleOpenPlan("calc(100% - 35%)");
               }}
             >
               <img
@@ -199,7 +259,7 @@ const Recursos = ({ isActive }) => {
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-40 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300  rounded-2xl cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
+              <div className="absolute z-20 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300  rounded-2xl cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
                 <p
                   className="md:text-2xl text-xl  font-bold text-white  "
                   style={{
@@ -210,13 +270,18 @@ const Recursos = ({ isActive }) => {
                 </p>
               </div>
             </div>
-            <div className="relative h-[113px] md:w-[266px] w-[160px] rounded-2xl overflow-hidden ">
+            <div
+              onClick={() => {
+                handleOpenFolleto("calc(100% - 25%)");
+              }}
+              className="relative h-[113px] md:w-[266px] w-[160px] rounded-2xl overflow-hidden "
+            >
               <img
                 className="w-[100%] h-[100%] "
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-40 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px]  rounded-2xl border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
+              <div className="absolute z-20 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px]  rounded-2xl border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
                 <p
                   className="md:text-2xl text-xl  font-bold text-white  "
                   style={{
@@ -229,7 +294,7 @@ const Recursos = ({ isActive }) => {
             </div>
           </div>
           <div className="flex flex-col gap-4 items-center">
-            <div className="bg-[#664198] text-white h-[35px] font-semibold md:w-[450px] w-[90vw] flex items-center text-xl md:text-2xl justify-center rounded-2xl">
+            <div className=" h-[35px] font-bold text-black md:w-[450px] w-[90vw] flex items-center text-xl md:text-[1.8rem] justify-center rounded-2xl">
               {" "}
               PRESENTACION DE NEGOCIAS
             </div>
@@ -253,7 +318,7 @@ const Recursos = ({ isActive }) => {
         </div>
 
         <div className="flex flex-col items-center gap-4 mt-6 select-none">
-          <div className="bg-[#664198] text-white h-[40px] w-[150px] font-bold flex justify-center items-center rounded-3xl">
+          <div className="text-black h-[40px] w-[150px] font-bold flex justify-center items-center rounded-3xl md:text-[1.9rem] ">
             <p>POST</p>
           </div>
           <div

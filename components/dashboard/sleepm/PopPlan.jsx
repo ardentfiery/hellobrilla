@@ -32,6 +32,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
           setPop={setPop}
           imgsrc={clickedImage}
           handleOpen={handleOpen}
+          size="calc(100% - 35%)"
         />
       )}
       <Modal size={size} open={open} onClose={handleClose}>
@@ -42,9 +43,9 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body>
-          <div className="h-[60vh] flex justify-center items-center flex-col">
+          <div className="h-[65vh] flex justify-center items-center flex-col">
             <div>
-              <p className="text-[#803DA1] font-bold text-[3rem]">
+              <p className="text-[#803DA1] font-bold text-[3rem] mb-4">
                 Plan Servilleta
               </p>
             </div>

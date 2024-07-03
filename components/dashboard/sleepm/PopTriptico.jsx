@@ -33,6 +33,7 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
           setPop={setPop}
           imgsrc={clickedImage}
           handleOpen={handleOpen}
+          size="calc(100% - 20%)"
         />
       )}
       <div className="relative z-40 ">

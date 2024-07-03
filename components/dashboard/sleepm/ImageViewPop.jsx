@@ -1,33 +1,7 @@
 import React from "react";
 import downloadImage from "@/utils/downloadImage";
 
-const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "" }) => {
-  // const fileName = imgsrc.substring(imgsrc.lastIndexOf("/") + 1);
-
-  // const downloadImage = async () => {
-  //   try {
-  //     // Fetch the image as a Blob
-  //     const response = await fetch(imgsrc);
-  //     const blob = await response.blob();
-
-  //     // Create an object URL from the Blob
-  //     const url = URL.createObjectURL(blob);
-
-  //     // Create an invisible link element
-  //     const link = document.createElement("a");
-  //     link.href = url;
-  //     link.download = fileName; // Set the default name for the downloaded image
-  //     document.body.appendChild(link);
-  //     link.click();
-  //     document.body.removeChild(link);
-
-  //     // Release the object URL
-  //     URL.revokeObjectURL(url);
-  //   } catch (error) {
-  //     console.error("Failed to download image:", error);
-  //   }
-  // };
-
+const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "", size="" }) => {
   return (
     <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-50 bg-[#0000007e] flex justify-center items-center">
       <div className="w-[70%] h-[85%] m-auto overflow-hidden flex justify-center">
@@ -37,7 +11,7 @@ const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "" }) => {
               onClick={() => {
                 setPop(false);
                 if (handleOpen) {
-                  handleOpen("calc(100% - 120px)");
+                  handleOpen(size);
                 }
               }}
               src="/dashboard/crossbtn.png"
