@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "rsuite";
 import axios from "@/app/api/axiosintercepter";
 import VideoViewPop from "./VideoViewPop";
+import downloadVideo from "@/utils/downloadVideo";
 
 const PopVisualVideo = ({ size, open, handleClose, handleOpen }) => {
   const [videos, setvideos] = useState([]);
@@ -77,9 +78,7 @@ const PopVisualVideo = ({ size, open, handleClose, handleOpen }) => {
                           src="/dashboard/video.jpg"
                           alt=""
                         />
-                        <div
-                          className="absolute z-30 top-0 h-[224px] w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-[30px] transition-all ease-in-out duration-300"
-                        >
+                        <div className="absolute z-30 top-0 h-[224px] w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-[30px] transition-all ease-in-out duration-300">
                           <div className="group w-[40%] h-[50%]">
                             <img
                               src="/dashboard/clickablevid.png"
@@ -117,6 +116,9 @@ const PopVisualVideo = ({ size, open, handleClose, handleOpen }) => {
                         </>
                       )}
                       <img
+                        onClick={() => {
+                          downloadVideo(video._id);
+                        }}
                         src="/dashboard/download.png"
                         className=" w-[2rem]  cursor-pointer"
                         alt=""

@@ -354,7 +354,7 @@ const Recursos = ({ isActive }) => {
                 />
                 <p className="font-bold text-[1.8rem] text-center ">VIDEO</p>
 
-                <div className="absolute z-30 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-[30px] transition-all ease-in-out duration-300">
+                <div className="absolute z-20 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-[30px] transition-all ease-in-out duration-300">
                   <div className="group w-[40%] h-[50%]">
                     <img
                       src="/dashboard/clickablevid.png"

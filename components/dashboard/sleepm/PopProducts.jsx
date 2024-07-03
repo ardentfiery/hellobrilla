@@ -101,13 +101,13 @@ const PopProducts = ({
                     <img
                       src="/dashboard/clickablevid.png"
                       alt=""
-                      className=" w-[70%] h-[70%] cursor-pointer group-hover:hidden"
+                      className=" w-[70%] h-[70%] cursor-pointer "
                     />
-                    <img
+                    {/* <img
                       src="/dashboard/clickablehover.png"
                       alt=""
                       className=" w-[70%] h-[70%] cursor-pointer hidden group-hover:flex"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>

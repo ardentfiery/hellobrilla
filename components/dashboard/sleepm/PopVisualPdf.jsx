@@ -52,7 +52,11 @@ const PopVisualPdf = ({ size, open, handleClose }) => {
                         Presentación <strong>{index + 1}</strong>
                       </p>
                     </div>
-                    <div className="group relative cursor-pointer ">
+                    <div 
+                    onClick={() => {
+                      window.open(pdf?.pdf)
+                    }}
+                    className="group relative cursor-pointer ">
                       <div className="h-[224px] w-[287px] border-[3px] border-[#664198] rounded-3xl overflow-hidden">
                         <img
                           src="/dashboard/pdfbg.png"
