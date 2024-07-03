@@ -1,23 +1,34 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import axios from "@/app/api/axiosintercepter";
 import { IoIosSearch } from "react-icons/io";
-import Recursospop from "./Recursospop";
+import ImageViewPop from "./ImageViewPop";
+import PopTriptico from "./PopTriptico";
+import PopPlan from "./PopPlan";
 
 const Recursos = ({ isActive }) => {
-  const [open, setOpen] = React.useState(false);
-  const [size, setSize] = React.useState();
-  const [posts, setposts] = React.useState([]);
+  const [posts, setposts] = useState([]);
+  const [clickedImage, setClickedImage] = useState();
+  const [pop, setPop] = useState(false);
 
   const scrollDiv = useRef(null);
 
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState();
   const handleOpen = (value) => {
     setSize(value);
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
+  const [openPlan, setOpenPlan] = useState(false);
+  const [sizePlan, setSizePlan] = useState();
+  const handleOpenPlan = (value) => {
+    setSizePlan(value);
+    setOpenPlan(true);
+  };
+  const handleClosePlan = () => setOpenPlan(false);
 
   const getPosts = async () => {
     try {
@@ -37,7 +48,29 @@ const Recursos = ({ isActive }) => {
 
   return (
     <div className="flex flex-col  mt-6">
-      <Recursospop />
+      <p>boom</p>
+      {pop && (
+        <ImageViewPop
+          // size={size}
+          // open={open}
+          // handleClose={handleClose}
+          pop={pop}
+          setPop={setPop}
+          imgsrc={clickedImage}
+        />
+      )}
+      <PopTriptico
+        size={size}
+        open={open}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
+      />
+      <PopPlan
+        size={sizePlan}
+        open={openPlan}
+        handleClose={handleClosePlan}
+        handleOpen={handleOpenPlan}
+      />
       <div className="flex justify-between h-[6rem]">
         <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-[80vw]   md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#803da1]">
           <div>
@@ -112,7 +145,6 @@ const Recursos = ({ isActive }) => {
                   alt=""
                 />
               </div>
-              <Recursospop />
 
               <div className="h-[100px] md:h-[200px] w-[100px] md:w-[200px]  flex justify-center items-center  border-[#664198] border-[2px] rounded-2xl ">
                 <img
@@ -133,28 +165,65 @@ const Recursos = ({ isActive }) => {
               <FaArrowCircleRight className="text-[#664198] h-[40px] w-[40px]" />
             </div>
           </div>
-          <div className="flex gap-4">
-            <div className="relative  h-[150px] w-[160px] md:w-[350px] rounded-3xl overflow-hidden">
+          <div className="flex gap-4 ">
+            <div
+              className="relative  h-[113px] w-[160px] md:w-[266px] rounded-2xl  overflow-hidden "
+              onClick={() => {
+                handleOpen("calc(100% - 120px)");
+              }}
+            >
               <img
                 className="w-[100%] h-[100%] md:w-[100%] -z-10"
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-50 top-0 bg-[#00000036] h-[100%] w-[100%] flex justify-center items-center">
-                <p className="md:text-2xl text-xl font-bold text-black  ">
-                  Tripticos
+              <div className="absolute z-30 top-0 bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center rounded-2xl items-center">
+                <p
+                  className=" md:text-2xl text-xl font-bold text-white shadow-md "
+                  style={{
+                    textShadow: "2px 2px #000000",
+                  }}
+                >
+                  Trípticos
                 </p>
               </div>
             </div>
-            <div className="relative h-[150px] md:w-[350px] w-[160px] rounded-3xl overflow-hidden">
+            <div
+              className="relative h-[113px] md:w-[266px] w-[160px]  overflow-hidden  rounded-2xl "
+              onClick={() => {
+                handleOpenPlan('calc(100% - 320px)')
+              }}
+            >
               <img
                 className="w-[100%] h-[100%] "
-                src="/dashboard/sketch.png"
+                src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-50 top-0  bg-[#00000036] h-[100%] w-[100%] flex justify-center items-center">
-                <p className="md:text-2xl text-xl  font-bold text-black  ">
+              <div className="absolute z-40 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300  rounded-2xl cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
+                <p
+                  className="md:text-2xl text-xl  font-bold text-white  "
+                  style={{
+                    textShadow: "2px 2px #000000",
+                  }}
+                >
                   Plan Servilleta
+                </p>
+              </div>
+            </div>
+            <div className="relative h-[113px] md:w-[266px] w-[160px] rounded-2xl overflow-hidden ">
+              <img
+                className="w-[100%] h-[100%] "
+                src="/dashboard/book.jpg"
+                alt=""
+              />
+              <div className="absolute z-40 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px]  rounded-2xl border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
+                <p
+                  className="md:text-2xl text-xl  font-bold text-white  "
+                  style={{
+                    textShadow: "2px 2px #000000",
+                  }}
+                >
+                  Folletos
                 </p>
               </div>
             </div>
@@ -207,7 +276,15 @@ const Recursos = ({ isActive }) => {
           >
             {posts?.map((post, index) => {
               return (
-                <div key={index} className="group h-[163px] w-[157px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300">
+                <div
+                  key={index}
+                  onClick={() => {
+                    setClickedImage(post?.brochure);
+                    // handleOpen("calc(100% - 10rem");
+                    setPop(true);
+                  }}
+                  className="group h-[163px] w-[157px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300"
+                >
                   <img
                     className="h-[100%] w-[100%] object-cover"
                     src={post?.brochure}
