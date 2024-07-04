@@ -131,21 +131,23 @@ const Recursos = ({ isActive }) => {
         handleOpen={handleOpenVideo}
       />
       <div className="flex justify-between h-[6rem]">
-        <div className="flex   items-center ml-[15vw] md:ml-[30vw] w-[80vw]   md:w-[20vw] h-[5vh]   gap-2 border-[3px] rounded-2xl border-[#803da1]">
-          <div>
-            <IoIosSearch className="text-2xl" />
-          </div>
-          <div className=" ">
-            <input
-              className=" h-[30px] w-[250px]"
-              type="text"
-              placeholder="Buscar servicios de Brilla System"
-            />
+        <div className="flex w-[70vw] justify-center items-center">
+          <div className="flex   items-center  w-[80vw] md:w-[20rem] h-[3rem] gap-2 border-[3px] rounded-2xl border-[#803da1]">
+            <div>
+              <IoIosSearch className="text-2xl" />
+            </div>
+            <div className=" ">
+              <input
+                className=" h-[30px] w-[250px]"
+                type="text"
+                placeholder="Buscar"
+              />
+            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center  ">
+        <div className="absolute right-[6rem] top-0 flex flex-col items-center  ">
           <div className="flex gap-4 h-[15vh] items-center">
-            <div className="h-[30px] w-[30px]">
+            <div className="h-[20px] w-[20px]">
               <img
                 className="h-[90%] w-[90%]"
                 src="/dashboard/notification.png"
@@ -157,7 +159,7 @@ const Recursos = ({ isActive }) => {
                 onClick={() => {
                   handleOpen("calc(100% - 30%)");
                 }}
-                className="h-[100px] w-[100px] object-fit rounded-full overflow-hidden "
+                className="h-[80px] w-[80px] object-fit rounded-full overflow-hidden "
               >
                 <img
                   className="h-[100%] w-[100%]"
@@ -169,7 +171,7 @@ const Recursos = ({ isActive }) => {
             </div>
 
             <div>
-              <div className="h-[30px] w-[30px]">
+              <div className="h-[20px] w-[20px]">
                 <img
                   className="h-[80%] w-[90%]"
                   src="/dashboard/msg.png"
@@ -187,9 +189,10 @@ const Recursos = ({ isActive }) => {
       <div>
         <p className="text-4xl text-[#664198] font-bold ml-8 ">Recursos</p>
       </div>
-      <div className="md:grid md:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl w-[96%]">
-        <div className="flex flex-col  gap-8 w-[100vw] md:w-auto items-center">
-          <div className="text-black flex items-center  md:justify-center mt-6  h-[35px] w-[350px] px-10 md:px-0 md:w-[450px] text-xl md:text-[1.9rem] font-bold">
+
+      <div className="md:grid md:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl w-[96%] pb-4">
+        <div className="flex flex-col  gap-2 w-[100vw] md:w-auto items-center">
+          <div className="text-black flex items-center  md:justify-center mt-4 text-xl md:text-[1.7rem] font-bold">
             <p>NUESTROS PRODUCTOS</p>
           </div>
           <div className="flex justify-center items-center  w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
@@ -206,7 +209,7 @@ const Recursos = ({ isActive }) => {
               }}
               className="group hover:bg-[#664198] w-[40px] h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
             >
-              <p className="font-medium text-[3rem] rotate-180 text-[#664198] group-hover:text-white ">
+              <p className="font-light text-[3rem] rotate-180 text-[#664198] group-hover:text-white ">
                 {">"}
               </p>
             </div>
@@ -248,12 +251,12 @@ const Recursos = ({ isActive }) => {
               }}
               className="group hover:bg-[#664198] w-[40px] h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
             >
-              <p className="font-medium text-[3rem]  text-[#664198] group-hover:text-white">
+              <p className="font-light text-[3rem]  text-[#664198] group-hover:text-white">
                 {">"}
               </p>
             </div>
           </div>
-          <div className="flex gap-4 ">
+          <div className="flex gap-4 mt-4">
             <div
               className="relative  h-[113px] w-[160px] md:w-[266px] rounded-2xl  overflow-hidden "
               onClick={() => {
@@ -321,17 +324,17 @@ const Recursos = ({ isActive }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 items-center">
-            <div className=" h-[35px] font-bold text-black md:w-[450px] w-[90vw] flex items-center text-xl md:text-[1.8rem] justify-center rounded-2xl">
+          <div className="flex flex-col gap-2 items-center">
+            <div className="mt-4 font-bold text-black flex items-center text-xl md:text-[1.7rem] justify-center rounded-2xl">
               {" "}
               PRESENTACIÓN DE NEGOCIAS
             </div>
-            <div className="flex items-center justify-around gap-4 border-[3px] border-[#664198] rounded-[4rem] w-[90vw] md:w-[800px] h-[200px] md:h-[230px] ">
+            <div className="flex items-center justify-around gap-4 border-[2px] border-[#664198] rounded-3xl w-[90vw] md:w-[690px] h-[200px] md:h-[201px] ">
               <div
                 onClick={() => {
                   handleOpenPdf("full");
                 }}
-                className="cursor-pointer group h-[150px] w-[160px] md:h-[148px]  md:w-[287px] rounded-3xl border-[3px] border-[#664198] relative"
+                className=" cursor-pointer group h-[150px] w-[160px] md:h-[148px]  md:w-[287px] rounded-3xl border-[3px] border-[#664198] relative"
               >
                 <img
                   className="h-[100%] w-[100%] "
@@ -339,20 +342,20 @@ const Recursos = ({ isActive }) => {
                   alt=""
                 />
                 <div className="absolute z-30 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-3xl transition-all ease-in-out duration-300"></div>
-                <p className="font-bold text-[1.8rem] text-center ">VISUAL</p>
+                <p className="font-bold text-[1.4rem] text-center ">VISUAL</p>
               </div>
               <div
                 onClick={() => {
                   handleOpenVideo("full");
                 }}
-                className=" group cursor-pointer h-[150px] w-[160px] md:h-[148px] md:w-[287px] rounded-3xl relative"
+                className=" group cursor-pointer h-[150px] w-[160px] md:h-[148px] md:w-[287px] rounded-[1.65rem] relative border-[3px] border-[#664198]"
               >
                 <img
-                  className="h-[100%] w-[100%] rounded-[30px] object-cover"
+                  className="h-[100%] w-[100%] rounded-3xl object-cover"
                   src="/dashboard/video.jpg"
                   alt=""
                 />
-                <p className="font-bold text-[1.8rem] text-center ">VIDEO</p>
+                <p className="font-bold text-[1.4rem] text-center ">VIDEO</p>
 
                 <div className="absolute z-20 top-0 h-[148px]  w-[287px] flex justify-center items-center group-hover:bg-[#00000052] rounded-[30px] transition-all ease-in-out duration-300">
                   <div className="group w-[40%] h-[50%]">
@@ -372,57 +375,59 @@ const Recursos = ({ isActive }) => {
           <div className="text-black h-[40px] w-[150px] font-bold flex justify-center items-center rounded-3xl md:text-[1.9rem] ">
             <p>POST</p>
           </div>
-          <div
-            onClick={() => {
-              //scroll up the post images
-              console.log(scrollDiv.current);
-              if (scrollDiv.current) {
-                scrollDiv.current.scrollBy({ top: -120, behavior: "smooth" });
-              }
-            }}
-            className="group hover:bg-[#664198] w-[33px] h-[33px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
-          >
-            <p className="font-medium text-[1.8rem] -rotate-90 text-[#664198] group-hover:text-white">
-              {">"}
-            </p>
-          </div>
-          <div
-            ref={scrollDiv}
-            className="h-[60vh] grid gap-5 overflow-y-scroll hide-scrollbar grow-0"
-          >
-            {posts?.map((post, index) => {
-              return (
-                <div
-                  key={index}
-                  onClick={() => {
-                    setClickedImage(post?.brochure);
-                    // handleOpen("calc(100% - 10rem");
-                    setPop(true);
-                  }}
-                  className="group h-[163px] w-[157px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300"
-                >
-                  <img
-                    className="h-[100%] w-[100%] object-cover"
-                    src={post?.brochure}
-                    alt=""
-                  />
-                  <div className="absolute top-0 h-full w-full group-hover:bg-[#0000004a]"></div>
-                </div>
-              );
-            })}
-          </div>
-          <div
-            onClick={() => {
-              //scroll down the post images
-              if (scrollDiv.current) {
-                scrollDiv.current.scrollBy({ top: 120, behavior: "smooth" });
-              }
-            }}
-            className="group hover:bg-[#664198] w-[33px] h-[33px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
-          >
-            <p className="font-medium text-[1.8rem] rotate-90 text-[#664198] group-hover:text-white">
-              {">"}
-            </p>
+          <div className="flex justify-center items-center gap-2 flex-col  h-[65vh]">
+            <div
+              onClick={() => {
+                //scroll up the post images
+                console.log(scrollDiv.current);
+                if (scrollDiv.current) {
+                  scrollDiv.current.scrollBy({ top: -120, behavior: "smooth" });
+                }
+              }}
+              className="group hover:bg-[#664198] w-[33px] h-[33px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+            >
+              <p className="font-light text-[1.8rem] -rotate-90 text-[#664198] group-hover:text-white">
+                {">"}
+              </p>
+            </div>
+            <div
+              ref={scrollDiv}
+              className="h-[60vh] grid gap-5 overflow-y-scroll hide-scrollbar grow-0"
+            >
+              {posts?.map((post, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      setClickedImage(post?.brochure);
+                      // handleOpen("calc(100% - 10rem");
+                      setPop(true);
+                    }}
+                    className="group h-[163px] w-[157px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300"
+                  >
+                    <img
+                      className="h-[100%] w-[100%] object-cover"
+                      src={post?.brochure}
+                      alt=""
+                    />
+                    <div className="absolute top-0 h-full w-full group-hover:bg-[#0000004a]"></div>
+                  </div>
+                );
+              })}
+            </div>
+            <div
+              onClick={() => {
+                //scroll down the post images
+                if (scrollDiv.current) {
+                  scrollDiv.current.scrollBy({ top: 120, behavior: "smooth" });
+                }
+              }}
+              className="group hover:bg-[#664198] w-[33px] h-[33px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+            >
+              <p className="font-light text-[1.8rem] rotate-90 text-[#664198] group-hover:text-white">
+                {">"}
+              </p>
+            </div>
           </div>
         </div>
       </div>
