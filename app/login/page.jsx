@@ -72,14 +72,15 @@ const Page = () => {
               </p>
             </div>
             <div>
-              <p className=" text-[#803DA1] text-lg">
-                Estamos encantadose de tenerte de
-                <br /> vuelta. Preparate para explorar un
+            Estamos encantados de tenerte de vuelta. Prepárate para explorar un mundo de innovación y excelencia en cada inicio de sesión. ¡Adelante y brilla con nosotros!
+              <p className=" text-[#03014C] text-lg">
+                Estamos encantados de tenerte de 
+                <br /> vuelta. Prepárate para explorar un
                 <br />
-                mundo de innovacaion excelencia
-                <br /> en cadi inicio de sedion. Adelante y <br />{" "}
-                <span className="text-[#803DA1] font-bold">brilla</span> con
-                nosotros!
+                mundo de innovación y excelencia
+                <br /> en cada inicio de sesión. ¡Adelante y <br />{" "}
+                <span className="text-[#803DA1] font-bold">brilla</span> brilla con nosotros!
+             
               </p>
             </div>
             <form className="flex gap-4 flex-col" onSubmit={handleSubmit}>

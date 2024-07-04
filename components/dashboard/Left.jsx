@@ -117,11 +117,11 @@ const Left = () => {
           onClick={() => {
             sethamclicked(true);
           }}
-          className="text-3xl text-[#664198] ml-4 md:hidden  "
+          className="text-3xl text-[#664198] ml-4 lg:hidden  "
         />
       </div>
-      <div className="mt-2">
-        <div className="absolute right-10 md:hidden visible">
+      <div className="mt-2 ">
+        <div className="absolute right-20 lg:hidden visible">
           <IoMdNotificationsOutline className="text-3xl" />
         </div>
 
@@ -130,7 +130,7 @@ const Left = () => {
           onClick={() => {
             handleOpen("full");
           }}
-          className="h-[30px] right-2 w-[30px] absolute md:hidden"
+          className="h-[30px] w-[30px] absolute right-10 lg:hidden"
         >
           <img
             className="h-[100%] w-[100%] rounded-full"
@@ -140,7 +140,7 @@ const Left = () => {
         </div>
       </div>
 
-      <div className="md:flex flex-col hidden items-center border-[3px] border-[#664198] rounded-3xl h-[97vh] w-[20rem]">
+      <div className="lg:flex flex-col hidden items-center border-[3px] border-[#664198] rounded-3xl h-[97vh] lg:w-[17rem] xl:w-[20rem]">
         <div className="w-[100%] px-[10%] flex items-center justify-center">
           <div className="h-[4rem] mt-2 flex justify-between  ">
             <img
@@ -152,16 +152,6 @@ const Left = () => {
           </div>
         </div>
         <div className="overflow-x-hidden no-scrollbar w-[100%] mt-5">
-          {/* <List>
-            {menuData.map((item, index) => {
-              return (
-                <>
-                  <TreeNode item={item} index={index} onSelect={handleSelect} />
-                </>
-              );
-            })}
-          </List> */}
-
           <MenuItems />
         </div>
       </div>
@@ -189,16 +179,8 @@ const Secondary = ({ menuData, handleSelect, sethamclicked }) => {
             className="text-[#664198] text-3xl"
           />
         </div>
-        <div className="overflow-x-hidden no-scrollbar h-fit">
-          <List>
-            {menuData.map((item, index) => {
-              return (
-                <>
-                  <TreeNode item={item} index={index} onSelect={handleSelect} />
-                </>
-              );
-            })}
-          </List>
+        <div className="overflow-x-hidden no-scrollbar h-fit hide-scrollbar">
+          <MenuItems />
         </div>
       </div>
     </div>

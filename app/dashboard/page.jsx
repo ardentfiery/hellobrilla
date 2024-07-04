@@ -27,11 +27,11 @@ const Page = () => {
   }, []);
   return (
     <div className="h-[100vh] overflow-hidden">
-      <div className="md:grid md:grid-cols-[1fr_4fr] gap-4">
-        <div className="md:px-2 md:py-4 md:h-[100vh] h-fit  w-[21rem]">
+      <div className="lg:grid  lg:grid-cols-[1fr_4fr] gap-4">
+        <div className="lg:px-2 lg:py-4 lg:h-[100vh] h-fit  lg:w-[17rem] xl:w-[20rem]  ">
           <Left />
         </div>
-        <div className="h-[100vh] w-[calc(100vw-21rem)]  overflow-y-scroll no-scrollbar">
+        <div className="h-[100vh] lg:w-[calc(100vw-17rem)] xl:w-[calc(100vw-20rem)]  overflow-y-scroll no-scrollbar">
           <Right />
           {/* <Right/> */}
         </div>
