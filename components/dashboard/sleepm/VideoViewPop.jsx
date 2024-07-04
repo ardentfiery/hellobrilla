@@ -3,7 +3,7 @@ import React from "react";
 import VideoPlayer from "@/utils/VideoPlayer";
 import { useRef } from "react";
 
-const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size="" }) => {
+const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
   const playerRef = useRef(null);
 
   const videoPlayerOptions = {
@@ -31,24 +31,26 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size="" }) => {
   };
   return (
     <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-50 bg-[#0000007e] flex justify-center items-center">
-      <div className="w-[70%] h-[85%] m-auto overflow-hidden flex justify-center">
+      <div className="w-[70%] h-[85%]  m-auto overflow-hidden flex justify-center">
         <div className="relative">
           <div className="overflow-hidden h-fit">
             <img
               onClick={() => {
                 setPop(false);
                 if (handleOpen) {
-                    handleOpen(size)
+                  handleOpen(size);
                 }
               }}
               src="/dashboard/crossbtn.png"
               alt="classbtn"
               className="absolute top-0 right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
             />
-            <VideoPlayer
-              options={videoPlayerOptions}
-              onReady={handlePlayerReady}
-            />
+            <div className="h-[100%] ">
+              <VideoPlayer
+                options={videoPlayerOptions}
+                onReady={handlePlayerReady}
+              />
+            </div>
           </div>
         </div>
       </div>
