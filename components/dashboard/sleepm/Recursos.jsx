@@ -372,7 +372,7 @@ const Recursos = ({ isActive }) => {
         </div>
 
         <div className="flex flex-col items-center gap-4 mt-6 select-none">
-          <div className="text-black h-[40px] w-[150px] font-bold flex justify-center items-center rounded-3xl md:text-[1.9rem] ">
+          <div className="text-black h-[40px] w-[150px] font-bold flex justify-center items-center rounded-3xl md:text-[1.7rem] ">
             <p>POST</p>
           </div>
           <div className="flex justify-center items-center gap-2 flex-col  h-[65vh]">
