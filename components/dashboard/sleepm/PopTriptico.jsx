@@ -51,7 +51,7 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
           />
           <Modal.Body>
             <div>
-              <div className="grid grid-cols-2 gap-x-4">
+              <div className="grid lg:grid-cols-2 gap-x-4">
                 <div className=" h-[70vh] flex flex-col justify-end items-center pb-5">
                   <div className="flex items-center justify-center gap-4 ">
                     <p className="font-bold text-[2.5rem]">Tríptico</p>

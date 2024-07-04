@@ -131,21 +131,23 @@ const Recursos = ({ isActive }) => {
         handleOpen={handleOpenVideo}
       />
       <div className="flex justify-between h-[6rem]">
-        <div className="flex w-[70vw] justify-center items-center">
-          <div className="flex   items-center  w-[80vw] md:w-[20rem] h-[3rem] gap-2 border-[3px] rounded-2xl border-[#803da1]">
-            <div>
-              <IoIosSearch className="text-2xl" />
-            </div>
-            <div className=" ">
-              <input
-                className=" h-[30px] w-[250px]"
-                type="text"
-                placeholder="Buscar"
-              />
+        <div className="flex  items-center justify-end pr-5 py-2  ">
+          <div className="sm:w-[50%] ">
+            <div className="w-[15rem] h-[2.4rem]  gap-2 border-[3px] rounded-2xl border-[#664198] flex items-center">
+              <div>
+                <IoIosSearch className="text-xl" />
+              </div>
+              <div className=" ">
+                <input
+                  className=" h-[2rem] w-[] md:w-fit outline-none rounded-xl"
+                  type="text"
+                  placeholder="Buscar de Brilla System"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="absolute right-[6rem] top-0 flex flex-col items-center  ">
+        <div className="absolute hidden lg:flex right-[6rem] top-0  flex-col items-center  ">
           <div className="flex gap-4 h-[15vh] items-center">
             <div className="h-[20px] w-[20px]">
               <img
@@ -186,16 +188,17 @@ const Recursos = ({ isActive }) => {
         </div>
       </div>
 
-      <div>
+      <div className="mt-10 lg:mt-0">
         <p className="text-4xl text-[#664198] font-bold ml-8 ">Recursos</p>
       </div>
 
-      <div className="md:grid md:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl w-[96%] pb-4">
+      <div className=" md:grid xl:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl mx-2 lg:mx-0 pb-4">
         <div className="flex flex-col  gap-2 w-[100vw] md:w-auto items-center">
           <div className="text-black flex items-center  md:justify-center mt-4 text-xl md:text-[1.7rem] font-bold">
             <p>NUESTROS PRODUCTOS</p>
           </div>
-          <div className="flex justify-center items-center  w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
+
+          <div className="flex justify-center items-center ml-0 m-auto md:m-0 w-[90%] md:w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
             <div
               onClick={() => {
                 //scroll up the post images
@@ -207,7 +210,7 @@ const Recursos = ({ isActive }) => {
                   });
                 }
               }}
-              className="group hover:bg-[#664198] w-[40px] h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+              className="group hover:bg-[#664198] w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
             >
               <p className="font-light text-[3rem] rotate-180 text-[#664198] group-hover:text-white ">
                 {">"}
@@ -223,9 +226,9 @@ const Recursos = ({ isActive }) => {
                     <div
                       onClick={() => {
                         setclickedProduct(product);
-                        handleOpenProduct("calc(100% - 45%)");
+                        handleOpenProduct("calc(100% - 25%)");
                       }}
-                      className="group h-[201px] w-[220px]  cursor-pointer border-[#803DA1] border-[2px] rounded-3xl overflow-hidden relative transition-all ease-in-out duration-300 "
+                      className="group h-[201px] w-[180px] md:w-[220px] 2xl:w-[266px]  cursor-pointer border-[#803DA1] border-[2px] rounded-3xl overflow-hidden relative transition-all ease-in-out duration-300 "
                     >
                       <img
                         className="h-[100%] w-[100%] object-cover"
@@ -249,16 +252,16 @@ const Recursos = ({ isActive }) => {
                   });
                 }
               }}
-              className="group hover:bg-[#664198] w-[40px] h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+              className="group hover:bg-[#664198] w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
             >
               <p className="font-light text-[3rem]  text-[#664198] group-hover:text-white">
                 {">"}
               </p>
             </div>
           </div>
-          <div className="flex gap-4 mt-4">
+          <div className=" sm:grid sm:grid-cols-2 md:flex md:flex-row flex-col gap-4 mt-4  px-5">
             <div
-              className="relative  h-[113px] w-[160px] md:w-[266px] rounded-2xl  overflow-hidden "
+              className="relative  h-[113px] w-[226px] xl:w-[220px] 2xl:w-[266px]  rounded-2xl  overflow-hidden "
               onClick={() => {
                 handleOpen("calc(100% - 20%)");
               }}
@@ -280,9 +283,9 @@ const Recursos = ({ isActive }) => {
               </div>
             </div>
             <div
-              className="relative h-[113px] md:w-[266px] w-[160px]  overflow-hidden  rounded-2xl "
+              className="relative h-[113px] w-[226px] xl:w-[220px] 2xl:w-[266px]  overflow-hidden  rounded-2xl "
               onClick={() => {
-                handleOpenPlan("calc(100% - 35%)");
+                handleOpenPlan("calc(100% - 25%)");
               }}
             >
               <img
@@ -305,7 +308,7 @@ const Recursos = ({ isActive }) => {
               onClick={() => {
                 handleOpenFolleto("calc(100% - 25%)");
               }}
-              className="relative h-[113px] md:w-[266px] w-[160px] rounded-2xl overflow-hidden "
+              className="relative h-[113px] w-[226px] xl:w-[220px] 2xl:w-[266px] rounded-2xl overflow-hidden "
             >
               <img
                 className="w-[100%] h-[100%] "
@@ -329,12 +332,12 @@ const Recursos = ({ isActive }) => {
               {" "}
               PRESENTACIÓN DE NEGOCIAS
             </div>
-            <div className="flex items-center justify-around gap-4 border-[2px] border-[#664198] rounded-3xl w-[90vw] md:w-[690px] h-[200px] md:h-[201px] ">
+            <div className="flex flex-col md:flex-row items-center justify-around gap-4 border-[2px] border-[#664198] h-fit py-7 w-fit px-8 md:px-0 rounded-3xl  md:w-[690px] ">
               <div
                 onClick={() => {
                   handleOpenPdf("full");
                 }}
-                className=" cursor-pointer group h-[150px] w-[160px] md:h-[148px]  md:w-[287px] rounded-3xl border-[3px] border-[#664198] relative"
+                className=" cursor-pointer group h-[148px]  w-[287px] rounded-3xl border-[3px] border-[#664198] relative"
               >
                 <img
                   className="h-[100%] w-[100%] "
@@ -348,7 +351,7 @@ const Recursos = ({ isActive }) => {
                 onClick={() => {
                   handleOpenVideo("full");
                 }}
-                className=" group cursor-pointer h-[150px] w-[160px] md:h-[148px] md:w-[287px] rounded-[1.65rem] relative border-[3px] border-[#664198]"
+                className=" group cursor-pointer h-[148px] w-[287px] rounded-[1.65rem] relative border-[3px] border-[#664198]"
               >
                 <img
                   className="h-[100%] w-[100%] rounded-3xl object-cover"

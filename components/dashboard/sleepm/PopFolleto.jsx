@@ -26,7 +26,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
   }, [open]);
 
   return (
-    <div className="z-30">
+    <div className="z-30 w-[80vw]">
       {pop && (
         <ImageViewPop
           pop={pop}
@@ -48,7 +48,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
             <div>
               <p className="text-[#803DA1] font-bold text-[3rem]">Folletos</p>
             </div>
-            <div className="flex justify-center items-center  w-[80vw] h-[30rem] gap-8 overflow-x-scroll hide-scrollbar">
+            <div className="flex justify-center items-center  w-[100%] h-[30rem] gap-8 overflow-x-scroll hide-scrollbar">
               <div
                 onClick={() => {
                   //scroll up the post images

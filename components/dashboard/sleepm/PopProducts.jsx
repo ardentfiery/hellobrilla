@@ -23,7 +23,7 @@ const PopProducts = ({
           setPop={setPop}
           imgsrc={clickedProduct?.brochure}
           handleOpen={handleOpen}
-          size="calc(100% - 45%)"
+          size="calc(100% - 25%)"
         />
       )}
       {popVid && (
@@ -43,7 +43,7 @@ const PopProducts = ({
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body className="hide-scrollbar select-none">
-          <div className="flex gap-6 justify-center items-center">
+          <div className="flex lg:flex-row flex-col gap-6 justify-center items-center">
             <div
               onClick={() => {
                 setPop(true);

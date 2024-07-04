@@ -25,7 +25,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
   }, [open]);
 
   return (
-    <div>
+    <div className="">
       {pop && (
         <ImageViewPop
           pop={pop}
@@ -43,13 +43,13 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body>
-          <div className="h-[65vh] flex justify-center items-center flex-col">
+          <div className="lg:h-[65vh] flex justify-center items-center flex-col">
             <div>
               <p className="text-[#803DA1] font-bold text-[3rem] mb-4">
                 Plan Servilleta
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid lg:grid-cols-2 gap-5">
               <div className=" w-[25rem]">
                 <div className="relative mt-10">
                   <div className="absolute z-10 top-[-3rem] right-10  border-[3px] border-[#803DA1] rounded-full w-[7rem] h-[8rem] text-center">
