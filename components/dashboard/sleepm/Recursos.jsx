@@ -12,6 +12,7 @@ import PopProducts from "./PopProducts";
 import PopVisualPdf from "./PopVisualPdf";
 import PopVisualVideo from "./PopVisualVideo";
 import BrillaLoader from "@/utils/BrillaLoader";
+import { Profile } from "../Profile";
 
 const Recursos = ({ isActive }) => {
   const [posts, setposts] = useState([]);
@@ -21,6 +22,14 @@ const Recursos = ({ isActive }) => {
   const [pop, setPop] = useState(false);
 
   const scrollDiv = useRef(null);
+
+  const [openProfile, setOpenProfile] = useState(false);
+  const [sizeProfile, setSizeProfile] = useState();
+  const handleOpenProfile = (value) => {
+    setSizeProfile(value);
+    setOpenProfile(true);
+  };
+  const handleCloseProfile = () => setOpenProfile(false);
 
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState();
@@ -94,6 +103,12 @@ const Recursos = ({ isActive }) => {
   return (
     <div className="flex flex-col  mt-6">
       {pop && <ImageViewPop pop={pop} setPop={setPop} imgsrc={clickedImage} />}
+      <Profile
+        size={sizeProfile}
+        open={openProfile}
+        handleClose={handleCloseProfile}
+        handleOpenProfile={handleOpenProfile}
+      />
       <PopTriptico
         size={size}
         open={open}
@@ -160,7 +175,7 @@ const Recursos = ({ isActive }) => {
             <div>
               <div
                 onClick={() => {
-                  handleOpen("calc(100% - 30%)");
+                  handleOpenProfile("calc(100% - 30%)");
                 }}
                 className="h-[80px] w-[80px] object-fit rounded-full overflow-hidden "
               >

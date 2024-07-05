@@ -42,7 +42,7 @@ const MenuItems = () => {
     },
     {
       title: "Conferencias",
-      icon: "/dashboard/conferencias.png", // Optional icon name
+      icon: "/dashboard/confer.png", // Optional icon name
     },
     {
       title: "Referidos",
