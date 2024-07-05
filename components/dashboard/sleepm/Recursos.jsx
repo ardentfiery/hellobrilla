@@ -12,7 +12,7 @@ import PopProducts from "./PopProducts";
 import PopVisualPdf from "./PopVisualPdf";
 import PopVisualVideo from "./PopVisualVideo";
 import BrillaLoader from "@/utils/BrillaLoader";
-import { Profile } from "../Profile";
+import ProfilePop from "../ProfilePop";
 
 const Recursos = ({ isActive }) => {
   const [posts, setposts] = useState([]);
@@ -103,7 +103,7 @@ const Recursos = ({ isActive }) => {
   return (
     <div className="flex flex-col  mt-6">
       {pop && <ImageViewPop pop={pop} setPop={setPop} imgsrc={clickedImage} />}
-      <Profile
+      <ProfilePop
         size={sizeProfile}
         open={openProfile}
         handleClose={handleCloseProfile}
