@@ -72,7 +72,6 @@ const Page = () => {
               </p>
             </div>
             <div>
-            Estamos encantados de tenerte de vuelta. Prepárate para explorar un mundo de innovación y excelencia en cada inicio de sesión. ¡Adelante y brilla con nosotros!
               <p className=" text-[#03014C] text-lg">
                 Estamos encantados de tenerte de 
                 <br /> vuelta. Prepárate para explorar un
