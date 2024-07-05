@@ -11,6 +11,7 @@ import PopFolleto from "./PopFolleto";
 import PopProducts from "./PopProducts";
 import PopVisualPdf from "./PopVisualPdf";
 import PopVisualVideo from "./PopVisualVideo";
+import BrillaLoader from "@/utils/BrillaLoader";
 
 const Recursos = ({ isActive }) => {
   const [posts, setposts] = useState([]);
@@ -130,7 +131,7 @@ const Recursos = ({ isActive }) => {
         handleClose={handleCloseVideo}
         handleOpen={handleOpenVideo}
       />
-      <div className="flex justify-between h-[6rem]">
+      <div className="flex justify-between h-[6rem] ">
         <div className="flex  items-center justify-end pr-5 py-2  ">
           <div className="sm:w-[50%] ">
             <div className="w-[15rem] h-[2.4rem]  gap-2 border-[3px] rounded-2xl border-[#664198] flex items-center">
@@ -147,7 +148,7 @@ const Recursos = ({ isActive }) => {
             </div>
           </div>
         </div>
-        <div className="absolute hidden lg:flex right-[6rem] top-0  flex-col items-center  ">
+        <div className="absolute hidden lg:flex right-[6rem] top-0 mb-2 flex-col items-center  ">
           <div className="flex gap-4 h-[15vh] items-center">
             <div className="h-[20px] w-[20px]">
               <img

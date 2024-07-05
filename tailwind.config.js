@@ -106,6 +106,16 @@ module.exports = {
             // transform: 'rotate(20deg)'
           },
         },
+        "pulse": {
+          "0%, 100%": {
+            opacity: "1",
+            // transform: 'rotate(-180deg)'
+          },
+          "50%": {
+            opacity: "0",
+            // transform: 'rotate(20deg)'
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -123,6 +133,7 @@ module.exports = {
         topdowntwo: "floaticontwo 2s linear infinite",
         sideways: "side 4s linear infinite",
         sideway: "sides 20s linear infinite",
+        "pulse": "pulse 10s linear infinite",
       },
     },
   },
