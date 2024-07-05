@@ -156,6 +156,9 @@ const page = () => {
               </>
             )}
           </div>
+          <div>
+            <button>Go to login page</button>
+          </div>
         </div>
     </div>
   );
