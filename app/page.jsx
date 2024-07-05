@@ -58,25 +58,22 @@ const Home = () => {
     try {
       const isAuthorized = await axios.get("/user/authorize");
       console.log("---------------- not authorized --------------------");
-      console.log("not authorized", isAuthorized);
       try {
         const data = await axios.get("/user/userotpverified");
-        console.log("otp not verified", data);
         console.log("---------------- otp not verified --------------------");
         try {
           const data = await axios.get("/user/paidforbrilla");
-          console.log("not paid for brilla", data);
           console.log(
             "---------------- not paid for brilla --------------------"
           );
 
           router.push("/dashboard");
         } catch (error) {
-          setisLoading(false);
+          // setisLoading(false);
           router.push("/payment");
         }
       } catch (error) {
-        setisLoading(false);
+        // setisLoading(false);
         router.push("/verifyotp");
       }
     } catch (error) {
