@@ -7,7 +7,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@$
 const PdfViewPop = ({ pop, setPop, pdfSrc, handleOpen = "", size = "" }) => {
   return (
     <div className="absolute top-0 left-0 h-[100vh]  w-[100vw] overflow-x-hidden z-50 bg-[#f9f9f9] flex justify-center items-center">
-      <div className="w-[85%] h-[950px]  m-auto overflow-x-hidden  flex justify-center">
+      <div className="w-[100%] h-[90%]  m-auto overflow-x-hidden  flex justify-center">
         <div className="relative">
       <img
         onClick={() => {
