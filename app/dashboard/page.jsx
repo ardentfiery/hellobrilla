@@ -23,6 +23,7 @@ const Page = () => {
       }
     } catch (error) {
       setisLoading(false);
+      router.push("/login");
       console.log(error);
     }
   };
