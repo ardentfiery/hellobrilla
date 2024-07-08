@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import BrillaLoader from "@/utils/BrillaLoader";
 
 const Page = () => {
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
 
   const router = useRouter();
 
@@ -28,7 +28,7 @@ const Page = () => {
   };
 
   useEffect(() => {
-    // checkAuthorization();
+    checkAuthorization();
   }, []);
   return (
     <>
