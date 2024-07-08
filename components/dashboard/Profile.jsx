@@ -1,11 +1,15 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import axios from "@/app/api/axiosintercepter";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Calendar from "react-calendar";
 
 export const Profile = () => {
   const router = useRouter();
+  const [value, onChange] = useState(new Date());
+
   const logOutUser = async () => {
     const toastId = toast.loading("logging out...");
     try {
@@ -20,8 +24,8 @@ export const Profile = () => {
   };
 
   return (
-    <div>
-      <div className="w-[20rem] flex-col gap-6 items-center md:flex mt-10 border-[#664198] border-[3px] rounded-3xl ">
+    <div className="w-full px-2">
+      <div className="w-full  xl:w-[20rem]  flex-col gap-6 items-center md:flex mt-10 border-[#664198] border-[3px] rounded-3xl ">
         <div className="flex flex-col items-center ">
           <div className="flex gap-6 h-[15vh] items-center ">
             <div className="h-[24px] w-[24px]">
@@ -79,12 +83,13 @@ export const Profile = () => {
         </div>
         <div>
           <div className="text-2xl font-semibold">FILTRAR POR FECHAS</div>
-          <div className="h-[20vh] w-[18rem]">
-            <img
+          <div className="h-fit w-[16rem] rounded-xl overflow-hidden border-[2px] border-[#803DA1]">
+            {/* <img
               className="h-[100%] w-[100%]"
               src="/dashboard/calendar.png"
               alt=""
-            />
+            /> */}
+            <Calendar onChange={onChange} value={value} />
           </div>
         </div>
         <div className="flex flex-col gap-2 items-center">

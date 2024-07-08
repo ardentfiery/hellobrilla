@@ -1,12 +1,16 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import axios from "@/app/api/axiosintercepter";
 import { toast } from "react-hot-toast";
 import { Modal } from "rsuite";
 import { useRouter } from "next/navigation";
+import Calendar from "react-calendar";
 
 const ProfilePop = ({ open, size, handleClose }) => {
   const router = useRouter();
+  const [value, onChange] = useState(new Date());
+
   const logOutUser = async () => {
     const toastId = toast.loading("logging out...");
     try {
@@ -22,7 +26,7 @@ const ProfilePop = ({ open, size, handleClose }) => {
 
   return (
     <div>
-      <Modal size={size} open={open} onClose={handleClose} className="">
+      <Modal size={size} open={open} onClose={handleClose} className="w-[100%]">
         <img
           onClick={handleClose}
           src="/dashboard/crossbtn.png"
@@ -30,8 +34,8 @@ const ProfilePop = ({ open, size, handleClose }) => {
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body className="hide-scrollbar select-none">
-          <div className="w-[20rem] md:w-[90%] flex-col gap-6 items-center md:flex mt-10 border-[#664198] border-[3px] rounded-3xl ">
-            <div className="flex flex-row items-center ">
+          <div className="w-[20rem] sm:w-[90%] sm:grid sm:grid-cols-2 items-center  mt-10 border-[#664198] border-[3px] rounded-3xl ">
+            <div className="flex flex-row sm:flex-col items-center ">
               <div className="flex gap-6 h-[15vh] items-center ">
                 <div className="h-[24px] w-[24px]">
                   <img
@@ -62,9 +66,7 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 <p>75%</p>
                 <p>completado</p>
               </div>
-            </div>
 
-            <div className="flex flex-col items-center gap-2">
               <div>
                 <p className="text-3xl font-semibold text-black">
                   Llecenia Robles
@@ -88,49 +90,45 @@ const ProfilePop = ({ open, size, handleClose }) => {
               </div>
               <div className="h-[1px] w-[250px] bg-black"></div>
             </div>
-            <div>
-              <div className="text-2xl font-semibold">FILTRAR POR FECHAS</div>
-              <div className="h-[20vh] w-[18rem]">
-                <img
-                  className="h-[100%] w-[100%]"
-                  src="/dashboard/calendar.png"
-                  alt=""
-                />
+            <div className=" flex flex-col items-center justify-center gap-4 py-2">
+              <div className="text-2xl font-semibold text-center">FILTRAR POR FECHAS</div>
+              <div className="h-fit  w-[16rem] rounded-xl overflow-hidden border-[2px] border-[#803DA1] flex justify-center">
+                <Calendar onChange={onChange} value={value} />
               </div>
-            </div>
-            <div className="flex flex-col gap-2 items-center">
-              <div className="flex justify-between w-[20rem] px-6 ">
-                <div className=" text-gray-500 ">
-                  <p className="text-xl">Desde</p>
-                  <div className=" text-white rounded-lg text-center flex gap-1 py-2 px-2 bg-[#803DA1]">
-                    <div className="   ">
-                      {" "}
-                      <p>DD</p>{" "}
-                    </div>
-                    <div className="    ">
-                      {" "}
-                      <p>MM</p>{" "}
-                    </div>
-                    <div className="  ">
-                      {" "}
-                      <p>AAAA</p>{" "}
+              <div className="flex flex-col gap-2 items-center">
+                <div className="flex justify-between w-[20rem] px-6 ">
+                  <div className=" text-gray-500 ">
+                    <p className="text-xl">Desde</p>
+                    <div className=" text-white rounded-lg text-center flex gap-1 py-2 px-2 bg-[#803DA1]">
+                      <div className="   ">
+                        {" "}
+                        <p>DD</p>{" "}
+                      </div>
+                      <div className="    ">
+                        {" "}
+                        <p>MM</p>{" "}
+                      </div>
+                      <div className="  ">
+                        {" "}
+                        <p>AAAA</p>{" "}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className=" text-gray-500 ">
-                  <p className="text-xl">Haste</p>
-                  <div className=" text-white rounded-lg text-center flex gap-1 py-2 px-2 bg-[#803DA1]">
-                    <div className="   ">
-                      {" "}
-                      <p>DD</p>{" "}
-                    </div>
-                    <div className="    ">
-                      {" "}
-                      <p>MM</p>{" "}
-                    </div>
-                    <div className="  ">
-                      {" "}
-                      <p>AAAA</p>{" "}
+                  <div className=" text-gray-500 ">
+                    <p className="text-xl">Haste</p>
+                    <div className=" text-white rounded-lg text-center flex gap-1 py-2 px-2 bg-[#803DA1]">
+                      <div className="   ">
+                        {" "}
+                        <p>DD</p>{" "}
+                      </div>
+                      <div className="    ">
+                        {" "}
+                        <p>MM</p>{" "}
+                      </div>
+                      <div className="  ">
+                        {" "}
+                        <p>AAAA</p>{" "}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -142,7 +140,9 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col gap-2  ">
+          </div>
+          <div className="flex justify-center items-center mt-10">
+            <div className="flex flex-col gap-2 w-[50%] ">
               <div>
                 <p className="text-black text-xl font-semibold text-center border-[#803da1] border-[2px] rounded-xl px-4 py-3">
                   MI ACTITUD HOY ES

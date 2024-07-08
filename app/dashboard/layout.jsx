@@ -1,5 +1,6 @@
 import { Inter, Montserrat } from "next/font/google";
 import { DashProvider } from "@/context/DashboardContext";
+import 'react-calendar/dist/Calendar.css';
 const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata = {
   title: "Dashboard - Brilla System",

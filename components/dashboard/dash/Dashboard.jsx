@@ -6,7 +6,7 @@ import { Profile } from "../Profile";
 const Dashboard = () => {
   return (
     <div className="flex lg:grid-cols-1 md:grid xl:grid-cols-[70%_30%]  lg:gap-4 overflow-hidden">
-      <div className="flex flex-col justify-center mt-8 gap-4 mb-4">
+      <div className="flex flex-col justify-center mt-8 gap-4 mb-4 w-full">
         <div className="flex  items-center justify-end pr-5 py-2  ">
           <div className="sm:w-[50%] ">
             <div className="w-[15rem] h-[2.4rem]  gap-2 border-[3px] rounded-2xl border-[#664198] flex items-center">
@@ -182,139 +182,6 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          {/* <div className="text-[#848484] md:flex hidden font-semibold  gap-12  items-center w-[100%] px-5 ">
-            <div>porcentaje</div>
-          </div> */}
-          {/* <div className="flex flex-col gap-6 items-center  md:w-[60vw] w-[90vw]">
-            <div className="flex items-center gap-4 md:gap-10">
-              <div className="flex flex-col md:flex-row  gap-4">
-                <div>
-                  <p className="font-bold text-black w-[50vw]  md:w-[10vw]">
-                    En ventas
-                  </p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="md:w-[15vw] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
-                    <div className="w-[80%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
-                  </div>
-                  <div className="w-[3rem]">
-                    <p className="text-[#664198] font-bold text-lg">80%</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p className="font-bold hidden md:flex text-black w-[10vw]">
-                  Tu peudes!
-                </p>
-              </div>
-              <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-[25vw] md:w-[8vw] h-[4vh] rounded-2xl">
-                  <div>
-                    <p>continuar</p>
-                  </div>
-                  <div>
-                    <IoArrowForwardCircle className="text-[#664198]" />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 md:gap-10">
-              <div className="flex flex-col md:flex-row  gap-4">
-                <div>
-                  <p className="font-bold text-black w-[50vw]  md:w-[10vw]">
-                    Crecimiento personalF
-                  </p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="md:w-[15vw] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
-                    <div className="w-[20%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
-                  </div>
-                  <div className="w-[3rem]">
-                    <p className="text-[#664198] font-bold text-lg">20%</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p className="font-bold hidden md:flex text-black w-[10vw]">
-                  Tu peudes!
-                </p>
-              </div>
-              <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-[25vw] md:w-[8vw] h-[4vh] rounded-2xl">
-                  <div>
-                    <p>continuar</p>
-                  </div>
-                  <div>
-                    <IoArrowForwardCircle className="text-[#664198]" />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 md:gap-10">
-              <div className="flex flex-col md:flex-row  gap-4">
-                <div>
-                  <p className="font-bold text-black w-[50vw]  md:w-[10vw]">
-                    En linderazgo
-                  </p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="md:w-[15vw] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
-                    <div className="w-[40%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
-                  </div>
-                  <div className="w-[3rem]">
-                    <p className="text-[#664198] font-bold text-lg">40%</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p className="font-bold hidden md:flex text-black w-[10vw]">
-                  Tu peudes!
-                </p>
-              </div>
-              <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-[25vw] md:w-[8vw] h-[4vh] rounded-2xl">
-                  <div>
-                    <p>continuar</p>
-                  </div>
-                  <div>
-                    <IoArrowForwardCircle className="text-[#664198]" />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 md:gap-10">
-              <div className="flex flex-col md:flex-row  gap-4">
-                <div>
-                  <p className="font-bold text-black w-[50vw]  md:w-[10vw]">
-                    En marketing
-                  </p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="md:w-[15vw] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
-                    <div className="w-[5%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
-                  </div>
-                  <div className="w-[3rem]">
-                    <p className="text-[#664198] font-bold text-lg">5%</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p className="font-bold hidden md:flex text-black w-[10vw]">
-                  Tu peudes!
-                </p>
-              </div>
-              <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-[25vw] md:w-[8vw] h-[4vh] rounded-2xl">
-                  <div>
-                    <p>continuar</p>
-                  </div>
-                  <div>
-                    <IoArrowForwardCircle className="text-[#664198]" />
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div> */}
         </div>
         <div className="flex flex-col gap-4 items-center py-2  mx-2 border-[3px] rounded-2xl  border-[#664198] h-fit px-10">
           <div className="flex items-center gap-2 mt-2 ">
@@ -447,7 +314,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="hidden md:flex">
+      <div className="hidden lg:flex w-full">
         <Profile />
       </div>
     </div>
