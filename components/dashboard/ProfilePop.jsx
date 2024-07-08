@@ -3,8 +3,10 @@ import { FaRegCopy } from "react-icons/fa";
 import axios from "@/app/api/axiosintercepter";
 import { toast } from "react-hot-toast";
 import { Modal } from "rsuite";
+import { useRouter } from "next/navigation";
 
 const ProfilePop = ({ open, size, handleClose }) => {
+  const router = useRouter();
   const logOutUser = async () => {
     const toastId = toast.loading("logging out...");
     try {
@@ -151,12 +153,12 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 </p>
               </div>
               <div
-                className="flex gap-2 text-[1.4rem] items-center justify-center"
+                className="flex gap-2 group text-[1.4rem] items-center justify-center cursor-pointer hover:font-semibold transition-all ease-in-out duration-200"
                 onClick={() => {
                   logOutUser();
                 }}
               >
-                <div className="h-[10px] w-[10px]">
+                <div className="h-[10px] w-[10px] group-hover:scale-110">
                   <img src="/dashboard/logout.png" alt="" />
                 </div>
                 <div>
@@ -170,6 +172,5 @@ const ProfilePop = ({ open, size, handleClose }) => {
     </div>
   );
 };
-
 
 export default ProfilePop;
