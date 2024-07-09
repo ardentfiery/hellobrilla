@@ -51,7 +51,8 @@ const PopVisualPdf = ({ size, open, handleClose, handleOpen = "" }) => {
             </p>
           </div>
           <Modal.Body>
-            <div className="w-[90vw] m-auto">
+            <div className="
+             m-auto">
               <div className="text-center">
                 <p className="text-[#803DA1] text-[2.5rem]  ">
                   <strong>Presentación de Negocios -</strong> Visual

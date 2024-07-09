@@ -5,7 +5,7 @@ import "./Pdf.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-const Pdfviewer = ({ pdfUrl }) => {
+const PdfComponent = ({ pdfUrl }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -14,13 +14,13 @@ const Pdfviewer = ({ pdfUrl }) => {
   }
 
   return (
-    <div className="pdfpagehold">
-      <div className="buttonandpage">
-        <p>
-          Page {pageNumber} of {numPages}
+    <div className="pdf-container flex flex-col items-center ">
+      <div className="button-and-page mt-14">
+        <p className="font-bold text-[1.3rem]  ">
+          {pageNumber} / {numPages}
         </p>
       </div>
-      <div className="flex gap-5 items-center w-[5rem]">
+      <div className="flex gap-5 items-center ">
         <div
           onClick={() => {
             if (pageNumber > 1) {
@@ -33,16 +33,19 @@ const Pdfviewer = ({ pdfUrl }) => {
             {">"}
           </p>
         </div>
-        <div className="border-[3px] border-[#664198] rounded-xl overflow-hidden h-[850px] ">
+        <div className="border-[3px] border-[#664198] rounded-xl overflow-hidden w-full  flex justify-center items-center">
           <Document
-            className="py-10"
             file={pdfUrl}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={(error) => {
               console.log(error);
             }}
           >
-            <Page pageNumber={pageNumber} />
+            <Page
+              pageNumber={pageNumber}
+              width={window.innerWidth * 0.8} // Adjust this as per your requirement
+              height={window.innerHeight * 0.8} // Adjust this as per your requirement
+            />
           </Document>
         </div>
         <div
@@ -62,4 +65,4 @@ const Pdfviewer = ({ pdfUrl }) => {
   );
 };
 
-export default Pdfviewer;
+export default PdfComponent;

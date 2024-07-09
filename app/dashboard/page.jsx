@@ -42,7 +42,6 @@ const Page = () => {
             </div>
             <div className="h-[100vh] lg:w-[calc(100vw-17rem)] xl:w-[calc(100vw-20rem)]  overflow-y-scroll no-scrollbar">
               <Right />
-              {/* <Right/> */}
             </div>
           </div>
         </div>
