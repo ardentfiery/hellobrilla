@@ -8,7 +8,7 @@ const PdfViewPop = ({ pop, setPop, pdfSrc, handleOpen = "", size = "" }) => {
   return (
     <div className="absolute top-0 left-0 h-screen w-screen overflow-x-hidden z-50 bg-[#f9f9f9] flex justify-center items-center py-2">
       <div className="w-full h-fit flex justify-center items-center">
-        <div className="relative w-full h-fit  ">
+        <div className="relative w-full h-fit mt-4 ">
           <img
             onClick={() => {
               if (handleOpen) {
@@ -18,7 +18,7 @@ const PdfViewPop = ({ pop, setPop, pdfSrc, handleOpen = "", size = "" }) => {
             }}
             src="/dashboard/crossbtn.png"
             alt="classbtn"
-            className="absolute top-[70px] right-[4rem] invert h-[2.4rem] w-[2.4rem] cursor-pointer"
+            className="absolute top-[40px] right-[4rem] invert h-[2.4rem] w-[2.4rem] cursor-pointer"
           />
           <div className="overflow-hidden h-full w-full flex justify-center items-center">
             <div className="h-full w-full max-h-fit">
