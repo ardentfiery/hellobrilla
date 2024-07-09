@@ -4,6 +4,7 @@ import axios from "@/app/api/axiosintercepter";
 import downloadImage from "@/utils/downloadImage";
 import ImageViewPop from "./ImageViewPop";
 import VideoViewPop from "./VideoViewPop";
+import downloadVideo from "@/utils/downloadVideo";
 
 const PopProducts = ({
   size,
@@ -114,7 +115,7 @@ const PopProducts = ({
               <div>
                 <button
                   onClick={() => {
-                    downloadImage(clickedProduct?.brochure);
+                    downloadVideo(clickedProduct?.videoUrl);
                   }}
                   className="bg-[#664198] mt-5 px-10 py-2 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
                 >
