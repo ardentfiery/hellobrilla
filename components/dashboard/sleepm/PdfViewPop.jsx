@@ -6,8 +6,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@$
 
 const PdfViewPop = ({ pop, setPop, pdfSrc, handleOpen = "", size = "" }) => {
   return (
-    <div className="absolute top-0 left-0 h-[100vh]  w-[100vw] overflow-x-hidden z-50 bg-[#f9f9f9] flex justify-center items-center">
-      <div className="w-[100%] h-[90%]  m-auto overflow-x-hidden  flex justify-center">
+    <div className="absolute top-0 left-0 h-auto  w-[100vw] overflow-x-hidden z-50 bg-[#f9f9f9] flex justify-center items-center">
+      <div className="w-[100%] h-auto  m-auto overflow-x-hidden  flex justify-center">
         <div className="relative">
       <img
         onClick={() => {
@@ -20,8 +20,8 @@ const PdfViewPop = ({ pop, setPop, pdfSrc, handleOpen = "", size = "" }) => {
         alt="classbtn"
         className="absolute top-0 right-[1rem] invert h-[2.4rem] w-[2.4rem] cursor-pointer"
       />
-          <div className="overflow-hidden h-fit">
-            <div className="h-[950px] ">
+          <div className="overflow-hidden h-auto">
+            <div className="h-auto max-w-[90vw]">
               <PdfComponent pdfUrl={pdfSrc} />
             </div>
           </div>

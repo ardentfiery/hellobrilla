@@ -178,14 +178,14 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
                     <div
                       className="relative"
                       onClick={() => {
-                        setClickedImage(triptico?.tripticoSpOne);
+                        setClickedImage(triptico?.tripticoEnOne);
                         setPop(true);
                         handleClose();
                       }}
                     >
                       <div className="w-[15rem] h-[16rem]">
                         <img
-                          src={triptico?.tripticoSpOne}
+                          src={triptico?.tripticoEnOne}
                           alt=""
                           className="object-cover h-full w-full"
                         />
@@ -211,14 +211,14 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
                     <div
                       className="relative"
                       onClick={() => {
-                        setClickedImage(triptico?.tripticoSpTwo);
+                        setClickedImage(triptico?.tripticoEnTwo);
                         setPop(true);
                         handleClose();
                       }}
                     >
                       <div className="w-[15rem] h-[16rem]">
                         <img
-                          src={triptico?.tripticoSpTwo}
+                          src={triptico?.tripticoEnTwo}
                           alt=""
                           className="object-cover h-full w-full"
                         />
