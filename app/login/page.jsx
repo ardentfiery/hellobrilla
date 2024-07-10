@@ -170,7 +170,7 @@ const Page = () => {
                 onClick={() => {
                   window.open(
                     // "http://localhost:5000/user/google",
-                    "https://backend.brillasystem.com/user/google",
+                    "https://liveback.brillasystem.com/user/google",
                     "_self"
                   );
                 }}
