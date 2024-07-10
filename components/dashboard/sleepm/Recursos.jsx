@@ -22,6 +22,7 @@ const Recursos = ({ isActive }) => {
   const [pop, setPop] = useState(false);
 
   const scrollDiv = useRef(null);
+  const scrollDivProd = useRef(null);
 
   const [openProfile, setOpenProfile] = useState(false);
   const [sizeProfile, setSizeProfile] = useState();
@@ -218,9 +219,10 @@ const Recursos = ({ isActive }) => {
             <div
               onClick={() => {
                 //scroll up the post images
-                console.log(scrollDiv.current);
-                if (scrollDiv.current) {
-                  scrollDiv.current.scrollBy({
+                console.log(scrollDivProd.current);
+                if (scrollDivProd.current) {
+                  console.log("booom")
+                  scrollDivProd.current.scrollBy({
                     left: -120,
                     behavior: "smooth",
                   });
@@ -233,7 +235,7 @@ const Recursos = ({ isActive }) => {
               </p>
             </div>
             <div
-              ref={scrollDiv}
+              ref={scrollDivProd}
               className="h-[60vh] w-[40rem] flex items-center gap-5 overflow-x-scroll hide-scrollbar grow-0"
             >
               {products?.map((product, index) => {
@@ -260,9 +262,10 @@ const Recursos = ({ isActive }) => {
             </div>
             <div
               onClick={() => {
-                //scroll down the post images
-                if (scrollDiv.current) {
-                  scrollDiv.current.scrollBy({
+                //scroll up the post images
+                console.log(scrollDivProd.current);
+                if (scrollDivProd.current) {
+                  scrollDivProd.current.scrollBy({
                     left: 120,
                     behavior: "smooth",
                   });

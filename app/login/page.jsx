@@ -78,7 +78,7 @@ const Page = () => {
                 <br />
                 mundo de innovación y excelencia
                 <br /> en cada inicio de sesión. ¡Adelante y <br />{" "}
-                <span className="text-[#803DA1] font-bold">brilla</span> brilla con nosotros!
+                <span className="text-[#803DA1] font-bold">brilla</span> con nosotros!
              
               </p>
             </div>

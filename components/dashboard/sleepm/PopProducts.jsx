@@ -89,15 +89,15 @@ const PopProducts = ({
                 setPopVid(true);
                 handleClose();
               }}
-              className="flex flex-col gap-4 justify-center items-center"
+              className="flex flex-col gap-4 justify-center items-center "
             >
-              <div className="h-[313px] w-[334px] border-[2px] border-[#664198] rounded-xl overflow-hidden">
+              <div className="h-[313px] w-[334px] border-[2px] border-[#664198] rounded-xl overflow-hidden ">
                 <img
                   src={clickedProduct?.brochure}
                   className="h-full w-full object-cover"
                   alt=""
                 />
-                <div className="absolute z-30 top-0 w-[25rem] h-[25rem] flex justify-center items-center ">
+                <div className="absolute z-30 top-0 h-[313px] w-[334px] flex justify-center items-center ">
                   <div className="group w-[40%] h-[40%]">
                     <img
                       src="/dashboard/clickablevid.png"
@@ -112,7 +112,7 @@ const PopProducts = ({
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="">
                 <button
                   onClick={() => {
                     downloadVideo(clickedProduct?.videoUrl);

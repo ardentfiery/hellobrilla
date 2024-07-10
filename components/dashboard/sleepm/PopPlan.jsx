@@ -43,14 +43,14 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body>
-          <div className="lg:h-[65vh] flex justify-center items-center flex-col">
+          <div className=" flex justify-center items-center flex-col">
             <div>
               <p className="text-[#803DA1] font-bold text-[3rem] mb-4">
                 Plan Servilleta
               </p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-5">
-              <div className=" w-[25rem]">
+            <div className="grid lg:grid-cols-2 gap-5  ">
+              <div className=" w-[25rem] h-fit">
                 <div className="relative mt-10">
                   <div className="absolute z-10 top-[-3rem] right-10  border-[3px] border-[#803DA1] rounded-full w-[7rem] h-[8rem] text-center">
                     <p className="text-[2.3rem] font-bold">1</p>
@@ -62,7 +62,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                     setPop(true);
                     handleClose();
                   }}
-                  className="absolute h-[25rem] z-20 w-[25rem] border-[3px] border-[#803DA1]"
+                  className="relative min-h-[25rem] h-fit z-20 w-[25rem] border-[3px] border-[#803DA1]"
                 >
                   <img
                     src={plan?.planSpanish}
@@ -84,7 +84,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                     </div>
                   </div>
                 </div>
-                <div className="flex h-[2rem] mt-[51vh] justify-center">
+                <div className="flex h-[2rem] justify-center mt-4">
                   <button
                     onClick={() => {
                       downloadImage(plan?.planSpanish);
@@ -96,7 +96,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                   <img src="/dashboard/spainflag.png" alt="" />
                 </div>
               </div>
-              <div className=" w-[25rem]">
+              <div className=" w-[25rem] h-fit">
                 <div className="relative mt-10">
                   <div className="absolute z-10 top-[-3rem] left-10  border-[3px] border-[#803DA1] rounded-full w-[7rem] h-[8rem] text-center">
                     <p className="text-[2.3rem] font-bold">2</p>
@@ -108,7 +108,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                     setPop(true);
                     handleClose();
                   }}
-                  className="absolute h-[25rem] z-20 w-[25rem] border-[3px] border-[#803DA1]"
+                  className="relative min-h-[25rem] h-fit z-20 w-[25rem] border-[3px] border-[#803DA1]"
                 >
                   <img
                     src={plan?.planEnglish}
@@ -130,7 +130,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                     </div>
                   </div>
                 </div>
-                <div className="flex h-[2rem] mt-[51vh] justify-center">
+                <div className="flex h-[2rem] justify-center mt-4">
                   <button
                     onClick={() => {
                       downloadImage(plan?.planEnglish);

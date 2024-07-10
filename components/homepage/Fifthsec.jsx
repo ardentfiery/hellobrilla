@@ -185,7 +185,7 @@ const Fifthsec = () => {
                   <MdPlayArrow />
                 </div>
                 <div>
-                  <p>Estrategias de liderazgo</p>
+                  <p>Entrenamiento en liderazgo</p>
                 </div>
               </div>
               <div>
@@ -198,7 +198,7 @@ const Fifthsec = () => {
                   <MdPlayArrow />
                 </div>
                 <div>
-                  <p>Estrategias de ventas.</p>
+                  <p>Entrenamiento en ventas</p>
                 </div>
               </div>
               <div>
