@@ -128,7 +128,7 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
                         </div>
                       </div>
                       <p className="bg-gray-100 text-center text-[1.3rem]  ">
-                        De frente
+                        Por detrás
                       </p>
                     </div>
                   </div>
@@ -238,7 +238,7 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
                         </div>
                       </div>
                       <p className="bg-gray-100 text-center text-[1.3rem]  ">
-                        De frente
+                        Por detrás
                       </p>
                     </div>
                   </div>
