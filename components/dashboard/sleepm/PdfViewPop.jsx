@@ -20,8 +20,8 @@ const PdfViewPop = ({ pop, setPop, pdfSrc, handleOpen = "", size = "" }) => {
             alt="classbtn"
             className="absolute top-[40px] right-[4rem] invert h-[2.4rem] w-[2.4rem] cursor-pointer"
           />
-          <div className="overflow-hidden h-full w-full flex justify-center items-center">
-            <div className="h-full w-full max-h-fit">
+          <div className="h-fit w-full flex justify-center items-center">
+            <div className="h-fit w-full max-h-fit">
               <PdfComponent pdfUrl={pdfSrc} />
             </div>
           </div>

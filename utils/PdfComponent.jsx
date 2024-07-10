@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "./Pdf.css";
+import getPdfDimensions from "./getPdfDimensions";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PdfComponent = ({ pdfUrl }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [pageDimensions, setPageDimensions] = useState({ width: 0, height: 0 });
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
+  useEffect(() => {
+    const fetchPdfDimensions = async () => {
+      const dimensions = await getPdfDimensions(pdfUrl);
+      console.log(dimensions);
+      setPageDimensions(dimensions);
+    };
+    fetchPdfDimensions();
+  }, [pdfUrl]);
+
+  const isLandscape = pageDimensions.width > pageDimensions.height;
 
   return (
     <div className="pdf-container flex flex-col items-center ">
@@ -33,7 +46,7 @@ const PdfComponent = ({ pdfUrl }) => {
             {">"}
           </p>
         </div>
-        <div className="border-[3px] border-[#664198] rounded-xl overflow-hidden w-full  flex justify-center items-center">
+        <div className="border-[3px]  border-[#664198] rounded-xl overflow-hidden w-full  flex justify-center items-center">
           <Document
             file={pdfUrl}
             onLoadSuccess={onDocumentLoadSuccess}
@@ -43,8 +56,9 @@ const PdfComponent = ({ pdfUrl }) => {
           >
             <Page
               pageNumber={pageNumber}
-              width={window.innerWidth * 0.8} // Adjust this as per your requirement
-              height={window.innerHeight * 0.8} // Adjust this as per your requirement
+              width={isLandscape ? 1400 : undefined}
+              height={!isLandscape ? 1000 : undefined}
+              className="w-[40rem] bg-green-500"
             />
           </Document>
         </div>
