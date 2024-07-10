@@ -108,8 +108,8 @@ width: 100% !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
   }
   
@@ -117,3 +117,7 @@ width: 100% !important;
     margin-bottom: 1rem;
   }
   
+  .pdf-image{
+    max-height: 93vh;
+    width: 75vw;
+  }

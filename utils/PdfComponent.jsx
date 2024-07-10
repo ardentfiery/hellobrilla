@@ -27,8 +27,8 @@ const PdfComponent = ({ pdfUrl }) => {
   const isLandscape = pageDimensions.width > pageDimensions.height;
 
   return (
-    <div className="pdf-container flex flex-col items-center ">
-      <div className="button-and-page mt-14">
+    <div className="pdf-container flex flex-col items-center overflow-x-hidden ">
+      <div className="button-and-page">
         <p className="font-bold text-[1.3rem]  ">
           {pageNumber} / {numPages}
         </p>
@@ -46,7 +46,7 @@ const PdfComponent = ({ pdfUrl }) => {
             {">"}
           </p>
         </div>
-        <div className="border-[3px]  border-[#664198] rounded-xl overflow-hidden w-full  flex justify-center items-center">
+        <div className="pdf-image border-[3px]  border-[#664198] rounded-xl overflow-y-scroll overflow-x-hidden">
           <Document
             file={pdfUrl}
             onLoadSuccess={onDocumentLoadSuccess}
@@ -56,9 +56,9 @@ const PdfComponent = ({ pdfUrl }) => {
           >
             <Page
               pageNumber={pageNumber}
-              width={isLandscape ? 1400 : undefined}
-              height={!isLandscape ? 1000 : undefined}
-              className="w-[40rem] bg-green-500"
+              width={window.innerWidth * 0.74}
+              // height={window.innerHeight * 0.3}
+              className="m-auto"
             />
           </Document>
         </div>
