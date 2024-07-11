@@ -71,7 +71,7 @@ const Page = () => {
       />
 
       <img
-        className="h-[200px] w-[200px] absolute left-[-20px] bottom-[-50px]   md:bottom-[0px] md:left-[10px]]"
+        className="h-[200px] w-[200px] absolute left-[-20px] bottom-[-300px]    md:bottom-[0px] md:left-[10px]]"
         src="/login/bottomleft.png"
         alt=""
       />

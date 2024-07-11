@@ -55,6 +55,7 @@ const page = () => {
         console.log(error);
       }
     } catch (error) {
+      toast.dismiss(toastId);
       console.log(error);
       router.push("/signup");
     }
