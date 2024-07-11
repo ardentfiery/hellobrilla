@@ -49,7 +49,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                 Plan Servilleta
               </p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-5  ">
+            <div className="grid lg:grid-cols-2 gap-5  w-full ">
               <div className=" w-[25rem] h-fit">
                 <div className="relative mt-10">
                   <div className="absolute z-10 top-[-3rem] right-10  border-[3px] border-[#803DA1] rounded-full w-[7rem] h-[8rem] text-center">
@@ -62,7 +62,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                     setPop(true);
                     handleClose();
                   }}
-                  className="relative min-h-[25rem] h-fit z-20 md:w-[25rem] w-[90vw] border-[3px] border-[#803DA1] ml-3 md:ml-0"
+                  className="relative min-h-[25rem] h-fit z-20 md:w-[25rem] w-[90vw] border-[3px] border-[#803DA1]  "
                 >
                   <img
                     src={plan?.planSpanish}
@@ -96,7 +96,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                   <img src="/dashboard/spainflag.png" alt="" />
                 </div>
               </div>
-              <div className=" w-[25rem] h-fit">
+              <div className=" w-[25rem] h-fit ">
                 <div className="relative mt-10">
                   <div className="absolute z-10 top-[-3rem] left-10  border-[3px] border-[#803DA1] rounded-full w-[7rem] h-[8rem] text-center">
                     <p className="text-[2.3rem] font-bold">2</p>
@@ -108,7 +108,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
                     setPop(true);
                     handleClose();
                   }}
-                  className="relative min-h-[25rem] h-fit z-20 md:w-[25rem] w-[90vw] border-[3px] border-[#803DA1] ml-3 md:ml-0"
+                  className="relative min-h-[25rem] h-fit z-20 md:w-[25rem] w-[90vw] border-[3px] border-[#803DA1]"
                 >
                   <img
                     src={plan?.planEnglish}
