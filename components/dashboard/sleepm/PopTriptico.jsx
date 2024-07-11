@@ -52,223 +52,230 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
           <Modal.Body>
             <div>
               <div className="grid lg:grid-cols-2 gap-x-4">
-                <div className=" h-[70vh] flex flex-col justify-end items-center pb-5">
-                  <div className="flex items-center justify-center gap-4 ">
+                <div className="h-fit md:h-[70vh] flex flex-col justify-end md:items-center pb-5">
+                  <div className="flex md:items-center md:justify-center gap-4 ">
                     <p className="font-bold text-[2.5rem]">Tríptico</p>
                     <div className="bg-gray-300 w-[3rem] h-[3rem] rounded-full text-center ">
                       <p className="font-bold text-[2.5rem]">1</p>
                     </div>
                   </div>
-                  <div
-                    style={{
-                      boxShadow: "-14px -8px #0000001F",
-                    }}
-                    className="mt-2 grid grid-cols-2 w-[30.5rem] gap-[.2rem] border-[3px] border-[#664198] bg-[#664198] rounded-2xl overflow-hidden "
-                  >
+                  <div className="grid grid-cols-1 ">
                     <div
-                      className="relative"
-                      onClick={() => {
-                        setClickedImage(triptico?.tripticoSpOne);
-                        setPop(true);
-                        handleClose();
+                      style={{
+                        boxShadow: "-14px -8px #0000001F",
                       }}
+                      className="mt-2 grid md:grid-cols-2 md:w-[30.5rem] gap-[.2rem] border-[3px] border-[#664198] bg-[#664198] rounded-2xl overflow-hidden w-fit  "
                     >
-                      <div className="w-[15rem] h-[16rem]">
-                        <img
-                          src={triptico?.tripticoSpOne}
-                          alt=""
-                          className="object-cover h-full w-full"
-                        />
-                      </div>
-                      <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center  ">
-                        <div className="group w-[50%] h-[50%]">
+                      <div
+                        className="relative "
+                        onClick={() => {
+                          setClickedImage(triptico?.tripticoSpOne);
+                          setPop(true);
+                          handleClose();
+                        }}
+                      >
+                        <div className="md:w-[15rem] md:h-[16rem] w-[90%] h-[16rem]">
                           <img
-                            src="/dashboard/clickable.png"
+                            src={triptico?.tripticoSpOne}
                             alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
-                          />
-                          <img
-                            src="/dashboard/clickablehover.png"
-                            alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            className="object-cover h-full w-full"
                           />
                         </div>
+                        <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center  ">
+                          <div className="group w-[50%] h-[50%]">
+                            <img
+                              src="/dashboard/clickable.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
+                            />
+                            <img
+                              src="/dashboard/clickablehover.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            />
+                          </div>
+                        </div>
+                        <p className="bg-gray-100 text-center text-[1.3rem]  ">
+                          De frente
+                        </p>
                       </div>
-                      <p className="bg-gray-100 text-center text-[1.3rem]  ">
-                        De frente
-                      </p>
-                    </div>
-                    <div
-                      className="relative"
-                      onClick={() => {
-                        setClickedImage(triptico?.tripticoSpTwo);
-                        setPop(true);
-                        handleClose();
-                      }}
-                    >
-                      <div className="w-[15rem] h-[16rem]">
-                        <img
-                          src={triptico?.tripticoSpTwo}
-                          alt=""
-                          className="object-cover h-full w-full"
-                        />
-                      </div>
-                      <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center ">
-                        <div className="group w-[50%] h-[50%]">
+                      <div
+                        className="relative"
+                        onClick={() => {
+                          setClickedImage(triptico?.tripticoSpTwo);
+                          setPop(true);
+                          handleClose();
+                        }}
+                      >
+                        <div className="w-[15rem] h-[16rem]">
                           <img
-                            src="/dashboard/clickable.png"
+                            src={triptico?.tripticoSpTwo}
                             alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
-                          />
-                          <img
-                            src="/dashboard/clickablehover.png"
-                            alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            className="object-cover h-full w-full"
                           />
                         </div>
+                        <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center ">
+                          <div className="group w-[50%] h-[50%]">
+                            <img
+                              src="/dashboard/clickable.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
+                            />
+                            <img
+                              src="/dashboard/clickablehover.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            />
+                          </div>
+                        </div>
+                        <p className="bg-gray-100 text-center text-[1.3rem]  ">
+                          Por detrás
+                        </p>
                       </div>
-                      <p className="bg-gray-100 text-center text-[1.3rem]  ">
-                        Por detrás
-                      </p>
                     </div>
-                  </div>
-                  <div className="flex w-[30.5rem] px-10 mt-4 h-[3rem] justify-between">
-                    <div>
-                      <button
-                        onClick={() => {
-                          downloadImage(triptico?.tripticoSpOne);
-                        }}
-                        className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
-                      >
-                        Descargar
-                      </button>
-                    </div>
-                    <div className=" h-[2rem] ">
-                      <img
-                        src="/dashboard/spainflag.png"
-                        className=" h-[100%] "
-                        lt=""
-                      />
-                    </div>
-                    <div>
-                      <button
-                        onClick={() => {
-                          downloadImage(triptico?.tripticoSpTwo);
-                        }}
-                        className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
-                      >
-                        Descargar
-                      </button>
+                    <div className="flex flex-col gap-2 md:flex-row md:w-[30.5rem] md:px-10 mt-4 h-[3rem] justify-between">
+                      <div>
+                        <button
+                          onClick={() => {
+                            downloadImage(triptico?.tripticoSpOne);
+                          }}
+                          className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
+                        >
+                          Descargar <span className="md:hidden">De Frente</span>
+                        </button>
+                      </div>
+                      <div className=" h-[2rem] ">
+                        <img
+                          src="/dashboard/spainflag.png"
+                          className=" h-[100%] "
+                          lt=""
+                        />
+                      </div>
+                      <div>
+                        <button
+                          onClick={() => {
+                            downloadImage(triptico?.tripticoSpTwo);
+                          }}
+                          className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
+                        >
+                          Descargar{" "}
+                          <span className="md:hidden">Por detras</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className=" h-[70vh] flex flex-col justify-start items-center pt-5">
-                  <div className="flex items-center justify-center gap-4 ">
+
+                <div className="h-fit md:h-[70vh] flex flex-col justify-start md:items-center pt-16 md:pt-5">
+                  <div className="flex md:items-center md:justify-center gap-4 ">
                     <p className="font-bold text-[2.5rem]">Tríptico</p>
                     <div className="bg-gray-300 w-[3rem] h-[3rem] rounded-full text-center ">
-                      <p className="font-bold text-[2.5rem]">1</p>
+                      <p className="font-bold text-[2.5rem]">2</p>
                     </div>
                   </div>
-                  <div
-                    style={{
-                      boxShadow: "-14px -8px #0000001F",
-                    }}
-                    className="mt-2 grid grid-cols-2 w-[30.5rem] gap-[.2rem] border-[3px] border-[#664198] bg-[#664198] rounded-2xl overflow-hidden"
-                  >
+                  <div className="grid grid-cols-1 ">
                     <div
-                      className="relative"
-                      onClick={() => {
-                        setClickedImage(triptico?.tripticoEnOne);
-                        setPop(true);
-                        handleClose();
+                      style={{
+                        boxShadow: "-14px -8px #0000001F",
                       }}
+                      className="mt-2 grid md:grid-cols-2 md:w-[30.5rem] gap-[.2rem] border-[3px] border-[#664198] bg-[#664198] rounded-2xl overflow-hidden w-fit"
                     >
-                      <div className="w-[15rem] h-[16rem]">
-                        <img
-                          src={triptico?.tripticoEnOne}
-                          alt=""
-                          className="object-cover h-full w-full"
-                        />
-                      </div>
-                      <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center ">
-                        <div className="group w-[50%] h-[50%]">
+                      <div
+                        className="relative"
+                        onClick={() => {
+                          setClickedImage(triptico?.tripticoEnOne);
+                          setPop(true);
+                          handleClose();
+                        }}
+                      >
+                        <div className="w-[15rem] h-[16rem]">
                           <img
-                            src="/dashboard/clickable.png"
+                            src={triptico?.tripticoEnOne}
                             alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
-                          />
-                          <img
-                            src="/dashboard/clickablehover.png"
-                            alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            className="object-cover h-full w-full"
                           />
                         </div>
+                        <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center ">
+                          <div className="group w-[50%] h-[50%]">
+                            <img
+                              src="/dashboard/clickable.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
+                            />
+                            <img
+                              src="/dashboard/clickablehover.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            />
+                          </div>
+                        </div>
+                        <p className="bg-gray-100 text-center text-[1.3rem]  ">
+                          De frente
+                        </p>
                       </div>
-                      <p className="bg-gray-100 text-center text-[1.3rem]  ">
-                        De frente
-                      </p>
-                    </div>
-                    <div
-                      className="relative"
-                      onClick={() => {
-                        setClickedImage(triptico?.tripticoEnTwo);
-                        setPop(true);
-                        handleClose();
-                      }}
-                    >
-                      <div className="w-[15rem] h-[16rem]">
-                        <img
-                          src={triptico?.tripticoEnTwo}
-                          alt=""
-                          className="object-cover h-full w-full"
-                        />
-                      </div>
-                      <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center ">
-                        <div className="group w-[50%] h-[50%]">
+                      <div
+                        className="relative"
+                        onClick={() => {
+                          setClickedImage(triptico?.tripticoEnTwo);
+                          setPop(true);
+                          handleClose();
+                        }}
+                      >
+                        <div className="w-[15rem] h-[16rem]">
                           <img
-                            src="/dashboard/clickable.png"
+                            src={triptico?.tripticoEnTwo}
                             alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
-                          />
-                          <img
-                            src="/dashboard/clickablehover.png"
-                            alt=""
-                            className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            className="object-cover h-full w-full"
                           />
                         </div>
+                        <div className="absolute top-0 w-[15rem] h-[16rem] flex justify-center items-center ">
+                          <div className="group w-[50%] h-[50%]">
+                            <img
+                              src="/dashboard/clickable.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer group-hover:hidden"
+                            />
+                            <img
+                              src="/dashboard/clickablehover.png"
+                              alt=""
+                              className=" w-[100%] h-[100%] cursor-pointer hidden group-hover:flex"
+                            />
+                          </div>
+                        </div>
+                        <p className="bg-gray-100 text-center text-[1.3rem]  ">
+                          Por detrás
+                        </p>
                       </div>
-                      <p className="bg-gray-100 text-center text-[1.3rem]  ">
-                        Por detrás
-                      </p>
                     </div>
-                  </div>
-                  <div className="flex w-[30.5rem] px-10 mt-4  justify-between">
-                    <div>
-                      <button
-                        onClick={() => {
-                          downloadImage(triptico?.tripticoEnOne);
-                        }}
-                        className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198]  transition-all ease-in-out duration-300"
-                      >
-                        Descargar
-                      </button>
-                    </div>
-                    <div className=" h-[2rem] ">
-                      <img
-                        src="/dashboard/usflag.png"
-                        className=" h-[100%] "
-                        lt=""
-                      />
-                    </div>
-                    <div>
-                      <button
-                        onClick={() => {
-                          downloadImage(triptico?.tripticoEnTwo);
-                        }}
-                        className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198]  transition-all ease-in-out duration-300"
-                      >
-                        Descargar
-                      </button>
+                    <div className="flex flex-col gap-2 md:flex-row md:w-[30.5rem] md:px-10 mt-4 h-[3rem] justify-between">
+                      <div>
+                        <button
+                          onClick={() => {
+                            downloadImage(triptico?.tripticoEnOne);
+                          }}
+                          className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198]  transition-all ease-in-out duration-300"
+                        >
+                          Descargar <span className="md:hidden">De Frente</span>
+                        </button>
+                      </div>
+                      <div className=" h-[2rem] ">
+                        <img
+                          src="/dashboard/usflag.png"
+                          className=" h-[100%] "
+                          lt=""
+                        />
+                      </div>
+                      <div>
+                        <button
+                          onClick={() => {
+                            downloadImage(triptico?.tripticoEnTwo);
+                          }}
+                          className="bg-[#664198] px-10 py-1 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198]  transition-all ease-in-out duration-300"
+                        >
+                          Descargar{" "}
+                          <span className="md:hidden">Por detras</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

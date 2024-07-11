@@ -43,7 +43,7 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
               }}
               src="/dashboard/crossbtn.png"
               alt="classbtn"
-              className="absolute top-0 right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
+              className="absolute md:top-0  z-50 right-[1rem] md:right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
             />
             <div className="h-[100%] bg-red-400">
               <VideoPlayer

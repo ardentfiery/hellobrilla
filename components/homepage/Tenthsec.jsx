@@ -115,9 +115,9 @@ const Tenthsec = () => {
             <p className="text-[1.6rem]  ">Las Vegas NV, United States </p>
           </div>
           <div>
-            <p className="foot text-3xl font-bold text-center">Contáctanos</p>
+            <p className="foot text-3xl font-bold text-center mb-3">Contáctanos</p>
             <div>
-              <div className="flex flex-wrap items-center justify-center gap-3 text-[#664198]">
+              <div className="flex flex-wrap items-center justify-center gap-7 text-[#664198]">
                 <p className="text-4xl socialicons md:text-5xl">
                   <a
                     href={`${socials?.whatsapp}`}
@@ -212,7 +212,7 @@ const Tenthsec = () => {
           <div className="foot">
             © COPYRIGHT {new Date().getFullYear()} BRYLLASISTEM - BY apeXgoo.com
           </div>
-          <div className="foot  flex items-center gap-3 md:gap-8 w-[35%] md:w-[15%]">
+          <div className="foot  flex items-center gap-3 md:gap-8 md:w-[15%] pt-2 md:pt-0">
             <p>Términos & condiciones - Privacidad</p>
           </div>
         </div>

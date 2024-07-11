@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDashContext } from "@/context/DashboardContext";
 
-const MenuItems = () => {
+const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
   const { activeDashPage, setactiveDashPage } = useDashContext();
 
   const [showChildOfSleepm, setshowChildOfSleepm] = useState(false);
@@ -67,6 +67,7 @@ const MenuItems = () => {
             }`}
             onClick={() => {
               setactiveDashPage(index);
+              mobile ? sethamclicked(false) : null;
             }}
           >
             <div className="flex gap-4 justify-start items-center">
@@ -157,6 +158,7 @@ const MenuItems = () => {
               }`}
               onClick={() => {
                 setactiveDashPage(12.0);
+                mobile ? sethamclicked(false) : null;
               }}
             >
               <div className="flex gap-4 justify-start items-center">
@@ -175,6 +177,7 @@ const MenuItems = () => {
               }`}
               onClick={() => {
                 setactiveDashPage(12.1);
+                mobile ? sethamclicked(false) : null;
               }}
             >
               <div className="flex gap-4 justify-start items-center">
@@ -193,6 +196,7 @@ const MenuItems = () => {
               }`}
               onClick={() => {
                 setactiveDashPage(12.2);
+                mobile ? sethamclicked(false) : null;
               }}
             >
               <div className="flex gap-4 justify-start items-center">
@@ -211,6 +215,7 @@ const MenuItems = () => {
               }`}
               onClick={() => {
                 setactiveDashPage(12.3);
+                mobile ? sethamclicked(false) : null;
               }}
             >
               <div className="flex gap-4 justify-start items-center">

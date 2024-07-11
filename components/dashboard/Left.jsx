@@ -1,13 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import TreeNode from "./TreeNode";
-import { List } from "@mui/material"; // Material UI for components
 import { RxCross2 } from "react-icons/rx";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoIosLogOut } from "react-icons/io";
-import axios from "@/app/api/axiosintercepter";
 import { useRouter } from "next/navigation";
-import { toast } from "react-hot-toast";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Popup from "./Popup";
 import MenuItems from "./MenuItems";
@@ -21,18 +16,6 @@ const Left = () => {
   const handleClose = () => setOpen(false);
   const router = useRouter();
 
-  const logOutUser = async () => {
-    const toastId = toast.loading("logging out...");
-    try {
-      await axios.get("/user/logout");
-      toast.success("Logged Out !");
-      toast.dismiss(toastId);
-      router.push("/login");
-    } catch (error) {
-      toast.success("Log Out failed !");
-      toast.dismiss(toastId);
-    }
-  };
 
   const menuData = [
     {
@@ -112,7 +95,7 @@ const Left = () => {
         />
       ) : null}
 
-      <div className="absolute z-50 ">
+      <div className="absolute z-40 pt-2 lg:pt-0 bg-white w-[100vw]">
         <RxHamburgerMenu
           onClick={() => {
             sethamclicked(true);
@@ -120,8 +103,8 @@ const Left = () => {
           className="text-3xl text-[#664198] ml-4 lg:hidden  "
         />
       </div>
-      <div className="mt-2 ">
-        <div className="absolute right-20 lg:hidden visible">
+      <div className="mt-2 z-40 absolute  right-8 flex gap-2">
+        <div className=" right-20 lg:hidden visible">
           <IoMdNotificationsOutline className="text-3xl" />
         </div>
 
@@ -130,7 +113,7 @@ const Left = () => {
           onClick={() => {
             handleOpen("full");
           }}
-          className="h-[30px] w-[30px] absolute right-10 lg:hidden"
+          className="h-[30px] w-[30px]  right-10 lg:hidden"
         >
           <img
             className="h-[100%] w-[100%] rounded-full"
@@ -180,7 +163,7 @@ const Secondary = ({ menuData, handleSelect, sethamclicked }) => {
           />
         </div>
         <div className="overflow-x-hidden no-scrollbar h-fit hide-scrollbar">
-          <MenuItems />
+          <MenuItems mobile={true} sethamclicked={sethamclicked} />
         </div>
       </div>
     </div>

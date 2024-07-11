@@ -26,14 +26,14 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
   }, [open]);
 
   return (
-    <div className="z-30 w-[80vw]">
+    <div className="z-30 w-full b">
       {pop && (
         <ImageViewPop
           pop={pop}
           setPop={setPop}
           imgsrc={clickedImage}
           handleOpen={handleOpen}
-          size="calc(100% - 25%)"
+          size="calc(100% - 0%)"
         />
       )}
       <Modal size={size} open={open} onClose={handleClose} className="">
@@ -43,12 +43,12 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
           alt="classbtn"
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
-        <Modal.Body className="hide-scrollbar select-none">
+        <Modal.Body className="hide-scrollbar select-none  w-[98vw] ml-[-4%] md:w-auto md:ml-auto">
           <div className="h-[60vh] flex  items-center flex-col mt-5 ">
             <div>
               <p className="text-[#803DA1] font-bold text-[3rem]">Folletos</p>
             </div>
-            <div className="flex justify-center items-center  w-[100%] h-[30rem] gap-8 overflow-x-scroll hide-scrollbar">
+            <div className="flex justify-center items-center  w-[100vw] h-[30rem] gap-8 overflow-x-scroll hide-scrollbar ">
               <div
                 onClick={() => {
                   //scroll up the post images
@@ -60,9 +60,9 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[55px] h-[55px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <p className="font-medium text-[4rem] rotate-180 text-[#664198] group-hover:text-white ">
+                <p className="font-medium text-[2rem] md:text-[4rem] rotate-180 text-[#664198] group-hover:text-white ">
                   {">"}
                 </p>
               </div>
@@ -73,7 +73,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                 {folletos?.map((folleto, index) => {
                   return (
                     <div className="grid ">
-                      <div key={index} className="flex flex-col">
+                      <div key={index} className="flex flex-col w-[60vw] md:w-auto ">
                         <div
                           onClick={() => {
                             setClickedImage(folleto?.brochure);
@@ -81,7 +81,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                             setPop(true);
                             handleClose();
                           }}
-                          className="group h-[285px] w-[275px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300  "
+                          className="group h-[255px] w-[100%] md:h-[285px] md:w-[275px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300  "
                         >
                           <img
                             className="h-[100%] w-[100%] object-cover"
@@ -109,7 +109,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                         onClick={() => {
                           downloadImage(folleto?.brochure);
                         }}
-                        className="bg-[#664198] mt-10 px-10 py-2 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
+                        className="bg-[#664198] w-[60vw] md:w-auto mt-10 px-10 py-2 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
                       >
                         Descargar
                       </button>
@@ -127,9 +127,9 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[60px] h-[60px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <p className="font-medium text-[4rem]  text-[#664198] group-hover:text-white">
+                <p className="font-medium text-[2rem] md:text-[4rem]  text-[#664198] group-hover:text-white">
                   {">"}
                 </p>
               </div>

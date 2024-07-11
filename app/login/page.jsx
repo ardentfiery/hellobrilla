@@ -65,13 +65,13 @@ const Page = () => {
           >
             <img className="h-[60px]" src="/login/logo.png" alt="" />
           </div>
-          <div className="flex flex-col gap-6 ">
-            <div>
-              <p className="font-bold text-4xl">
+          <div className="flex flex-col gap-6 w-[90vw] md:w-auto">
+            <div className="flex justify-left ">
+              <p className="font-bold text-2xl md:text-4xl">
                 <span className="text-[#803DA1]">Tu </span>eres Bienvenido@
               </p>
             </div>
-            <div>
+            <div className="flex justify-left ">
               <p className=" text-[#03014C] text-lg">
                 Estamos encantados de tenerte de 
                 <br /> vuelta. Prepárate para explorar un

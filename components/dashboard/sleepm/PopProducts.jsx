@@ -33,7 +33,7 @@ const PopProducts = ({
           setPop={setPopVid}
           vidSrc={clickedProduct?.videoUrl}
           handleOpen={handleOpen}
-          size="calc(100% - 45%)"
+          size="calc(100% - 25%)"
         />
       )}
       <Modal size={size} open={open} onClose={handleClose} className="">
@@ -89,7 +89,7 @@ const PopProducts = ({
                 setPopVid(true);
                 handleClose();
               }}
-              className="flex flex-col gap-4 justify-center items-center "
+              className="flex flex-col gap-4 justify-center items-center relative "
             >
               <div className="h-[313px] w-[334px] border-[2px] border-[#664198] rounded-xl overflow-hidden ">
                 <img
@@ -104,11 +104,6 @@ const PopProducts = ({
                       alt=""
                       className=" w-[70%] h-[70%] cursor-pointer "
                     />
-                    {/* <img
-                      src="/dashboard/clickablehover.png"
-                      alt=""
-                      className=" w-[70%] h-[70%] cursor-pointer hidden group-hover:flex"
-                    /> */}
                   </div>
                 </div>
               </div>
