@@ -107,7 +107,7 @@ const page = () => {
               <div className="h-[4px] w-[10rem] bg-[#664198] ml-[30px]"></div>
             </div>
           </div>
-          <div className=" flex flex-col justify-center gap-[4rem] w-[100vw] items-center">
+          <div className=" flex lg:flex-row flex-col justify-center gap-[4rem] w-[100vw] items-center">
             <div className="flex flex-col gap-[2rem] md:h-[30rem] w-fit px-4 py-2   justify-center">
               <div className="flex gap-6 flex-col items-center">
                 <img
