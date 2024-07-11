@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "rsuite";
 import axios from "@/app/api/axiosintercepter";
 import PdfViewPop from "./PdfViewPop";
+import downloadImage from "@/utils/downloadImage";
 
 const PopVisualPdf = ({ size, open, handleClose, handleOpen = "" }) => {
   const [pdfs, setPdfs] = useState([]);
@@ -51,8 +52,10 @@ const PopVisualPdf = ({ size, open, handleClose, handleOpen = "" }) => {
             </p>
           </div>
           <Modal.Body>
-            <div className="
-             m-auto mt-2">
+            <div
+              className="
+             m-auto mt-2"
+            >
               <div className="text-center">
                 <p className="text-[#803DA1] text-[2.5rem]  ">
                   <strong>Presentación de Negocios -</strong> Visual
@@ -114,6 +117,16 @@ const PopVisualPdf = ({ size, open, handleClose, handleOpen = "" }) => {
                           className=" w-[2rem] "
                           alt=""
                         />
+                      </div>
+                      <div className="mt-3 ">
+                        <button
+                          onClick={() => {
+                            downloadImage(pdf?.pdf);
+                          }}
+                          className="bg-[#664198] px-10 py-2 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:text-[#664198] transition-all ease-in-out duration-300"
+                        >
+                          Descargar
+                        </button>
                       </div>
                     </div>
                   );
