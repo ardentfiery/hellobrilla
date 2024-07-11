@@ -107,8 +107,8 @@ const page = () => {
               <div className="h-[4px] w-[10rem] bg-[#664198] ml-[30px]"></div>
             </div>
           </div>
-          <div className=" flex justify-center gap-[4rem] w-[100vw] items-center">
-            <div className="flex flex-col gap-[2rem] h-[30rem] w-fit px-4 py-2   justify-center">
+          <div className=" flex flex-col justify-center gap-[4rem] w-[100vw] items-center">
+            <div className="flex flex-col gap-[2rem] md:h-[30rem] w-fit px-4 py-2   justify-center">
               <div className="flex gap-6 flex-col items-center">
                 <img
                   className="md:h-[20rem] "
@@ -154,7 +154,7 @@ const page = () => {
               </div>
             </div>
             <div>
-              <div className="w-[30rem] h-[30rem] bg-slate-300 rounded flex flex-col justify-between py-2">
+              <div className="lg:w-[30rem] h-[30rem] bg-slate-300 rounded flex flex-col justify-between py-2 px-4 lg:px-0">
                 <p className="font-bold text-[2rem] text-center">
                   ¿Ya hiciste el pago por otros medios?
                 </p>
@@ -177,7 +177,7 @@ const page = () => {
           </div>
         </div>
       ) : (
-        <div className="h-[100vh] w-[100vw] max-w-[100%] flex justify-center items-center ">
+        <div className="lg:h-[100vh] lg:w-[100vw] w-[90%] lg:max-w-[100%] flex justify-center items-center ">
           <div className="flex flex-col items-center justify-center gap-6">
             <p className="text-[2rem] font-semibold w-[80%] text-center">
               Su solicitud ya ha sido enviada. Espere la verificación por parte
