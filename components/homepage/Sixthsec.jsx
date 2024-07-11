@@ -329,9 +329,7 @@ const Newcomponent = ({ size, open, handleClose, currentEvent }) => {
       toast.error("Email must be from Gmail, Hotmail, or Yahoo.");
       return;
     }
-    const stripe = await loadStripe(
-      "pk_test_51OdbKnSDrQbUV5GODnck4S7qTTAI1C7Cb2IIjJmcb6HLlHymyzQXpfdTUfbn0hFEbzVcu9HijzBuWGKMfch1wU8O00ZTvLKR3G"
-    );
+    const stripe = await loadStripe(process.env.NEXT_PUBLIC_PUB_KEY);
     // const stripe = await loadStripe(process.env.NEXT_PUBLIC_PUBLISHABLE_KEY_TEST);
     try {
       const resp = await axios.post(

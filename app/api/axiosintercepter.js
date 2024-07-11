@@ -3,7 +3,7 @@ import axios from "axios";
 const axiosInstance = axios.create({
   // baseURL: "http://192.168.1.14:3502",
   // baseURL: "http://localhost:3502",
-  baseURL: "https://liveback.brillasystem.com",
+  baseURL: process.env.NEXT_PUBLIC_BACK_API,
 });
 
 axiosInstance.interceptors.response.use(
