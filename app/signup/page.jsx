@@ -70,12 +70,6 @@ const Page = () => {
         alt=""
       />
 
-      <img
-        className="h-[200px] w-[200px] absolute left-[-20px] bottom-[-300px]    md:bottom-[0px] md:left-[10px]]"
-        src="/login/bottomleft.png"
-        alt=""
-      />
-
       <div className="flex flex-col gap-4 md:flex-row w-[65%]   md:justify-around h-[100vh] pt-[2%]  md:pt-[5%]">
         <div
           onClick={() => {
@@ -95,8 +89,8 @@ const Page = () => {
           </div>
           <div className="w-[90vw] md:w-auto">
             <p className=" text-[#5F5D9C] text-[1.1rem] ">
-              Regístrate ahora y da el primer paso hacia un 
-               <br />
+              Regístrate ahora y da el primer paso hacia un
+              <br />
               <span>futuro brillante. ¡Tu éxito comienza hoy!</span>
             </p>
           </div>
@@ -247,7 +241,7 @@ const Page = () => {
               </div>
             </button>
           </div>
-          <div className="flex justify-center w-[100%]">
+          <div className="flex justify-center w-[100%] relative">
             <p>
               ¿tienes una cuenta?{" "}
               <span
@@ -259,6 +253,11 @@ const Page = () => {
                 Ingresa
               </span>
             </p>
+            <img
+              className="h-[200px] w-[200px] absolute left-[-50px] bottom-[-100px] -z-20   md:bottom-[0px] md:left-[10px]]"
+              src="/login/bottomleft.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
