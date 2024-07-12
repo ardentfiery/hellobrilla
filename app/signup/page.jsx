@@ -34,27 +34,27 @@ const Page = () => {
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
-
+  
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
-    useFormik({
-      initialValues: initialValues,
-      validationSchema: signUpSchema,
-      onSubmit: async (values) => {
-        const toastId = toast.loading("Signing up...");
-        try {
-          const resp = await axios.post("/user/signup", values);
-          setsavedUserId(resp.data.userId);
-          setsavedUserEmail(resp.data.email);
-          handleOpen("md");
-          toast.success("Signed up !");
-          toast.dismiss(toastId);
-        } catch (error) {
-          toast.error(error.response.data.message);
-          toast.dismiss(toastId);
-        }
-      },
-    });
-
+  useFormik({
+    initialValues: initialValues,
+    validationSchema: signUpSchema,
+    onSubmit: async (values) => {
+      const toastId = toast.loading("Signing up...");
+      try {
+        const resp = await axios.post("/user/signup", values);
+        setsavedUserId(resp.data.userId);
+        setsavedUserEmail(resp.data.email);
+        handleOpen("md");
+        toast.success("Signed up !");
+        toast.dismiss(toastId);
+      } catch (error) {
+        toast.error(error.response.data.message);
+        toast.dismiss(toastId);
+      }
+    },
+  });
+  
   return (
     <div className="h-[100vh] w-[100vw] overflow-x-hidden relative">
       <VerifyOtp
@@ -67,6 +67,11 @@ const Page = () => {
       <img
         className="h-[200px] w-[200px] absolute right-[-100px] md:top-0 top-[-30px] md:right-[0px]"
         src="/login/topright.png"
+        alt=""
+      />
+      <img
+        className="h-[200px] w-[200px] hidden md:flex absolute left-[-50px] bottom-[-100px] -z-20   md:bottom-[0px] md:left-[10px]]"
+        src="/login/bottomleft.png"
         alt=""
       />
 
@@ -254,7 +259,7 @@ const Page = () => {
               </span>
             </p>
             <img
-              className="h-[200px] w-[200px] absolute left-[-50px] bottom-[-100px] -z-20   md:bottom-[0px] md:left-[10px]]"
+              className="h-[200px] w-[200px] sm:hidden absolute left-[-50px] bottom-[-100px] -z-20   md:bottom-[0px] md:left-[10px]]"
               src="/login/bottomleft.png"
               alt=""
             />
