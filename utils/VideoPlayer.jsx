@@ -45,7 +45,7 @@ export default function VideoPlayer(props) {
     };
   }, [playerRef]);
   return (
-    <div data-vjs-player style={{ width: "75vw" }}>
+    <div data-vjs-player>
       <div ref={videoRef} />
     </div>
   );

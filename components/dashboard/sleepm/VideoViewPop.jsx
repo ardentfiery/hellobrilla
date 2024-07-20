@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import videojs from 'video.js';
 import VideoPlayer from "@/utils/VideoPlayer";
-import { useRef } from "react";
 
 const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
   const playerRef = useRef(null);
@@ -17,10 +17,19 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
       },
     ],
   };
+
   const handlePlayerReady = (player) => {
     playerRef.current = player;
 
-    // You can handle player events here, for example:
+    // Log the player's dimensions once the metadata is loaded
+    player.on('loadedmetadata', () => {
+      const videoWidth = player.videoWidth();
+      const videoHeight = player.videoHeight();
+      console.log('Video Width:', videoWidth);
+      console.log('Video Height:', videoHeight);
+    });
+
+    // You can handle other player events here, for example:
     player.on("waiting", () => {
       videojs.log("player is waiting");
     });
@@ -29,10 +38,11 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
       videojs.log("player will dispose");
     });
   };
+
   return (
     <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-50 bg-[#0000007e] flex justify-center items-center">
-      <div className="w-[85%] h-[85%]  m-auto overflow-hidden flex justify-center">
-        <div className="relative">
+      <div className="w-[85%] h-[85%] m-auto overflow-hidden flex justify-center bg-green-400">
+        <div className="relative h-full min-w-[50vw] max-w-[70vw]">
           <div className="overflow-hidden h-fit">
             <img
               onClick={() => {
@@ -42,10 +52,10 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
                 }
               }}
               src="/dashboard/crossbtn.png"
-              alt="classbtn"
-              className="absolute md:top-0  z-50 right-[1rem] md:right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
+              alt="close"
+              className="absolute md:top-0 z-50 right-[1rem] md:right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
             />
-            <div className="h-[100%] bg-red-400">
+            <div className="bg-red-400">
               <VideoPlayer
                 options={videoPlayerOptions}
                 onReady={handlePlayerReady}
