@@ -41,7 +41,7 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
 
   return (
     <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-50 bg-[#0000007e] flex justify-center items-center">
-      <div className="w-[85%] h-[85%] m-auto overflow-hidden flex justify-center bg-green-400">
+      <div className="w-[85%] h-[85%] m-auto overflow-hidden flex justify-center ">
         <div className="relative h-full min-w-[50vw] max-w-[70vw]">
           <div className="overflow-hidden h-fit">
             <img
