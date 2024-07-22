@@ -25,9 +25,9 @@ export const Profile = () => {
 
   return (
     <div className="w-full px-2">
-      <div className="w-full  xl:w-[20rem]  flex-col gap-6 items-center md:flex mt-10 border-[#664198] border-[3px] rounded-3xl ">
+      <div className="w-full   flex-col gap-6 items-center md:flex mt-10 border-[#664198] border-[3px] rounded-3xl ">
         <div className="flex flex-col items-center ">
-          <div className="flex gap-6 h-[15vh] items-center ">
+          <div className="flex gap-6  items-center ">
             <div className="h-[24px] w-[24px]">
               <img
                 className="h-[100%] w-[100%]"
@@ -81,9 +81,9 @@ export const Profile = () => {
           </div>
           <div className="h-[1px] w-[250px] bg-black"></div>
         </div>
-        <div>
+        <div className=" w-full flex flex-col items-center">
           <div className="text-2xl font-semibold">FILTRAR POR FECHAS</div>
-          <div className="h-fit w-[16rem] rounded-xl overflow-hidden border-[2px] border-[#803DA1]">
+          <div className="h-fit w-[95%] max-w-fit  rounded-xl overflow-hidden border-[2px] border-[#803DA1]">
             {/* <img
               className="h-[100%] w-[100%]"
               src="/dashboard/calendar.png"

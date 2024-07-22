@@ -99,7 +99,7 @@ const Recursos = ({ isActive }) => {
   }, [isActive]);
 
   return (
-    <div className="flex flex-col  mt-6">
+    <div className="flex flex-col  mt-6 pr-3">
       {pop && <ImageViewPop pop={pop} setPop={setPop} imgsrc={clickedImage} />}
       <ProfilePop
         size={sizeProfile}
@@ -150,12 +150,12 @@ const Recursos = ({ isActive }) => {
         <p className="text-4xl text-[#664198] font-bold ml-8 ">Recursos</p>
       </div>
 
-      <div className=" md:grid xl:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl mx-2 lg:mx-0 pb-4 z-10 bg-white">
-        <div className="flex flex-col  gap-2 w-[100vw] md:w-auto items-center">
+      <div className=" md:grid xl:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl mx-2 lg:mx-0 pb-4 z-10  ">
+        <div className="flex flex-col  gap-2 w-[95vw] lg:w-auto items-center ">
           <div className="text-black flex items-center  md:justify-center mt-4 text-xl md:text-[1.7rem] font-bold">
             <p>NUESTROS PRODUCTOS</p>
           </div>
-          <div className="flex  justify-center items-center  m-auto md:m-0 w-[92%] ml-[1.5%] md:w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
+          <div className="flex justify-center items-center  m-auto md:m-0 w-[95vw] ml-[1.5%] pl-2 lg:w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
             {products?.length > 0 ? (
               <>
                 <div
@@ -227,7 +227,7 @@ const Recursos = ({ isActive }) => {
             )}
           </div>
 
-          <div className=" sm:grid sm:grid-cols-2 md:flex md:flex-row flex-col gap-4 mt-4  px-5">
+          <div className=" flex  sm:grid sm:grid-cols-2 md:flex md:flex-row flex-col items-center justify-center gap-4 mt-4 px-2  w-full  ">
             <div
               className="relative  h-[113px] w-[226px] xl:w-[220px] 2xl:w-[266px]  rounded-2xl  overflow-hidden "
               onClick={() => {

@@ -5,7 +5,7 @@ import axios from "@/app/api/axiosintercepter";
 import TutorialPop from "./TutorialPop";
 import Popup from "../Popup";
 import PcProfile from "../PcProfile";
-import { Oval} from "react-loader-spinner"
+import { Oval } from "react-loader-spinner";
 
 const Tutorials = ({ isActive }) => {
   const [open, setOpen] = useState(false);
@@ -78,7 +78,7 @@ const Tutorials = ({ isActive }) => {
       ) : (
         <>
           {tutorials.length > 0 ? (
-            <div className="border-[#664198] rounded-2xl border-[3px] px-10 mx-2 mb-5 bg-white z-10">
+            <div className="border-[#664198] rounded-2xl border-[3px] px-10 mr-4 mx-2 mb-5 bg-white z-10">
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10   py-4 ">
                 {tutorials?.map((tutorial, index) => {
                   return (
@@ -86,7 +86,14 @@ const Tutorials = ({ isActive }) => {
                       key={index}
                       className="h-[25rem] bg-[#F6F6F6] w-[24rem] flex flex-col items-center gap-2  rounded-2xl"
                     >
-                      <div className="min-h-[15rem] w-[98%]">
+                      <div
+                        onClick={() => {
+                          setClickedVid(tutorial);
+                          setOpenVidPop(true);
+                          setSizeVidPop("calc(100% - 20%)");
+                        }}
+                        className="min-h-[15rem] w-[98%] cursor-pointer"
+                      >
                         <iframe
                           src={tutorial?.videoUrl}
                           className={`h-[15rem] w-[100%] object-cover pointer-events-none`}
@@ -99,15 +106,11 @@ const Tutorials = ({ isActive }) => {
                           </div>
                           <div>{tutorial?.description}</div>
                         </div>
-                        <div
-                          onClick={() => {
-                            setClickedVid(tutorial);
-                            setOpenVidPop(true);
-                            setSizeVidPop("calc(100% - 20%)");
-                          }}
+                        {/* <div
+                       
                         >
                           <LuPlayCircle className="text-[#f80cd5a5] text-[3rem] cursor-pointer hover:scale-110 transition-all ease-in-out duration-300 hover:text-[#f80cd4]" />
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   );
