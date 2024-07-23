@@ -1,8 +1,8 @@
 import axios from "@/app/api/axiosintercepter";
 
-const downloadVideo = async (docId) => {
+const downloadVideo = async (docId,prod=false) => {
   try {
-    const response = await axios.get(`/sleepm/downloadvideo/${docId}`, {
+    const response = await axios.get(`/sleepm/${prod ? "downloadvideo" : "downloadvideoprod"}/${docId}`, {
       //   headers: {
       //     Authorization: `Bearer ${your_jwt_token}`,
       //   },

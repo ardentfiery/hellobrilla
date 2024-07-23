@@ -117,7 +117,7 @@ const PopVisualVideo = ({ size, open, handleClose, handleOpen }) => {
                       )}
                       <img
                         onClick={() => {
-                          downloadVideo(video._id);
+                          downloadVideo(video._id, true);
                         }}
                         src="/dashboard/download.png"
                         className=" w-[2rem]  cursor-pointer"

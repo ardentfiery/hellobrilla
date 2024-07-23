@@ -5,7 +5,7 @@ import { Profile } from "../Profile";
 
 const Dashboard = () => {
   return (
-    <div className="flex lg:grid-cols-1 md:grid xl:grid-cols-[70%_30%] overflow-hidden">
+    <div className="flex flex-col lg:grid lg:grid-cols-1 md:grid md:grid-cols-1 xl:grid-cols-[70%_30%] overflow-hidden">
       <div className="flex flex-col justify-center mt-8 gap-4 mb-4 ">
         <div className="flex  items-center justify-end pr-5 py-2  ">
           <div className="sm:w-[50%] ">
@@ -63,12 +63,11 @@ const Dashboard = () => {
           </div>
         </div>
 
-
         <div className="flex flex-col items-center mx-2 gap-3 border-[3px] border-[#664198]   rounded-2xl py-2 sm:w-[95vw] lg:w-[98%]">
           <div>
             <p className="font-bold text-2xl text-black">SISTEMA EDUCATIVO</p>
           </div>
-          <div className="grid  md:grid-rows-5 gap-y-4 md:w-[54rem] lg:w-[52rem] xl:w-[45rem] 2xl:w-full md:gap-y-2  md:h-[16rem] px-4">
+          <div className="grid  lg:grid-rows-5 gap-y-4 md:w-[96%] md:h-fit lg:h-[16rem] lg:w-[54rem] xl:w-[45rem] 2xl:w-full md:gap-y-2  px-4">
             <div className="md:grid hidden grid-cols-2 grid-rows-2 md:grid-cols-[25%_25%_25%_25%] lg:grid-cols-[25%_25%_25%_25%] xl:grid-cols-[25%_25%_25%_25%]  gap-[0.5rem] w-[100%] ">
               <div className="h-[2rem] text-[#848484] md:flex hidden font-semibold">
                 Nombre del entrenamiento

@@ -44,6 +44,7 @@ const PopProducts = ({
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body className="hide-scrollbar select-none">
+          {console.log(clickedProduct)}
           <div className="flex lg:flex-row flex-col gap-6 justify-center items-center">
             <div
               onClick={() => {
@@ -84,14 +85,14 @@ const PopProducts = ({
                 </button>
               </div>
             </div>
-            <div
-              onClick={() => {
-                setPopVid(true);
-                handleClose();
-              }}
-              className="flex flex-col gap-4 justify-center items-center relative "
-            >
-              <div className="h-[313px] w-[334px] border-[2px] border-[#664198] rounded-xl overflow-hidden ">
+            <div className="flex flex-col gap-4 justify-center items-center relative ">
+              <div
+                onClick={() => {
+                  setPopVid(true);
+                  handleClose();
+                }}
+                className="h-[313px] w-[334px] border-[2px] border-[#664198] rounded-xl overflow-hidden "
+              >
                 <img
                   src={clickedProduct?.brochure}
                   className="h-full w-full object-cover"
@@ -110,7 +111,7 @@ const PopProducts = ({
               <div className="">
                 <button
                   onClick={() => {
-                    downloadVideo(clickedProduct?.videoUrl);
+                    downloadVideo(clickedProduct?._id);
                   }}
                   className="bg-[#664198] mt-5 px-10 py-2 text-[1.1rem] font-semibold rounded-3xl text-white hover:bg-white hover:border-[1px] hover:border-[#664198] hover:text-[#664198] box-border transition-all ease-in-out duration-300"
                 >
