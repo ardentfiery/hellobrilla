@@ -16,6 +16,7 @@ export default function VideoPlayer(props) {
       const videoElement = document.createElement("video-js");
 
       videoElement.classList.add("vjs-big-play-centered");
+      videoElement.classList.add("vjs-16-9");
       videoRef.current.appendChild(videoElement);
 
       const player = (playerRef.current = videojs(videoElement, options, () => {

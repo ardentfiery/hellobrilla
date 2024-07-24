@@ -9,7 +9,8 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
   const videoPlayerOptions = {
     controls: true,
     responsive: true,
-    fluid: true,
+    width: 100,
+    // fluid: true,
     sources: [
       {
         src: vidSrc,
@@ -55,7 +56,7 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
               alt="close"
               className="absolute md:top-0 z-50 right-[1rem] md:right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
             />
-            <div className="bg-red-400">
+            <div className="max-w-[80vw] min-w-[20rem] ">
               <VideoPlayer
                 options={videoPlayerOptions}
                 onReady={handlePlayerReady}
