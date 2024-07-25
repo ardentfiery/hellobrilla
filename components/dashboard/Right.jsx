@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FaRegCopy } from "react-icons/fa";
 import Dashboard from "./dash/Dashboard";
@@ -17,9 +18,10 @@ import Ganacias from "./ganacias/Ganacias";
 import Miperfit from "./miperfit/Miperfit";
 import Empresa from "./sleepm/Empresa";
 import Mipagina from "./sleepm/Mipagina";
-
+import { useRouter } from "next/navigation";
 const Right = () => {
   const { activeDashPage } = useDashContext();
+  const router = useRouter();
 
   return (
     <div>
@@ -50,12 +52,14 @@ const Right = () => {
       ) : activeDashPage == 12.0 ? (
         <Empresa isActive={activeDashPage === 12.0} />
       ) : activeDashPage == 12.1 ? (
-        <Recursos isActive={activeDashPage === 12.1}/>
+        <Recursos isActive={activeDashPage === 12.1} />
       ) : activeDashPage == 12.2 ? (
         <Tutorials isActive={activeDashPage === 12.2} />
-      ) : activeDashPage == 12.3  ? (
-        <Mipagina isActive={activeDashPage === 12.3} />
-      ) : null}
+      ) : activeDashPage == 12.3 ? (
+        // <Mipagina isActive={activeDashPage === 12.3} />
+        window.open("/slepweb/dfasdf", "_blank")
+      ) : // router.push("/jpayoteiid")
+      null}
     </div>
   );
 };
