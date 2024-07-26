@@ -414,7 +414,12 @@ export default function Page({ isActive, params }) {
                       </p>
                     </div>
                     <div className="h-[10%] flex justify-center">
-                      <button className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300">
+                      <button
+                        onClick={() => {
+                          window.open(`https://wa.me/${userSocials?.whatsapp}`);
+                        }}
+                        className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+                      >
                         <p className="text-[#803DA1] font-bold text-[1rem] lg:text-[1.1rem] ">
                           Lo quiero
                         </p>
@@ -467,7 +472,12 @@ export default function Page({ isActive, params }) {
                   </div>
                 </div>
                 <div className="pl-[5%]">
-                  <button className="flex gap-2 bg-white py-3 px-5 rounded-3xl hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300">
+                  <button
+                    onClick={() => {
+                      window.open(`https://wa.me/${userSocials?.whatsapp}`);
+                    }}
+                    className="flex gap-2 bg-white py-3 px-5 rounded-3xl hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+                  >
                     <p className="text-[#803DA1] font-bold text-[1rem] lg:text-[1.1rem] ">
                       Quiero mas información
                     </p>
