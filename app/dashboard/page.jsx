@@ -18,6 +18,7 @@ const Page = () => {
         const data = await axios.get("/user/paidforbrilla");
         setisLoading(false);
         // router.push("/dashboard");
+        console.log(isAuthorized);
       } catch (error) {
         router.push("/payment");
       }

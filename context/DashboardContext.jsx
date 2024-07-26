@@ -5,9 +5,10 @@ const DashContext = createContext();
 
 export const DashProvider = ({ children }) => {
   const [activeDashPage, setactiveDashPage] = useState(0);
+  const [userId, setuserId] = useState("");
 
   return (
-    <DashContext.Provider value={{ activeDashPage, setactiveDashPage }}>
+    <DashContext.Provider value={{ activeDashPage, setactiveDashPage, userId, setuserId }}>
       {children}
     </DashContext.Provider>
   );

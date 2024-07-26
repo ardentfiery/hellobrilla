@@ -349,9 +349,9 @@ export default function Page({ isActive, params }) {
                         alt=""
                       />
                     </div>
-                    <div className="h-fit grid grid-cols-[65%_35%]">
+                    <div className="h-fit grid grid-cols-[65%_35%] mt-2">
                       <p className="font-bold">
-                        MASCARILLA DE OJOS CON BIOCRISTALES
+                       {product?.name ? product.name : "No Name"} 
                       </p>
                       <div className="flex justify-end items-end px-[10%] gap-2 pb-2">
                         <img
