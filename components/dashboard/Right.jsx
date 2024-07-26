@@ -17,8 +17,8 @@ import Referidos from "./referidos/Referidos";
 import Ganacias from "./ganacias/Ganacias";
 import Miperfit from "./miperfit/Miperfit";
 import Empresa from "./sleepm/Empresa";
-import Mipagina from "./sleepm/Mipagina";
 import { useRouter } from "next/navigation";
+import MiPaginaSocial from "./sleepm/MiPaginaSocial";
 
 const Right = () => {
   const { activeDashPage, userId } = useDashContext();
@@ -59,7 +59,9 @@ const Right = () => {
       ) : activeDashPage == 12.3 ? (
         // <Mipagina isActive={activeDashPage === 12.3} />
         window.open(`/slepweb/${userId}`, "_blank")
-      ) : // router.push("/jpayoteiid")
+      ) : activeDashPage == 12.4 ? (
+        <MiPaginaSocial isActive={activeDashPage === 12.4} />
+      ) : // router.push("/jpayoteiid"):
       null}
     </div>
   );

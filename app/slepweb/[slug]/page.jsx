@@ -4,10 +4,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useState, useEffect } from "react";
 import axios from "@/app/api/axiosintercepter";
+
 export default function Page({ isActive, params }) {
   console.log(params.slug);
   const [products, setproducts] = useState([]);
   const [paginaVideo, setpaginaVideo] = useState({});
+  const [userSocials, setuserSocials] = useState([]);
 
   const [hamClicked, sethamClicked] = useState(false);
 
@@ -15,7 +17,6 @@ export default function Page({ isActive, params }) {
     try {
       const resp = await axios.get("/sleepm/getsleepmproducts");
       setproducts(resp?.data?.data);
-      console.log(resp?.data?.data);
     } catch (error) {
       console.log(`error gettting products: ${error}`);
     }
@@ -29,15 +30,24 @@ export default function Page({ isActive, params }) {
       console.log(error);
     }
   };
+  const getUserSocial = async () => {
+    try {
+      const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
+      setuserSocials(resp.data.data);
+      console.log(resp.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     getProducts();
     getPaginaVideo();
+    getUserSocial();
   }, []);
 
   return (
     <div className="overflow-hidden h-fit flex flex-col gap-8">
-      {console.log(products)}
       {hamClicked ? <MobileNavPage sethamClicked={sethamClicked} /> : null}
 
       <div>
@@ -48,33 +58,62 @@ export default function Page({ isActive, params }) {
           </div>
           <div className="flex gap-8 mt-[0.5rem] pr-[2%]">
             <div>
-              <img src="/pgfb.png" className="w-[2.2rem] h-[2.2rem] " alt="" />
+              <img
+                onClick={() => {
+                  userSocials?.facebook
+                    ? window.open(userSocials?.facebook, "_blank")
+                    : null;
+                }}
+                src="/pgfb.png"
+                className="w-[2.2rem] h-[2.2rem] cursor-pointer"
+                alt=""
+              />
             </div>
             <div>
               <img
+                onClick={() => {
+                  userSocials?.instagram
+                    ? window.open(userSocials?.instagram, "_blank")
+                    : null;
+                }}
                 src="/pginsta.png"
-                className="md:w-[2rem] md:h-[2rem] w-[2rem] h-[2rem] "
+                className="md:w-[2rem] md:h-[2rem] w-[2rem] h-[2rem] cursor-pointer"
                 alt=""
               />
             </div>
             <div>
               <img
+                onClick={() => {
+                  userSocials?.youtube
+                    ? window.open(userSocials?.youtube, "_blank")
+                    : null;
+                }}
                 src="/pgyt.png"
-                className="md:w-[1.8rem] md:h-[1.8rem] w-[2rem] h-[2rem] "
+                className="md:w-[1.8rem] md:h-[1.8rem] w-[2rem] h-[2rem] cursor-pointer"
                 alt=""
               />
             </div>
             <div>
               <img
+                onClick={() => {
+                  userSocials?.whatsapp
+                    ? window.open(userSocials?.whatsapp, "_blank")
+                    : null;
+                }}
                 src="/pgwhatsapp.png"
-                className="md:w-[1.6rem] md:h-[1.6rem] w-[2rem] h-[2rem] "
+                className="md:w-[1.6rem] md:h-[1.6rem] w-[2rem] h-[2rem] cursor-pointer"
                 alt=""
               />
             </div>
             <div>
               <img
+                onClick={() => {
+                  userSocials?.sms
+                    ? window.open(userSocials?.sms, "_blank")
+                    : null;
+                }}
                 src="/pgsms.png"
-                className="md:w-[1.4rem] md:h-[1.4rem] w-[2rem] h-[2rem] "
+                className="md:w-[1.4rem] md:h-[1.4rem] w-[2rem] h-[2rem] cursor-pointer"
                 alt=""
               />
             </div>
@@ -351,29 +390,19 @@ export default function Page({ isActive, params }) {
                     </div>
                     <div className="h-fit grid grid-cols-[65%_35%] mt-2">
                       <p className="font-bold">
-                       {product?.name ? product.name : "No Name"} 
+                        {product?.name ? product.name : "No Name"}
                       </p>
                       <div className="flex justify-end items-end px-[10%] gap-2 pb-2">
-                        <img
-                          src="/rating.png"
-                          className="h-[1rem] w-[1rem] "
-                          alt=""
-                        />
-                        <img
-                          src="/rating.png"
-                          className="h-[1rem] w-[1rem] "
-                          alt=""
-                        />
-                        <img
-                          src="/rating.png"
-                          className="h-[1rem] w-[1rem] "
-                          alt=""
-                        />
-                        <img
-                          src="/rating.png"
-                          className="h-[1rem] w-[1rem] "
-                          alt=""
-                        />
+                        {product?.rating &&
+                          Array.from({ length: product?.rating }).map(
+                            (_, index) => (
+                              <img
+                                src="/rating.png"
+                                className="h-[1rem] w-[1rem] "
+                                alt=""
+                              />
+                            )
+                          )}
                       </div>
                     </div>
                     <div className="h-[30%] my-[1rem] ">
@@ -480,6 +509,11 @@ export default function Page({ isActive, params }) {
             <div className="w-fit flex gap-8">
               <div>
                 <img
+                  onClick={() => {
+                    userSocials?.facebook
+                      ? window.open(userSocials?.facebook, "_blank")
+                      : null;
+                  }}
                   src="/pgfb.png"
                   className="h-[2.4rem] w-[2.4rem] "
                   alt=""
@@ -487,6 +521,11 @@ export default function Page({ isActive, params }) {
               </div>
               <div>
                 <img
+                  onClick={() => {
+                    userSocials?.instagram
+                      ? window.open(userSocials?.instagram, "_blank")
+                      : null;
+                  }}
                   src="/pginsta.png"
                   className="h-[2.4rem] w-[2.4rem] "
                   alt=""
@@ -494,6 +533,11 @@ export default function Page({ isActive, params }) {
               </div>
               <div>
                 <img
+                  onClick={() => {
+                    userSocials?.youtube
+                      ? window.open(userSocials?.youtube, "_blank")
+                      : null;
+                  }}
                   src="/pgyt.png"
                   className="h-[2.4rem] w-[2.4rem] "
                   alt=""
@@ -501,6 +545,11 @@ export default function Page({ isActive, params }) {
               </div>
               <div>
                 <img
+                  onClick={() => {
+                    userSocials?.whatsapp
+                      ? window.open(userSocials?.whatsapp, "_blank")
+                      : null;
+                  }}
                   src="/pgwhatsapp.png"
                   className="h-[2.4rem] w-[2.4rem] "
                   alt=""
@@ -508,6 +557,11 @@ export default function Page({ isActive, params }) {
               </div>
               <div>
                 <img
+                  onClick={() => {
+                    userSocials?.sms
+                      ? window.open(userSocials?.sms, "_blank")
+                      : null;
+                  }}
                   src="/pgsms.png"
                   className="h-[2.4rem] w-[2.4rem] "
                   alt=""
