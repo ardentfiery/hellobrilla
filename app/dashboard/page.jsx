@@ -5,9 +5,11 @@ import axios from "@/app/api/axiosintercepter";
 import Right from "@/components/dashboard/Right";
 import { useRouter } from "next/navigation";
 import BrillaLoader from "@/utils/BrillaLoader";
+import { useDashContext } from "@/context/DashboardContext";
 
 const Page = () => {
   const [isLoading, setisLoading] = useState(true);
+  const { setuserId } = useDashContext();
 
   const router = useRouter();
 
@@ -17,8 +19,7 @@ const Page = () => {
       try {
         const data = await axios.get("/user/paidforbrilla");
         setisLoading(false);
-        // router.push("/dashboard");
-        console.log(isAuthorized);
+        setuserId(isAuthorized.data.id);
       } catch (error) {
         router.push("/payment");
       }

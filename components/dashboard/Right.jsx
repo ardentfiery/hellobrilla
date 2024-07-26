@@ -19,8 +19,9 @@ import Miperfit from "./miperfit/Miperfit";
 import Empresa from "./sleepm/Empresa";
 import Mipagina from "./sleepm/Mipagina";
 import { useRouter } from "next/navigation";
+
 const Right = () => {
-  const { activeDashPage } = useDashContext();
+  const { activeDashPage, userId } = useDashContext();
   const router = useRouter();
 
   return (
@@ -57,7 +58,7 @@ const Right = () => {
         <Tutorials isActive={activeDashPage === 12.2} />
       ) : activeDashPage == 12.3 ? (
         // <Mipagina isActive={activeDashPage === 12.3} />
-        window.open("/slepweb/dfasdf", "_blank")
+        window.open(`/slepweb/${userId}`, "_blank")
       ) : // router.push("/jpayoteiid")
       null}
     </div>
