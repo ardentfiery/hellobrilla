@@ -26,7 +26,7 @@ const MiPaginaSocial = ({ isActive }) => {
   const updateUserSocial = async () => {
     const toastId = toast.loading("updating...");
     try {
-      await axios.put(`/user/updateusersocialpagina/${userId}`, updateValues);
+      await axios.post(`/user/updateusersocialpagina/${userId}`, updateValues);
       getUserSocial();
       setupdateValues({});
       toast.success("Updated!");
