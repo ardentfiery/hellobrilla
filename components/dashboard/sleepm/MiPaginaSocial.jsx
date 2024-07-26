@@ -4,6 +4,7 @@ import { Input } from "rsuite";
 import { Label } from "@/components/ui/label";
 import { useDashContext } from "@/context/DashboardContext";
 import { toast } from "react-hot-toast";
+import axios from "@/app/api/axiosintercepter";
 
 const MiPaginaSocial = ({ isActive }) => {
   const { userId } = useDashContext();
@@ -12,11 +13,11 @@ const MiPaginaSocial = ({ isActive }) => {
   const [updateValues, setupdateValues] = useState({});
 
   const getUserSocial = async () => {
-    console.log(userId)
+    console.log(userId);
     try {
       const resp = await axios.get(`/user/getusersocialpagina/${userId}`);
       setuserSocials(resp.data.data);
-      console.log(resp.data.data)
+      console.log(resp.data.data);
     } catch (error) {
       console.log(error);
     }
