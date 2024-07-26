@@ -22,7 +22,6 @@ import MiPaginaSocial from "./sleepm/MiPaginaSocial";
 
 const Right = () => {
   const { activeDashPage, userId } = useDashContext();
-  const router = useRouter();
 
   return (
     <div>
