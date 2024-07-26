@@ -7,6 +7,7 @@ import axios from "@/app/api/axiosintercepter";
 export default function Page({ isActive, params }) {
   console.log(params.slug);
   const [products, setproducts] = useState([]);
+  const [paginaVideo, setpaginaVideo] = useState({});
 
   const [hamClicked, sethamClicked] = useState(false);
 
@@ -19,8 +20,19 @@ export default function Page({ isActive, params }) {
       console.log(`error gettting products: ${error}`);
     }
   };
+
+  const getPaginaVideo = async () => {
+    try {
+      const resp = await axios.get("/sleepm/getpaginavideos");
+      setpaginaVideo(resp.data.data[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getProducts();
+    getPaginaVideo();
   }, []);
 
   return (
@@ -193,12 +205,21 @@ export default function Page({ isActive, params }) {
             />
           </div>
           <div className="absolute top-0 h-[40rem] left-0 grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-[45%_55%] z-50 w-full rounded-3xl overflow-hidden">
-            <div className="h-[35rem] relative hidden lg:flex justify-center items-center mt-0 ">
-              <img
+            <div className="h-[35rem] relative hidden lg:flex justify-center items-center mt-0">
+              {/* <img
                 src="/bedrect.png"
                 className="absolute w-[85%] max-w[85%]"
                 alt=""
-              />
+              /> */}
+              <iframe
+                className=" top-0 left-0 h-[75%] w-[85%] max-w[85%] rounded z-10"
+                src={paginaVideo?.videoUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
             <div className="lg:mt-[6%] mt-[10%]">
               <p className="font-bold text-[1.7rem] md:text-[2.4rem] xl:text-[2.8rem] text-white lg:pl-[14%] text-center lg:text-left ">
