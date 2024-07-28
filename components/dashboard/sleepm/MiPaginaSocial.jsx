@@ -113,6 +113,19 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
+        <div>
+          <Label htmlFor="email" className="text-[1.2rem] font-semibold ">
+            Email
+          </Label>
+          <Input
+            id="email"
+            placeholder="Escribe algo..."
+            defaultValue={userSocials?.email ? userSocials?.email : ""}
+            onChange={(value) => {
+              setupdateValues({ ...updateValues, email: value });
+            }}
+          />
+        </div>
       </div>
       <div>
         <button

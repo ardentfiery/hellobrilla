@@ -4,18 +4,20 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useState, useEffect } from "react";
 import axios from "@/app/api/axiosintercepter";
+import TestimonialSlider from "@/components/dashboard/sleepm/TestimonialSlider";
 
 export default function Page({ isActive, params }) {
   console.log(params.slug);
   const [products, setproducts] = useState([]);
   const [paginaVideo, setpaginaVideo] = useState({});
+  const [paginaTestimonials, setpaginaTestimonials] = useState([]);
   const [userSocials, setuserSocials] = useState([]);
 
   const [hamClicked, sethamClicked] = useState(false);
 
   const getProducts = async () => {
     try {
-      const resp = await axios.get("/sleepm/getsleepmproducts");
+      const resp = await axios.get("/sleepm/getpaginaproducts");
       setproducts(resp?.data?.data);
     } catch (error) {
       console.log(`error gettting products: ${error}`);
@@ -26,6 +28,14 @@ export default function Page({ isActive, params }) {
     try {
       const resp = await axios.get("/sleepm/getpaginavideos");
       setpaginaVideo(resp.data.data[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getPaginaTestimonials = async () => {
+    try {
+      const resp = await axios.get("/sleepm/getpaginatestimony");
+      setpaginaTestimonials(resp.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -43,6 +53,7 @@ export default function Page({ isActive, params }) {
   useEffect(() => {
     getProducts();
     getPaginaVideo();
+    getPaginaTestimonials();
     getUserSocial();
   }, []);
 
@@ -52,10 +63,13 @@ export default function Page({ isActive, params }) {
 
       <div>
         <div className="bg-[#813DA1] h-[5rem] md:h-[4.5rem] xl:h-[5rem] w-screen navclip flex justify-between flex-col md:flex-row items-center md:items-start  ">
-          <div className="flex text-white gap-1 mt-[0.5rem] ml-[5%] ">
-            <img src="/mail.png" className="w-[1.5rem] h-[1.5rem] " alt="" />
-            <p className=" text-[1.1rem] text-center">something@gmail.com</p>
-          </div>
+          <a href={`mailto:${userSocials?.email}`}>
+            <div className="flex text-white gap-1 mt-[0.5rem] ml-[5%] ">
+              <img src="/mail.png" className="w-[1.5rem] h-[1.5rem] " alt="" />
+
+              <p className=" text-[1.1rem] text-center">{userSocials?.email}</p>
+            </div>
+          </a>
           <div className="flex gap-8 mt-[0.5rem] pr-[2%]">
             <div>
               <img
@@ -120,6 +134,7 @@ export default function Page({ isActive, params }) {
           </div>
         </div>
       </div>
+
       <div className="lg:mt-3">
         <div className="flex items-center md:justify-around lg:w-[75%] ">
           <div className="lg:hidden flex shadow-sm w-screen justify-between items-center px-4 py-2">
@@ -245,11 +260,6 @@ export default function Page({ isActive, params }) {
           </div>
           <div className="absolute top-0 h-[40rem] left-0 grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-[45%_55%] z-50 w-full rounded-3xl overflow-hidden">
             <div className="h-[35rem] relative hidden lg:flex justify-center items-center mt-0">
-              {/* <img
-                src="/bedrect.png"
-                className="absolute w-[85%] max-w[85%]"
-                alt=""
-              /> */}
               <iframe
                 className=" top-0 left-0 h-[75%] w-[85%] max-w[85%] rounded z-10"
                 src={paginaVideo?.videoUrl}
@@ -346,19 +356,8 @@ export default function Page({ isActive, params }) {
                 revitalizante.
               </p>
             </div>
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div className="flex flex-col gap-2 items-center">
-              <p className=" text-xl font-semibold">
-                Víctor / Campeón de Bádminton
-              </p>
-              <div className="w-[65%] text-center">
-                Le he contado a muchas personas cómo los colchones y almohadas
-                Sleepm me ayudan a lograr resultados consistentes. ¡Esperamos
-                que veas muchos más jugadores de bádminton EX usando Sleepm en
-                el futuro!
-              </div>
+            <div className="flex flex-col gap-2 items-center  w-[95%] lg:w-[85%] md:w-[90%]">
+              <TestimonialSlider paginaTestimonials={paginaTestimonials} />
             </div>
           </div>
         </div>
