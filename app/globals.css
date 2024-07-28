@@ -86,3 +86,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.toast-custom {
+  box-shadow: 0 0 10px #2299dd, 0 0 5px #f97316;
+  background-color: #f97316;
+}

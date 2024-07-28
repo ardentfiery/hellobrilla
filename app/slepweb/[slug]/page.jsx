@@ -1,18 +1,16 @@
 "use client";
-import "./PageStyle.css";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { RxCross2 } from "react-icons/rx";
 import { useState, useEffect } from "react";
+import "./PageStyle.css";
 import axios from "@/app/api/axiosintercepter";
 import TestimonialSlider from "@/components/dashboard/sleepm/TestimonialSlider";
+import { useRouter } from "next/navigation";
 
 export default function Page({ isActive, params }) {
+  const router = useRouter();
   const [products, setproducts] = useState([]);
   const [paginaVideo, setpaginaVideo] = useState({});
   const [paginaTestimonials, setpaginaTestimonials] = useState([]);
-  const [userSocials, setuserSocials] = useState([]);
 
-  const [hamClicked, sethamClicked] = useState(false);
 
   const getProducts = async () => {
     try {
@@ -39,137 +37,17 @@ export default function Page({ isActive, params }) {
       console.log(error);
     }
   };
-  const getUserSocial = async () => {
-    try {
-      const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
-      setuserSocials(resp.data.data);
-      console.log(resp.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
     getProducts();
     getPaginaVideo();
     getPaginaTestimonials();
-    getUserSocial();
   }, []);
 
   return (
     <div className="overflow-hidden h-fit flex flex-col gap-8">
-      {hamClicked ? <MobileNavPage sethamClicked={sethamClicked} /> : null}
+      {/* {hamClicked ? <MobileNavPage sethamClicked={sethamClicked} /> : null} */}
 
-      <div>
-        <div className="bg-[#813DA1] h-[5rem] md:h-[4.5rem] xl:h-[5rem] w-screen navclip flex justify-between flex-col md:flex-row items-center md:items-start  ">
-          <a href={`mailto:${userSocials?.email}`}>
-            <div className="flex text-white gap-1 mt-[0.5rem] ml-[5%] ">
-              <img src="/mail.png" className="w-[1.5rem] h-[1.5rem] " alt="" />
-
-              <p className=" text-[1.1rem] text-center">{userSocials?.email}</p>
-            </div>
-          </a>
-          <div className="flex gap-8 mt-[0.5rem] pr-[2%]">
-            <div>
-              <img
-                onClick={() => {
-                  userSocials?.facebook
-                    ? window.open(userSocials?.facebook, "_blank")
-                    : null;
-                }}
-                src="/pgfb.png"
-                className="w-[2.2rem] h-[2.2rem] cursor-pointer"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                onClick={() => {
-                  userSocials?.instagram
-                    ? window.open(userSocials?.instagram, "_blank")
-                    : null;
-                }}
-                src="/pginsta.png"
-                className="md:w-[2rem] md:h-[2rem] w-[2rem] h-[2rem] cursor-pointer"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                onClick={() => {
-                  userSocials?.youtube
-                    ? window.open(userSocials?.youtube, "_blank")
-                    : null;
-                }}
-                src="/pgyt.png"
-                className="md:w-[1.8rem] md:h-[1.8rem] w-[2rem] h-[2rem] cursor-pointer"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                onClick={() => {
-                  userSocials?.whatsapp
-                    ? window.open(userSocials?.whatsapp, "_blank")
-                    : null;
-                }}
-                src="/pgwhatsapp.png"
-                className="md:w-[1.6rem] md:h-[1.6rem] w-[2rem] h-[2rem] cursor-pointer"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                onClick={() => {
-                  userSocials?.sms
-                    ? window.open(userSocials?.sms, "_blank")
-                    : null;
-                }}
-                src="/pgsms.png"
-                className="md:w-[1.4rem] md:h-[1.4rem] w-[2rem] h-[2rem] cursor-pointer"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="lg:mt-3">
-        <div className="flex items-center md:justify-around lg:w-[75%] ">
-          <div className="lg:hidden flex shadow-sm w-screen justify-between items-center px-4 py-2">
-            <GiHamburgerMenu
-              onClick={() => {
-                sethamClicked(true);
-              }}
-              className=" text-[2rem]"
-            />
-            <img src="/sleepmlogo.png" className="w-[7rem]" alt="" />
-          </div>
-          <img
-            src="/sleepmlogo.png"
-            className="w-[9rem] hidden lg:flex"
-            alt=""
-          />
-          <div className=" gap-5 flex-wrap items-center text-[1.2rem] hidden lg:flex ">
-            <p></p>
-            <p className="hover:font-bold hover:text-[#813DA1] cursor-pointer transition-all ease-in-out duration-300">
-              Inicio
-            </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-              Tecnología
-            </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-              Testimonios
-            </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-              Productos
-            </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-              Plan de pagos
-            </p>{" "}
-          </div>
-        </div>
-      </div>
 
       <div className="flex flex-col gap-8 items-center md:flex-row md:justify-between w-[85vw]  m-auto ">
         <div className="text-[40px] font-bold w-[30rem]">
@@ -378,15 +256,21 @@ export default function Page({ isActive, params }) {
             <div className="flex flex-col  gap-2 items-center md:grid md:grid-cols-2 xl:grid-cols-3  md:place-items-center gap-y-6 ">
               {products?.map((product, index) => {
                 return (
-                  <div className="h-[35rem] w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4">
-                    <div className="h-[40%] flex justify-center">
+                  <div
+                    className="h-[35rem] w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
+                    key={index}
+                    onClick={() => {
+                      router.push(`/slepweb/${params?.slug}/products`);
+                    }}
+                  >
+                    <div className="h-[40%] flex justify-center cursor-pointer">
                       <img
                         src={product?.image}
                         className="h-full object-cover"
                         alt=""
                       />
                     </div>
-                    <div className="h-fit grid grid-cols-[65%_35%] mt-2">
+                    <div className="h-fit grid grid-cols-[65%_35%] mt-2 ">
                       <p className="font-bold">
                         {product?.name ? product.name : "No Name"}
                       </p>
@@ -411,7 +295,7 @@ export default function Page({ isActive, params }) {
                         alivia el dolor y promueve un sueño profundo.
                       </p>
                     </div>
-                    <div className="h-[10%] flex justify-center">
+                    <div className="h-[10%] flex justify-center z-50">
                       <button
                         onClick={() => {
                           window.open(`https://wa.me/${userSocials?.whatsapp}`);
@@ -419,7 +303,7 @@ export default function Page({ isActive, params }) {
                         className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                       >
                         <p className="text-[#803DA1] font-bold text-[1rem] lg:text-[1.1rem] ">
-                          Lo quiero
+                          Ver producto
                         </p>
                         <img
                           src="/buttonarrow.png"
@@ -494,143 +378,6 @@ export default function Page({ isActive, params }) {
           </div>
         </div>
       </div>
-
-      <div className="mt-[4rem] relative">
-        <img
-          src="/footerhandshake.png"
-          className="absolute md:bottom-[41%] lg:bottom-[81%] w-[13rem] left-[10%] top-[0%] z-50 md:flex hidden h-auto"
-          alt=""
-        />
-        <div className="bg-[#26262C] h-fit py-4 w-screen clipthis  text-center">
-          <div className="md:mt-[7%] lg:mt-[5%]">
-            <p className="font-bold text-[2.4rem] text-white">
-              "Contáctame y será un placer atenderte."
-            </p>
-          </div>
-          <div className="text-white mt-8 w-[95%] lg:w-[40%] m-auto ">
-            <p className="md:text-[1.1rem] lg:text-[1.2rem] ">
-              Estás a solo un clic de alcanzar el éxito que buscas. Sigue mis
-              redes sociales y contáctame por la que te resulte más conveniente.
-            </p>
-          </div>
-          <div className=" flex justify-center mt-5">
-            <div className="w-fit flex gap-8">
-              <div>
-                <img
-                  onClick={() => {
-                    userSocials?.facebook
-                      ? window.open(userSocials?.facebook, "_blank")
-                      : null;
-                  }}
-                  src="/pgfb.png"
-                  className="h-[2.4rem] w-[2.4rem] "
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={() => {
-                    userSocials?.instagram
-                      ? window.open(userSocials?.instagram, "_blank")
-                      : null;
-                  }}
-                  src="/pginsta.png"
-                  className="h-[2.4rem] w-[2.4rem] "
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={() => {
-                    userSocials?.youtube
-                      ? window.open(userSocials?.youtube, "_blank")
-                      : null;
-                  }}
-                  src="/pgyt.png"
-                  className="h-[2.4rem] w-[2.4rem] "
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={() => {
-                    userSocials?.whatsapp
-                      ? window.open(userSocials?.whatsapp, "_blank")
-                      : null;
-                  }}
-                  src="/pgwhatsapp.png"
-                  className="h-[2.4rem] w-[2.4rem] "
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={() => {
-                    userSocials?.sms
-                      ? window.open(userSocials?.sms, "_blank")
-                      : null;
-                  }}
-                  src="/pgsms.png"
-                  className="h-[2.4rem] w-[2.4rem] "
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div className="w-[85%] h-[2px] m-auto mt-4 bg-[#8b8a8a7b] "> </div>
-          <div className="mt-4 flex flex-wrap justify-center gap-5 w-[75%] m-auto ">
-            <div className=" flex items-center">
-              <img src="/sleepmlogo.png" className="h-[2rem]" alt="" />
-            </div>
-            <div className="flex flex-col justify-center items-center gap-4  text-white text-[1.2rem]">
-              <div className="flex gap-3 flex-wrap">
-                <p></p>
-                <p>Inicio</p>
-                <p>Tecnología</p>
-                <p>Testimonios</p>
-                <p>Productos</p>
-                <p>Plan de pagos</p>
-              </div>
-              <div className="">
-                <p>© 2024 Sleepm / Términos & condiciones </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
-
-const MobileNavPage = ({ sethamClicked }) => {
-  return (
-    <div className="absolute h-screen w-screen bg-cyan-100 overflow-hidden">
-      <div className="lg:hidden flex shadow-sm w-screen justify-between items-center px-4 py-2">
-        <RxCross2
-          onClick={() => {
-            sethamClicked(false);
-          }}
-          className=" text-[2rem] text-red-500 font-bold"
-        />
-        <img src="/sleepmlogo.png" className="w-[7rem]" alt="" />
-      </div>
-      <div className="h-[60%] w-full  flex gap-[2rem] flex-wrap flex-col items-center justify-center">
-        <p className="hover:font-bold hover:text-[#813DA1] cursor-pointer transition-all ease-in-out duration-300">
-          Inicio
-        </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-          Tecnología
-        </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-          Testimonios
-        </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-          Productos
-        </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
-          Plan de pagos
-        </p>{" "}
-      </div>
-    </div>
-  );
-};
