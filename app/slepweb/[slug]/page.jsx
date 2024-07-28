@@ -7,7 +7,6 @@ import axios from "@/app/api/axiosintercepter";
 import TestimonialSlider from "@/components/dashboard/sleepm/TestimonialSlider";
 
 export default function Page({ isActive, params }) {
-  console.log(params.slug);
   const [products, setproducts] = useState([]);
   const [paginaVideo, setpaginaVideo] = useState({});
   const [paginaTestimonials, setpaginaTestimonials] = useState([]);

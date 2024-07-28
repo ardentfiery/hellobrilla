@@ -26,15 +26,14 @@ const MiPaginaSocial = ({ isActive }) => {
   const updateUserSocial = async () => {
     const toastId = toast.loading("updating...");
     try {
-      console.log()
       await axios.post(`/user/updateusersocialpagina/${userId}`, updateValues);
       getUserSocial();
       setupdateValues({});
-      toast.success("Updated!");
+      toast.success("Updated successfully!...");
       toast.dismiss(toastId);
     } catch (error) {
       console.log(error);
-      toast.error("Error updating!");
+      toast.error("Error updating!...");
       toast.dismiss(toastId);
     }
   };
