@@ -4,12 +4,23 @@ import axios from "@/app/api/axiosintercepter";
 import TestimonialSlider from "@/components/dashboard/sleepm/TestimonialSlider";
 import { useRouter } from "next/navigation";
 import { usePaginaContext } from "@/context/PaginaContext";
+import PaginaPop from "@/components/dashboard/sleepm/PaginaPop";
 
 export default function Page({ isActive, params }) {
   const router = useRouter();
+
   const [paginaVideo, setpaginaVideo] = useState({});
   const [paginaTestimonials, setpaginaTestimonials] = useState([]);
   const [randNumber, setrandNumber] = useState([0, 3]);
+
+  const [clickedProduct, setclickedProduct] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState();
+  const handleOpen = (value) => {
+    setSize(value);
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
 
   const { products, getUserSocial, userSocials, parseText } =
     usePaginaContext();
@@ -74,7 +85,13 @@ export default function Page({ isActive, params }) {
 
   return (
     <div className="overflow-hidden h-fit flex flex-col gap-8">
-      {/* {hamClicked ? <MobileNavPage sethamClicked={sethamClicked} /> : null} */}
+      <PaginaPop
+        open={open}
+        size={size}
+        handleClose={handleClose}
+        currentProd={clickedProduct}
+        whatsapp={userSocials?.whatsapp}
+      />
 
       <div className="flex flex-col gap-8 items-center md:flex-row md:justify-between w-[85vw]  m-auto ">
         <div className="text-[40px] font-bold w-[30rem]">
@@ -292,18 +309,25 @@ export default function Page({ isActive, params }) {
                     <div
                       className="h-[35rem] w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
                       key={index}
-                      onClick={() => {
-                        router.push(`/slepweb/${params?.slug}/products`);
-                      }}
                     >
-                      <div className="h-[40%] flex justify-center cursor-pointer">
+                      <div
+                        onClick={() => {
+                          router.push(`/slepweb/${params?.slug}/products`);
+                        }}
+                        className="h-[40%] flex justify-center cursor-pointer"
+                      >
                         <img
                           src={product?.image}
                           className="h-full object-cover"
                           alt=""
                         />
                       </div>
-                      <div className="h-fit grid grid-cols-[65%_35%] mt-2 ">
+                      <div
+                        onClick={() => {
+                          router.push(`/slepweb/${params?.slug}/products`);
+                        }}
+                        className="h-fit grid grid-cols-[65%_35%] mt-2 "
+                      >
                         <p className="font-bold">
                           {product?.name ? product.name : "No Name"}
                         </p>
@@ -320,7 +344,12 @@ export default function Page({ isActive, params }) {
                             )}
                         </div>
                       </div>
-                      <div className="h-[30%] my-[1rem] ">
+                      <div
+                        onClick={() => {
+                          router.push(`/slepweb/${params?.slug}/products`);
+                        }}
+                        className="h-[30%] my-[1rem] "
+                      >
                         <p className="text-[#2B2B2B]">
                           {(() => {
                             try {
@@ -347,11 +376,10 @@ export default function Page({ isActive, params }) {
                       <div className="h-[10%] flex justify-center z-50">
                         <button
                           onClick={() => {
-                            window.open(
-                              `https://wa.me/${userSocials?.whatsapp}`
-                            );
+                            handleOpen("80%");
+                            setclickedProduct(product);
                           }}
-                          className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+                          className="flex justify-center gap-2  items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                         >
                           <p className="text-[#803DA1] font-bold text-[1rem] lg:text-[1.1rem] ">
                             Ver producto

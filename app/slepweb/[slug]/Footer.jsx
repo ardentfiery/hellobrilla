@@ -1,10 +1,11 @@
 "use client";
 import "./PageStyle.css";
 import { usePaginaContext } from "@/context/PaginaContext";
+import { useRouter } from "next//navigation";
 
 const Footer = () => {
-  const { userSocials } = usePaginaContext();
-  
+  const { userSocials, setactiveTab, userId } = usePaginaContext();
+  const router = useRouter();
   return (
     <div className="max-w-[100%] w-[100vw] overflow-hidden ">
       <div className="mt-[4rem] relative">
@@ -97,11 +98,27 @@ const Footer = () => {
             <div className="flex flex-col justify-center items-center gap-4  text-white text-[1.2rem]">
               <div className="flex gap-3 flex-wrap">
                 <p></p>
-                <p>Inicio</p>
-                <p>Tecnología</p>
-                <p>Testimonios</p>
-                <p>Productos</p>
-                <p>Plan de pagos</p>
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setactiveTab(0);
+                    router.push(`/slepweb/${userId}`);
+                  }}
+                >
+                  Inicio
+                </p>
+                <p className="cursor-pointer">Tecnología</p>
+                <p className="cursor-pointer">Testimonios</p>
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setactiveTab(3);
+                    router.push(`/slepweb/${userId}/products`);
+                  }}
+                >
+                  Productos
+                </p>
+                <p className="cursor-pointer">Plan de pagos</p>
               </div>
               <div className="">
                 <p>© 2024 Sleepm / Términos & condiciones </p>

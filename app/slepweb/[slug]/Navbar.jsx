@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./PageStyle.css";
 import { usePaginaContext } from "@/context/PaginaContext";
 
-const Navbar = () => {
+const Navbar = ({ params }) => {
   const [hamClicked, sethamClicked] = useState(false);
-  const { userSocials } = usePaginaContext();
+  const { userSocials, userId, activeTab, setactiveTab } = usePaginaContext();
+  const router = useRouter();
 
   return (
     <div className="max-w-[100%] w-[100vw] overflow-hidden ">
@@ -104,19 +106,59 @@ const Navbar = () => {
           />
           <div className=" gap-5 flex-wrap items-center text-[1.2rem] hidden lg:flex ">
             <p></p>
-            <p className="hover:font-bold hover:text-[#813DA1] cursor-pointer transition-all ease-in-out duration-300">
+            <p
+              onClick={() => {
+                setactiveTab(0);
+                router.push(`/slepweb/${userId}`)
+              }}
+              className={`hover:font-bold hover:text-[#813DA1] cursor-pointer transition-all ease-in-out duration-300 ${
+                activeTab == 0 ? "text-[#813DA1] font-bold" : ""
+              }`}
+            >
               Inicio
             </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+            <p
+              onClick={() => {
+                setactiveTab(1);
+                // router.push(`/slepweb/${userId}/`)
+              }}
+              className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+                activeTab == 1 ? "text-[#813DA1] font-bold" : ""
+              }`}
+            >
               Tecnología
             </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+            <p
+              onClick={() => {
+                setactiveTab(2);
+                // router.push(`/slepweb/${userId}/`)
+              }}
+              className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+                activeTab == 2 ? "text-[#813DA1] font-bold" : ""
+              }`}
+            >
               Testimonios
             </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+            <p
+              onClick={() => {
+                setactiveTab(3);
+                router.push(`/slepweb/${userId}/products`);
+              }}
+              className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+                activeTab == 3 ? "text-[#813DA1] font-bold" : ""
+              }`}
+            >
               Productos
             </p>
-            <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+            <p
+              onClick={() => {
+                setactiveTab(4);
+                // router.push(`/slepweb/${userId}/`)
+              }}
+              className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+                activeTab == 4 ? "text-[#813DA1] font-bold" : ""
+              }`}
+            >
               Plan de pagos
             </p>{" "}
           </div>

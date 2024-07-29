@@ -7,9 +7,12 @@ const PaginaContext = createContext();
 export const PaginaProvider = ({ children }) => {
   const [products, setproducts] = useState([]);
   const [userSocials, setuserSocials] = useState([]);
+  const [userId, setuserId] = useState("");
+  const [activeTab, setactiveTab] = useState(0);
 
   const getUserSocial = async (params) => {
     try {
+      setuserId(params.slug);
       const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
       setuserSocials(resp.data.data);
       console.log(resp.data.data);
@@ -44,7 +47,16 @@ export const PaginaProvider = ({ children }) => {
 
   return (
     <PaginaContext.Provider
-      value={{ products, userSocials, getUserSocial, parseText }}
+      value={{
+        products,
+        userSocials,
+        getUserSocial,
+        parseText,
+        userId,
+        setuserId,
+        activeTab,
+        setactiveTab,
+      }}
     >
       {children}
     </PaginaContext.Provider>

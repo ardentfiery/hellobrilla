@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { usePaginaContext } from "@/context/PaginaContext";
 import PaginaPop from "@/components/dashboard/sleepm/PaginaPop";
 
-const page = ({params}) => {
-  const { products, userSocials, parseText, getUserSocial } =
+const page = ({ params }) => {
+  const { products, userSocials, parseText, getUserSocial, setactiveTab } =
     usePaginaContext();
 
   const [clickedProduct, setclickedProduct] = useState([]);
@@ -18,11 +18,11 @@ const page = ({params}) => {
 
   useEffect(() => {
     getUserSocial(params);
+    setactiveTab(3);
   }, []);
 
   return (
     <div className="max-w-[100%] w-[100vw] h-auto overflow-hidden ">
-      {console.log(userSocials)}
       <PaginaPop
         open={open}
         size={size}

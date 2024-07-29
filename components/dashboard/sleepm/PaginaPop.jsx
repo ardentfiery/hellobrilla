@@ -31,7 +31,7 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                   />
                 ))}
             </div>
-            <div className="grid grid-cols-2 h-fit">
+            <div className="grid md:grid-cols-2 h-fit">
               <div className=" w-[98%] flex justify-center flex-col items-center gap-3">
                 <img
                   src={currentProd?.image ? currentProd.image[imgIndex] : "" }
@@ -54,7 +54,7 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                   />
                 </button>
               </div>
-              <div className="w-[80%] text-[1.1rem] text-black">
+              <div className="w-[80%] m-auto md:m-0 text-left text-[1.1rem] text-black">
                 <p>
                   {(() => {
                     try {
@@ -79,9 +79,9 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] text-[2rem] flex items-center justify-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group hover:bg-[#664198] select-none w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] text-[2rem] flex items-center justify-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <div className="scale-150 font-bold rotate-180 mt-3 mr-2  group-hover:text-white ">
+                <div className="scale-150 font-medium  rotate-180 md:mt-3 md:mr-2  group-hover:text-white ">
                   {">"}
                 </div>
               </div>
@@ -123,9 +123,9 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full text-[2rem] border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full text-[2rem] border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <div className="scale-150 font-bold mb-3 ml-2  group-hover:text-white ">
+                <div className="scale-150 font-medium md:mb-3 md:ml-2  group-hover:text-white ">
                   {">"}
                 </div>
               </div>

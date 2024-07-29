@@ -9,7 +9,7 @@ import { useDashContext } from "@/context/DashboardContext";
 
 const Page = () => {
   const [isLoading, setisLoading] = useState(true);
-  const { setuserId,getuser } = useDashContext();
+  const { setuserId } = useDashContext();
 
   const router = useRouter();
 
