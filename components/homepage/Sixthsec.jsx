@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoMdArrowDropright } from "react-icons/io";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../app/api/axiosintercepter";
 import { Modal, Input, Button } from "rsuite";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

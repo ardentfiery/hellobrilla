@@ -1,5 +1,5 @@
 import { Inter, Montserrat } from "next/font/google";
-import { DashProvider } from "@/context/DashboardContext";
+import { DashProvider } from "../../context/DashboardContext";
 import "../globals.css"
 import "react-calendar/dist/Calendar.css";
 const montserrat = Montserrat({ subsets: ["latin"] });

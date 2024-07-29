@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Modal } from "rsuite";
-import { usePaginaContext } from "@/context/PaginaContext";
+import { usePaginaContext } from "../../../context/PaginaContext";
 
 const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
   const [imgIndex, setImgIndex] = useState(0);

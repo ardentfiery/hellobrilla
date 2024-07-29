@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { LuPlayCircle } from "react-icons/lu";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../../app/api/axiosintercepter";
 import TutorialPop from "./TutorialPop";
 import Popup from "../Popup";
 import PcProfile from "../PcProfile";

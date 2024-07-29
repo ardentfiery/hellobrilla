@@ -1,5 +1,5 @@
 import React from "react";
-import downloadImage from "@/utils/downloadImage";
+import downloadImage from "../../../utils/downloadImage";
 
 const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "", size="" }) => {
   return (

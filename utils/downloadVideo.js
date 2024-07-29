@@ -1,4 +1,4 @@
-import axios from "@/app/api/axiosintercepter";
+import axios from "../app/api/axiosintercepter";
 
 const downloadVideo = async (docId,prod=false) => {
   try {

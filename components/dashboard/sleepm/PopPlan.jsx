@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "rsuite";
-import axios from "@/app/api/axiosintercepter";
-import downloadImage from "@/utils/downloadImage";
+import axios from "../../../app/api/axiosintercepter";
+import downloadImage from "../../../utils/downloadImage";
 import ImageViewPop from "./ImageViewPop";
 
 const PopPlan = ({ size, open, handleClose, handleOpen }) => {

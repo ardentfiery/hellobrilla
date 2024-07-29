@@ -1,12 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import axios from "@/app/api/axiosintercepter";
-import TestimonialSlider from "@/components/dashboard/sleepm/TestimonialSlider";
+import axios from "../../api/axiosintercepter";
+import TestimonialSlider from "../../../components/dashboard/sleepm/TestimonialSlider";
 import { useRouter } from "next/navigation";
-import { usePaginaContext } from "@/context/PaginaContext";
-import PaginaPop from "@/components/dashboard/sleepm/PaginaPop";
-
-export default function Page({ isActive, params }) {
+import { usePaginaContext } from "../../../context/PaginaContext";
+import PaginaPop from "../../../components/dashboard/sleepm/PaginaPop";
+export default function Page({ params }) {
   const router = useRouter();
 
   const [paginaVideo, setpaginaVideo] = useState({});

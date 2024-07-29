@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../api/axiosintercepter";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 const page = () => {

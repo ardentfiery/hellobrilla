@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../app/api/axiosintercepter";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Calendar from "react-calendar";

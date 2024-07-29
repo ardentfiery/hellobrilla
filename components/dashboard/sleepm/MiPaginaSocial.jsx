@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Input } from "rsuite";
-import { Label } from "@/components/ui/label";
-import { useDashContext } from "@/context/DashboardContext";
+import { Label } from "../../../components/ui/label";
+import { useDashContext } from "../../../context/DashboardContext";
 import { toast } from "react-hot-toast";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../../app/api/axiosintercepter";
 
 const MiPaginaSocial = ({ isActive }) => {
   const { userId } = useDashContext();

@@ -4,7 +4,7 @@ import { FaRegCopy } from "react-icons/fa";
 import Dashboard from "./dash/Dashboard";
 import Recursos from "./sleepm/Recursos";
 import Tutorials from "./sleepm/Tutorials";
-import { useDashContext } from "@/context/DashboardContext";
+import { useDashContext } from "../../context/DashboardContext";
 import Personal from "./personal/Personal";
 import Liderazgo from "./liderazgo/Liderazgo";
 import Ventas from "./ventas/Ventas";

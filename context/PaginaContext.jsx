@@ -1,6 +1,6 @@
 "use client";
 import { useContext, createContext, useState, useEffect } from "react";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../app/api/axiosintercepter";
 
 const PaginaContext = createContext();
 

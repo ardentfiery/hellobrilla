@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePaginaContext } from "@/context/PaginaContext";
-import PaginaPop from "@/components/dashboard/sleepm/PaginaPop";
+import { usePaginaContext } from "../../../../context/PaginaContext";
+import PaginaPop from "../../../../components/dashboard/sleepm/PaginaPop";
 
 const page = ({ params }) => {
   const { products, userSocials, parseText, getUserSocial, setactiveTab } =

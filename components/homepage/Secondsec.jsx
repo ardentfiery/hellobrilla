@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../app/api/axiosintercepter";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Modal } from "rsuite";

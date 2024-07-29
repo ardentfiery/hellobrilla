@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../../app/api/axiosintercepter";
 import PcProfile from "../PcProfile";
 import ImageViewPop from "./ImageViewPop";
 import PopTriptico from "./PopTriptico";

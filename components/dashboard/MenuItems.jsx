@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDashContext } from "@/context/DashboardContext";
+import { useDashContext } from "../../context/DashboardContext";
 
 const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
   const { activeDashPage, setactiveDashPage } = useDashContext();

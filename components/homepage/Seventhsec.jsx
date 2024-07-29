@@ -10,7 +10,7 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../app/api/axiosintercepter";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 

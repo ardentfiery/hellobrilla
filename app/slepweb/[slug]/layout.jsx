@@ -2,10 +2,9 @@
 import "rsuite/dist/rsuite.min.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { PaginaProvider } from "@/context/PaginaContext";
+import { PaginaProvider } from "../../../context/PaginaContext";
 import { Inter, Montserrat } from "next/font/google";
 const montserrat = Montserrat({ subsets: ["latin"] });
-import { usePageContext } from "react-pdf";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

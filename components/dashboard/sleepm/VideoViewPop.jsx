@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import videojs from 'video.js';
-import VideoPlayer from "@/utils/VideoPlayer";
+import VideoPlayer from "../../../utils/VideoPlayer";
 
 const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
   const playerRef = useRef(null);

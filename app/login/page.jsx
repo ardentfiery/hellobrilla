@@ -5,7 +5,7 @@ import { CiLock } from "react-icons/ci";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { useFormik } from "formik";
-import { loginSchema } from "@/schema";
+import { loginSchema } from "../../schema";
 import axios from "../api/axiosintercepter";
 import ForgotPassword from "./ForgotPassword";
 import { toast } from "react-hot-toast";

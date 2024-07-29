@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Modal } from "rsuite";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../../app/api/axiosintercepter";
 import VideoViewPop from "./VideoViewPop";
-import downloadVideo from "@/utils/downloadVideo";
+import downloadVideo from "../../../utils/downloadVideo";
 
 const PopVisualVideo = ({ size, open, handleClose, handleOpen }) => {
   const [videos, setvideos] = useState([]);

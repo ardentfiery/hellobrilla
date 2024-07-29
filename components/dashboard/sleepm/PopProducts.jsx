@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Modal } from "rsuite";
-import axios from "@/app/api/axiosintercepter";
-import downloadImage from "@/utils/downloadImage";
+import downloadImage from "../../../utils/downloadImage";
 import ImageViewPop from "./ImageViewPop";
 import VideoViewPop from "./VideoViewPop";
-import downloadVideo from "@/utils/downloadVideo";
+import downloadVideo from "../../../utils/downloadVideo";
 
 const PopProducts = ({
   size,

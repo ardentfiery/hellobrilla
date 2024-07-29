@@ -7,7 +7,7 @@ import { CiLock } from "react-icons/ci";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { useFormik } from "formik";
-import { signUpSchema } from "@/schema";
+import { signUpSchema } from "../../schema";
 import axios from "../api/axiosintercepter";
 import { Modal } from "rsuite";
 import { MdDoneOutline } from "react-icons/md";

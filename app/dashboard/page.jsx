@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Left from "@/components/dashboard/Left";
-import axios from "@/app/api/axiosintercepter";
-import Right from "@/components/dashboard/Right";
+import Left from "../../components/dashboard/Left"
+import axios from "../../app/api/axiosintercepter";
+import Right from "../../components/dashboard/Right";
 import { useRouter } from "next/navigation";
-import BrillaLoader from "@/utils/BrillaLoader";
-import { useDashContext } from "@/context/DashboardContext";
+import BrillaLoader from "../../utils/BrillaLoader";
+import { useDashContext } from "../../context/DashboardContext";
 
 const Page = () => {
   const [isLoading, setisLoading] = useState(true);

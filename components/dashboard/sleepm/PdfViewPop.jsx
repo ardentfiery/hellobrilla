@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PdfComponent from "@/utils/PdfComponent";
+import PdfComponent from "../../../utils/PdfComponent";
 import { pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 

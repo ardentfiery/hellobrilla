@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./PageStyle.css";
-import { usePaginaContext } from "@/context/PaginaContext";
+import { usePaginaContext } from "../../../context/PaginaContext";
 
 const Navbar = ({ params }) => {
   const [hamClicked, sethamClicked] = useState(false);

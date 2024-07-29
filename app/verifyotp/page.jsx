@@ -4,7 +4,8 @@ import axios from "../api/axiosintercepter";
 import { MdDoneOutline } from "react-icons/md";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import BrillaLoader from "@/utils/BrillaLoader";
+import BrillaLoader from "../../utils/BrillaLoader";
+
 const page = () => {
   const router = useRouter();
   const [savedUserId, setsavedUserId] = useState();

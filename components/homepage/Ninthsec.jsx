@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../app/api/axiosintercepter";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 import {
@@ -11,10 +11,10 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "../../components/ui/carousel";
 
 import { IoMdStar } from "react-icons/io";
-import { Card } from "@/components/ui/card";
+import { Card } from "../../components/ui/card";
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,

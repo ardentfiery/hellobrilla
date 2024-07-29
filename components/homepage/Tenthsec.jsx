@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import { MdPlayArrow } from "react-icons/md";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../app/api/axiosintercepter";
 import { useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io5";

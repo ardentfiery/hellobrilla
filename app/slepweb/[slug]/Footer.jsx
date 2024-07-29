@@ -1,6 +1,6 @@
 "use client";
 import "./PageStyle.css";
-import { usePaginaContext } from "@/context/PaginaContext";
+import { usePaginaContext } from "../../../context/PaginaContext";
 import { useRouter } from "next//navigation";
 
 const Footer = () => {

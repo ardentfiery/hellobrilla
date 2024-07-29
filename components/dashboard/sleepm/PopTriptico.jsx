@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Modal } from "rsuite";
-import axios from "@/app/api/axiosintercepter";
+import axios from "../../../app/api/axiosintercepter";
 import ImageViewPop from "./ImageViewPop";
-import downloadImage from "@/utils/downloadImage";
+import downloadImage from "../../../utils/downloadImage";
 
 const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
   const [triptico, setTriptico] = useState({});
