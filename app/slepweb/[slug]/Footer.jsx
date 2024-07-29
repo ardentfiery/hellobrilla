@@ -1,23 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import "./PageStyle.css";
+import { usePaginaContext } from "@/context/PaginaContext";
 
 const Footer = () => {
-  const [userSocials, setuserSocials] = useState([]);
-
-  const getUserSocial = async () => {
-    try {
-      const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
-      setuserSocials(resp.data.data);
-      console.log(resp.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getUserSocial();
-  }, []);
-
+  const { userSocials } = usePaginaContext();
+  
   return (
     <div className="max-w-[100%] w-[100vw] overflow-hidden ">
       <div className="mt-[4rem] relative">

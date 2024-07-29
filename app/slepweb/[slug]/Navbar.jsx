@@ -1,24 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import "./PageStyle.css";
+import { usePaginaContext } from "@/context/PaginaContext";
 
 const Navbar = () => {
-  const [userSocials, setuserSocials] = useState([]);
   const [hamClicked, sethamClicked] = useState(false);
-
-  const getUserSocial = async () => {
-    try {
-      const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
-      setuserSocials(resp.data.data);
-      console.log(resp.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getUserSocial();
-  }, []);
+  const { userSocials } = usePaginaContext();
 
   return (
     <div className="max-w-[100%] w-[100vw] overflow-hidden ">

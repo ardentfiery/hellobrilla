@@ -1,24 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
-import "./PageStyle.css";
 import axios from "@/app/api/axiosintercepter";
 import TestimonialSlider from "@/components/dashboard/sleepm/TestimonialSlider";
 import { useRouter } from "next/navigation";
+import { usePaginaContext } from "@/context/PaginaContext";
 
 export default function Page({ isActive, params }) {
   const router = useRouter();
-  const [products, setproducts] = useState([]);
   const [paginaVideo, setpaginaVideo] = useState({});
   const [paginaTestimonials, setpaginaTestimonials] = useState([]);
+  const [randNumber, setrandNumber] = useState([0, 3]);
 
+  const { products, getUserSocial, userSocials, parseText } =
+    usePaginaContext();
 
-  const getProducts = async () => {
-    try {
-      const resp = await axios.get("/sleepm/getpaginaproducts");
-      setproducts(resp?.data?.data);
-    } catch (error) {
-      console.log(`error gettting products: ${error}`);
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
+    return array;
   };
 
   const getPaginaVideo = async () => {
@@ -38,16 +39,42 @@ export default function Page({ isActive, params }) {
     }
   };
 
+  const generateNumbersWithDifference = (num1, num2) => {
+    console.log(num1, num2);
+    const min = Math.min(num1, num2);
+    const max = Math.max(num1, num2);
+
+    // Find all possible pairs with a difference of 3 within the given range
+    const possiblePairs = [];
+
+    for (let i = min; i <= max - 3; i++) {
+      const j = i + 3;
+      if (j <= max) {
+        possiblePairs.push([i, j]);
+      }
+    }
+
+    // Check if there are possible pairs, otherwise return null or an appropriate message
+    if (possiblePairs.length === 0) {
+      return null; // Or return an appropriate message, e.g., "No pairs found with a difference of 3"
+    }
+
+    // Select a random pair from the possible pairs
+    const randomIndex = Math.floor(Math.random() * possiblePairs.length);
+    console.log(randomIndex);
+    setrandNumber(possiblePairs[randomIndex]);
+  };
+
   useEffect(() => {
-    getProducts();
     getPaginaVideo();
     getPaginaTestimonials();
-  }, []);
+    getUserSocial(params);
+    generateNumbersWithDifference(0, products?.length);
+  }, [params, products]);
 
   return (
     <div className="overflow-hidden h-fit flex flex-col gap-8">
       {/* {hamClicked ? <MobileNavPage sethamClicked={sethamClicked} /> : null} */}
-
 
       <div className="flex flex-col gap-8 items-center md:flex-row md:justify-between w-[85vw]  m-auto ">
         <div className="text-[40px] font-bold w-[30rem]">
@@ -66,7 +93,12 @@ export default function Page({ isActive, params }) {
               Innovación en tecnología del sueño para transformar tu vida
             </p>
           </div>
-          <div className="mt-3">
+          <div
+            className="mt-3"
+            onClick={() => {
+              router.push(`/slepweb/${params?.slug}/products`);
+            }}
+          >
             <img
               className="h-[4rem] w-[15rem] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
               src="/arrowbox.png"
@@ -254,67 +286,87 @@ export default function Page({ isActive, params }) {
           </p>
           <div className=" w-[100%] md:w-[80%] py-4">
             <div className="flex flex-col  gap-2 items-center md:grid md:grid-cols-2 xl:grid-cols-3  md:place-items-center gap-y-6 ">
-              {products?.map((product, index) => {
-                return (
-                  <div
-                    className="h-[35rem] w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
-                    key={index}
-                    onClick={() => {
-                      router.push(`/slepweb/${params?.slug}/products`);
-                    }}
-                  >
-                    <div className="h-[40%] flex justify-center cursor-pointer">
-                      <img
-                        src={product?.image}
-                        className="h-full object-cover"
-                        alt=""
-                      />
-                    </div>
-                    <div className="h-fit grid grid-cols-[65%_35%] mt-2 ">
-                      <p className="font-bold">
-                        {product?.name ? product.name : "No Name"}
-                      </p>
-                      <div className="flex justify-end items-end px-[10%] gap-2 pb-2">
-                        {product?.rating &&
-                          Array.from({ length: product?.rating }).map(
-                            (_, index) => (
-                              <img
-                                src="/rating.png"
-                                className="h-[1rem] w-[1rem] "
-                                alt=""
-                              />
-                            )
-                          )}
-                      </div>
-                    </div>
-                    <div className="h-[30%] my-[1rem] ">
-                      <p className="text-[#2B2B2B]">
-                        El grafeno ayuda en la recuperación de lesiones y alivia
-                        el dolor muscular. Los biocristales mejoran la energía y
-                        el descanso. El infrarrojo lejano mejora la circulación,
-                        alivia el dolor y promueve un sueño profundo.
-                      </p>
-                    </div>
-                    <div className="h-[10%] flex justify-center z-50">
-                      <button
-                        onClick={() => {
-                          window.open(`https://wa.me/${userSocials?.whatsapp}`);
-                        }}
-                        className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
-                      >
-                        <p className="text-[#803DA1] font-bold text-[1rem] lg:text-[1.1rem] ">
-                          Ver producto
-                        </p>
+              {shuffleArray(products.slice(randNumber[0], randNumber[1]))?.map(
+                (product, index) => {
+                  return (
+                    <div
+                      className="h-[35rem] w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
+                      key={index}
+                      onClick={() => {
+                        router.push(`/slepweb/${params?.slug}/products`);
+                      }}
+                    >
+                      <div className="h-[40%] flex justify-center cursor-pointer">
                         <img
-                          src="/buttonarrow.png"
-                          className="w-[1rem] h-[1rem]"
+                          src={product?.image}
+                          className="h-full object-cover"
                           alt=""
                         />
-                      </button>
+                      </div>
+                      <div className="h-fit grid grid-cols-[65%_35%] mt-2 ">
+                        <p className="font-bold">
+                          {product?.name ? product.name : "No Name"}
+                        </p>
+                        <div className="flex justify-end items-end px-[10%] gap-2 pb-2">
+                          {product?.rating &&
+                            Array.from({ length: product?.rating }).map(
+                              (_, index) => (
+                                <img
+                                  src="/rating.png"
+                                  className="h-[1rem] w-[1rem] "
+                                  alt=""
+                                />
+                              )
+                            )}
+                        </div>
+                      </div>
+                      <div className="h-[30%] my-[1rem] ">
+                        <p className="text-[#2B2B2B]">
+                          {(() => {
+                            try {
+                              return product.description
+                                ? parseText(
+                                    JSON.parse(
+                                      product.description.slice(0, 300)
+                                    )
+                                  )
+                                : null;
+                            } catch (error) {
+                              console.error(
+                                "Invalid JSON string:",
+                                error.message
+                              );
+                              return parseText(
+                                product.description.slice(0, 300)
+                              );
+                            }
+                          })()}
+                          ...
+                        </p>
+                      </div>
+                      <div className="h-[10%] flex justify-center z-50">
+                        <button
+                          onClick={() => {
+                            window.open(
+                              `https://wa.me/${userSocials?.whatsapp}`
+                            );
+                          }}
+                          className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
+                        >
+                          <p className="text-[#803DA1] font-bold text-[1rem] lg:text-[1.1rem] ">
+                            Ver producto
+                          </p>
+                          <img
+                            src="/buttonarrow.png"
+                            className="w-[1rem] h-[1rem]"
+                            alt=""
+                          />
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                }
+              )}
             </div>
           </div>
         </div>
@@ -349,7 +401,7 @@ export default function Page({ isActive, params }) {
                     <p>BONO DE INCENTIVO</p>
                   </div>
                   <div className="flex gap-3">
-                    <img src="/starfourfour.png" alt="" />
+                    <img src="/starfour.png" alt="" />
                     <p>FONDO DE BONOS GLOBAL </p>
                   </div>
                 </div>
