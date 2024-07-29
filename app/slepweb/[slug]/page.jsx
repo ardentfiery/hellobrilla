@@ -22,7 +22,7 @@ export default function Page({ isActive, params }) {
   };
   const handleClose = () => setOpen(false);
 
-  const { products, getUserSocial, userSocials, parseText } =
+  const { products, getUserSocial, userSocials, parseText, setactiveTab } =
     usePaginaContext();
 
   const shuffleArray = (array) => {
@@ -81,6 +81,7 @@ export default function Page({ isActive, params }) {
     getPaginaTestimonials();
     getUserSocial(params);
     generateNumbersWithDifference(0, products?.length);
+    setactiveTab(0);
   }, [params, products]);
 
   return (

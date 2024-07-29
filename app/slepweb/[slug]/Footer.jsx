@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="mt-[4rem] relative">
         <img
           src="/footerhandshake.png"
-          className="absolute md:bottom-[41%] lg:bottom-[81%] w-[13rem] left-[10%] top-[0%] z-50 md:flex hidden h-auto"
+          className="absolute md:bottom-[41%] lg:bottom-[81%] w-[13rem] left-[10%] top-[0%] z-40 md:flex hidden h-auto"
           alt=""
         />
         <div className="bg-[#26262C] h-fit py-4 w-screen clipthis  text-center">

@@ -9,6 +9,7 @@ export const PaginaProvider = ({ children }) => {
   const [userSocials, setuserSocials] = useState([]);
   const [userId, setuserId] = useState("");
   const [activeTab, setactiveTab] = useState(0);
+  const [isLoading, setisLoading] = useState(true);
 
   const getUserSocial = async (params) => {
     try {
@@ -16,6 +17,7 @@ export const PaginaProvider = ({ children }) => {
       const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
       setuserSocials(resp.data.data);
       console.log(resp.data.data);
+      setisLoading(false)
     } catch (error) {
       console.log(error);
     }
