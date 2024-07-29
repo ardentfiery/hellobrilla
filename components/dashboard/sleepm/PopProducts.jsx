@@ -43,7 +43,6 @@ const PopProducts = ({
           className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body className="hide-scrollbar select-none">
-          {console.log(clickedProduct)}
           <div className="flex lg:flex-row flex-col gap-6 justify-center items-center">
             <div
               onClick={() => {

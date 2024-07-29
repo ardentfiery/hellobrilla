@@ -26,8 +26,6 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
     player.on('loadedmetadata', () => {
       const videoWidth = player.videoWidth();
       const videoHeight = player.videoHeight();
-      console.log('Video Width:', videoWidth);
-      console.log('Video Height:', videoHeight);
     });
 
     // You can handle other player events here, for example:

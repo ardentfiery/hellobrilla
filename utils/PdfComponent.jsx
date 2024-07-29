@@ -18,7 +18,6 @@ const PdfComponent = ({ pdfUrl }) => {
   useEffect(() => {
     const fetchPdfDimensions = async () => {
       const dimensions = await getPdfDimensions(pdfUrl);
-      console.log(dimensions);
       setPageDimensions(dimensions);
     };
     fetchPdfDimensions();

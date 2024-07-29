@@ -58,16 +58,10 @@ const Home = () => {
   const authorizeUser = async () => {
     try {
       const isAuthorized = await axios.get("/user/authorize");
-      console.log("---------------- not authorized --------------------");
       try {
         const data = await axios.get("/user/userotpverified");
-        console.log("---------------- otp not verified --------------------");
         try {
           const data = await axios.get("/user/paidforbrilla");
-          console.log(
-            "---------------- not paid for brilla --------------------"
-          );
-
           router.push("/dashboard");
         } catch (error) {
           // setisLoading(false);

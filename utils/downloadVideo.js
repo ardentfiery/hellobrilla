@@ -8,9 +8,7 @@ const downloadVideo = async (docId,prod=false) => {
       //   },
       responseType: "blob", // Important for file download
     });
-    console.log(response);
     const url = window.URL.createObjectURL(new Blob([response.data]));
-    console.log(url);
     const link = document.createElement("a");
     link.href = url;
     link.setAttribute("download", "video.mp4"); // You can specify the file name

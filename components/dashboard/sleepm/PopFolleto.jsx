@@ -52,7 +52,6 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
               <div
                 onClick={() => {
                   //scroll up the post images
-                  console.log(scrollDiv.current);
                   if (scrollDiv.current) {
                     scrollDiv.current.scrollBy({
                       left: -120,

@@ -76,7 +76,6 @@ const Recursos = ({ isActive }) => {
     try {
       const resp = await axios.get("/sleepm/getsleepmposts");
       setposts(resp?.data?.data);
-      console.log(resp?.data?.data);
     } catch (error) {
       console.log(`error gettting posts: ${error}`);
     }
@@ -85,7 +84,6 @@ const Recursos = ({ isActive }) => {
     try {
       const resp = await axios.get("/sleepm/getsleepmproducts");
       setproducts(resp?.data?.data);
-      console.log(resp?.data?.data);
     } catch (error) {
       console.log(`error gettting products: ${error}`);
     }
@@ -161,9 +159,7 @@ const Recursos = ({ isActive }) => {
                 <div
                   onClick={() => {
                     //scroll up the post images
-                    console.log(scrollDivProd.current);
                     if (scrollDivProd.current) {
-                      console.log("booom");
                       scrollDivProd.current.scrollBy({
                         left: -120,
                         behavior: "smooth",
@@ -205,7 +201,6 @@ const Recursos = ({ isActive }) => {
                 <div
                   onClick={() => {
                     //scroll up the post images
-                    console.log(scrollDivProd.current);
                     if (scrollDivProd.current) {
                       scrollDivProd.current.scrollBy({
                         left: 120,
@@ -354,7 +349,6 @@ const Recursos = ({ isActive }) => {
               <div
                 onClick={() => {
                   //scroll up the post images
-                  console.log(scrollDiv.current);
                   if (scrollDiv.current) {
                     scrollDiv.current.scrollBy({
                       top: -120,

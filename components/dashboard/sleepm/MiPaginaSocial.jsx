@@ -13,11 +13,9 @@ const MiPaginaSocial = ({ isActive }) => {
   const [updateValues, setupdateValues] = useState({});
 
   const getUserSocial = async () => {
-    console.log(userId);
     try {
       const resp = await axios.get(`/user/getusersocialpagina/${userId}`);
       setuserSocials(resp.data.data);
-      console.log(resp.data.data);
     } catch (error) {
       console.log(error);
     }

@@ -37,7 +37,6 @@ const PopVisualPdf = ({ size, open, handleClose, handleOpen = "" }) => {
         />
       )}
       <div className="relative">
-        {console.log(pdfs)}
         <Modal size={size} open={open} onClose={handleClose}>
           <div
             onClick={() => {

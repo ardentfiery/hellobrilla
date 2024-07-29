@@ -17,18 +17,20 @@ export const PaginaProvider = ({ children }) => {
       const resp = await axios.get(`/user/getusersocialpagina/${params.slug}`);
       setuserSocials(resp.data.data);
       console.log(resp.data.data);
-      setisLoading(false)
+      setisLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
   const getProducts = async () => {
+    setisLoading(true);
     try {
       const resp = await axios.get("/sleepm/getpaginaproducts");
       setproducts(resp?.data?.data);
     } catch (error) {
       console.log(`error gettting products: ${error}`);
     }
+    setisLoading(false);
   };
   const parseText = (text) => {
     const parts = text?.split(/(\*\*.*?\*\*|\n)/);
@@ -58,6 +60,7 @@ export const PaginaProvider = ({ children }) => {
         setuserId,
         activeTab,
         setactiveTab,
+        isLoading,
       }}
     >
       {children}

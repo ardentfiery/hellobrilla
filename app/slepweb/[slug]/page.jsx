@@ -50,7 +50,6 @@ export default function Page({ params }) {
   };
 
   const generateNumbersWithDifference = (num1, num2) => {
-    console.log(num1, num2);
     const min = Math.min(num1, num2);
     const max = Math.max(num1, num2);
 
@@ -71,7 +70,6 @@ export default function Page({ params }) {
 
     // Select a random pair from the possible pairs
     const randomIndex = Math.floor(Math.random() * possiblePairs.length);
-    console.log(randomIndex);
     setrandNumber(possiblePairs[randomIndex]);
   };
 
