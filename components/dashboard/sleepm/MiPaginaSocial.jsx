@@ -130,7 +130,7 @@ const MiPaginaSocial = ({ isActive }) => {
           <RadioGroup
             name="radio-group"
             defaultValue={
-              userSocials?.priority ? userSocials?.priority : "whats"
+              userSocials?.priority ? userSocials.priority : null
             }
             className="flex gap-4 font-medium text-[1.1rem]"
             onChange={(value) => {
