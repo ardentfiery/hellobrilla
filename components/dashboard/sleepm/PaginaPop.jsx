@@ -32,12 +32,13 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                 ))}
             </div>
             <div className="grid md:grid-cols-2 h-fit">
-              <div className=" w-[98%] flex  flex-col items-center gap-3">
+              <div className=" w-[100%] flex  flex-col items-center gap-3">
                 <img
                   src={currentProd?.image ? currentProd.image[imgIndex] : ""}
-                  className="h-[35rem] w-[40rem] px-10 object-cover"
+                  className="h-auto w-full sm:h-[20rem] sm:w-[25rem] md:h-[25rem] md:w-[30rem] lg:h-[30rem] lg:w-[35rem] xl:h-[35rem] xl:w-[40rem] px-10 object-contain"
                   alt=""
                 />
+
                 <button
                   onClick={() => {
                     window.open(`https://wa.me/${whatsapp}`);
@@ -106,7 +107,7 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                           className="group h-[255px] w-[100%] md:h-[285px] md:w-[275px] shadow-md shadow-black cursor-pointer  relative transition-all ease-in-out duration-300  "
                         >
                           <img
-                            className="h-[100%] w-[100%] object-cover"
+                            className="h-[100%] w-[100%] object-contain"
                             src={image}
                             alt=""
                           />
