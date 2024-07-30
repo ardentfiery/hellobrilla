@@ -76,7 +76,7 @@ const ProfilePop = ({ open, size, handleClose }) => {
               <div>
                 <p>link para referer</p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 w-[80%] m-auto">
                 <div
                   onClick={() => {
                     navigator.clipboard.writeText(
@@ -86,8 +86,8 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 >
                   <FaRegCopy />
                 </div>
-                <div className="w-[100%]">
-                  <a className="break-normal" href="">
+                <div className="w-[90%]">
+                  <a className="break-words" href="">
                     https://brillasystem.com/{userData?._id}
                   </a>
                 </div>

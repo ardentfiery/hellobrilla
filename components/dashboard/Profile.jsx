@@ -68,7 +68,7 @@ export const Profile = () => {
           <div>
             <p>link para referer</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 w-[80%] m-auto">
             <div
               onClick={() => {
                 navigator.clipboard.writeText(
@@ -78,7 +78,7 @@ export const Profile = () => {
             >
               <FaRegCopy />
             </div>
-            <div className="w-[100%]">
+            <div className="w-[90%]">
               <a className="break-words" href="">
                 https://brillasystem.com/{userData?._id}
               </a>
