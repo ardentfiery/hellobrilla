@@ -32,10 +32,10 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                 ))}
             </div>
             <div className="grid md:grid-cols-2 h-fit">
-              <div className=" w-[100%] flex  flex-col items-center gap-3">
+              <div className=" w-[100%] flex  flex-col justify-start items-center gap-3">
                 <img
                   src={currentProd?.image ? currentProd.image[imgIndex] : ""}
-                  className="h-auto w-full sm:h-[20rem] sm:w-[25rem] md:h-[25rem] md:w-[30rem] lg:h-[30rem] lg:w-[35rem] xl:h-[35rem] xl:w-[40rem] px-10 object-contain"
+                  className="h-auto w-full sm:h-[20rem] sm:w-[25rem] md:h-[25rem] md:w-[30rem] lg:h-[30rem] lg:w-[35rem] xl:h-[35rem] xl:w-[40rem] px-2 object-contain"
                   alt=""
                 />
 
