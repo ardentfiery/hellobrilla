@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 
-const PcProfile = () => {
+const PcProfile = ({ handleOpenProfile }) => {
   return (
     <div className="flex justify-between h-[6rem] ">
       <div className="flex  items-center justify-end pr-5 py-2  ">
@@ -36,12 +36,7 @@ const PcProfile = () => {
               }}
               className="h-[80px] w-[80px] object-fit rounded-full overflow-hidden "
             >
-              <img
-                className="h-[100%] w-[100%]"
-                src="/user.png"
-                alt=""
-              />
-              ;
+              <img className="h-[100%] w-[100%]" src="/user.png" alt="" />;
             </div>
           </div>
 

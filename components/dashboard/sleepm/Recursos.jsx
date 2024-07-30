@@ -143,7 +143,7 @@ const Recursos = ({ isActive }) => {
         handleOpen={handleOpenVideo}
       />
 
-      <PcProfile />
+      <PcProfile handleOpenProfile={handleOpenProfile} />
       <div className="mt-10 lg:mt-0">
         <p className="text-4xl text-[#664198] font-bold ml-8 ">Recursos</p>
       </div>
