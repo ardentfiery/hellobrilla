@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "./PageStyle.css";
 import { usePaginaContext } from "../../../context/PaginaContext";
 import MiPaginaLoader from "../../../utils/MiPaginaLoader";
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = ({ params }) => {
   const [hamClicked, sethamClicked] = useState(false);
@@ -188,7 +189,7 @@ export default Navbar;
 
 const MobileNavPage = ({ sethamClicked }) => {
   return (
-    <div className="absolute h-screen w-screen bg-cyan-100 overflow-hidden">
+    <div className="absolute h-screen w-screen overflow-hidden">
       <div className="lg:hidden flex shadow-sm w-screen justify-between items-center px-4 py-2">
         <RxCross2
           onClick={() => {
