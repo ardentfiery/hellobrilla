@@ -2,8 +2,11 @@ import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import { Profile } from "../Profile";
+import { useDashContext } from "../../context/DashboardContext";
 
 const Dashboard = () => {
+  const { userData } = useDashContext();
+
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-1 md:grid md:grid-cols-1 xl:grid-cols-[70%_30%] overflow-hidden">
       <div className="flex flex-col justify-center mt-8 gap-4 mb-4 ">
@@ -38,7 +41,7 @@ const Dashboard = () => {
             <div className="sm:w-full md:w-[75%] px-10 sm:px-0   flex flex-col justify-center  ">
               <div className="">
                 <p className="font-bold text-md  md:text-xl lg:text-2xl text-[#353564]">
-                  ¡Hola Llecenia bienvenida a
+                  ¡Hola {userData?.name} a
                   <span className="text-[#664198] text-md md:text-xl">
                     {" "}
                     Brilla System!

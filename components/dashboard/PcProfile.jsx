@@ -38,7 +38,7 @@ const PcProfile = () => {
             >
               <img
                 className="h-[100%] w-[100%]"
-                src="/dashboard/girlie.jpg"
+                src="/user.png"
                 alt=""
               />
               ;

@@ -6,10 +6,12 @@ import { toast } from "react-hot-toast";
 import { Modal } from "rsuite";
 import { useRouter } from "next/navigation";
 import Calendar from "react-calendar";
+import { useDashContext } from "../../context/DashboardContext";
 
 const ProfilePop = ({ open, size, handleClose }) => {
   const router = useRouter();
   const [value, onChange] = useState(new Date());
+  const { userData } = useDashContext();
 
   const logOutUser = async () => {
     const toastId = toast.loading("logging out...");
@@ -46,11 +48,7 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 </div>
                 <div>
                   <div className="h-[80px] w-[80px] object-fit rounded-full overflow-hidden ">
-                    <img
-                      className="h-[100%] w-[100%]"
-                      src="/dashboard/girlie.jpg"
-                      alt=""
-                    />
+                    <img className="h-[100%] w-[100%]" src="/user.png" alt="" />
                     ;
                   </div>
                 </div>
@@ -69,11 +67,11 @@ const ProfilePop = ({ open, size, handleClose }) => {
 
               <div>
                 <p className="text-3xl font-semibold text-black">
-                  Llecenia Robles
+                  {userData?.name}
                 </p>
               </div>
               <div>
-                <p className="underline">Usuario:Lleci</p>
+                <p className="underline">Usuario: {userData?.username}</p>
               </div>
               <div>
                 <p>link para referer</p>
@@ -83,15 +81,15 @@ const ProfilePop = ({ open, size, handleClose }) => {
                   <FaRegCopy />
                 </div>
                 <div>
-                  <a href="https://brillasystem.com/lleci">
-                    https://brillasystem.com/lleci
-                  </a>
+                  <a href="">https://brillasystem.com/{userData?._id}</a>
                 </div>
               </div>
               <div className="h-[1px] w-[250px] bg-black"></div>
             </div>
             <div className=" flex flex-col items-center justify-center gap-4 py-2">
-              <div className="text-2xl font-semibold text-center">FILTRAR POR FECHAS</div>
+              <div className="text-2xl font-semibold text-center">
+                FILTRAR POR FECHAS
+              </div>
               <div className="h-fit  w-[16rem] rounded-xl overflow-hidden border-[2px] border-[#803DA1] flex justify-center">
                 <Calendar onChange={onChange} value={value} />
               </div>

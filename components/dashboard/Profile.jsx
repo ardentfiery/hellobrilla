@@ -5,10 +5,12 @@ import axios from "../../app/api/axiosintercepter";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Calendar from "react-calendar";
+import { useDashContext } from "../../context/DashboardContext";
 
 export const Profile = () => {
   const router = useRouter();
   const [value, onChange] = useState(new Date());
+  const { userData } = useDashContext();
 
   const logOutUser = async () => {
     const toastId = toast.loading("logging out...");
@@ -37,12 +39,7 @@ export const Profile = () => {
             </div>
             <div>
               <div className="h-[80px] w-[80px] object-fit rounded-full overflow-hidden ">
-                <img
-                  className="h-[100%] w-[100%]"
-                  src="/dashboard/girlie.jpg"
-                  alt=""
-                />
-                ;
+                <img className="h-[100%] w-[100%]" src="/user.png" alt="" />;
               </div>
             </div>
             <div className="h-[24px] w-[24px]">
@@ -61,10 +58,12 @@ export const Profile = () => {
 
         <div className="flex flex-col items-center gap-2">
           <div>
-            <p className="text-3xl font-semibold text-black">Llecenia Robles</p>
+            <p className="text-3xl font-semibold text-black">
+              {userData?.name}
+            </p>
           </div>
           <div>
-            <p className="underline">Usuario:Lleci</p>
+            <p className="underline">Usuario: {userData?.username}</p>
           </div>
           <div>
             <p>link para referer</p>
@@ -74,9 +73,7 @@ export const Profile = () => {
               <FaRegCopy />
             </div>
             <div>
-              <a href="https://brillasystem.com/lleci">
-                https://brillasystem.com/lleci
-              </a>
+              <a href="">https://brillasystem.com/{userData?._id}</a>
             </div>
           </div>
           <div className="h-[1px] w-[250px] bg-black"></div>
@@ -84,11 +81,6 @@ export const Profile = () => {
         <div className=" w-full flex flex-col items-center">
           <div className="text-2xl font-semibold">FILTRAR POR FECHAS</div>
           <div className="h-fit w-[95%] max-w-fit  rounded-xl overflow-hidden border-[2px] border-[#803DA1]">
-            {/* <img
-              className="h-[100%] w-[100%]"
-              src="/dashboard/calendar.png"
-              alt=""
-            /> */}
             <Calendar onChange={onChange} value={value} />
           </div>
         </div>
