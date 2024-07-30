@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Input } from "rsuite";
+import { Input, Radio, RadioGroup } from "rsuite";
 import { Label } from "../../../components/ui/label";
 import { useDashContext } from "../../../context/DashboardContext";
 import { toast } from "react-hot-toast";
@@ -24,9 +24,10 @@ const MiPaginaSocial = ({ isActive }) => {
   const updateUserSocial = async () => {
     const toastId = toast.loading("updating...");
     try {
-      await axios.post(`/user/updateusersocialpagina/${userId}`, updateValues);
-      getUserSocial();
-      setupdateValues({});
+      console.log(updateValues);
+      // await axios.post(`/user/updateusersocialpagina/${userId}`, updateValues);
+      // getUserSocial();
+      // setupdateValues({});
       toast.success("Updated successfully!...");
       toast.dismiss(toastId);
     } catch (error) {
@@ -122,6 +123,28 @@ const MiPaginaSocial = ({ isActive }) => {
               setupdateValues({ ...updateValues, email: value });
             }}
           />
+        </div>
+        <div>
+          <Label htmlFor="radio-group" className="text-[1.2rem] font-semibold ">
+            Lo quiero
+          </Label>
+          <RadioGroup
+            name="radio-group"
+            defaultValue={
+              userSocials?.priority ? userSocials?.priority : "whats"
+            }
+            className="flex gap-4 font-medium text-[1.1rem]"
+            onChange={(value) => {
+              setupdateValues({ ...updateValues, priority: value });
+            }}
+          >
+            <Radio value="whats"> WhatsApp</Radio>
+            <Radio value="sms"> SMS</Radio>
+          </RadioGroup>
+          <p>
+            No puedes utilizar ambos métodos al mismo tiempo. Debes elegir el
+            método con el que mejor puedas atender a tus clientes.
+          </p>
         </div>
       </div>
       <div>

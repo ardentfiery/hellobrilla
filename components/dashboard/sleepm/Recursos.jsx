@@ -148,7 +148,7 @@ const Recursos = ({ isActive }) => {
         <p className="text-4xl text-[#664198] font-bold ml-8 ">Recursos</p>
       </div>
 
-      <div className=" md:grid xl:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[3px] rounded-3xl mx-2 lg:mx-0 pb-4 z-10  ">
+      <div className=" md:grid xl:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[1.8px] rounded-3xl mx-2 lg:mx-0 pb-4 z-10  ">
         <div className="flex flex-col  gap-2 w-[95vw] lg:w-auto items-center ">
           <div className="text-black flex items-center  md:justify-center mt-4 text-xl md:text-[1.7rem] font-bold">
             <p>NUESTROS PRODUCTOS</p>
@@ -234,7 +234,7 @@ const Recursos = ({ isActive }) => {
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-20 top-0 bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center rounded-2xl items-center">
+              <div className="absolute z-20 top-0 bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[1.8px] border-[#664198] h-[100%] w-[100%] flex justify-center rounded-2xl items-center">
                 <p
                   className=" md:text-2xl text-xl font-bold text-white shadow-md "
                   style={{
@@ -258,7 +258,7 @@ const Recursos = ({ isActive }) => {
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-20 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300  rounded-2xl cursor-pointer border-[3px] border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
+              <div className="absolute z-20 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300  rounded-2xl cursor-pointer border-[1.8px] border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
                 <p
                   className="md:text-2xl text-xl  font-bold text-white  "
                   style={{
@@ -280,7 +280,7 @@ const Recursos = ({ isActive }) => {
                 src="/dashboard/book.jpg"
                 alt=""
               />
-              <div className="absolute z-20 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[3px]  rounded-2xl border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
+              <div className="absolute z-20 top-0  bg-[#0000006e] hover:bg-[#ffffff6e] transition-all ease-in-out duration-300 cursor-pointer border-[1.8px]  rounded-2xl border-[#664198] h-[100%] w-[100%] flex justify-center items-center">
                 <p
                   className="md:text-2xl text-xl  font-bold text-white  "
                   style={{
@@ -303,7 +303,7 @@ const Recursos = ({ isActive }) => {
                 onClick={() => {
                   handleOpenPdf("full");
                 }}
-                className=" cursor-pointer group h-[148px]  w-[287px] rounded-3xl border-[3px] border-[#664198] relative "
+                className=" cursor-pointer group h-[148px]  w-[287px] rounded-3xl border-[1.8px] border-[#664198] relative "
               >
                 <img
                   className="h-[100%] w-[100%] "
@@ -317,7 +317,7 @@ const Recursos = ({ isActive }) => {
                 onClick={() => {
                   handleOpenVideo("full");
                 }}
-                className=" group cursor-pointer h-[148px] w-[287px] rounded-[1.65rem] relative border-[3px] border-[#664198]"
+                className=" group cursor-pointer h-[148px] w-[287px] rounded-[1.65rem] relative border-[1.8px] border-[#664198]"
               >
                 <img
                   className="h-[100%] w-[100%] rounded-3xl object-cover"

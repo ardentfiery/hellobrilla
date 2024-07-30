@@ -123,7 +123,7 @@ const Left = () => {
         </div>
       </div>
 
-      <div className="lg:flex flex-col hidden items-center border-[3px] border-[#664198] rounded-3xl h-[97vh] lg:w-[17rem] xl:w-[20rem]">
+      <div className="lg:flex flex-col hidden items-center border-[1.8px] border-[#664198] rounded-3xl h-[97vh] lg:w-[17rem] xl:w-[20rem]">
         <div className="w-[100%] px-[10%] flex items-center justify-center">
           <div className="h-[4rem] mt-2 flex justify-between  ">
             <img

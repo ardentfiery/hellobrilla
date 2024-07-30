@@ -96,7 +96,7 @@ const Footer = () => {
               <img src="/sleepmlogo.png" className="h-[2rem]" alt="" />
             </div>
             <div className="flex flex-col justify-center items-center gap-4  text-white text-[1.2rem]">
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-3 flex-wrap justify-center">
                 <p></p>
                 <p
                   className="cursor-pointer"

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Modal } from "rsuite";
 import { usePaginaContext } from "../../../context/PaginaContext";
 
-const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
+const PaginaPop = ({ size, open, handleClose, currentProd, userSocials }) => {
   const [imgIndex, setImgIndex] = useState(0);
 
   const { parseText } = usePaginaContext();
@@ -41,7 +41,13 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
 
                 <button
                   onClick={() => {
-                    window.open(`https://wa.me/${whatsapp}`);
+                    if (userSocials?.priority) {
+                      userSocials?.priority == "sms"
+                        ? (window.location.href = `sms:${userSocials?.sms}`)
+                        : window.open(`https://wa.me/${userSocials?.whatsapp}`);
+                    } else {
+                      window.open(`https://wa.me/${userSocials?.whatsapp}`);
+                    }
                   }}
                   className="flex justify-center gap-2 items-center bg-white h-[3rem] px-5 rounded-3xl border-[2px] border-[#803DA1] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300"
                 >

@@ -50,16 +50,14 @@ const Right = () => {
       ) : activeDashPage == 11 ? (
         <Miperfit isActive={activeDashPage === 11} />
       ) : activeDashPage == 12.0 ? (
-        <Empresa isActive={activeDashPage === 12.0} />
+        <Recursos isActive={activeDashPage === 12.0} />
       ) : activeDashPage == 12.1 ? (
-        <Recursos isActive={activeDashPage === 12.1} />
+        <Tutorials isActive={activeDashPage === 12.1} />
       ) : activeDashPage == 12.2 ? (
-        <Tutorials isActive={activeDashPage === 12.2} />
+        window.open(`/slepweb/${userId}`, "_blank")
       ) : activeDashPage == 12.3 ? (
         // <Mipagina isActive={activeDashPage === 12.3} />
-        window.open(`/slepweb/${userId}`, "_blank")
-      ) : activeDashPage == 12.4 ? (
-        <MiPaginaSocial isActive={activeDashPage === 12.4} />
+        <MiPaginaSocial isActive={activeDashPage === 12.3} />
       ) : // router.push("/jpayoteiid"):
       null}
     </div>

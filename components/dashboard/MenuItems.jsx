@@ -152,7 +152,7 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
         </div>
         {showChildOfSleepm ? (
           <div className="text-[0.9rem] mt-2">
-            <div
+            {/* <div
               className={` m-auto group  cursor-pointer hover:bg-[#7e61a559]  hover:rounded-xl px-2 py-2 w-[12rem] transition-all ease-in-out duration-300 ${
                 activeDashPage === 12.0 ? "bg-[#664198] rounded-xl " : ""
               }`}
@@ -168,6 +168,25 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
                   }`}
                 >
                   {">> >> >> Empresa"}
+                </p>
+              </div>
+            </div> */}
+            <div
+              className={` m-auto group cursor-pointer hover:bg-[#7e61a559]  hover:rounded-xl px-2 py-2 w-[12rem] transition-all ease-in-out duration-300 ${
+                activeDashPage === 12.0 ? "bg-[#664198] rounded-xl " : ""
+              }`}
+              onClick={() => {
+                setactiveDashPage(12.0);
+                mobile ? sethamclicked(false) : null;
+              }}
+            >
+              <div className="flex gap-4 justify-start items-center">
+                <p
+                  className={`font-semibold  ${
+                    activeDashPage === 12.0 ? "text-white" : ""
+                  }`}
+                >
+                  {">> >> >> Recursos"}
                 </p>
               </div>
             </div>
@@ -186,7 +205,7 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
                     activeDashPage === 12.1 ? "text-white" : ""
                   }`}
                 >
-                  {">> >> >> Recursos"}
+                  {">> >> >> Tutoriales"}
                 </p>
               </div>
             </div>
@@ -205,7 +224,7 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
                     activeDashPage === 12.2 ? "text-white" : ""
                   }`}
                 >
-                  {">> >> >> Tutoriales"}
+                  {">> >> >> Mi pagina web"}
                 </p>
               </div>
             </div>
@@ -224,26 +243,7 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
                     activeDashPage === 12.3 ? "text-white" : ""
                   }`}
                 >
-                  {">> >> >> Mi pagina web"}
-                </p>
-              </div>
-            </div>
-            <div
-              className={` m-auto group cursor-pointer hover:bg-[#7e61a559]  hover:rounded-xl px-2 py-2 w-[12rem] transition-all ease-in-out duration-300 ${
-                activeDashPage === 12.4 ? "bg-[#664198] rounded-xl " : ""
-              }`}
-              onClick={() => {
-                setactiveDashPage(12.4);
-                mobile ? sethamclicked(false) : null;
-              }}
-            >
-              <div className="flex gap-4 justify-start items-center">
-                <p
-                  className={`font-semibold  ${
-                    activeDashPage === 12.4 ? "text-white" : ""
-                  }`}
-                >
-                  {">> >> >> Pagina Social"}
+                  {">> >> >> Mis redes sociales"}
                 </p>
               </div>
             </div>

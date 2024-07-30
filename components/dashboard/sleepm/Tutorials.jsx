@@ -78,7 +78,7 @@ const Tutorials = ({ isActive }) => {
       ) : (
         <>
           {tutorials.length > 0 ? (
-            <div className="border-[#664198] rounded-2xl border-[3px] px-10 mr-4 mx-2 mb-5 bg-white z-10">
+            <div className="border-[#664198] rounded-2xl border-[1.8px] px-10 mr-4 mx-2 mb-5 bg-white z-10">
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10   py-4 ">
                 {tutorials?.map((tutorial, index) => {
                   return (

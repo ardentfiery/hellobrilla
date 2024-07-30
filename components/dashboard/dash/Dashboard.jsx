@@ -9,7 +9,7 @@ const Dashboard = () => {
       <div className="flex flex-col justify-center mt-8 gap-4 mb-4 ">
         <div className="flex  items-center justify-end pr-5 py-2  ">
           <div className="sm:w-[50%] ">
-            <div className="w-[15rem] h-[2.4rem]  gap-2 border-[3px] rounded-2xl border-[#664198] flex items-center">
+            <div className="w-[15rem] h-[2.4rem]  gap-2 border-[1.8px] rounded-2xl border-[#664198] flex items-center">
               <div>
                 <IoIosSearch className="text-xl" />
               </div>
@@ -24,7 +24,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="flex h-fit  py-8 mx-2 relative justify-end md:justify-center sm:w-[95vw] lg:w-[98%]   md:gap-6 border-[3px] rounded-2xl border-[#664198] ">
+        <div className="flex h-fit  py-8 mx-2 relative justify-end md:justify-center sm:w-[95vw] lg:w-[98%]   md:gap-6 border-[1.8px] rounded-2xl border-[#664198] ">
           <div className="flex justify-between w-full  gap-4   h-[9rem] ">
             <div className="w-[25%] hidden sm:flex">
               <div className="h-[15rem] w-[25%] absolute bottom-0 left-0  z-50 ">
@@ -54,7 +54,7 @@ const Dashboard = () => {
               </div>
               <div className="flex  justify-end mt-2">
                 <div className="flex w-fit md:w-[40%] lg:w-fit xl:w-[40%] ">
-                  <button className="h-[36px] px-3 w-fit mr-2 font-semibold rounded-2xl border-[3px] border-[#664198] text-[1rem]">
+                  <button className="h-[36px] px-3 w-fit mr-2 font-semibold rounded-2xl border-[1.8px] border-[#664198] text-[1rem]">
                     <p>Ver el paso o paso</p>
                   </button>
                 </div>
@@ -63,7 +63,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center mx-2 gap-3 border-[3px] border-[#664198]   rounded-2xl py-2 sm:w-[95vw] lg:w-[98%]">
+        <div className="flex flex-col items-center mx-2 gap-3 border-[1.8px] border-[#664198]   rounded-2xl py-2 sm:w-[95vw] lg:w-[98%]">
           <div>
             <p className="font-bold text-2xl text-black">SISTEMA EDUCATIVO</p>
           </div>
@@ -83,7 +83,7 @@ const Dashboard = () => {
                 Crecimiento personal
               </p>
               <div className="flex gap-2  w-[100%] ">
-                <div className="w-[100%]  h-[1rem] mt-[6px] rounded-2xl border-[3px] bg-white border-[#664198] ">
+                <div className="w-[100%]  h-[1rem] mt-[6px] rounded-2xl border-[1.8px] bg-white border-[#664198] ">
                   <div className="w-[40%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
                 </div>
                 <div className="w-[20%]">
@@ -94,7 +94,7 @@ const Dashboard = () => {
                 Te espero en la meta
               </p>
               <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
+                <button className="flex items-center justify-center gap-2 border-[1.8px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
                   <div>
                     <p>continuar</p>
                   </div>
@@ -110,7 +110,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-[25%_25%_25%_25%] lg:grid-cols-[25%_25%_25%_25%] xl:grid-cols-[25%_25%_25%_25%]  gap-[0.5rem] w-[100%]   ">
               <p className="font-bold text-black w-[100%]">En linderazgo</p>
               <div className="flex gap-2  w-[100%] ">
-                <div className="md:w-[15vw] mt-[6px] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
+                <div className="md:w-[15vw] mt-[6px] w-[45vw] h-[1rem] rounded-2xl border-[1.8px] bg-white border-[#664198] ">
                   <div className="w-[80%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
                 </div>
                 <div className="w-[3rem]">
@@ -121,7 +121,7 @@ const Dashboard = () => {
                 Hazlo!
               </p>
               <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
+                <button className="flex items-center justify-center gap-2 border-[1.8px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
                   <div>
                     <p>continuar</p>
                   </div>
@@ -136,7 +136,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-[25%_25%_25%_25%] lg:grid-cols-[25%_25%_25%_25%] xl:grid-cols-[25%_25%_25%_25%]  gap-[0.5rem] w-[100%]   ">
               <p className="font-bold text-black w-[100%]">En ventas</p>
               <div className="flex gap-2 ">
-                <div className="md:w-[15vw] mt-[6px] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
+                <div className="md:w-[15vw] mt-[6px] w-[45vw] h-[1rem] rounded-2xl border-[1.8px] bg-white border-[#664198] ">
                   <div className="w-[80%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
                 </div>
                 <div className="w-[3rem]">
@@ -147,7 +147,7 @@ const Dashboard = () => {
                 Tu puedes!
               </p>
               <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
+                <button className="flex items-center justify-center gap-2 border-[1.8px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
                   <div>
                     <p>continuar</p>
                   </div>
@@ -160,7 +160,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-[25%_25%_25%_25%] lg:grid-cols-[25%_25%_25%_25%] xl:grid-cols-[25%_25%_25%_25%]  gap-[0.5rem] w-[100%]   ">
               <p className="font-bold text-black w-[100%]">En marketing</p>
               <div className="flex gap-2 ">
-                <div className="md:w-[15vw] mt-[6px] w-[45vw] h-[1rem] rounded-2xl border-[3px] bg-white border-[#664198] ">
+                <div className="md:w-[15vw] mt-[6px] w-[45vw] h-[1rem] rounded-2xl border-[1.8px] bg-white border-[#664198] ">
                   <div className="w-[80%] bg-[#664198] h-[0.65rem] rounded-2xl"></div>
                 </div>
                 <div className="w-[3rem]">
@@ -171,7 +171,7 @@ const Dashboard = () => {
                 Felicidades!
               </p>
               <div>
-                <button className="flex items-center justify-center gap-2 border-[2px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
+                <button className="flex items-center justify-center gap-2 border-[1.8px] border-[#664198] w-fit px-2 h-[4vh] rounded-2xl">
                   <div>
                     <p>continuar</p>
                   </div>
@@ -183,13 +183,13 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 items-center py-2  mx-2 border-[3px] rounded-2xl  border-[#664198] h-fit px-10 sm:w-[95vw] lg:w-[98%]">
+        <div className="flex flex-col gap-4 items-center py-2  mx-2 border-[1.8px] rounded-2xl  border-[#664198] h-fit px-10 sm:w-[95vw] lg:w-[98%]">
           <div className="flex items-center gap-2 mt-2 ">
             <div>
               <p className="font-bold text-[1.4rem]"> MI RETO</p>
             </div>
             <div>
-              <button className="flex items-center justify-center gap-2 border-[2px] border-[#803da1] px-3 h-[4vh] rounded-2xl">
+              <button className="flex items-center justify-center gap-2 border-[1.8px] border-[#803da1] px-3 h-[4vh] rounded-2xl">
                 <div>
                   <p>Ver</p>
                 </div>
@@ -201,7 +201,7 @@ const Dashboard = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-5 justify-center text-center">
-            <div className="border-[2px] border-[#803da1]   h-fit md:h-[5rem] rounded-2xl  flex flex-col gap-3 items-center">
+            <div className="border-[1.8px] border-[#803da1]   h-fit md:h-[5rem] rounded-2xl  flex flex-col gap-3 items-center">
               <div>
                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                   Prospectos nuevos
@@ -220,7 +220,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="border-[2px] border-[#803da1] w-[12rem] md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
+            <div className="border-[1.8px] border-[#803da1] w-[12rem] md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
               <div>
                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                   Preguntas realizadas
@@ -239,7 +239,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="border-[2px] border-[#803da1] w-[12rem] md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
+            <div className="border-[1.8px] border-[#803da1] w-[12rem] md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
               <div>
                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                   ATM realizados
@@ -254,7 +254,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="border-[2px] border-[#803da1] w-[12rem]  md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
+            <div className="border-[1.8px] border-[#803da1] w-[12rem]  md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
               <div>
                 <p className="text-gray-600 font-bold md:text-2xl">
                   Prospectos nuevos
@@ -273,7 +273,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="border-[2px] border-[#803da1] w-[12rem]  md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
+            <div className="border-[1.8px] border-[#803da1] w-[12rem]  md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
               <div>
                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                   Prospectos nuevos
@@ -292,7 +292,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="border-[2px] border-[#803da1] w-[12rem]  md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
+            <div className="border-[1.8px] border-[#803da1] w-[12rem]  md:w-[17rem] rounded-2xl h-fit md:h-[5rem]  flex flex-col gap-3  items-center">
               <div>
                 <p className="text-gray-600 font-bold text-sm md:text-2xl">
                   Prospectos nuevos

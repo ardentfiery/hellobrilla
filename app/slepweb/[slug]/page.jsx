@@ -92,7 +92,7 @@ export default function Page({ params }) {
       />
 
       <div className="flex flex-col gap-8 items-center md:flex-row md:justify-between w-[85vw]  m-auto ">
-        <div className="text-[40px] font-bold w-[30rem]">
+        <div className="text-[30px] md:text-[40px] font-bold w-[90%] md:w-[30rem]">
           Descubre una nueva forma de dormir
           <br />
           <p className="text-[#803DA1]">y vivir mejor</p>
@@ -104,7 +104,7 @@ export default function Page({ params }) {
               src="/border.png"
               alt=""
             />
-            <p className="absolute top-3 text-[#250F38] text-[20px] w-[18rem] flex  p-4 ml-2">
+            <p className="absolute top-3 text-[#250F38] text-[20px] w-[18rem] flex  p-4 ml-2 z-40">
               Innovación en tecnología del sueño para transformar tu vida
             </p>
           </div>
@@ -178,7 +178,7 @@ export default function Page({ params }) {
           <div>
             <img
               src="/bubblebg.png"
-              className="min-h-[35rem] max-h-[35rem] w-[100%] object-cover rounded-3xl"
+              className="min-h-[40rem] max-h-[40rem] md:min-h-[35rem] md:max-h-[35rem] w-[100%] object-cover rounded-3xl"
               alt=""
             />
           </div>
@@ -315,7 +315,7 @@ export default function Page({ params }) {
                         className="h-[40%] flex justify-center cursor-pointer"
                       >
                         <img
-                          src={product?.image}
+                          src={product?.image[0]}
                           className="h-full object-cover"
                           alt=""
                         />

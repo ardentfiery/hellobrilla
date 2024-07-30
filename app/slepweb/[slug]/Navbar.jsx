@@ -188,8 +188,10 @@ const Navbar = ({ params }) => {
 export default Navbar;
 
 const MobileNavPage = ({ sethamClicked }) => {
+  const router = useRouter();
+  const { userId, activeTab, setactiveTab, isLoading } = usePaginaContext();
   return (
-    <div className="absolute h-screen bg-white w-screen overflow-hidden">
+    <div className="absolute h-screen bg-white w-screen overflow-hidden z-50">
       <div className="lg:hidden flex shadow-sm w-screen justify-between items-center px-4 py-2">
         <RxCross2
           onClick={() => {
@@ -200,19 +202,65 @@ const MobileNavPage = ({ sethamClicked }) => {
         <img src="/sleepmlogo.png" className="w-[7rem]" alt="" />
       </div>
       <div className="h-[60%] w-full  flex gap-[2rem] flex-wrap flex-col items-center justify-center">
-        <p className="hover:font-bold hover:text-[#813DA1] cursor-pointer transition-all ease-in-out duration-300">
+        <p></p>
+        <p
+          onClick={() => {
+            setactiveTab(0);
+            router.push(`/slepweb/${userId}`);
+            sethamClicked(false);
+          }}
+          className={`hover:font-bold hover:text-[#813DA1] cursor-pointer transition-all ease-in-out duration-300 ${
+            activeTab == 0 ? "text-[#813DA1] font-bold" : ""
+          }`}
+        >
           Inicio
         </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+        <p
+          onClick={() => {
+            setactiveTab(1);
+            // router.push(`/slepweb/${userId}/`)
+            sethamClicked(false);
+          }}
+          className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+            activeTab == 1 ? "text-[#813DA1] font-bold" : ""
+          }`}
+        >
           Tecnología
         </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+        <p
+          onClick={() => {
+            setactiveTab(2);
+            // router.push(`/slepweb/${userId}/`)
+            sethamClicked(false);
+          }}
+          className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+            activeTab == 2 ? "text-[#813DA1] font-bold" : ""
+          }`}
+        >
           Testimonios
         </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+        <p
+          onClick={() => {
+            setactiveTab(3);
+            router.push(`/slepweb/${userId}/products`);
+            sethamClicked(false);
+          }}
+          className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+            activeTab == 3 ? "text-[#813DA1] font-bold" : ""
+          }`}
+        >
           Productos
         </p>
-        <p className="cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300">
+        <p
+          onClick={() => {
+            setactiveTab(4);
+            // router.push(`/slepweb/${userId}/`)
+            sethamClicked(false);
+          }}
+          className={`cursor-pointer hover:font-bold hover:text-[#813DA1] transition-all ease-in-out duration-300 ${
+            activeTab == 4 ? "text-[#813DA1] font-bold" : ""
+          }`}
+        >
           Plan de pagos
         </p>{" "}
       </div>
