@@ -80,7 +80,7 @@ const Footer = () => {
                 <img
                   onClick={() => {
                     userSocials?.sms
-                      ? window.open(userSocials?.sms, "_blank")
+                      ? window.open(`sms:${userSocials?.sms}`, "_blank")
                       : null;
                   }}
                   src="/pgsms.png"

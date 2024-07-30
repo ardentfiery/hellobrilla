@@ -90,9 +90,9 @@ const Navbar = ({ params }) => {
                 <div>
                   <img
                     onClick={() => {
-                      userSocials?.sms
-                        ? window.open(userSocials?.sms, "_blank")
-                        : null;
+                      if (userSocials?.sms) {
+                        window.location.href = `sms:${userSocials?.sms}`;
+                      }
                     }}
                     src="/pgsms.png"
                     className="md:w-[1.4rem] md:h-[1.4rem] w-[2rem] h-[2rem] cursor-pointer"
