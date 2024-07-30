@@ -71,13 +71,17 @@ export const Profile = () => {
           <div className="flex gap-2">
             <div
               onClick={() => {
-                navigator.clipboard.writeText(`https://brillasystem.com/${userData?._id}`);
+                navigator.clipboard.writeText(
+                  `https://brillasystem.com/${userData?._id}`
+                );
               }}
             >
               <FaRegCopy />
             </div>
-            <div>
-              <a className="break-words" href="">https://brillasystem.com/{userData?._id}</a>
+            <div className="w-[100%]">
+              <a className="break-words" href="">
+                https://brillasystem.com/{userData?._id}
+              </a>
             </div>
           </div>
           <div className="h-[1px] w-[250px] bg-black"></div>
