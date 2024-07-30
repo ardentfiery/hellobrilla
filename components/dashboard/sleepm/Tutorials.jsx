@@ -59,7 +59,13 @@ const Tutorials = ({ isActive }) => {
         tutorial={clickedVid}
       />
       <Popup size={size} open={open} handleClose={handleClose} />
-      <PcProfile />
+      <ProfilePop
+        size={size}
+        open={open}
+        handleClose={handleClose}
+        handleOpenProfile={handleOpen}
+      />
+      <PcProfile handleOpenProfile={handleOpenProfile} />
       <div className="mt-6">
         <p className="text-4xl text-[#664198] font-bold">Tutoriales</p>
       </div>

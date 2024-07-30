@@ -72,7 +72,7 @@ export const Profile = () => {
             <div>
               <FaRegCopy />
             </div>
-            <div className="break-words">
+            <div className="break-normal">
               <a href="">https://brillasystem.com/{userData?._id}</a>
             </div>
           </div>
