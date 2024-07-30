@@ -32,10 +32,10 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                 ))}
             </div>
             <div className="grid md:grid-cols-2 h-fit">
-              <div className=" w-[98%] flex justify-center flex-col items-center gap-3">
+              <div className=" w-[98%] flex  flex-col items-center gap-3">
                 <img
-                  src={currentProd?.image ? currentProd.image[imgIndex] : "" }
-                  className="h-[35rem] w-full px-10 object-cover"
+                  src={currentProd?.image ? currentProd.image[imgIndex] : ""}
+                  className="h-[35rem] w-[40rem] px-10 object-cover"
                   alt=""
                 />
                 <button
@@ -54,8 +54,11 @@ const PaginaPop = ({ size, open, handleClose, currentProd, whatsapp }) => {
                   />
                 </button>
               </div>
-              <div className="w-[80%] m-auto md:m-0 text-left text-[1.1rem] text-black">
-                <p>
+              <div className="w-[80%] m-auto md:m-0 ">
+                <p className="text-left font-bold text-[1.3rem] text-black">
+                  {currentProd?.name}
+                </p>
+                <p className="text-left text-[1.1rem] text-black">
                   {(() => {
                     try {
                       return currentProd.description
