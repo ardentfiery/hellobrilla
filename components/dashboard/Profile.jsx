@@ -69,7 +69,11 @@ export const Profile = () => {
             <p>link para referer</p>
           </div>
           <div className="flex gap-2">
-            <div>
+            <div
+              onClick={() => {
+                navigator.clipboard.writeText(`https://brillasystem.com/${userData?._id}`);
+              }}
+            >
               <FaRegCopy />
             </div>
             <div className="break-normal">

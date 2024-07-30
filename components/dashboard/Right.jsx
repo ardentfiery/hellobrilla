@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { FaRegCopy } from "react-icons/fa";
 import Dashboard from "./dash/Dashboard";
 import Recursos from "./sleepm/Recursos";
 import Tutorials from "./sleepm/Tutorials";
