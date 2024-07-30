@@ -86,8 +86,10 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 >
                   <FaRegCopy />
                 </div>
-                <div className="break-normal">
-                  <a href="">https://brillasystem.com/{userData?._id}</a>
+                <div>
+                  <a className="break-normal" href="">
+                    https://brillasystem.com/{userData?._id}
+                  </a>
                 </div>
               </div>
               <div className="h-[1px] w-[250px] bg-black"></div>
