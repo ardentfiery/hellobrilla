@@ -80,7 +80,7 @@ const ProfilePop = ({ open, size, handleClose }) => {
                 <div>
                   <FaRegCopy />
                 </div>
-                <div>
+                <div className="break-words">
                   <a href="">https://brillasystem.com/{userData?._id}</a>
                 </div>
               </div>
