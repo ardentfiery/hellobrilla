@@ -6,6 +6,7 @@ import TutorialPop from "./TutorialPop";
 import Popup from "../Popup";
 import PcProfile from "../PcProfile";
 import { Oval } from "react-loader-spinner";
+import ProfilePop from "../ProfilePop";
 
 const Tutorials = ({ isActive }) => {
   const [open, setOpen] = useState(false);
@@ -65,7 +66,7 @@ const Tutorials = ({ isActive }) => {
         handleClose={handleClose}
         handleOpenProfile={handleOpen}
       />
-      <PcProfile handleOpenProfile={handleOpenProfile} />
+      <PcProfile handleOpenProfile={handleOpen} />
       <div className="mt-6">
         <p className="text-4xl text-[#664198] font-bold">Tutoriales</p>
       </div>
