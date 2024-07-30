@@ -2,7 +2,7 @@ import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import { Profile } from "../Profile";
-import { useDashContext } from "../../context/DashboardContext";
+import { useDashContext } from "../../../context/DashboardContext";
 
 const Dashboard = () => {
   const { userData } = useDashContext();
