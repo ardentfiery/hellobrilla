@@ -3,7 +3,7 @@ import React from "react";
 const BrillaLoader = () => {
   return (
     <div className="absolute z-50 top-0 left-0 h-[100vh] w-[100vw] bg-white flex justify-center items-center ">
-      <div className="w-[70vw] md:w-[30rem]">
+      <div className="w-[20vw] md:w-[15rem]">
         <img
           src="/landing/logo.png"
           className="w-full h-auto  "
