@@ -18,7 +18,11 @@ export const DashProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log("boooooooooooooooooooooooooooooooooooooooooooooom");
     if (userId) {
+      console.log(
+        "jjhhhhhhhhhhhhoooooooooooooooooooooooooooooooooooooooooooooom"
+      );
       getUsersDetail(userId);
     }
   }, [userId]);

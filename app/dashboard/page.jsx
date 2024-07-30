@@ -19,6 +19,9 @@ const Page = () => {
       try {
         const data = await axios.get("/user/paidforbrilla");
         setisLoading(false);
+        console.log("--------------------------------------------")
+        console.log(isAuthorized.data)
+        console.log("--------------------------------------------")
         setuserId(isAuthorized.data.id);
       } catch (error) {
         router.push("/payment");
