@@ -15,12 +15,11 @@ import Conferencias from "./conferencias/Conferencias";
 import Referidos from "./referidos/Referidos";
 import Ganacias from "./ganacias/Ganacias";
 import Miperfit from "./miperfit/Miperfit";
-import Empresa from "./sleepm/Empresa";
-import { useRouter } from "next/navigation";
-import MiPaginaSocial from "./sleepm/MiPaginaSocial";
 
+import MiPaginaSocial from "./sleepm/MiPaginaSocial";
+import Mipagina from "./sleepm/Mipagina";
 const Right = () => {
-  const { activeDashPage, userId } = useDashContext();
+  const { activeDashPage } = useDashContext();
 
   return (
     <div>
@@ -53,8 +52,9 @@ const Right = () => {
       ) : activeDashPage == 12.1 ? (
         <Tutorials isActive={activeDashPage === 12.1} />
       ) : activeDashPage == 12.2 ? (
-        window.open(`/slepweb/${userId}`, "_blank")
-      ) : activeDashPage == 12.3 ? (
+        <Mipagina isActive={activeDashPage === 12.2} />
+      ) : 
+      activeDashPage == 12.3 ? (
         // <Mipagina isActive={activeDashPage === 12.3} />
         <MiPaginaSocial isActive={activeDashPage === 12.3} />
       ) : // router.push("/jpayoteiid"):

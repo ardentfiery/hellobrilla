@@ -4,6 +4,7 @@ import { usePaginaContext } from "../../../context/PaginaContext";
 
 const PaginaPop = ({ size, open, handleClose, currentProd, userSocials }) => {
   const [imgIndex, setImgIndex] = useState(0);
+  console.log(userSocials)
 
   const { parseText } = usePaginaContext();
 

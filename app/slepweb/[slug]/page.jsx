@@ -89,6 +89,7 @@ export default function Page({ params }) {
         handleClose={handleClose}
         currentProd={clickedProduct}
         whatsapp={userSocials?.whatsapp}
+        userSocials={userSocials}
       />
 
       <div className="flex flex-col gap-8 items-center md:flex-row md:justify-between w-[85vw]  m-auto ">

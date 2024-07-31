@@ -3,9 +3,9 @@ import downloadImage from "../../../utils/downloadImage";
 
 const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "", size="" }) => {
   return (
-    <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-50 bg-[#0000007e] flex justify-center items-center">
-      <div className="w-[70%] h-[85%] m-auto overflow-hidden flex justify-center">
-        <div className="relative">
+    <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-50 bg-[#000000a8] flex justify-center items-center ">
+      <div className="w-[80%] h-[95%] m-auto overflow-hidden flex justify-center relative">
+        <div className=" ">
           <div className="overflow-hidden h-fit">
             <img
               onClick={() => {
@@ -16,11 +16,11 @@ const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "", size="" }) => {
               }}
               src="/dashboard/crossbtn.png"
               alt="classbtn"
-              className="absolute top-0 right-[1rem] md:right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
+              className="absolute top-[.5rem]  right-[0.5rem] md:right-[0.5rem] h-[2.4rem] w-[2.4rem] cursor-pointer z-50 hover:scale-105 transition-all  ease-in-out duration-300"
             />
             <img
               src={imgsrc}
-              className="w-[100%] object-contain"
+              className="w-[100%] object-contain z-40"
               alt="dynamic image displaying"
               style={{
                 height: `${handleOpen ? "80vh" : ""}`,

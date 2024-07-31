@@ -53,7 +53,7 @@ const page = ({ params }) => {
           {products?.map((product, index) => {
             return (
               <div
-                className="h-[40rem] py-2 w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
+                className="h-[41rem] py-2 w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
                 key={index}
               >
                 <div className="h-[17rem] flex justify-center cursor-pointer">
@@ -100,7 +100,7 @@ const page = ({ params }) => {
                     ...
                   </p>
                 </div>
-                <div className="h-[7rem] xl:h-[20%] flex gap-1 flex-wrap justify-center  ">
+                <div className="h-[7.5rem] xl:h-[20%] flex gap-1 mb-2 flex-wrap justify-center  ">
                   <button
                     onClick={() => {
                       if (userSocials?.priority) {
