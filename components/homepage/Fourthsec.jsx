@@ -33,8 +33,8 @@ const Fourthsec = () => {
         <div className="text-white relative overflow-hidden "ref={container}>
             <div className="h-[30rem] md:h-fit w-[100vw]">
                 <img
-                    className=" w-[100%] h-[100%]  object-cover overflow-hidden"
-                    src="/landing/person.jpeg"
+                    className=" w-[100%] h-[30rem]  object-cover overflow-hidden"
+                    src="/landing/person2.jpeg"
                     alt=""
                 />
             </div>

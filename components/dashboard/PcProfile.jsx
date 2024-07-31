@@ -20,8 +20,8 @@ const PcProfile = ({ handleOpenProfile }) => {
           </div>
         </div>
       </div>
-      <div className="absolute hidden lg:flex right-[6rem] top-0 mb-2 flex-col items-center z-0 ">
-        <div className="flex gap-4 h-[15vh] items-center">
+      <div className="absolute hidden lg:flex right-[6rem] flex-col gap-2 items-center z-0">
+        <div className="flex gap-2 h-fit items-center">
           <div className="h-[20px] w-[20px]">
             <img
               className="h-[90%] w-[90%]"
@@ -34,7 +34,7 @@ const PcProfile = ({ handleOpenProfile }) => {
               onClick={() => {
                 handleOpenProfile("calc(100% - 30%)");
               }}
-              className="h-[80px] w-[80px] object-fit rounded-full overflow-hidden "
+              className="h-[65px] w-[65px] object-fit rounded-full overflow-hidden "
             >
               <img className="h-[100%] w-[100%]" src="/user.png" alt="" />;
             </div>
