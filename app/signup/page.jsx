@@ -274,7 +274,7 @@ const VerifyOtp = ({ size, open, handleClose, email, userId }) => {
   const [verified, setverified] = useState(false);
   const [otp, setotp] = useState("");
 
-  const initialTimer = 180; // 3 minutes = 180 seconds
+  const initialTimer = 300; // 5 minutes = 300 seconds
   const [isDisabled, setIsDisabled] = useState(true);
   const [timer, setTimer] = useState(initialTimer);
 
