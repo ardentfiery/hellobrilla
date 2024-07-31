@@ -305,31 +305,21 @@ export default function Page({ params }) {
                 (product, index) => {
                   return (
                     <div
-                      className="h-[35rem] w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
+                      className="h-[40rem] py-2 w-[90%] md:w-[19rem] xl:w-[22rem] 2xl:w-[25rem] bg-white box-shadow rounded-xl shadow-xl px-4 cursor-pointer"
                       key={index}
                     >
-                      <div
-                        onClick={() => {
-                          router.push(`/slepweb/${params?.slug}/products`);
-                        }}
-                        className="h-[40%] flex justify-center cursor-pointer"
-                      >
+                      <div className="h-[17rem] flex justify-center cursor-pointer">
                         <img
                           src={product?.image[0]}
                           className="h-full object-cover"
                           alt=""
                         />
                       </div>
-                      <div
-                        onClick={() => {
-                          router.push(`/slepweb/${params?.slug}/products`);
-                        }}
-                        className="h-fit grid grid-cols-[65%_35%] mt-2 "
-                      >
-                        <p className="font-bold">
+                      <div className="h-[4rem] grid grid-cols-[65%_35%] mt-2 ">
+                        <p className="font-bold flex items-center">
                           {product?.name ? product.name : "No Name"}
                         </p>
-                        <div className="flex justify-end items-end px-[10%] gap-2 pb-2">
+                        <div className="flex justify-end items-end px-[10%] gap-2 pb-3">
                           {product?.rating &&
                             Array.from({ length: product?.rating }).map(
                               (_, index) => (
@@ -342,36 +332,30 @@ export default function Page({ params }) {
                             )}
                         </div>
                       </div>
-                      <div
-                        onClick={() => {
-                          router.push(`/slepweb/${params?.slug}/products`);
-                        }}
-                        className="h-[30%] my-[1rem] "
-                      >
+                      <div className="h-[11rem] ">
                         <p className="text-[#2B2B2B]">
                           {(() => {
                             try {
                               return product.description
-                                ? parseText(
-                                    JSON.parse(
-                                      product.description.slice(0, 300)
-                                    )
-                                  )
+                                ? JSON.parse(product.description.slice(0, 200))
+                                    .replace(/\\n/g, " ")
+                                    .replace(/\*\*/g, "")
                                 : null;
                             } catch (error) {
                               console.error(
                                 "Invalid JSON string:",
                                 error.message
                               );
-                              return parseText(
-                                product.description.slice(0, 300)
-                              );
+                              return product.description
+                                .slice(0, 200)
+                                .replace(/\\n/g, " ")
+                                .replace(/\*\*/g, "");
                             }
                           })()}
                           ...
                         </p>
                       </div>
-                      <div className="h-[10%] flex justify-center z-50">
+                      <div className="h-[7rem] xl:h-[20%] flex gap-1 flex-wrap justify-center  ">
                         <button
                           onClick={() => {
                             handleOpen("80%");

@@ -89,10 +89,14 @@ const PaginaPop = ({ size, open, handleClose, currentProd, userSocials }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] select-none w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] text-[2rem] flex items-center justify-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group hover:bg-[#664198] select-none w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full  text-[2rem] flex items-center justify-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <div className="scale-150 font-medium  rotate-180 md:mt-3 md:mr-2  group-hover:text-white ">
-                  {">"}
+                <div className=" ">
+                  <img
+                    src="/slidearrow.png"
+                    className="h-[3rem] w-[3rem] rotate-180"
+                    alt=""
+                  />
                 </div>
               </div>
               <div
@@ -133,11 +137,13 @@ const PaginaPop = ({ size, open, handleClose, currentProd, userSocials }) => {
                     });
                   }
                 }}
-                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full text-[2rem] border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <div className="scale-150 font-medium md:mb-3 md:ml-2  group-hover:text-white ">
-                  {">"}
-                </div>
+                <img
+                  src="/slidearrow.png"
+                  className="h-[3rem] w-[3rem] "
+                  alt=""
+                />
               </div>
             </div>
           </div>
