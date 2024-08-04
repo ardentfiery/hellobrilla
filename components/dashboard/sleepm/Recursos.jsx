@@ -144,16 +144,16 @@ const Recursos = ({ isActive }) => {
       />
 
       <PcProfile handleOpenProfile={handleOpenProfile} />
-      <div className="mt-10 lg:mt-0">
+      <div className="mt-0 lg:mt-0">
         <p className="text-4xl text-[#664198] font-bold ml-8 ">Recursos</p>
       </div>
 
       <div className=" md:grid xl:grid-cols-[3fr_1fr] flex flex-col gap-6 mb-4  border-[#664198] border-[1.8px] rounded-3xl mx-2 lg:mx-0 pb-4 z-10  ">
-        <div className="flex flex-col  gap-2 w-[95vw] lg:w-auto items-center ">
+        <div className="flex flex-col  gap-2  lg:w-auto items-center ">
           <div className="text-black flex items-center  md:justify-center mt-4 text-xl md:text-[1.7rem] font-bold">
             <p>NUESTROS PRODUCTOS</p>
           </div>
-          <div className="flex justify-center items-center  m-auto md:m-0 w-[95vw] ml-[1.5%] pl-2 lg:w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
+          <div className="flex  justify-center items-center px-2   md:m-0 w-[100%]  lg:w-[50rem] h-[14rem] gap-8 overflow-x-scroll hide-scrollbar  overflow-y-hidden">
             {products?.length > 0 ? (
               <>
                 <div
@@ -166,11 +166,13 @@ const Recursos = ({ isActive }) => {
                       });
                     }
                   }}
-                  className="group hover:bg-[#664198] w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                  className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
                 >
-                  <p className="font-light text-[3rem] rotate-180 text-[#664198] group-hover:text-white ">
-                    {">"}
-                  </p>
+                  <img
+                    src="/slidearrow.png"
+                    className="h-[3rem] w-[3rem] rotate-180"
+                    alt=""
+                  />
                 </div>
                 <div
                   ref={scrollDivProd}
@@ -208,11 +210,13 @@ const Recursos = ({ isActive }) => {
                       });
                     }
                   }}
-                  className="group hover:bg-[#664198] w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                  className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
                 >
-                  <p className="font-light text-[3rem]  text-[#664198] group-hover:text-white">
-                    {">"}
-                  </p>
+                  <img
+                    src="/slidearrow.png"
+                    className="h-[3rem] w-[3rem] "
+                    alt=""
+                  />
                 </div>
               </>
             ) : (
@@ -356,11 +360,13 @@ const Recursos = ({ isActive }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[33px] h-[33px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <p className="font-light text-[1.8rem] -rotate-90 text-[#664198] group-hover:text-white">
-                  {">"}
-                </p>
+                <img
+                  src="/slidearrow.png"
+                  className="h-[3rem] w-[3rem] -rotate-90"
+                  alt=""
+                />
               </div>
               <div
                 ref={scrollDiv}
@@ -397,11 +403,13 @@ const Recursos = ({ isActive }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[33px] h-[33px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <p className="font-light text-[1.8rem] rotate-90 text-[#664198] group-hover:text-white">
-                  {">"}
-                </p>
+                <img
+                  src="/slidearrow.png"
+                  className="h-[3rem] w-[3rem] rotate-90"
+                  alt=""
+                />
               </div>
             </div>
           ) : (

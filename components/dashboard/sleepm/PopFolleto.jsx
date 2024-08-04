@@ -59,11 +59,13 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <p className="font-medium text-[2rem] md:text-[4rem] rotate-180 text-[#664198] group-hover:text-white ">
-                  {">"}
-                </p>
+                <img
+                  src="/slidearrow.png"
+                  className="h-[3rem] w-[3rem] rotate-180 "
+                  alt=""
+                />
               </div>
               <div
                 ref={scrollDiv}
@@ -72,7 +74,10 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                 {folletos?.map((folleto, index) => {
                   return (
                     <div className="grid ">
-                      <div key={index} className="flex flex-col w-[60vw] md:w-auto ">
+                      <div
+                        key={index}
+                        className="flex flex-col w-[60vw] md:w-auto "
+                      >
                         <div
                           onClick={() => {
                             setClickedImage(folleto?.brochure);
@@ -126,11 +131,13 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
                     });
                   }
                 }}
-                className="group hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+                className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <p className="font-medium text-[2rem] md:text-[4rem]  text-[#664198] group-hover:text-white">
-                  {">"}
-                </p>
+                <img
+                  src="/slidearrow.png"
+                  className="h-[3rem] w-[3rem] "
+                  alt=""
+                />
               </div>
             </div>
           </div>

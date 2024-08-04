@@ -3,11 +3,11 @@ import { IoIosSearch } from "react-icons/io";
 
 const PcProfile = ({ handleOpenProfile }) => {
   return (
-    <div className="flex justify-between h-[6rem] ">
-      <div className="flex  items-center justify-end pr-5 py-2  ">
-        <div className="sm:w-[50%] ">
+    <div className="flex justify-between h-[5rem] ">
+      <div className="flex  items-center justify-end pr-5 py-2 w-[100%] ">
+        <div className="sm:w-[50%] m-auto lg:m-0 ">
           <div className="w-[15rem] h-[2.4rem]  gap-2 border-[3px] rounded-2xl border-[#664198] flex items-center">
-            <div>
+            <div className="">
               <IoIosSearch className="text-xl" />
             </div>
             <div className=" ">
@@ -20,7 +20,7 @@ const PcProfile = ({ handleOpenProfile }) => {
           </div>
         </div>
       </div>
-      <div className="absolute hidden lg:flex right-[6rem] flex-col gap-2 items-center z-0">
+      <div className="absolute hidden lg:flex   right-[6rem] flex-col gap-2 items-center z-0">
         <div className="flex gap-2 h-fit items-center">
           <div className="h-[20px] w-[20px]">
             <img

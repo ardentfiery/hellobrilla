@@ -58,7 +58,7 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
     },
   ];
   return (
-    <div className="w-[100%] flex flex-col gap-3 pb-4 no-scrollbar">
+    <div className="w-[100%] flex flex-col gap-3 pb-4 no-scrollbar ">
       {menuData.map((item, index) => {
         return (
           <div
@@ -152,25 +152,6 @@ const MenuItems = ({ mobile = false, sethamclicked = "" }) => {
         </div>
         {showChildOfSleepm ? (
           <div className="text-[0.9rem] mt-2">
-            {/* <div
-              className={` m-auto group  cursor-pointer hover:bg-[#7e61a559]  hover:rounded-xl px-2 py-2 w-[12rem] transition-all ease-in-out duration-300 ${
-                activeDashPage === 12.0 ? "bg-[#664198] rounded-xl " : ""
-              }`}
-              onClick={() => {
-                setactiveDashPage(12.0);
-                mobile ? sethamclicked(false) : null;
-              }}
-            >
-              <div className="flex gap-4 justify-start items-center">
-                <p
-                  className={`font-semibold  ${
-                    activeDashPage === 12.0 ? "text-white" : ""
-                  }`}
-                >
-                  {">> >> >> Empresa"}
-                </p>
-              </div>
-            </div> */}
             <div
               className={` m-auto group cursor-pointer hover:bg-[#7e61a559]  hover:rounded-xl px-2 py-2 w-[12rem] transition-all ease-in-out duration-300 ${
                 activeDashPage === 12.0 ? "bg-[#664198] rounded-xl " : ""

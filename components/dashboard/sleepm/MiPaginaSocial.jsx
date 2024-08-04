@@ -43,9 +43,9 @@ const MiPaginaSocial = ({ isActive }) => {
     { isActive }
   );
   return (
-    <div className="flex flex-col gap-4 items-center jutify-center w-full h-screen ">
-      <div className="flex justify-center items-center md:grid md:grid-cols-2 gap-4 flex-col w-full  px-10 h-fit  mt-[10%]">
-        <div>
+    <div className="flex flex-col gap-4 items-center jutify-center w-full h-screen">
+      <div className="flex justify-center items-center md:grid md:grid-cols-2 gap-4 flex-col w-[100%]   px-10 h-fit  mt-[10%]">
+        <div className="w-[100%]">
           <Label htmlFor="facebook" className="text-[1.2rem] font-semibold ">
             Facebook
           </Label>
@@ -58,7 +58,7 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
-        <div>
+        <div className="w-[100%]">
           <Label htmlFor="insta" className="text-[1.2rem] font-semibold ">
             Instagram
           </Label>
@@ -71,7 +71,7 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
-        <div>
+        <div className="w-[100%]">
           <Label htmlFor="youtube" className="text-[1.2rem] font-semibold ">
             Youtube
           </Label>
@@ -84,7 +84,7 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
-        <div>
+        <div className="w-[100%]">
           <Label htmlFor="whatsapp" className="text-[1.2rem] font-semibold ">
             WhatsApp
           </Label>
@@ -97,7 +97,7 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
-        <div>
+        <div className="w-[100%]">
           <Label htmlFor="sms" className="text-[1.2rem] font-semibold ">
             SMS
           </Label>
@@ -110,7 +110,7 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
-        <div>
+        <div className="w-[100%]">
           <Label htmlFor="email" className="text-[1.2rem] font-semibold ">
             Email
           </Label>
@@ -123,15 +123,38 @@ const MiPaginaSocial = ({ isActive }) => {
             }}
           />
         </div>
-        <div>
+        <div className="w-[100%]">
           <Label htmlFor="radio-group" className="text-[1.2rem] font-semibold ">
             Lo quiero
           </Label>
-          <RadioGroup
+          {userSocials?.priority ? (
+            <RadioGroup
+              name="radio-group"
+              defaultValue={userSocials?.priority ? userSocials.priority : null}
+              className="flex gap-4 font-medium text-[1.1rem]"
+              onChange={(value) => {
+                setupdateValues({ ...updateValues, priority: value });
+              }}
+            >
+              <Radio value="whats"> WhatsApp</Radio>
+              <Radio value="sms"> SMS</Radio>
+            </RadioGroup>
+          ) : (
+            <RadioGroup
+              name="radio-group"
+              defaultValue={userSocials?.priority ? userSocials.priority : null}
+              className="flex gap-4 font-medium text-[1.1rem]"
+              onChange={(value) => {
+                setupdateValues({ ...updateValues, priority: value });
+              }}
+            >
+              <Radio value="whats"> WhatsApp</Radio>
+              <Radio value="sms"> SMS</Radio>
+            </RadioGroup>
+          )}
+          {/* <RadioGroup
             name="radio-group"
-            defaultValue={
-              userSocials?.priority ? userSocials.priority : null
-            }
+            defaultValue={userSocials?.priority ? userSocials.priority : null}
             className="flex gap-4 font-medium text-[1.1rem]"
             onChange={(value) => {
               setupdateValues({ ...updateValues, priority: value });
@@ -139,7 +162,7 @@ const MiPaginaSocial = ({ isActive }) => {
           >
             <Radio value="whats"> WhatsApp</Radio>
             <Radio value="sms"> SMS</Radio>
-          </RadioGroup>
+          </RadioGroup> */}
           <p>
             No puedes utilizar ambos métodos al mismo tiempo. Debes elegir el
             método con el que mejor puedas atender a tus clientes.

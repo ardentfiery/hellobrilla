@@ -39,11 +39,13 @@ const PdfComponent = ({ pdfUrl }) => {
               setPageNumber(pageNumber - 1);
             }
           }}
-          className="group hover:bg-[#664198] w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+          className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
         >
-          <p className="font-light text-[3rem] rotate-180 text-[#664198] group-hover:text-white ">
-            {">"}
-          </p>
+          <img
+            src="/slidearrow.png"
+            className="h-[3rem] w-[3rem] rotate-180"
+            alt=""
+          />
         </div>
         <div className="pdf-image border-[3px]  border-[#664198] rounded-xl overflow-y-scroll overflow-x-hidden">
           <Document
@@ -67,11 +69,9 @@ const PdfComponent = ({ pdfUrl }) => {
               setPageNumber(pageNumber + 1);
             }
           }}
-          className="group hover:bg-[#664198] w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-full border-[1px] border-[#664198] flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
+          className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
         >
-          <p className="font-light text-[3rem] -rotate-180 text-[#664198] group-hover:text-white ">
-            {">"}
-          </p>
+          <img src="/slidearrow.png" className="h-[3rem] w-[3rem] " alt="" />
         </div>
       </div>
     </div>

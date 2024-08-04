@@ -86,7 +86,7 @@ const Left = () => {
 
   const [hamclicked, sethamclicked] = useState(false);
   return (
-    <div className="relative">
+    <div className="relative ">
       {hamclicked ? (
         <Secondary
           menuData={menuData}
@@ -95,7 +95,7 @@ const Left = () => {
         />
       ) : null}
 
-      <div className="absolute z-40 pt-2 lg:pt-0 bg-white w-[100vw]">
+      <div className=" z-40 pt-2 lg:pt-0  w-[100vw]">
         <RxHamburgerMenu
           onClick={() => {
             sethamclicked(true);
@@ -103,7 +103,7 @@ const Left = () => {
           className="text-3xl text-[#664198] ml-4 lg:hidden  "
         />
       </div>
-      <div className="mt-2 z-40 absolute  right-8 flex gap-2">
+      <div className=" -z-10 absolute right-8 flex gap-2 top-1">
         <div className=" right-20 lg:hidden visible">
           <IoMdNotificationsOutline className="text-3xl" />
         </div>
@@ -146,7 +146,7 @@ export default Left;
 
 const Secondary = ({ menuData, handleSelect, sethamclicked }) => {
   return (
-    <div className="h-[100vh] w-[100vw] ">
+    <div className="h-[100vh] w-[100vw] bg-white">
       <div className="flex flex-col items-center  h-[97vh] ">
         <div className="h-[4rem] w-[20rem] mt-2 flex justify-between items-center  ">
           <img
