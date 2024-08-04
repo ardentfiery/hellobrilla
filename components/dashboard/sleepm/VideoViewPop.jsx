@@ -54,7 +54,7 @@ const VideoViewPop = ({ pop, setPop, vidSrc, handleOpen = "", size = "" }) => {
               alt="close"
               className="absolute md:top-0 z-50 right-[1rem] md:right-[-3rem] h-[2.4rem] w-[2.4rem] cursor-pointer"
             />
-            <div className="max-w-[80vw] min-w-[20rem] ">
+            <div className="max-w-[90vw]  min-w-[15rem] ">
               <VideoPlayer
                 options={videoPlayerOptions}
                 onReady={handlePlayerReady}
