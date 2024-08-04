@@ -97,7 +97,7 @@ const Recursos = ({ isActive }) => {
   }, [isActive]);
 
   return (
-    <div className="flex flex-col  mt-6 pr-3">
+    <div className="flex flex-col  mt-6 mb-16 pr-3">
       {pop && <ImageViewPop pop={pop} setPop={setPop} imgsrc={clickedImage} />}
       <ProfilePop
         size={sizeProfile}
