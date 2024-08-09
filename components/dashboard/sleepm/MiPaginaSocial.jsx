@@ -132,6 +132,7 @@ const MiPaginaSocial = ({ isActive }) => {
             value={userSocials?.priority}
             className="flex gap-4 font-medium text-[1.1rem]"
             onChange={(value) => {
+              userSocials.priority = value;
               setupdateValues({ ...updateValues, priority: value });
             }}
           >
