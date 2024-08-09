@@ -129,7 +129,7 @@ const MiPaginaSocial = ({ isActive }) => {
             Lo quiero
           </Label>
           <RadioGroup
-            defaultValue={userSocials?.priority ? userSocials.priority : null}
+            value={userSocials?.priority}
             className="flex gap-4 font-medium text-[1.1rem]"
             onChange={(value) => {
               setupdateValues({ ...updateValues, priority: value });
