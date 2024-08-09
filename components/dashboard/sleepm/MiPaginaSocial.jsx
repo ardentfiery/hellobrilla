@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Label } from "../../../components/ui/label";
 import { Input } from "rsuite";
-import { Radio, RadioGroup } from "@chakra-ui/react";
+import { RadioGroup, RadioGroupItem } from "../../ui/radio-group";
 import { useDashContext } from "../../../context/DashboardContext";
 import { toast } from "react-hot-toast";
 import axios from "../../../app/api/axiosintercepter";
@@ -129,14 +129,20 @@ const MiPaginaSocial = ({ isActive }) => {
             Lo quiero
           </Label>
           <RadioGroup
-            value={userSocials?.priority ? userSocials.priority : null}
+            defaultValue={userSocials?.priority ? userSocials.priority : null}
             className="flex gap-4 font-medium text-[1.1rem]"
             onChange={(value) => {
               setupdateValues({ ...updateValues, priority: value });
             }}
           >
-            <Radio value="whats"> WhatsApp</Radio>
-            <Radio value="sms"> SMS</Radio>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="whats" id="whats" />
+              <Label htmlFor="whats">WhatsApp</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="sms" id="sms" />
+              <Label htmlFor="sms">SMS</Label>
+            </div>
           </RadioGroup>
 
           <p>
