@@ -110,13 +110,13 @@ export default function Page({ params }) {
             </p>
           </div>
           <div
-            className="mt-3"
+            className="mt-3 "
             onClick={() => {
               router.push(`/slepweb/${params?.slug}/products`);
             }}
           >
             <img
-              className="h-[2rem] w-[4rem] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300 object-cover"
+              className="h-[4rem] w-[full] hover:drop-shadow-lg hover:scale-105 cursor-pointer transition-all ease-in-out duration-300 object-cover"
               src="/arrowbox.png"
               alt=""
             />
