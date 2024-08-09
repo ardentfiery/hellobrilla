@@ -8,7 +8,7 @@ import BrillaLoader from "../../utils/BrillaLoader";
 import { useDashContext } from "../../context/DashboardContext";
 
 const Page = () => {
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
   const { setuserId } = useDashContext();
 
   const router = useRouter();
@@ -30,7 +30,7 @@ const Page = () => {
   };
 
   useEffect(() => {
-    // checkAuthorization();
+    checkAuthorization();
   }, []);
   return (
     <>
