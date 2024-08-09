@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fortawesome/react-fontawesome": "^0.2.2",
@@ -16,6 +17,7 @@
     "@mui/material": "^5.15.18",
     "@mui/x-tree-view": "^7.5.0",
     "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-radio-group": "^1.2.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",

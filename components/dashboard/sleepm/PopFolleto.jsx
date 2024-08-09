@@ -41,14 +41,14 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
           onClick={handleClose}
           src="/dashboard/crossbtn.png"
           alt="classbtn"
-          className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
+          className="absolute top-0 p-1 right-[2%] h-[2rem] w-[2rem] lg:h-[2.4rem] lg:w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body className="hide-scrollbar select-none  w-[98vw] ml-[-4%] md:w-auto md:ml-auto">
           <div className="h-[60vh] flex  items-center flex-col mt-5 ">
             <div>
               <p className="text-[#803DA1] font-bold text-[3rem]">Folletos</p>
             </div>
-            <div className="flex justify-center items-center  w-[100vw] h-[30rem] gap-8 overflow-x-scroll hide-scrollbar ">
+            <div className="flex justify-center bg- items-center  w-[100vw] h-[30rem] gap-8 overflow-x-scroll hide-scrollbar ">
               <div
                 onClick={() => {
                   //scroll up the post images
@@ -63,7 +63,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
               >
                 <img
                   src="/slidearrow.png"
-                  className="h-[3rem] w-[3rem] rotate-180 "
+                  className="h-[2rem] w-[2rem] lg:h-[3rem] lg:w-[3rem] rotate-180 "
                   alt=""
                 />
               </div>
@@ -135,7 +135,7 @@ const PopFolleto = ({ size, open, handleClose, handleOpen }) => {
               >
                 <img
                   src="/slidearrow.png"
-                  className="h-[3rem] w-[3rem] "
+                  className="h-[2rem] w-[2rem] lg:h-[3rem] lg:w-[3rem] "
                   alt=""
                 />
               </div>

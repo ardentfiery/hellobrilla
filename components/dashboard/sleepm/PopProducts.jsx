@@ -23,7 +23,7 @@ const PopProducts = ({
           setPop={setPop}
           imgsrc={clickedProduct?.brochure}
           handleOpen={handleOpen}
-          size="calc(100% - 25%)"
+          size="calc(100% - 10%)"
         />
       )}
       {popVid && (
@@ -32,7 +32,7 @@ const PopProducts = ({
           setPop={setPopVid}
           vidSrc={clickedProduct?.videoUrl}
           handleOpen={handleOpen}
-          size="calc(100% - 25%)"
+          size="calc(100% - 10%)"
         />
       )}
       <Modal size={size} open={open} onClose={handleClose} className="">
@@ -40,7 +40,7 @@ const PopProducts = ({
           onClick={handleClose}
           src="/dashboard/crossbtn.png"
           alt="classbtn"
-          className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
+          className="absolute top-0 p-1 right-[2%] h-[2rem] w-[2rem] lg:h-[2.4rem] lg:w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body className="hide-scrollbar select-none">
           <div className="flex lg:flex-row flex-col gap-6 justify-center items-center">

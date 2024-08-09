@@ -16,7 +16,7 @@ const ImageViewPop = ({ pop, setPop, imgsrc, handleOpen = "", size="" }) => {
               }}
               src="/dashboard/crossbtn.png"
               alt="classbtn"
-              className="absolute top-[.5rem]  right-[0.5rem] md:right-[0.5rem] h-[2.4rem] w-[2.4rem] cursor-pointer z-50 hover:scale-105 transition-all  ease-in-out duration-300"
+              className="absolute top-[.5rem] bg-[#000000a3] rounded-full  right-[0] md:right-[0.5rem] h-[2.4rem] w-[2.4rem] cursor-pointer z-50 hover:scale-105 transition-all  ease-in-out duration-300"
             />
             <img
               src={imgsrc}

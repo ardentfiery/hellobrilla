@@ -95,7 +95,7 @@ const Left = () => {
         />
       ) : null}
 
-      <div className=" z-40 pt-2 lg:pt-0  w-[100vw]">
+      <div className=" z-10 pt-2 lg:pt-0  w-[100vw]">
         <RxHamburgerMenu
           onClick={() => {
             sethamclicked(true);
@@ -103,7 +103,9 @@ const Left = () => {
           className="text-3xl text-[#664198] ml-4 lg:hidden  "
         />
       </div>
-      <div className=" -z-10 absolute right-8 flex gap-2 top-1">
+      <div className="absolute right-8 flex gap-2 top-1" style={{
+        display: hamclicked ? "none" : "flex",
+      }}>
         <div className=" right-20 lg:hidden visible">
           <IoMdNotificationsOutline className="text-3xl" />
         </div>
@@ -113,7 +115,7 @@ const Left = () => {
           onClick={() => {
             handleOpen("full");
           }}
-          className="h-[30px] w-[30px]  right-10 lg:hidden"
+          className="h-[30px] w-[30px] z-0  right-10 lg:hidden"
         >
           <img
             className="h-[100%] w-[100%] rounded-full"
@@ -146,9 +148,9 @@ export default Left;
 
 const Secondary = ({ menuData, handleSelect, sethamclicked }) => {
   return (
-    <div className="h-[100vh] w-[100vw] bg-white">
+    <div className="h-[100vh] w-[100vw]  ">
       <div className="flex flex-col items-center  h-[97vh] ">
-        <div className="h-[4rem] w-[20rem] mt-2 flex justify-between items-center  ">
+        <div className=" h-[4rem] w-[20rem] mt-2 flex justify-between items-center  ">
           <img
             className="h-[100%] "
             src="/landing/logo.png
@@ -162,7 +164,7 @@ const Secondary = ({ menuData, handleSelect, sethamclicked }) => {
             className="text-[#664198] text-3xl"
           />
         </div>
-        <div className="overflow-x-hidden no-scrollbar h-fit hide-scrollbar">
+        <div className="overflow-x-hidden  no-scrollbar h-fit hide-scrollbar">
           <MenuItems mobile={true} sethamclicked={sethamclicked} />
         </div>
       </div>

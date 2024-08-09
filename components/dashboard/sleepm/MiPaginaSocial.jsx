@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Input, Radio, RadioGroup } from "rsuite";
 import { Label } from "../../../components/ui/label";
+import { Input } from "rsuite";
+import { Radio, RadioGroup } from "@chakra-ui/react";
 import { useDashContext } from "../../../context/DashboardContext";
 import { toast } from "react-hot-toast";
 import axios from "../../../app/api/axiosintercepter";
@@ -127,34 +128,8 @@ const MiPaginaSocial = ({ isActive }) => {
           <Label htmlFor="radio-group" className="text-[1.2rem] font-semibold ">
             Lo quiero
           </Label>
-          {userSocials?.priority ? (
-            <RadioGroup
-              name="radio-group"
-              defaultValue={userSocials?.priority ? userSocials.priority : null}
-              className="flex gap-4 font-medium text-[1.1rem]"
-              onChange={(value) => {
-                setupdateValues({ ...updateValues, priority: value });
-              }}
-            >
-              <Radio value="whats"> WhatsApp</Radio>
-              <Radio value="sms"> SMS</Radio>
-            </RadioGroup>
-          ) : (
-            <RadioGroup
-              name="radio-group"
-              defaultValue={userSocials?.priority ? userSocials.priority : null}
-              className="flex gap-4 font-medium text-[1.1rem]"
-              onChange={(value) => {
-                setupdateValues({ ...updateValues, priority: value });
-              }}
-            >
-              <Radio value="whats"> WhatsApp</Radio>
-              <Radio value="sms"> SMS</Radio>
-            </RadioGroup>
-          )}
-          {/* <RadioGroup
-            name="radio-group"
-            defaultValue={userSocials?.priority ? userSocials.priority : null}
+          <RadioGroup
+            value={userSocials?.priority ? userSocials.priority : null}
             className="flex gap-4 font-medium text-[1.1rem]"
             onChange={(value) => {
               setupdateValues({ ...updateValues, priority: value });
@@ -162,7 +137,8 @@ const MiPaginaSocial = ({ isActive }) => {
           >
             <Radio value="whats"> WhatsApp</Radio>
             <Radio value="sms"> SMS</Radio>
-          </RadioGroup> */}
+          </RadioGroup>
+
           <p>
             No puedes utilizar ambos métodos al mismo tiempo. Debes elegir el
             método con el que mejor puedas atender a tus clientes.

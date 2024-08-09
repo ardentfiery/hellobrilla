@@ -43,12 +43,12 @@ const PopVisualVideo = ({ size, open, handleClose, handleOpen }) => {
             handleClose();
           }}
           className="group select-none hover:bg-[#664198] w-[35px] h-[35px] md:w-[55px] md:h-[55px] rounded-full flex justify-center items-center transition-all ease-in-out duration-300 cursor-pointer"
-              >
-                <img
-                  src="/slidearrow.png"
-                  className="h-[3rem] w-[3rem] rotate-180 "
-                  alt=""
-                />
+        >
+          <img
+            src="/slidearrow.png"
+            className="h-[2rem] w-[2rem] lg:h-[3rem] lg:w-[3rem] rotate-180 "
+            alt=""
+          />
         </div>
         <Modal.Body>
           <div className="w-[90vw] m-auto">

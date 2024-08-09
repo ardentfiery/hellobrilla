@@ -47,19 +47,19 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
             onClick={handleClose}
             src="/dashboard/crossbtn.png"
             alt="classbtn"
-            className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
+            className="absolute top-0 p-1 right-[2%] h-[2rem] w-[2rem] lg:h-[2.4rem] lg:w-[2.4rem] invert cursor-pointer"
           />
           <Modal.Body>
             <div>
               <div className="grid lg:grid-cols-2 gap-x-4">
-                <div className="h-fit md:h-[70vh] flex flex-col justify-end md:items-center pb-5">
+                <div className="h-fit lg:h-[70vh] flex flex-col justify-end md:items-center  pb-5">
                   <div className="flex md:items-center md:justify-center gap-4 ">
-                    <p className="font-bold text-[2.5rem]">Tríptico</p>
+                    <p className="font-bold text-[2.5rem] bg-w">Tríptico</p>
                     <div className="bg-gray-300 w-[3rem] h-[3rem] rounded-full text-center ">
                       <p className="font-bold text-[2.5rem]">1</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 ">
+                  <div className="md:grid md:grid-cols-1 flex justify-center flex-col items-center">
                     <div
                       style={{
                         boxShadow: "-14px -8px #0000001F",
@@ -166,14 +166,14 @@ const PopTriptico = ({ size, open, handleClose, handleOpen }) => {
                   </div>
                 </div>
 
-                <div className="h-fit md:h-[70vh] flex flex-col justify-start md:items-center pt-16 md:pt-5">
+                <div className="h-fit lg:h-[70vh] flex flex-col justify-start md:items-center pt-16 md:pt-5">
                   <div className="flex md:items-center md:justify-center gap-4 ">
                     <p className="font-bold text-[2.5rem]">Tríptico</p>
                     <div className="bg-gray-300 w-[3rem] h-[3rem] rounded-full text-center ">
                       <p className="font-bold text-[2.5rem]">2</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 ">
+                  <div className="md:grid md:grid-cols-1 flex justify-center flex-col items-center">
                     <div
                       style={{
                         boxShadow: "-14px -8px #0000001F",

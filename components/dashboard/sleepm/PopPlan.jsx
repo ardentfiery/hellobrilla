@@ -32,7 +32,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
           setPop={setPop}
           imgsrc={clickedImage}
           handleOpen={handleOpen}
-          size= {window.innerWidth < 650 ? "calc(100% - 0%)" : "calc(100% - 35%)"} 
+          size={"calc(100% - 10%)"}
         />
       )}
       <Modal size={size} open={open} onClose={handleClose}>
@@ -40,7 +40,7 @@ const PopPlan = ({ size, open, handleClose, handleOpen }) => {
           onClick={handleClose}
           src="/dashboard/crossbtn.png"
           alt="classbtn"
-          className="absolute top-2 right-[4rem] h-[2.4rem] w-[2.4rem] invert cursor-pointer"
+          className="absolute top-0 p-1 right-[2%] h-[2rem] w-[2rem] lg:h-[2.4rem] lg:w-[2.4rem] invert cursor-pointer"
         />
         <Modal.Body>
           <div className=" flex justify-center items-center flex-col">

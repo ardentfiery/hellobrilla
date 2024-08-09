@@ -186,7 +186,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 items-center py-2  mx-2 border-[1.8px] rounded-2xl  border-[#664198] h-fit px-10 sm:w-[95vw] lg:w-[98%]">
+        <div className="flex flex-col gap-4 items-center py-2 mb-10 lg:mb-auto  mx-2 border-[1.8px] rounded-2xl  border-[#664198] h-fit px-10 sm:w-[95vw] lg:w-[98%]">
           <div className="flex items-center gap-2 mt-2 ">
             <div>
               <p className="font-bold text-[1.4rem]"> MI RETO</p>

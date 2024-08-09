@@ -182,7 +182,7 @@ const Recursos = ({ isActive }) => {
                         <div
                           onClick={() => {
                             setclickedProduct(product);
-                            handleOpenProduct("calc(100% - 25%)");
+                            handleOpenProduct("calc(100% - 10%)");
                           }}
                           className="group h-[201px] w-[180px] md:w-[220px] 2xl:w-[266px]  cursor-pointer border-[#803DA1] border-[2px] rounded-3xl overflow-hidden relative transition-all ease-in-out duration-300 "
                         >
@@ -226,7 +226,7 @@ const Recursos = ({ isActive }) => {
             <div
               className="relative  h-[113px] w-[226px] xl:w-[220px] 2xl:w-[266px]  rounded-2xl  overflow-hidden "
               onClick={() => {
-                handleOpen("calc(100% - 20%)");
+                handleOpen("calc(100% - 10%)");
               }}
             >
               <img
